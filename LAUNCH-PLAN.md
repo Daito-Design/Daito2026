@@ -12,7 +12,7 @@
 - [ ] Review case study metrics accuracy
 - [ ] Approve launch
 
-### Shawn Reilly (Project Manager)
+### Shawn Reilly (Operations Manager)
 - [ ] Provide headshot photo (only team member missing)
 - [ ] Coordinate launch timeline
 - [ ] QA checklist completion
