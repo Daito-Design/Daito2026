@@ -5,6 +5,30 @@
 
 ---
 
+## 📋 Tasks by Person
+
+### Jared (Owner)
+- [ ] Final sign-off on all content
+- [ ] Review case study metrics accuracy
+- [ ] Approve launch
+
+### Shawn Reilly (Project Manager)
+- [ ] Provide headshot photo (only team member missing)
+- [ ] Coordinate launch timeline
+- [ ] QA checklist completion
+
+### Design Team (Damon, Andrea, Sharon, Tyler, Raafia, Rakesh)
+- [ ] Mobile responsiveness review
+- [ ] Cross-browser testing
+- [ ] Visual QA on all pages
+
+### Development
+- [ ] Footer logo loading fix verification
+- [ ] Performance optimization
+- [ ] Analytics setup post-launch
+
+---
+
 ## ✅ Completed
 
 ### Content & Metrics
@@ -25,39 +49,28 @@
 - Bluware: Client-centric metrics only
 - Shearwater Geo: Fixed title cutoff
 
-### Team & Photos
-- Added Tyler McCoy (Lead Designer)
-- All team photos added:
-  - Jared Huke, Joseph Santori, Russell Buyse
-  - Damon Daood, Andrea August, Sharon Chhin
-  - Tyler McCoy, Raafia Jessa, Rakesh Maisuria
-- Blog page images added (all 10 posts)
+### Team Photos Added
+- ✅ Jared Huke
+- ✅ Joseph Santori
+- ✅ Russell Buyse
+- ✅ Damon Daood
+- ✅ Andrea August
+- ✅ Sharon Chhin
+- ✅ Tyler McCoy
+- ✅ Raafia Jessa
+- ✅ Rakesh Maisuria
+- ❌ Shawn Reilly (needs photo)
+
+### Blog Page
+- All 10 blog card images added
 
 ---
 
-## 🔄 Pending
-
-### Before Launch
-- [ ] Shawn Reilly photo (only team member without photo)
-- [ ] Final content review across all pages
-- [ ] Mobile responsiveness check
-- [ ] Footer logo loading verification
-
-### Post-Launch
-- [ ] Analytics setup
-- [ ] SEO monitoring
-- [ ] Performance optimization
-
----
-
-## 📁 Key Files Modified
+## 📁 Files Modified
 - `index.html` - Homepage
 - `about.html` - Team photos & metrics
 - `case-studies.html` - Work page
-- `case-study-shell.html` - Shell case study
-- `case-study-constellation.html` - Constellation case study
-- `case-study-tdecu.html` - TDECU case study
-- `case-study-bluware.html` - Bluware case study
+- `case-study-*.html` - All case studies
 - `blog.html` - Blog images
 - `services.html` - Financial Services clients
 
