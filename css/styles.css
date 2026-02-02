@@ -560,6 +560,19 @@ a:hover {
   color: var(--white);
 }
 
+.nav.dark .nav-link {
+  color: var(--white);
+}
+
+.nav.dark .nav-link:hover {
+  color: var(--sand);
+}
+
+.nav.dark .nav-cta {
+  background-color: var(--oxblood);
+  color: var(--white);
+}
+
 .nav.dark.scrolled {
   background-color: rgba(26, 26, 26, 0.95);
   color: var(--white);
