@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluware Case Study | Daito Design</title>
+    <meta name="description" content="How Daito Design's embedded design partnership helped Bluware create world-class seismic interpretation software with 74% margins.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --sand: #F5F0E8;
+            --charcoal: #1A1A1A;
+            --oxblood: #722F37;
+            --oxblood-light: #8B3A42;
+            --bluware-blue: #0EA5E9;
+            --bluware-teal: #14B8A6;
+            --bluware-dark: #0C1929;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--sand);
+            color: var(--charcoal);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(26, 26, 26, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 0 60px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo-img { height: 72px; width: auto; }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--sand);
+            text-decoration: none;
+            font-size: 13px;
+            opacity: 0.75;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover { opacity: 1; }
+
+        .nav-cta {
+            background: var(--oxblood) !important;
+            padding: 10px 20px !important;
+            border-radius: 4px;
+            opacity: 1 !important;
+        }
+
+        .case-hero {
+            min-height: 85vh;
+            background: var(--bluware-dark);
+            display: flex;
+            align-items: center;
+            padding: 120px 60px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .case-meta {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--bluware-blue);
+            padding: 6px 14px;
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            border-radius: 20px;
+        }
+
+        .case-hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 400;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .case-hero h1 em {
+            font-style: italic;
+            color: var(--bluware-blue);
+        }
+
+        .case-hero .lead {
+            font-size: 18px;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+        }
+
+        .stat { text-align: left; }
+
+        .stat-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--bluware-blue);
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .section { padding: 100px 60px; }
+        .section-dark { background: var(--charcoal); color: var(--sand); }
+        .section-bluware { background: var(--bluware-dark); color: white; }
+
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--oxblood);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .section-dark .section-label,
+        .section-bluware .section-label { color: var(--bluware-blue); }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            font-weight: 400;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .lead-text {
+            font-size: 18px;
+            opacity: 0.8;
+            max-width: 700px;
+            line-height: 1.75;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .two-col-content p {
+            margin-bottom: 20px;
+            opacity: 0.85;
+            line-height: 1.8;
+        }
+
+        .pod-highlight {
+            background: rgba(14, 165, 233, 0.1);
+            border: 2px solid var(--bluware-blue);
+            border-radius: 12px;
+            padding: 48px;
+            margin: 48px 0;
+            text-align: center;
+        }
+
+        .pod-highlight h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: var(--bluware-blue);
+            margin-bottom: 16px;
+        }
+
+        .pod-highlight p {
+            font-size: 16px;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pod-highlight .margin-stat {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 72px;
+            color: var(--bluware-blue);
+            font-weight: 500;
+            margin-top: 24px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .benefit-card {
+            background: rgba(14, 165, 233, 0.05);
+            border: 1px solid rgba(14, 165, 233, 0.15);
+            border-radius: 8px;
+            padding: 32px;
+        }
+
+        .benefit-card h4 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: var(--bluware-blue);
+        }
+
+        .benefit-card p {
+            font-size: 14px;
+            opacity: 0.75;
+            line-height: 1.7;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .result-card {
+            text-align: center;
+            padding: 40px 24px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .result-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            font-weight: 500;
+            color: var(--oxblood);
+            line-height: 1;
+        }
+
+        .result-label {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-top: 12px;
+            line-height: 1.4;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, var(--oxblood) 0%, var(--oxblood-light) 100%);
+            padding: 80px;
+            border-radius: 12px;
+            margin-top: 64px;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 200px;
+            color: rgba(255,255,255,0.1);
+            position: absolute;
+            top: -20px;
+            left: 40px;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-style: italic;
+            color: white;
+            line-height: 1.5;
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            margin-top: 32px;
+            color: white;
+        }
+
+        .testimonial-author strong {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .testimonial-author span {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 100px 60px;
+            background: var(--charcoal);
+        }
+
+        .cta-section h2 { color: var(--sand); margin-bottom: 16px; }
+
+        .cta-section p {
+            color: var(--sand);
+            opacity: 0.7;
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary { background: var(--oxblood); color: var(--sand); }
+        .btn-primary:hover { background: var(--oxblood-light); transform: translateY(-2px); }
+
+        footer {
+            background: var(--charcoal);
+            padding: 48px 60px;
+            border-top: 1px solid rgba(245, 240, 232, 0.08);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-logo { height: 48px; width: auto; }
+
+        .footer-content span {
+            color: var(--sand);
+            opacity: 0.5;
+            font-size: 13px;
+        }
+
+        @media (max-width: 1024px) {
+            .case-hero { padding: 100px 40px 60px; }
+            .case-hero h1 { font-size: 42px; }
+            .two-col { grid-template-columns: 1fr; gap: 48px; }
+            .benefits-grid, .results-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 24px; }
+            .nav-links { display: none; }
+            .section { padding: 64px 24px; }
+            .case-hero h1 { font-size: 32px; }
+            .benefits-grid, .results-grid { grid-template-columns: 1fr; }
+            .testimonial { padding: 48px 32px; }
+            .testimonial-text { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" aria-label="Daito Design Home">
+            <img src="images/daito-logo.webp" alt="Daito Design" class="nav-logo-img">
+        </a>
+        <ul class="nav-links">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="agentic-experience.html">Agentic Experience</a></li>
+            <li><a href="case-studies.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+    </nav>
+
+    <section class="case-hero">
+        <div class="hero-content">
+            <div class="case-meta">
+                <span class="meta-tag">Geo-Technology</span>
+                <span class="meta-tag">Design POD</span>
+                <span class="meta-tag">3+ Year Partnership</span>
+            </div>
+            <h1>Embedded Design for <em>Subsurface Intelligence</em></h1>
+            <p class="lead">Bluware develops sophisticated seismic interpretation software for geoscientists. We embedded with their product team for 3+ years, delivering continuous design support with our highest-margin engagement model.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">$595K</div>
+                    <div class="stat-label">Total Engagement</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">74%</div>
+                    <div class="stat-label">Project Margin</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">3+</div>
+                    <div class="stat-label">Year Partnership</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-bluware">
+        <div class="container">
+            <p class="section-label">The Challenge</p>
+            <h2>Making Powerful Technology Accessible</h2>
+            <p class="lead-text">Bluware's technology enables seismic data analysis that was previously impossible—but powerful technology needs intuitive interfaces to realize its potential. The mandate: design interfaces that match the sophistication of the technology without dumbing it down.</p>
+
+            <div class="pod-highlight">
+                <h3>The Design POD Model</h3>
+                <p>Rather than project-based engagements, we embedded a dedicated design team directly into Bluware's product organization. Sprint-aligned delivery. Continuous improvement. True partnership.</p>
+                <div class="margin-stat">74%</div>
+                <p style="margin-top: 8px;">Project margin—our highest-performing engagement model</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <p class="section-label">Our Approach</p>
+            <h2>Continuous Design Partnership</h2>
+            <p class="lead-text">We operate as an extension of Bluware's product team—participating in sprints, responding to evolving requirements, and maintaining deep domain expertise.</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h4>Sprint-Aligned Delivery</h4>
+                    <p>Design work synchronized with development cycles. No handoff delays. Immediate feedback loops. Continuous iteration.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Domain Expertise</h4>
+                    <p>After 3+ years, we understand seismic interpretation workflows deeply. We challenge assumptions and propose solutions.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Predictable Capacity</h4>
+                    <p>Dedicated design resources available when needed. No ramp-up time for new projects. Institutional knowledge preserved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <p class="section-label">The Work</p>
+            <h2>From Research to Production</h2>
+            <p class="lead-text">Our embedded partnership spans the full product design lifecycle—from competitive intelligence to production-ready interfaces.</p>
+
+            <div class="two-col" style="margin-top: 48px;">
+                <div class="two-col-content">
+                    <h3 style="color: var(--bluware-blue); font-family: 'Cormorant Garamond', serif; font-size: 28px; margin-bottom: 16px;">Competitive Intelligence</h3>
+                    <p>Deep analysis of the geo-tech landscape. Understanding where Bluware's technology creates unique value. Identifying UX patterns that work in subsurface interpretation.</p>
+
+                    <h3 style="color: var(--bluware-blue); font-family: 'Cormorant Garamond', serif; font-size: 28px; margin-bottom: 16px; margin-top: 32px;">Product Design</h3>
+                    <p>End-to-end UX/UI for Bluware's interpretation platform. Complex data visualization. Multi-panel workflows. Precision controls for specialist users.</p>
+                </div>
+                <div class="two-col-content">
+                    <h3 style="color: var(--bluware-blue); font-family: 'Cormorant Garamond', serif; font-size: 28px; margin-bottom: 16px;">Website & Content</h3>
+                    <p>Product marketing design for launches and campaigns. Communicating sophisticated technology to technical audiences.</p>
+
+                    <h3 style="color: var(--bluware-blue); font-family: 'Cormorant Garamond', serif; font-size: 28px; margin-bottom: 16px; margin-top: 32px;">Design System</h3>
+                    <p>Comprehensive component library ensuring consistency across the product portfolio. Documentation enabling internal teams to extend the design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <p class="section-label">Results</p>
+            <h2>Partnership That Scales</h2>
+            <p class="lead-text">The Design POD model has proven to be our most effective engagement structure—delivering value for clients while achieving sustainable margins.</p>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-value">3+</div>
+                    <div class="result-label">Years of continuous partnership</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">74%</div>
+                    <div class="result-label">Project margin achieved</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">8</div>
+                    <div class="result-label">Major projects delivered</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">$74K</div>
+                    <div class="result-label">Average project value</div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text">They understood our domain deeply enough to challenge our assumptions. That's rare in a design partner. After three years, they're not just a vendor—they're part of how we build products.</p>
+                <div class="testimonial-author">
+                    <strong>VP of Product</strong>
+                    <span>Bluware</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <div class="two-col">
+                <div class="two-col-content">
+                    <p class="section-label">Capabilities Applied</p>
+                    <h2>The Design POD Advantage</h2>
+                    <p>The POD model works because it aligns incentives. We succeed when the product succeeds. That changes how we approach every design decision.</p>
+                    <p>For companies building complex technical products, embedded design partnership offers something project-based work can't: continuity, context, and commitment.</p>
+                </div>
+                <div>
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 32px;">
+                        <h4 style="color: var(--bluware-blue); font-size: 14px; margin-bottom: 20px; letter-spacing: 1px;">SERVICES DELIVERED</h4>
+                        <ul style="list-style: none; font-size: 15px; line-height: 2.2; opacity: 0.85;">
+                            <li>→ Competitive Analysis</li>
+                            <li>→ User Research</li>
+                            <li>→ Product Strategy</li>
+                            <li>→ UX/UI Design</li>
+                            <li>→ Design Systems</li>
+                            <li>→ Website Design</li>
+                            <li>→ Embedded Design Partnership</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Need embedded design support?</h2>
+        <p>Let's discuss how a Design POD could accelerate your product development.</p>
+        <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <img src="images/daito-logo.webp" alt="Daito Design" class="footer-logo">
+            <div style="display: flex; align-items: center; gap: 24px;">
+                <a href="https://www.linkedin.com/company/daitodesign/" target="_blank" rel="noopener" style="color: var(--sand); opacity: 0.7; text-decoration: none; font-size: 13px; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">LinkedIn</a>
+                <span style="color: var(--sand); opacity: 0.5; font-size: 13px;">© 2026 Daito Design. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

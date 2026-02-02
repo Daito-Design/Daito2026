@@ -1,0 +1,6 @@
+# Daito Design robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://daitodesign.com/sitemap.xml

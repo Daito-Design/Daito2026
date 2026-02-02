@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constellation Energy Case Study | Daito Design</title>
+    <meta name="description" content="How Daito Design helped Constellation Energy digitize nuclear procedures and save approximately 1 million work hours through AI-powered efficiency.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --sand: #F5F0E8;
+            --charcoal: #1A1A1A;
+            --oxblood: #722F37;
+            --oxblood-light: #8B3A42;
+            --constellation-blue: #0066CC;
+            --constellation-cyan: #00AACC;
+            --constellation-dark: #0A1929;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--sand);
+            color: var(--charcoal);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(26, 26, 26, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 0 60px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo-img {
+            height: 72px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--sand);
+            text-decoration: none;
+            font-size: 13px;
+            opacity: 0.75;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover { opacity: 1; }
+
+        .nav-cta {
+            background: var(--oxblood) !important;
+            padding: 10px 20px !important;
+            border-radius: 4px;
+            opacity: 1 !important;
+        }
+
+        /* Hero */
+        .case-hero {
+            min-height: 85vh;
+            background: var(--constellation-dark);
+            display: flex;
+            align-items: center;
+            padding: 120px 60px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 170, 204, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .case-meta {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--constellation-cyan);
+            padding: 6px 14px;
+            border: 1px solid rgba(0, 170, 204, 0.3);
+            border-radius: 20px;
+        }
+
+        .case-hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 400;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .case-hero h1 em {
+            font-style: italic;
+            color: var(--constellation-cyan);
+        }
+
+        .case-hero .lead {
+            font-size: 18px;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--constellation-cyan);
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: -5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 55%;
+            max-width: 800px;
+            z-index: 0;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 100px 60px;
+        }
+
+        .section-dark {
+            background: var(--charcoal);
+            color: var(--sand);
+        }
+
+        .section-constellation {
+            background: var(--constellation-dark);
+            color: white;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--oxblood);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .section-dark .section-label,
+        .section-constellation .section-label {
+            color: var(--constellation-cyan);
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            font-weight: 400;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .lead-text {
+            font-size: 18px;
+            opacity: 0.8;
+            max-width: 700px;
+            line-height: 1.75;
+        }
+
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .two-col-content p {
+            margin-bottom: 20px;
+            opacity: 0.85;
+            line-height: 1.8;
+        }
+
+        /* Challenge Section */
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .challenge-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 32px;
+        }
+
+        .challenge-card h4 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: var(--constellation-cyan);
+        }
+
+        .challenge-card p {
+            font-size: 14px;
+            opacity: 0.7;
+            line-height: 1.7;
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 32px 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--oxblood);
+            color: var(--sand);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 500;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            font-size: 13px;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        /* Safety Callout */
+        .safety-callout {
+            background: rgba(0, 170, 204, 0.1);
+            border-left: 4px solid var(--constellation-cyan);
+            padding: 32px;
+            margin: 48px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .safety-callout h4 {
+            color: var(--constellation-cyan);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .safety-callout p {
+            font-size: 16px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        /* Systems Grid */
+        .systems-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .system-card {
+            background: rgba(0, 170, 204, 0.05);
+            border: 1px solid rgba(0, 170, 204, 0.15);
+            border-radius: 8px;
+            padding: 32px;
+        }
+
+        .system-card h4 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: var(--constellation-cyan);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .system-card p {
+            font-size: 14px;
+            opacity: 0.75;
+            line-height: 1.7;
+        }
+
+        /* Results */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .result-card {
+            text-align: center;
+            padding: 40px 24px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .result-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 44px;
+            font-weight: 500;
+            color: var(--oxblood);
+            line-height: 1;
+        }
+
+        .result-label {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-top: 12px;
+            line-height: 1.4;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background: linear-gradient(135deg, var(--oxblood) 0%, var(--oxblood-light) 100%);
+            padding: 80px;
+            border-radius: 12px;
+            margin-top: 64px;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 200px;
+            color: rgba(255,255,255,0.1);
+            position: absolute;
+            top: -20px;
+            left: 40px;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-style: italic;
+            color: white;
+            line-height: 1.5;
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            margin-top: 32px;
+            color: white;
+        }
+
+        .testimonial-author strong {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .testimonial-author span {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 100px 60px;
+            background: var(--charcoal);
+        }
+
+        .cta-section h2 {
+            color: var(--sand);
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: var(--sand);
+            opacity: 0.7;
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--oxblood);
+            color: var(--sand);
+        }
+
+        .btn-primary:hover {
+            background: var(--oxblood-light);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            padding: 48px 60px;
+            border-top: 1px solid rgba(245, 240, 232, 0.08);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            height: 48px;
+            width: auto;
+        }
+
+        .footer-content span {
+            color: var(--sand);
+            opacity: 0.5;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .case-hero { padding: 100px 40px 60px; }
+            .case-hero h1 { font-size: 42px; }
+            .hero-image { display: none; }
+            .two-col { grid-template-columns: 1fr; gap: 48px; }
+            .challenge-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr 1fr; }
+            .systems-grid { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 24px; }
+            .nav-links { display: none; }
+            .section { padding: 64px 24px; }
+            .case-hero h1 { font-size: 32px; }
+            .process-steps, .results-grid { grid-template-columns: 1fr; }
+            .testimonial { padding: 48px 32px; }
+            .testimonial-text { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" aria-label="Daito Design Home">
+            <img src="images/daito-logo.webp" alt="Daito Design" class="nav-logo-img">
+        </a>
+        <ul class="nav-links">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="agentic-experience.html">Agentic Experience</a></li>
+            <li><a href="case-studies.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="case-hero">
+        <div class="hero-content">
+            <div class="case-meta">
+                <span class="meta-tag">Nuclear Energy</span>
+                <span class="meta-tag">Digital Transformation</span>
+                <span class="meta-tag">AI-Powered Operations</span>
+            </div>
+            <h1>Digitizing <em>Nuclear Procedures</em> for America's Largest Clean Energy Producer</h1>
+            <p class="lead">We helped Constellation Energy transform decades of paper-based procedures into intelligent digital workflows—saving approximately one million work hours while maintaining the safety margins that nuclear operations demand.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">~1M</div>
+                    <div class="stat-label">Hours Saved</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">85%</div>
+                    <div class="stat-label">Compliance Improvement</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Legacy Systems Consolidated</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200&q=80" alt="Control Room Operations">
+        </div>
+    </section>
+
+    <!-- Challenge -->
+    <section class="section section-constellation">
+        <div class="container">
+            <p class="section-label">The Challenge</p>
+            <h2>Transforming Safety-Critical Operations</h2>
+            <p class="lead-text">A major nuclear utility operating multiple power plants was digitizing decades of paper-based procedures. The goal: transform static documents into intelligent, interactive digital workflows that guide operators through complex tasks while maintaining the safety margins that nuclear operations demand.</p>
+
+            <div class="challenge-grid">
+                <div class="challenge-card">
+                    <h4>Zero-Error Tolerance</h4>
+                    <p>In nuclear environments, every design decision carries weight. The interfaces we create must prevent errors before they happen, not just catch them after.</p>
+                </div>
+                <div class="challenge-card">
+                    <h4>Regulatory Complexity</h4>
+                    <p>NRC and INPO regulations govern every aspect of nuclear operations. Digital systems must maintain compliance while improving efficiency.</p>
+                </div>
+                <div class="challenge-card">
+                    <h4>Legacy Integration</h4>
+                    <p>Eight different systems had evolved over decades. New digital tools needed to consolidate functionality while preserving institutional knowledge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Approach -->
+    <section class="section">
+        <div class="container">
+            <p class="section-label">Our Approach</p>
+            <h2>Error Prevention as a Design Principle</h2>
+            <p class="lead-text">We approached nuclear UX with the humility it demands—listening first, designing second, and treating every interface element as a potential point of failure or protection.</p>
+
+            <div class="safety-callout">
+                <h4>Safety-Critical Design Philosophy</h4>
+                <p>In nuclear operations, the best error is one that never happens. We designed every workflow, every screen, and every interaction to prevent mistakes—not just display warnings when they occur. This means progressive disclosure, confirmation patterns, and interfaces that make the right action the easy action.</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Plant Observation</h4>
+                    <p>On-site research at operating plants. Understanding workflows in the actual environment where they'll be used.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Compliance Mapping</h4>
+                    <p>Deep analysis of NRC and INPO requirements. Ensuring every design decision meets regulatory standards.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Error Prevention</h4>
+                    <p>Designing interfaces where the right action is the easy action. Making mistakes hard, not just caught.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Continuous Research</h4>
+                    <p>POD research model with 20+ presentations. Embedded partnership for ongoing improvement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Systems -->
+    <section class="section section-constellation">
+        <div class="container">
+            <p class="section-label">The Work</p>
+            <h2>A Digital Transformation Framework</h2>
+            <p class="lead-text">We designed multiple interconnected systems that work together to support nuclear operations—from procedure execution to work planning to AI-powered automation.</p>
+
+            <div class="systems-grid">
+                <div class="system-card">
+                    <h4>Smart Procedures</h4>
+                    <p>Digital procedure execution system that guides operators through complex tasks with real-time validation, automatic documentation, and error prevention at every step.</p>
+                </div>
+                <div class="system-card">
+                    <h4>Work Planning Interface</h4>
+                    <p>Resource allocation and scheduling system that optimizes maintenance windows, tracks dependencies, and ensures coverage for safety-critical operations.</p>
+                </div>
+                <div class="system-card">
+                    <h4>AI-Powered Automation</h4>
+                    <p>Machine learning systems that optimize workflows, predict maintenance needs, and automate routine decision-making while keeping humans in control.</p>
+                </div>
+                <div class="system-card">
+                    <h4>Compliance Dashboard</h4>
+                    <p>Real-time visibility into regulatory compliance status, audit trails, and documentation requirements across all plant operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section">
+        <div class="container">
+            <p class="section-label">Results</p>
+            <h2>Measurable Impact on Operations</h2>
+            <p class="lead-text">Digital transformation at nuclear scale requires patience and precision. The results speak to both efficiency gains and—more importantly—maintained and improved safety margins.</p>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-value">~1M</div>
+                    <div class="result-label">Estimated hours saved through AI efficiency</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">85%</div>
+                    <div class="result-label">Improved compliance adherence</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">8</div>
+                    <div class="result-label">Legacy systems consolidated</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">20+</div>
+                    <div class="result-label">Research presentations delivered</div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text">They approached our environment with the right level of humility. They listened first, understood the stakes, and designed systems that make our operators more effective while maintaining the safety margins we demand. That's rare.</p>
+                <div class="testimonial-author">
+                    <strong>Director of Digital Operations</strong>
+                    <span>Constellation Energy</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Used -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="two-col">
+                <div class="two-col-content">
+                    <p class="section-label">Capabilities Applied</p>
+                    <h2>Safety-Critical UX Expertise</h2>
+                    <p>Nuclear operations demand a different approach to design. We brought our industrial UX expertise together with deep regulatory knowledge to create interfaces that protect operators and improve efficiency simultaneously.</p>
+                    <p>Our embedded research partnership ensures that design decisions are grounded in real operational context—not assumptions made in conference rooms.</p>
+                </div>
+                <div>
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 32px;">
+                        <h4 style="color: var(--constellation-cyan); font-size: 14px; margin-bottom: 20px; letter-spacing: 1px;">SERVICES DELIVERED</h4>
+                        <ul style="list-style: none; font-size: 15px; line-height: 2.2; opacity: 0.85;">
+                            <li>→ Safety-Critical UX Research</li>
+                            <li>→ Regulatory Compliance Design</li>
+                            <li>→ Procedure Digitization</li>
+                            <li>→ Error Prevention Design</li>
+                            <li>→ Work Planning UX</li>
+                            <li>→ AI Integration Design</li>
+                            <li>→ Embedded Research Partnership</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready to digitize your operations?</h2>
+        <p>Let's discuss how safety-critical UX can transform your procedures while maintaining compliance.</p>
+        <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <img src="images/daito-logo.webp" alt="Daito Design" class="footer-logo">
+            <div style="display: flex; align-items: center; gap: 24px;">
+                <a href="https://www.linkedin.com/company/daitodesign/" target="_blank" rel="noopener" style="color: var(--sand); opacity: 0.7; text-decoration: none; font-size: 13px; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">LinkedIn</a>
+                <span style="color: var(--sand); opacity: 0.5; font-size: 13px;">© 2026 Daito Design. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

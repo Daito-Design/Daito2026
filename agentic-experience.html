@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" class="axd-page">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agentic Experience Design (AXD) - Daito Design's pioneering approach to human-AI collaboration in enterprise environments. Our enterprise human factors methodology ensures AI agents work with your people, not against them.">
+  <title>Agentic Experience Design (AXD) | Daito Design</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23722F37' rx='12' width='100' height='100'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='Georgia'>D</text></svg>">
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav dark" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="Daito Design Home">
+          <img src="images/daito-logo.webp" alt="Daito Design" class="nav-logo-img" style="height: 72px; width: auto;">
+          
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="agentic-experience.html" class="nav-link active">Agentic Experience</a></li>
+          <li><a href="case-studies.html" class="nav-link">Work</a></li>
+          <li><a href="blog.html" class="nav-link">Insights</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <!-- Hero Section - Dark -->
+    <section class="axd-hero">
+      <div class="axd-hero-bg" aria-hidden="true"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <div class="hero-content">
+          <span class="eyebrow" style="color: var(--oxblood-light);">Agentic Experience Design</span>
+          <h1 class="hero-title" style="color: var(--white);">
+            We're not designing interfaces anymore.
+          </h1>
+          <p class="hero-subtitle" style="color: rgba(255,255,255,0.7);">
+            We're designing the collaboration between humans and AI agents. Our enterprise human factors approach ensures your AI investments actually work—for the people who use them.
+          </p>
+          <div class="hero-cta">
+            <a href="#approach" class="btn btn-accent btn-lg btn-arrow">
+              Our Approach
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true" style="color: rgba(255,255,255,0.5);">
+        <span>Scroll</span>
+        <div class="scroll-indicator-line" style="background: linear-gradient(to bottom, var(--oxblood-light), transparent);"></div>
+      </div>
+    </section>
+
+    <!-- The Challenge -->
+    <section class="section-full statement-section bg-sand">
+      <div class="container">
+        <p class="statement-text reveal">
+          Everyone's building AI agents.<br>
+          <span class="highlight">Almost nobody is designing them.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- The Problem -->
+    <section class="section section-xl">
+      <div class="container">
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-20); align-items: center;">
+          <div class="reveal">
+            <span class="eyebrow">The Problem</span>
+            <h2 class="text-title mb-8">
+              Agentic AI is being built by engineers,<br>for engineers.
+            </h2>
+            <p class="text-body-lg text-charcoal-soft mb-6">
+              Most enterprise AI initiatives fail not because the technology doesn't work—but because the humans can't work with it.
+            </p>
+            <p class="text-body text-charcoal-soft mb-6">
+              AI agents are being deployed without consideration for how operators will monitor them, when they should intervene, or how to build the trust required for effective human-AI collaboration.
+            </p>
+            <p class="text-body text-charcoal-soft">
+              The result? Expensive AI systems that get ignored, overridden, or abandoned.
+            </p>
+          </div>
+          <div class="reveal-scale">
+            <div style="background: var(--sand-light); padding: var(--space-12);">
+              <div style="font-family: var(--font-display); font-size: var(--text-6xl); color: var(--oxblood); margin-bottom: var(--space-6); line-height: 1;">70%</div>
+              <p style="font-size: var(--text-xl); color: var(--charcoal); margin-bottom: var(--space-4);">of enterprise AI projects fail to deliver expected value</p>
+              <p style="font-size: var(--text-sm); color: var(--charcoal-soft);">— Gartner Research</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section id="approach" class="section section-xl bg-charcoal" style="color: var(--sand);">
+      <div class="container">
+        <div class="text-center mb-20 reveal">
+          <span class="eyebrow" style="color: var(--oxblood-light);">Our Approach</span>
+          <h2 class="text-title" style="color: var(--white); margin-bottom: var(--space-6);">
+            Enterprise Human Factors for AI
+          </h2>
+          <p class="text-body-lg max-w-60ch mx-auto" style="color: var(--charcoal-soft);">
+            We apply decades of human factors research—from aviation, nuclear, and industrial safety—to the design of AI agent systems.
+          </p>
+        </div>
+
+        <div class="axd-pillars">
+          <article class="axd-pillar">
+            <div class="axd-pillar-number" aria-hidden="true">01</div>
+            <h3>Calibrated Trust</h3>
+            <p>
+              Users need to know when to trust the agent and when to intervene. We design transparency mechanisms that build appropriate trust—not blind faith or excessive skepticism.
+            </p>
+          </article>
+
+          <article class="axd-pillar">
+            <div class="axd-pillar-number" aria-hidden="true">02</div>
+            <h3>Explainable Actions</h3>
+            <p>
+              Operators can't supervise what they don't understand. We ensure every agent action can be explained in human terms—not technical logs.
+            </p>
+          </article>
+
+          <article class="axd-pillar">
+            <div class="axd-pillar-number" aria-hidden="true">03</div>
+            <h3>Graceful Handoff</h3>
+            <p>
+              When agents reach their limits, control must transfer smoothly to humans. We design escalation paths that preserve context and enable rapid human response.
+            </p>
+          </article>
+
+          <article class="axd-pillar">
+            <div class="axd-pillar-number" aria-hidden="true">04</div>
+            <h3>Appropriate Autonomy</h3>
+            <p>
+              Not every task should be automated. We help organizations find the right balance between agent autonomy and human oversight for their risk profile.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Differentiator: Human Factors Background -->
+    <section class="section section-xl">
+      <div class="container">
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-20); align-items: center;">
+          <div class="reveal-left">
+            <span class="eyebrow">What Makes Us Different</span>
+            <h2 class="text-title mb-8">
+              We come from<br>high-stakes industries.
+            </h2>
+            <p class="text-body-lg text-charcoal-soft mb-8">
+              Our team has designed human-machine interfaces for oil platforms, nuclear facilities, air traffic control, and emergency response systems.
+            </p>
+            <p class="text-body text-charcoal-soft mb-6">
+              In these environments, unclear interfaces don't just reduce productivity—they cost lives. We've learned how to design for operators under pressure, for systems that must work the first time, every time.
+            </p>
+            <p class="text-body text-charcoal-soft">
+              We bring that same rigor to AI agent design.
+            </p>
+          </div>
+          <div class="reveal-right">
+            <div class="quote-large">
+              "In safety-critical environments, there's no room for 'the user should have known better.' The system must guide correct action."
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison: Traditional vs AXD -->
+    <section class="section section-xl bg-sand-light" style="padding: 0;">
+      <div class="comparison-grid">
+        <div class="comparison-card traditional reveal-left">
+          <span class="eyebrow" style="color: var(--charcoal-soft);">Traditional AI Implementation</span>
+          <h3>Ship it and hope</h3>
+          <ul class="comparison-list">
+            <li>
+              <svg class="comparison-icon negative" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+              <span>Technical accuracy as the primary metric</span>
+            </li>
+            <li>
+              <svg class="comparison-icon negative" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+              <span>Black-box decision making</span>
+            </li>
+            <li>
+              <svg class="comparison-icon negative" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+              <span>All-or-nothing automation</span>
+            </li>
+            <li>
+              <svg class="comparison-icon negative" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+              <span>Training as an afterthought</span>
+            </li>
+            <li>
+              <svg class="comparison-icon negative" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+              <span>Users adapt to the AI</span>
+            </li>
+            <li>
+              <svg class="comparison-icon negative" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+              <span>Failure = override the system</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="comparison-card daito reveal-right">
+          <span class="eyebrow" style="color: var(--oxblood-light);">Daito's AXD Approach</span>
+          <h3 style="color: var(--white);">Design for adoption</h3>
+          <ul class="comparison-list">
+            <li>
+              <svg class="comparison-icon positive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              <span>Human-AI team performance as the metric</span>
+            </li>
+            <li>
+              <svg class="comparison-icon positive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              <span>Explainable, auditable reasoning</span>
+            </li>
+            <li>
+              <svg class="comparison-icon positive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              <span>Graduated autonomy with clear boundaries</span>
+            </li>
+            <li>
+              <svg class="comparison-icon positive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              <span>Change management from day one</span>
+            </li>
+            <li>
+              <svg class="comparison-icon positive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              <span>AI adapts to user mental models</span>
+            </li>
+            <li>
+              <svg class="comparison-icon positive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              <span>Failure = graceful degradation + learning</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Agent Journey Framework -->
+    <section class="section section-xl">
+      <div class="container">
+        <div class="text-center mb-16 reveal">
+          <span class="eyebrow">Framework</span>
+          <h2 class="text-title mb-6">The Agent Journey</h2>
+          <p class="text-body-lg text-charcoal-soft max-w-60ch mx-auto">
+            We help organizations understand where they are in the transition to agentic AI—and design the right experience for each stage.
+          </p>
+        </div>
+
+        <div class="reveal" style="background: var(--sand-light); padding: var(--space-12);">
+          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-4); text-align: center;">
+            <div style="padding: var(--space-6);">
+              <div style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--sand-darker); margin-bottom: var(--space-3);">1</div>
+              <h4 style="font-size: var(--text-sm); font-weight: var(--weight-semibold); margin-bottom: var(--space-2);">Automation Islands</h4>
+              <p style="font-size: var(--text-xs); color: var(--charcoal-soft);">Discrete RPA & basic automation</p>
+            </div>
+            <div style="padding: var(--space-6); position: relative;">
+              <div style="position: absolute; top: 50%; left: -10%; width: 20%; height: 2px; background: var(--sand-dark);"></div>
+              <div style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--sand-darker); margin-bottom: var(--space-3);">2</div>
+              <h4 style="font-size: var(--text-sm); font-weight: var(--weight-semibold); margin-bottom: var(--space-2);">AI-Assisted</h4>
+              <p style="font-size: var(--text-xs); color: var(--charcoal-soft);">Recommendations & insights</p>
+            </div>
+            <div style="padding: var(--space-6); background: var(--white); position: relative;">
+              <div style="position: absolute; top: 50%; left: -10%; width: 20%; height: 2px; background: var(--sand-dark);"></div>
+              <div style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--oxblood); margin-bottom: var(--space-3);">3</div>
+              <h4 style="font-size: var(--text-sm); font-weight: var(--weight-semibold); margin-bottom: var(--space-2);">Semi-Autonomous</h4>
+              <p style="font-size: var(--text-xs); color: var(--charcoal-soft);">Agents with approval gates</p>
+              <div style="position: absolute; bottom: -var(--space-4); left: 50%; transform: translateX(-50%); font-size: var(--text-xs); color: var(--oxblood); font-weight: var(--weight-semibold);">← Most clients</div>
+            </div>
+            <div style="padding: var(--space-6); position: relative;">
+              <div style="position: absolute; top: 50%; left: -10%; width: 20%; height: 2px; background: var(--sand-dark);"></div>
+              <div style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--sand-darker); margin-bottom: var(--space-3);">4</div>
+              <h4 style="font-size: var(--text-sm); font-weight: var(--weight-semibold); margin-bottom: var(--space-2);">Supervised Autonomy</h4>
+              <p style="font-size: var(--text-xs); color: var(--charcoal-soft);">Agents with exception handling</p>
+            </div>
+            <div style="padding: var(--space-6); position: relative;">
+              <div style="position: absolute; top: 50%; left: -10%; width: 20%; height: 2px; background: var(--sand-dark);"></div>
+              <div style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--sand-darker); margin-bottom: var(--space-3);">5</div>
+              <h4 style="font-size: var(--text-sm); font-weight: var(--weight-semibold); margin-bottom: var(--space-2);">Collaborative Intelligence</h4>
+              <p style="font-size: var(--text-xs); color: var(--charcoal-soft);">Multi-agent orchestration</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12 reveal">
+          <a href="blog/agent-journey.html" class="btn btn-outline btn-arrow">
+            Read: Where Are You on Your Agent Journey?
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="section section-xl bg-charcoal" style="color: var(--sand);">
+      <div class="container">
+        <div class="text-center mb-16 reveal">
+          <span class="eyebrow" style="color: var(--oxblood-light);">Our Process</span>
+          <h2 class="text-title" style="color: var(--white);">How we work</h2>
+        </div>
+
+        <div class="grid grid-3 reveal-stagger">
+          <div style="padding: var(--space-8); border-left: 1px solid var(--charcoal-light);">
+            <div style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--oxblood-light); margin-bottom: var(--space-4);">01</div>
+            <h4 style="color: var(--white); font-family: var(--font-body); font-size: var(--text-lg); margin-bottom: var(--space-4);">Field Research</h4>
+            <p style="color: var(--charcoal-soft); font-size: var(--text-sm);">
+              We embed with your operators to understand their work, their workarounds, and their pain points. No AI strategy should be built without understanding the humans involved.
+            </p>
+          </div>
+          <div style="padding: var(--space-8); border-left: 1px solid var(--charcoal-light);">
+            <div style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--oxblood-light); margin-bottom: var(--space-4);">02</div>
+            <h4 style="color: var(--white); font-family: var(--font-body); font-size: var(--text-lg); margin-bottom: var(--space-4);">Interaction Design</h4>
+            <p style="color: var(--charcoal-soft); font-size: var(--text-sm);">
+              We design the conversation between human and agent—when to inform, when to ask, when to act. We prototype and test with real users before a single line of AI code is written.
+            </p>
+          </div>
+          <div style="padding: var(--space-8); border-left: 1px solid var(--charcoal-light);">
+            <div style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--oxblood-light); margin-bottom: var(--space-4);">03</div>
+            <h4 style="color: var(--white); font-family: var(--font-body); font-size: var(--text-lg); margin-bottom: var(--space-4);">Change Enablement</h4>
+            <p style="color: var(--charcoal-soft); font-size: var(--text-sm);">
+              We don't just deliver designs—we help organizations build the muscle memory for human-AI collaboration. Training, rollout strategy, and continuous optimization.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study Highlight -->
+    <section class="section section-xl">
+      <div class="container">
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center;">
+          <div class="reveal" style="background: linear-gradient(135deg, var(--charcoal) 0%, var(--oxblood-dark) 100%); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--white);">
+            <div style="text-align: center; padding: var(--space-8);">
+              <div style="font-size: var(--text-xs); letter-spacing: var(--tracking-widest); text-transform: uppercase; opacity: 0.7; margin-bottom: var(--space-4);">Case Study</div>
+              <div style="font-family: var(--font-display); font-size: var(--text-4xl); line-height: 1;">Energy<br>Major</div>
+            </div>
+          </div>
+          <div class="reveal">
+            <span class="eyebrow">AXD in Action</span>
+            <h3 class="text-subtitle mb-6">
+              Predictive maintenance agents for offshore operations
+            </h3>
+            <p class="text-body text-charcoal-soft mb-8">
+              We designed the human-agent collaboration model for an AI system that predicts equipment failures across 200+ offshore platforms. The challenge wasn't the AI—it was getting experienced operators to trust algorithmic recommendations over their decades of intuition.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); margin-bottom: var(--space-8);">
+              <div>
+                <div class="metric-value" style="font-size: var(--text-3xl);">73%</div>
+                <div class="metric-label">Agent recommendation adoption</div>
+              </div>
+              <div>
+                <div class="metric-value" style="font-size: var(--text-3xl);">40%</div>
+                <div class="metric-label">Reduction in unplanned downtime</div>
+              </div>
+              <div>
+                <div class="metric-value" style="font-size: var(--text-3xl);">6mo</div>
+                <div class="metric-label">Time to full operator trust</div>
+              </div>
+            </div>
+            <a href="case-studies.html" class="btn btn-outline btn-arrow">
+              View Case Studies
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statement -->
+    <section class="section-full statement-section bg-sand-light">
+      <div class="container">
+        <p class="statement-text reveal">
+          Autonomy without trust is just<br>
+          <span class="highlight">expensive automation.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="section section-xl" id="resources">
+      <div class="container">
+        <div class="text-center mb-16 reveal">
+          <span class="eyebrow">Resources</span>
+          <h2 class="text-title mb-6">Start Your AXD Journey</h2>
+          <p class="text-body-lg text-charcoal-soft max-w-60ch mx-auto">
+            Free tools to assess your current state and learn the framework.
+          </p>
+        </div>
+
+        <div class="grid reveal" style="grid-template-columns: repeat(2, 1fr); gap: var(--space-8);">
+          <!-- Risk Assessment Card -->
+          <a href="agentic-assessment.html" class="resource-card" style="display: block; text-decoration: none; background: var(--charcoal); color: var(--white); padding: var(--space-10); position: relative; overflow: hidden; transition: transform 0.3s ease;">
+            <div style="position: absolute; top: 0; right: 0; width: 200px; height: 200px; background: linear-gradient(135deg, var(--oxblood) 0%, transparent 70%); opacity: 0.3;"></div>
+            <span style="display: inline-block; padding: 0.25rem 0.75rem; background: var(--oxblood); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-6);">Free Assessment</span>
+            <h3 style="font-family: var(--font-display); font-size: var(--text-2xl); margin-bottom: var(--space-4); color: var(--sand);">Agentic Risk Assessment</h3>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: var(--space-6);">10 questions. 3 minutes. Discover your organization's AI agent deployment risks across data, business, human oversight, and compliance dimensions.</p>
+            <div style="display: flex; align-items: center; gap: var(--space-2); color: var(--sand);">
+              <span style="font-weight: 500;">Take the Assessment</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+
+          <!-- Agentic Manual Card -->
+          <a href="agentic-manual.html" class="resource-card" style="display: block; text-decoration: none; background: var(--sand-light); color: var(--charcoal); padding: var(--space-10); position: relative; overflow: hidden; transition: transform 0.3s ease;">
+            <div style="position: absolute; top: 0; right: 0; width: 200px; height: 200px; background: linear-gradient(135deg, var(--sand-dark) 0%, transparent 70%); opacity: 0.3;"></div>
+            <span style="display: inline-block; padding: 0.25rem 0.75rem; background: var(--charcoal); color: var(--white); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-6);">Free Guide</span>
+            <h3 style="font-family: var(--font-display); font-size: var(--text-2xl); margin-bottom: var(--space-4); color: var(--charcoal);">The Agentic Manual</h3>
+            <p style="color: var(--charcoal-soft); margin-bottom: var(--space-6);">A comprehensive framework for designing human-AI collaboration. Covers the HAS Map, Calibrated Trust, Explainable Actions, Graceful Handoffs, and Appropriate Autonomy.</p>
+            <div style="display: flex; align-items: center; gap: var(--space-2); color: var(--oxblood);">
+              <span style="font-weight: 500;">Download the Manual</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-xl bg-oxblood" style="color: var(--white);">
+      <div class="container text-center">
+        <div class="reveal">
+          <span class="eyebrow" style="color: rgba(255,255,255,0.7);">Let's Talk</span>
+          <h2 class="text-display" style="color: var(--white); margin-bottom: var(--space-8);">
+            Ready to design your agent experience?
+          </h2>
+          <p class="text-body-lg max-w-50ch mx-auto mb-12" style="color: rgba(255,255,255,0.8);">
+            Whether you're planning your first AI agent deployment or scaling existing systems, we can help you design for adoption.
+          </p>
+          <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-lg" style="background: var(--white); color: var(--oxblood);">
+              Schedule Consultation
+            </a>
+            <a href="blog.html" class="btn btn-lg btn-outline" style="border-color: rgba(255,255,255,0.5); color: var(--white);">
+              Read Our Research
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon" aria-hidden="true">D</div>
+            <span class="footer-logo-text">Daito Design</span>
+          </div>
+          <p class="footer-tagline">
+            The leader in industrial UX and enterprise experience design.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#pre-product">Pre-Product</a></li>
+            <li><a href="services.html#product">Product</a></li>
+            <li><a href="services.html#post-product">Post-Product</a></li>
+            <li><a href="agentic-experience.html">Agentic Experience</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="case-studies.html">Work</a></li>
+            <li><a href="blog.html">Insights</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Austin HQ</h4>
+          <ul class="footer-links">
+            <li>901 W. 9th Street, Suite 102</li>
+            <li>Austin, Texas 78703</li>
+            <li style="margin-top: var(--space-4);"><a href="mailto:hello@daitodesign.com">hello@daitodesign.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Daito Design. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="https://www.linkedin.com/company/daitodesign" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

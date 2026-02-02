@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Risk Assessment | Daito</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Daito Brand Colors */
+            --sand: #F5F0E8;
+            --sand-light: #FAF8F4;
+            --sand-dark: #E8E0D4;
+            --sand-darker: #D4C9B8;
+            --charcoal: #1A1A1A;
+            --charcoal-light: #2C2C2C;
+            --charcoal-medium: #4A4A4A;
+            --charcoal-soft: #6B6B6B;
+            --oxblood: #722F37;
+            --oxblood-light: #8B3A44;
+            --oxblood-dark: #5A252C;
+            --cream: #FAF8F4;
+            --white: #FFFFFF;
+            --gray-100: #F5F5F5;
+            --gray-200: #E5E5E5;
+            --gray-300: #D4D4D4;
+            --gray-600: #525252;
+            --gray-800: #262626;
+
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+            --risk-critical: #DC2626;
+            --risk-high: #EA580C;
+            --risk-medium: #CA8A04;
+            --risk-low: #16A34A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--sand);
+            color: var(--charcoal);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(245, 240, 232, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+        }
+
+        .nav-logo {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--oxblood);
+        }
+
+        /* Main Content */
+        .assessment-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .assessment-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .assessment-header h1 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            padding-top: 0.1em;
+            padding-bottom: 0.15em;
+        }
+
+        .assessment-header p {
+            font-size: 1.125rem;
+            color: var(--charcoal-soft);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin-bottom: 3rem;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--sand-darker);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--oxblood) 0%, var(--oxblood-light) 100%);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .progress-text {
+            text-align: center;
+            margin-top: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        /* Question Card */
+        .question-card {
+            background: var(--white);
+            border: 1px solid var(--sand-darker);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            display: none;
+            box-shadow: 0 4px 20px rgba(26, 26, 26, 0.08);
+        }
+
+        .question-card.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question-number {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--oxblood);
+            margin-bottom: 1rem;
+        }
+
+        .question-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(114, 47, 55, 0.15);
+            border-radius: 4px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--oxblood);
+            margin-left: 1rem;
+        }
+
+        .question-text {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            line-height: 1.35;
+            margin-bottom: 2rem;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: flex-start;
+            padding: 1.25rem 1.5rem;
+            background: var(--sand-light);
+            border: 1px solid var(--sand-darker);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option:hover {
+            background: var(--sand-dark);
+            border-color: var(--oxblood-light);
+        }
+
+        .option.selected {
+            background: rgba(114, 47, 55, 0.1);
+            border-color: var(--oxblood);
+        }
+
+        .option input {
+            display: none;
+        }
+
+        .option-indicator {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--charcoal-soft);
+            border-radius: 50%;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .option.selected .option-indicator {
+            border-color: var(--oxblood);
+            background: var(--oxblood);
+        }
+
+        .option.selected .option-indicator::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: var(--white);
+            border-radius: 50%;
+        }
+
+        .option-content {
+            flex: 1;
+        }
+
+        .option-label {
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 0.25rem;
+        }
+
+        .option-description {
+            font-size: 0.875rem;
+            color: var(--charcoal-soft);
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--charcoal-soft);
+            color: var(--charcoal-soft);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--oxblood);
+            color: var(--oxblood);
+        }
+
+        .btn-primary {
+            background: var(--oxblood);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--oxblood-light);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Results Section */
+        .results {
+            display: none;
+        }
+
+        .results.active {
+            display: block;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .results-header h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .overall-score {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid;
+        }
+
+        .score-circle.critical { border-color: var(--risk-critical); }
+        .score-circle.high { border-color: var(--risk-high); }
+        .score-circle.medium { border-color: var(--risk-medium); }
+        .score-circle.low { border-color: var(--risk-low); }
+
+        .score-number {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .score-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.25rem;
+        }
+
+        .risk-level {
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .risk-level.critical { color: var(--risk-critical); }
+        .risk-level.high { color: var(--risk-high); }
+        .risk-level.medium { color: var(--risk-medium); }
+        .risk-level.low { color: var(--risk-low); }
+
+        /* Risk Categories */
+        .risk-categories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .risk-category {
+            background: var(--white);
+            border: 1px solid var(--sand-darker);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(26, 26, 26, 0.05);
+        }
+
+        .risk-category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .risk-category-name {
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .risk-category-score {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .risk-bar {
+            height: 8px;
+            background: var(--sand-dark);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .risk-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.8s ease;
+        }
+
+        .risk-bar-fill.critical { background: var(--risk-critical); }
+        .risk-bar-fill.high { background: var(--risk-high); }
+        .risk-bar-fill.medium { background: var(--risk-medium); }
+        .risk-bar-fill.low { background: var(--risk-low); }
+
+        /* Recommendations */
+        .recommendations {
+            background: var(--white);
+            border: 1px solid var(--sand-darker);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 2px 10px rgba(26, 26, 26, 0.05);
+        }
+
+        .recommendations h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+        }
+
+        .recommendation-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--sand-dark);
+        }
+
+        .recommendation-item:last-child {
+            border-bottom: none;
+        }
+
+        .recommendation-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            color: var(--oxblood);
+        }
+
+        .recommendation-text {
+            flex: 1;
+        }
+
+        .recommendation-text strong {
+            color: var(--charcoal);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .recommendation-text p {
+            font-size: 0.875rem;
+            color: var(--charcoal-soft);
+        }
+
+        /* CTA Section */
+        .results-cta {
+            text-align: center;
+            padding: 3rem;
+            background: var(--charcoal);
+            border: 1px solid var(--charcoal-light);
+            border-radius: 12px;
+            margin-top: 3rem;
+        }
+
+        .results-cta h3 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            font-weight: 400;
+            color: var(--sand);
+            margin-bottom: 1rem;
+        }
+
+        .results-cta p {
+            color: var(--sand-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--oxblood);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta:hover {
+            background: var(--oxblood-light);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--charcoal-soft);
+            font-size: 0.875rem;
+        }
+
+        footer a {
+            color: var(--oxblood);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .assessment-container {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .assessment-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .question-text {
+                font-size: 1.35rem;
+            }
+
+            .question-card {
+                padding: 1.5rem;
+            }
+
+            .risk-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">
+            <img src="images/daito-logo.webp" alt="Daito Design" style="height: 48px; width: auto;">
+        </a>
+        <ul class="nav-links">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="agentic-experience.html" class="active">Agentic Experience</a></li>
+            <li><a href="case-studies.html">Work</a></li>
+            <li><a href="blog.html">Insights</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Get in Touch</a></li>
+        </ul>
+    </nav>
+
+    <main class="assessment-container">
+        <!-- Header -->
+        <header class="assessment-header">
+            <h1>Agentic AI Risk Assessment</h1>
+            <p>Evaluate your organization's readiness for AI agent deployment. This 10-question assessment identifies risks across data integrity, business continuity, human oversight, and regulatory compliance.</p>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p class="progress-text"><span id="currentQuestion">1</span> of 10 questions</p>
+        </div>
+
+        <!-- Questions -->
+        <div id="questionsContainer">
+            <!-- Question 1: Agent Inventory -->
+            <div class="question-card active" data-question="1">
+                <div class="question-number">Question 1 <span class="question-category">Data Risk</span></div>
+                <h2 class="question-text">How many AI agents or automated systems currently operate within your organization?</h2>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="q1" value="0" data-risk="data:1,business:1">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">None yet</div>
+                            <div class="option-description">We're exploring but haven't deployed any AI agents</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q1" value="1" data-risk="data:2,business:2">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">1-5 agents</div>
+                            <div class="option-description">Limited deployment, typically in specific departments</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q1" value="2" data-risk="data:3,business:3">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">6-20 agents</div>
+                            <div class="option-description">Growing deployment across multiple functions</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q1" value="3" data-risk="data:4,business:4">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">20+ agents</div>
+                            <div class="option-description">Extensive deployment, potentially enterprise-wide</div>
+                        </div>
+                    </label>
+                </div>
+                <div class="nav-buttons">
+                    <div></div>
+                    <button class="btn btn-primary" onclick="nextQuestion()" disabled>Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 2: Data Access -->
+            <div class="question-card" data-question="2">
+                <div class="question-number">Question 2 <span class="question-category">Data Risk</span></div>
+                <h2 class="question-text">What level of data access do your AI agents have?</h2>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="q2" value="0" data-risk="data:1,compliance:1">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Read-only, non-sensitive data</div>
+                            <div class="option-description">Agents can only view public or low-sensitivity information</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q2" value="1" data-risk="data:2,compliance:2">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Read-only, including sensitive data</div>
+                            <div class="option-description">Can access confidential information but cannot modify</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q2" value="2" data-risk="data:3,compliance:3">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Read-write on business systems</div>
+                            <div class="option-description">Can modify records, create entries, update databases</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q2" value="3" data-risk="data:4,compliance:4">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Full system access including critical infrastructure</div>
+                            <div class="option-description">Administrative or elevated privileges on core systems</div>
+                        </div>
+                    </label>
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevQuestion()">Back</button>
+                    <button class="btn btn-primary" onclick="nextQuestion()" disabled>Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 3: Governance Framework -->
+            <div class="question-card" data-question="3">
+                <div class="question-number">Question 3 <span class="question-category">Compliance Risk</span></div>
+                <h2 class="question-text">What governance framework exists for your AI agent operations?</h2>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="q3" value="0" data-risk="compliance:4,business:3">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">No formal governance</div>
+                            <div class="option-description">Agents deployed ad-hoc without documented policies</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q3" value="1" data-risk="compliance:3,business:2">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Basic guidelines exist</div>
+                            <div class="option-description">Informal policies, not consistently enforced</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q3" value="2" data-risk="compliance:2,business:2">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Documented policies with some oversight</div>
+                            <div class="option-description">Written policies, periodic reviews, designated owners</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q3" value="3" data-risk="compliance:1,business:1">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Comprehensive governance framework</div>
+                            <div class="option-description">Full policy suite, regular audits, executive sponsorship</div>
+                        </div>
+                    </label>
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevQuestion()">Back</button>
+                    <button class="btn btn-primary" onclick="nextQuestion()" disabled>Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 4: Human Oversight -->
+            <div class="question-card" data-question="4">
+                <div class="question-number">Question 4 <span class="question-category">Human Risk</span></div>
+                <h2 class="question-text">What level of human oversight exists for agent decisions?</h2>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="q4" value="0" data-risk="human:4,business:3">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Fully autonomous</div>
+                            <div class="option-description">Agents operate independently without human review</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q4" value="1" data-risk="human:3,business:2">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Exception-based review</div>
+                            <div class="option-description">Humans only intervene when flagged anomalies occur</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q4" value="2" data-risk="human:2,business:2">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Sampling-based review</div>
+                            <div class="option-description">Regular random sampling of agent decisions for quality</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q4" value="3" data-risk="human:1,business:1">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Human-in-the-loop for critical actions</div>
+                            <div class="option-description">All significant decisions require human approval</div>
+                        </div>
+                    </label>
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevQuestion()">Back</button>
+                    <button class="btn btn-primary" onclick="nextQuestion()" disabled>Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 5: Edge Case Testing -->
+            <div class="question-card" data-question="5">
+                <div class="question-number">Question 5 <span class="question-category">Business Risk</span></div>
+                <h2 class="question-text">How thoroughly are edge cases and failure modes tested before deployment?</h2>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="q5" value="0" data-risk="business:4,data:2">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Minimal testing</div>
+                            <div class="option-description">Basic functionality verified, limited edge case coverage</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q5" value="1" data-risk="business:3,data:2">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Standard QA process</div>
+                            <div class="option-description">Typical software testing applied to agent behaviors</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q5" value="2" data-risk="business:2,data:1">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Dedicated AI testing suite</div>
+                            <div class="option-description">Specialized tests for AI behaviors, including adversarial scenarios</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q5" value="3" data-risk="business:1,data:1">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Comprehensive red-teaming and simulation</div>
+                            <div class="option-description">Extensive testing including chaos engineering and attack simulation</div>
+                        </div>
+                    </label>
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevQuestion()">Back</button>
+                    <button class="btn btn-primary" onclick="nextQuestion()" disabled>Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 6: Drift Monitoring -->
+            <div class="question-card" data-question="6">
+                <div class="question-number">Question 6 <span class="question-category">Data Risk</span></div>
+                <h2 class="question-text">How do you monitor for model drift and behavioral changes over time?</h2>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="q6" value="0" data-risk="data:4,business:3">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">No monitoring</div>
+                            <div class="option-description">Agents deployed without ongoing performance tracking</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q6" value="1" data-risk="data:3,business:2">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Basic output logging</div>
+                            <div class="option-description">Outputs recorded but not systematically analyzed</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q6" value="2" data-risk="data:2,business:2">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Performance dashboards</div>
+                            <div class="option-description">Key metrics tracked with alerting on anomalies</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q6" value="3" data-risk="data:1,business:1">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Comprehensive MLOps pipeline</div>
+                            <div class="option-description">Automated drift detection, retraining triggers, version control</div>
+                        </div>
+                    </label>
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevQuestion()">Back</button>
+                    <button class="btn btn-primary" onclick="nextQuestion()" disabled>Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 7: Change Management -->
+            <div class="question-card" data-question="7">
+                <div class="question-number">Question 7 <span class="question-category">Business Risk</span></div>
+                <h2 class="question-text">What change management process exists for agent updates?</h2>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="q7" value="0" data-risk="business:4,compliance:2">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Direct production updates</div>
+                            <div class="option-description">Changes deployed directly without staged rollout</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q7" value="1" data-risk="business:3,compliance:2">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Basic staging environment</div>
+                            <div class="option-description">Testing in staging before production, limited validation</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q7" value="2" data-risk="business:2,compliance:1">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Formal change control process</div>
+                            <div class="option-description">Change advisory board, documented rollback procedures</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q7" value="3" data-risk="business:1,compliance:1">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Progressive delivery with automated safeguards</div>
+                            <div class="option-description">Canary deployments, feature flags, automatic rollback on errors</div>
+                        </div>
+                    </label>
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevQuestion()">Back</button>
+                    <button class="btn btn-primary" onclick="nextQuestion()" disabled>Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 8: Explainability -->
+            <div class="question-card" data-question="8">
+                <div class="question-number">Question 8 <span class="question-category">Compliance Risk</span></div>
+                <h2 class="question-text">Can you explain why your agents make specific decisions?</h2>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="q8" value="0" data-risk="compliance:4,human:3">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Black box</div>
+                            <div class="option-description">No visibility into decision-making process</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q8" value="1" data-risk="compliance:3,human:2">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">General understanding</div>
+                            <div class="option-description">Know the factors involved but not specific weights</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q8" value="2" data-risk="compliance:2,human:2">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Partial explainability</div>
+                            <div class="option-description">Can trace some decisions, audit trails for critical actions</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q8" value="3" data-risk="compliance:1,human:1">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Full transparency</div>
+                            <div class="option-description">Complete audit trail, interpretable reasoning for all decisions</div>
+                        </div>
+                    </label>
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevQuestion()">Back</button>
+                    <button class="btn btn-primary" onclick="nextQuestion()" disabled>Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 9: Incident Response -->
+            <div class="question-card" data-question="9">
+                <div class="question-number">Question 9 <span class="question-category">Human Risk</span></div>
+                <h2 class="question-text">What happens when an agent makes a harmful or incorrect decision?</h2>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="q9" value="0" data-risk="human:4,business:4">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">No defined process</div>
+                            <div class="option-description">Issues handled ad-hoc when discovered</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q9" value="1" data-risk="human:3,business:3">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Manual intervention available</div>
+                            <div class="option-description">Can disable agents but no formal incident process</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q9" value="2" data-risk="human:2,business:2">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Documented incident response plan</div>
+                            <div class="option-description">Defined escalation paths, responsible parties identified</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q9" value="3" data-risk="human:1,business:1">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Automated circuit breakers with playbooks</div>
+                            <div class="option-description">Automatic halt mechanisms, tested response procedures, lessons learned process</div>
+                        </div>
+                    </label>
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevQuestion()">Back</button>
+                    <button class="btn btn-primary" onclick="nextQuestion()" disabled>Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 10: Regulatory Compliance -->
+            <div class="question-card" data-question="10">
+                <div class="question-number">Question 10 <span class="question-category">Compliance Risk</span></div>
+                <h2 class="question-text">How do you ensure agents comply with relevant regulations (GDPR, industry-specific rules, etc.)?</h2>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="q10" value="0" data-risk="compliance:4,data:3">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Not specifically addressed</div>
+                            <div class="option-description">Compliance handled at general IT level, not agent-specific</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q10" value="1" data-risk="compliance:3,data:2">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Initial compliance review</div>
+                            <div class="option-description">Legal/compliance reviewed at deployment, no ongoing monitoring</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q10" value="2" data-risk="compliance:2,data:1">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Regular compliance audits</div>
+                            <div class="option-description">Periodic reviews, documented compliance evidence</div>
+                        </div>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="q10" value="3" data-risk="compliance:1,data:1">
+                        <span class="option-indicator"></span>
+                        <div class="option-content">
+                            <div class="option-label">Continuous compliance monitoring</div>
+                            <div class="option-description">Automated compliance checks, real-time regulatory tracking, dedicated AI ethics role</div>
+                        </div>
+                    </label>
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevQuestion()">Back</button>
+                    <button class="btn btn-primary" onclick="showResults()">View Results</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results" id="resultsSection">
+            <div class="results-header">
+                <h2>Your Agentic Risk Profile</h2>
+                <div class="overall-score">
+                    <div class="score-circle" id="scoreCircle">
+                        <span class="score-number" id="overallScore">--</span>
+                        <span class="score-label">Risk Score</span>
+                    </div>
+                    <div>
+                        <p class="risk-level" id="riskLevel">--</p>
+                        <p style="color: var(--gray-300); font-size: 0.875rem;">Overall Risk Level</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="risk-categories">
+                <div class="risk-category">
+                    <div class="risk-category-header">
+                        <span class="risk-category-name">Data Risk</span>
+                        <span class="risk-category-score" id="dataScore">--</span>
+                    </div>
+                    <div class="risk-bar">
+                        <div class="risk-bar-fill" id="dataBar" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="risk-category">
+                    <div class="risk-category-header">
+                        <span class="risk-category-name">Business Risk</span>
+                        <span class="risk-category-score" id="businessScore">--</span>
+                    </div>
+                    <div class="risk-bar">
+                        <div class="risk-bar-fill" id="businessBar" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="risk-category">
+                    <div class="risk-category-header">
+                        <span class="risk-category-name">Human Risk</span>
+                        <span class="risk-category-score" id="humanScore">--</span>
+                    </div>
+                    <div class="risk-bar">
+                        <div class="risk-bar-fill" id="humanBar" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="risk-category">
+                    <div class="risk-category-header">
+                        <span class="risk-category-name">Compliance Risk</span>
+                        <span class="risk-category-score" id="complianceScore">--</span>
+                    </div>
+                    <div class="risk-bar">
+                        <div class="risk-bar-fill" id="complianceBar" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recommendations">
+                <h3>Priority Recommendations</h3>
+                <div id="recommendationsList"></div>
+            </div>
+
+            <div class="results-cta">
+                <h3>Ready to reduce your agentic risk?</h3>
+                <p>Download the complete Agentic Manual for a comprehensive framework covering governance, trust calibration, and operational excellence.</p>
+                <a href="agentic-manual.html#download" class="btn-cta">Get the Agentic Manual</a>
+            </div>
+
+            <div class="results-cta" style="margin-top: 1.5rem; background: linear-gradient(135deg, rgba(194, 178, 128, 0.15) 0%, rgba(44, 44, 44, 0.5) 100%);">
+                <h3>Want expert guidance?</h3>
+                <p>We've helped Shell, Schneider Electric, and Constellation deploy AI agents safely. Let's discuss your specific risk profile and create a roadmap to close the gaps.</p>
+                <a href="contact.html" class="btn-cta" style="background: var(--oxblood); color: var(--white);">Request a Consultation</a>
+            </div>
+
+            <!-- Share Results -->
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(194, 178, 128, 0.2);">
+                <p style="color: var(--gray-300); font-size: 0.875rem; margin-bottom: 1rem;">Share your results</p>
+                <div style="display: flex; justify-content: center; gap: 1rem;">
+                    <a href="#" onclick="shareLinkedIn()" style="color: var(--sand); text-decoration: none; padding: 0.75rem 1.5rem; border: 1px solid var(--sand); border-radius: 6px; font-size: 0.875rem; transition: all 0.3s;">Share on LinkedIn</a>
+                    <a href="#" onclick="copyResults()" style="color: var(--gray-300); text-decoration: none; padding: 0.75rem 1.5rem; border: 1px solid var(--gray-600); border-radius: 6px; font-size: 0.875rem; transition: all 0.3s;">Copy Results</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Daito. <a href="index.html">Return to homepage</a></p>
+    </footer>
+
+    <script>
+        let currentQ = 1;
+        const totalQuestions = 10;
+        const answers = {};
+
+        // Risk scores per category
+        const riskScores = {
+            data: 0,
+            business: 0,
+            human: 0,
+            compliance: 0
+        };
+
+        // Initialize options listeners
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function() {
+                const card = this.closest('.question-card');
+                const questionNum = card.dataset.question;
+
+                // Remove selected from siblings
+                card.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+
+                // Enable continue button
+                card.querySelector('.btn-primary').disabled = false;
+
+                // Store answer
+                const input = this.querySelector('input');
+                input.checked = true;
+                answers[questionNum] = {
+                    value: input.value,
+                    risk: input.dataset.risk
+                };
+            });
+        });
+
+        function updateProgress() {
+            const progress = (currentQ / totalQuestions) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('currentQuestion').textContent = currentQ;
+        }
+
+        function nextQuestion() {
+            if (currentQ < totalQuestions) {
+                document.querySelector(`.question-card[data-question="${currentQ}"]`).classList.remove('active');
+                currentQ++;
+                document.querySelector(`.question-card[data-question="${currentQ}"]`).classList.add('active');
+                updateProgress();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQ > 1) {
+                document.querySelector(`.question-card[data-question="${currentQ}"]`).classList.remove('active');
+                currentQ--;
+                document.querySelector(`.question-card[data-question="${currentQ}"]`).classList.add('active');
+                updateProgress();
+            }
+        }
+
+        function calculateRiskScores() {
+            // Reset scores
+            Object.keys(riskScores).forEach(key => riskScores[key] = 0);
+
+            // Parse risk values from answers
+            Object.values(answers).forEach(answer => {
+                if (answer.risk) {
+                    const riskParts = answer.risk.split(',');
+                    riskParts.forEach(part => {
+                        const [category, value] = part.split(':');
+                        riskScores[category] += parseInt(value);
+                    });
+                }
+            });
+
+            // Normalize scores (max possible varies by category)
+            // Data: Q1, Q2, Q5, Q6, Q10 = max 17
+            // Business: Q1, Q3, Q4, Q5, Q6, Q7, Q9 = max 23
+            // Human: Q4, Q8, Q9 = max 11
+            // Compliance: Q2, Q3, Q7, Q8, Q10 = max 16
+
+            const maxScores = {
+                data: 17,
+                business: 23,
+                human: 11,
+                compliance: 16
+            };
+
+            const normalizedScores = {};
+            Object.keys(riskScores).forEach(key => {
+                normalizedScores[key] = Math.round((riskScores[key] / maxScores[key]) * 100);
+            });
+
+            return normalizedScores;
+        }
+
+        function getRiskLevel(score) {
+            if (score >= 75) return 'critical';
+            if (score >= 50) return 'high';
+            if (score >= 25) return 'medium';
+            return 'low';
+        }
+
+        function generateRecommendations(scores) {
+            const recommendations = [];
+
+            if (scores.data >= 50) {
+                recommendations.push({
+                    title: 'Strengthen Data Governance',
+                    description: 'Implement stricter data access controls and monitoring for AI agents. Consider data classification and purpose limitation policies.'
+                });
+            }
+
+            if (scores.business >= 50) {
+                recommendations.push({
+                    title: 'Enhance Testing & Change Management',
+                    description: 'Establish comprehensive testing protocols including edge cases and adversarial scenarios. Implement staged rollouts with automated rollback.'
+                });
+            }
+
+            if (scores.human >= 50) {
+                recommendations.push({
+                    title: 'Increase Human Oversight',
+                    description: 'Implement human-in-the-loop for critical decisions. Create clear escalation paths and incident response procedures.'
+                });
+            }
+
+            if (scores.compliance >= 50) {
+                recommendations.push({
+                    title: 'Build Regulatory Framework',
+                    description: 'Develop comprehensive AI governance policies. Ensure decision explainability and maintain audit trails for regulatory compliance.'
+                });
+            }
+
+            // General recommendations based on overall score
+            const avgScore = (scores.data + scores.business + scores.human + scores.compliance) / 4;
+
+            if (avgScore >= 60) {
+                recommendations.push({
+                    title: 'Consider Expert Assessment',
+                    description: 'Your risk profile suggests engaging specialized AI governance consultants to help establish foundational safeguards before expanding agent deployments.'
+                });
+            }
+
+            if (recommendations.length === 0) {
+                recommendations.push({
+                    title: 'Maintain Vigilance',
+                    description: 'Your current practices show good risk awareness. Continue regular audits and stay updated on emerging AI governance best practices.'
+                });
+            }
+
+            return recommendations;
+        }
+
+        function showResults() {
+            // Hide questions
+            document.getElementById('questionsContainer').style.display = 'none';
+            document.querySelector('.progress-container').style.display = 'none';
+
+            // Calculate scores
+            const scores = calculateRiskScores();
+            const avgScore = Math.round((scores.data + scores.business + scores.human + scores.compliance) / 4);
+            const riskLevel = getRiskLevel(avgScore);
+
+            // Update overall score
+            document.getElementById('overallScore').textContent = avgScore;
+            document.getElementById('riskLevel').textContent = riskLevel.toUpperCase() + ' RISK';
+            document.getElementById('riskLevel').className = 'risk-level ' + riskLevel;
+            document.getElementById('scoreCircle').className = 'score-circle ' + riskLevel;
+
+            // Update category scores
+            ['data', 'business', 'human', 'compliance'].forEach(cat => {
+                const score = scores[cat];
+                const level = getRiskLevel(score);
+                document.getElementById(cat + 'Score').textContent = score + '%';
+                document.getElementById(cat + 'Score').style.color = `var(--risk-${level})`;
+
+                const bar = document.getElementById(cat + 'Bar');
+                bar.style.width = score + '%';
+                bar.className = 'risk-bar-fill ' + level;
+            });
+
+            // Generate recommendations
+            const recommendations = generateRecommendations(scores);
+            const recList = document.getElementById('recommendationsList');
+            recList.innerHTML = recommendations.map(rec => `
+                <div class="recommendation-item">
+                    <svg class="recommendation-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                    <div class="recommendation-text">
+                        <strong>${rec.title}</strong>
+                        <p>${rec.description}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            // Show results
+            document.getElementById('resultsSection').classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialize
+        updateProgress();
+
+        // Share functions
+        function shareLinkedIn() {
+            const scores = calculateRiskScores();
+            const avgScore = Math.round((scores.data + scores.business + scores.human + scores.compliance) / 4);
+            const level = getRiskLevel(avgScore);
+            const text = encodeURIComponent(`I just took the Agentic AI Risk Assessment from Daito Design.\n\nMy organization scored ${avgScore}% (${level.toUpperCase()} RISK) across data, business, human oversight, and compliance dimensions.\n\nCurious about your AI agent deployment risks? Take the free 3-minute assessment:\n`);
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}&summary=${text}`, '_blank', 'width=600,height=400');
+        }
+
+        function copyResults() {
+            const scores = calculateRiskScores();
+            const avgScore = Math.round((scores.data + scores.business + scores.human + scores.compliance) / 4);
+            const level = getRiskLevel(avgScore);
+            const text = `Agentic AI Risk Assessment Results\n\nOverall: ${avgScore}% (${level.toUpperCase()} RISK)\n\nData Risk: ${scores.data}%\nBusiness Risk: ${scores.business}%\nHuman Risk: ${scores.human}%\nCompliance Risk: ${scores.compliance}%\n\nTake the assessment: ${window.location.href}`;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Results copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>

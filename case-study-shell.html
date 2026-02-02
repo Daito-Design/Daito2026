@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shell Case Study | Daito Design</title>
+    <meta name="description" content="How Daito Design has partnered with Shell since 2018 across 6 continents, transforming exploration workflows and geoscientist productivity.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --sand: #F5F0E8;
+            --charcoal: #1A1A1A;
+            --oxblood: #722F37;
+            --oxblood-light: #8B3A42;
+            --shell-yellow: #FDBB30;
+            --shell-red: #DD1D21;
+            --shell-dark: #0C1A2B;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--sand);
+            color: var(--charcoal);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(26, 26, 26, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 0 60px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo-img {
+            height: 72px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--sand);
+            text-decoration: none;
+            font-size: 13px;
+            opacity: 0.75;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover { opacity: 1; }
+
+        .nav-cta {
+            background: var(--oxblood) !important;
+            padding: 10px 20px !important;
+            border-radius: 4px;
+            opacity: 1 !important;
+        }
+
+        /* Hero */
+        .case-hero {
+            min-height: 85vh;
+            background: var(--shell-dark);
+            display: flex;
+            align-items: center;
+            padding: 120px 60px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(253, 187, 48, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .case-meta {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--shell-yellow);
+            padding: 6px 14px;
+            border: 1px solid rgba(253, 187, 48, 0.3);
+            border-radius: 20px;
+        }
+
+        .case-hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 400;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .case-hero h1 em {
+            font-style: italic;
+            color: var(--shell-yellow);
+        }
+
+        .case-hero .lead {
+            font-size: 18px;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--shell-yellow);
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: -5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 55%;
+            max-width: 800px;
+            z-index: 0;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 100px 60px;
+        }
+
+        .section-dark {
+            background: var(--charcoal);
+            color: var(--sand);
+        }
+
+        .section-shell {
+            background: var(--shell-dark);
+            color: white;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--oxblood);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .section-dark .section-label,
+        .section-shell .section-label {
+            color: var(--shell-yellow);
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            font-weight: 400;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .lead-text {
+            font-size: 18px;
+            opacity: 0.8;
+            max-width: 700px;
+            line-height: 1.75;
+        }
+
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .two-col-content p {
+            margin-bottom: 20px;
+            opacity: 0.85;
+            line-height: 1.8;
+        }
+
+        /* Challenge Section */
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .challenge-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 32px;
+        }
+
+        .challenge-card h4 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: var(--shell-yellow);
+        }
+
+        .challenge-card p {
+            font-size: 14px;
+            opacity: 0.7;
+            line-height: 1.7;
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 32px 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--oxblood);
+            color: var(--sand);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 500;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            font-size: 13px;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        /* Image Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin: 48px 0;
+        }
+
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--shell-dark);
+            aspect-ratio: 16/10;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: opacity 0.3s, transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+
+        .gallery-full {
+            grid-column: 1 / -1;
+            aspect-ratio: 21/9;
+        }
+
+        /* Applications Grid */
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .app-card {
+            background: rgba(253, 187, 48, 0.05);
+            border: 1px solid rgba(253, 187, 48, 0.15);
+            border-radius: 8px;
+            padding: 32px;
+        }
+
+        .app-card h4 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: var(--shell-yellow);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .app-card p {
+            font-size: 14px;
+            opacity: 0.75;
+            line-height: 1.7;
+        }
+
+        /* Results */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .result-card {
+            text-align: center;
+            padding: 40px 24px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .result-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            font-weight: 500;
+            color: var(--oxblood);
+            line-height: 1;
+        }
+
+        .result-label {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-top: 12px;
+            line-height: 1.4;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background: linear-gradient(135deg, var(--oxblood) 0%, var(--oxblood-light) 100%);
+            padding: 80px;
+            border-radius: 12px;
+            margin-top: 64px;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 200px;
+            color: rgba(255,255,255,0.1);
+            position: absolute;
+            top: -20px;
+            left: 40px;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-style: italic;
+            color: white;
+            line-height: 1.5;
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            margin-top: 32px;
+            color: white;
+        }
+
+        .testimonial-author strong {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .testimonial-author span {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 100px 60px;
+            background: var(--charcoal);
+        }
+
+        .cta-section h2 {
+            color: var(--sand);
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: var(--sand);
+            opacity: 0.7;
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--oxblood);
+            color: var(--sand);
+        }
+
+        .btn-primary:hover {
+            background: var(--oxblood-light);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            padding: 48px 60px;
+            border-top: 1px solid rgba(245, 240, 232, 0.08);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            height: 48px;
+            width: auto;
+        }
+
+        .footer-content span {
+            color: var(--sand);
+            opacity: 0.5;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .case-hero { padding: 100px 40px 60px; }
+            .case-hero h1 { font-size: 42px; }
+            .hero-image { display: none; }
+            .two-col { grid-template-columns: 1fr; gap: 48px; }
+            .challenge-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr 1fr; }
+            .apps-grid { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 24px; }
+            .nav-links { display: none; }
+            .section { padding: 64px 24px; }
+            .case-hero h1 { font-size: 32px; }
+            .process-steps, .results-grid { grid-template-columns: 1fr; }
+            .testimonial { padding: 48px 32px; }
+            .testimonial-text { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" aria-label="Daito Design Home">
+            <img src="images/daito-logo.webp" alt="Daito Design" class="nav-logo-img">
+        </a>
+        <ul class="nav-links">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="agentic-experience.html">Agentic Experience</a></li>
+            <li><a href="case-studies.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="case-hero">
+        <div class="hero-content">
+            <div class="case-meta">
+                <span class="meta-tag">Oil & Gas</span>
+                <span class="meta-tag">Enterprise UX</span>
+                <span class="meta-tag">Since 2018</span>
+            </div>
+            <h1>Transforming <em>Exploration Workflows</em> Across Six Continents</h1>
+            <p class="lead">Since 2018, we've partnered with one of the world's largest energy companies to design tools that geoscientists rely on for billion-dollar drilling decisions—from offshore platforms to research centers worldwide.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">$1.69M</div>
+                    <div class="stat-label">Total Engagement</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">43</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Proposal Win Rate</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1590846083693-f23fdede4704?w=1200&q=80" alt="Offshore Oil Platform">
+        </div>
+    </section>
+
+    <!-- Challenge -->
+    <section class="section section-shell">
+        <div class="container">
+            <p class="section-label">The Challenge</p>
+            <h2>Enterprise Complexity at Global Scale</h2>
+            <p class="lead-text">One of the world's largest energy companies was digitally transforming how their geoscientists work. With exploration teams spanning six continents, thousands of specialist users, and decades of legacy systems, they needed a partner who could navigate enterprise complexity while delivering intuitive, powerful tools.</p>
+
+            <div class="challenge-grid">
+                <div class="challenge-card">
+                    <h4>Billion-Dollar Decisions</h4>
+                    <p>These applications inform drilling decisions worth hundreds of millions. Usability gaps don't just frustrate users—they can lead to costly mistakes in geological interpretation.</p>
+                </div>
+                <div class="challenge-card">
+                    <h4>Legacy System Debt</h4>
+                    <p>Decades of accumulated technical decisions had created a fragmented ecosystem. New tools needed to integrate seamlessly while modernizing the user experience.</p>
+                </div>
+                <div class="challenge-card">
+                    <h4>Extreme Environments</h4>
+                    <p>From offshore platforms with intermittent connectivity to research centers with demanding display requirements—design solutions needed to work everywhere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach -->
+    <section class="section">
+        <div class="container">
+            <p class="section-label">Our Approach</p>
+            <h2>Research-Driven Enterprise Design</h2>
+            <p class="lead-text">We embedded ourselves in Shell's world—visiting platforms, shadowing interpreters, and understanding the nuances of geoscience workflows before designing a single screen.</p>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Field Research</h4>
+                    <p>On-platform observation across multiple continents. Understanding workflows in context, not conference rooms.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>User Workshops</h4>
+                    <p>Collaborative sessions with geoscientists, interpreters, and operations staff to define requirements.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Design Systems</h4>
+                    <p>Creating consistency across the portfolio with scalable component libraries and interaction patterns.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Iterative Delivery</h4>
+                    <p>Usability testing with representative users. Refinement based on real-world feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications -->
+    <section class="section section-shell">
+        <div class="container">
+            <p class="section-label">The Work</p>
+            <h2>A Portfolio of Exploration Tools</h2>
+            <p class="lead-text">Since 2018, we've designed and refined multiple applications—each addressing different aspects of the exploration workflow.</p>
+
+            <div class="apps-grid">
+                <div class="app-card">
+                    <h4>Exploration App 1</h4>
+                    <p>Subsurface data interpretation tools for geoscientists. Complex visualization of seismic, well log, and geological model data.</p>
+                </div>
+                <div class="app-card">
+                    <h4>Exploration App 2</h4>
+                    <p>Collaborative interpretation workspace. Real-time multi-user editing with version control and annotation systems.</p>
+                </div>
+                <div class="app-card">
+                    <h4>Exploration App 3</h4>
+                    <p>Production digitization platform. Transitioning field operations from paper-based workflows to digital-first processes.</p>
+                </div>
+                <div class="app-card">
+                    <h4>Mobile Workbench</h4>
+                    <p>Field worker mobile solution optimized for offshore environments—gloved use, intermittent connectivity, safety-critical operations.</p>
+                </div>
+                <div class="app-card">
+                    <h4>AI Exploration Agent</h4>
+                    <p>Next-generation agentic experience design. Human-AI collaboration for geological interpretation and decision support.</p>
+                </div>
+                <div class="app-card">
+                    <h4>Design System</h4>
+                    <p>Unified component library ensuring visual and interaction consistency across the entire exploration tool portfolio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section section-dark">
+        <div class="container">
+            <p class="section-label">Field Research</p>
+            <h2>Understanding Work in Context</h2>
+            <p class="lead-text">Great enterprise software comes from understanding how people actually work—not how we assume they work. We've spent time on platforms, in control rooms, and alongside interpreters to inform every design decision.</p>
+
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80" alt="Oil Rig Control Room">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Industrial Data Analytics">
+                </div>
+                <div class="gallery-item gallery-full">
+                    <img src="https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=1600&q=80" alt="Offshore Platform Operations">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section">
+        <div class="container">
+            <p class="section-label">Results</p>
+            <h2>Measurable Impact at Scale</h2>
+            <p class="lead-text">Our partnership has delivered tangible improvements across Shell's exploration operations—from individual productivity gains to portfolio-wide efficiency.</p>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-value">7+</div>
+                    <div class="result-label">Years of continuous partnership</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">43</div>
+                    <div class="result-label">Projects delivered successfully</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">40%</div>
+                    <div class="result-label">Faster task completion in field</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">60%</div>
+                    <div class="result-label">Reduction in data entry errors</div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text">Before, our interpreters spent more time fighting the software than interpreting data. Now they can focus on the geology. Daito understood our domain deeply enough to challenge our assumptions—that's rare in a design partner.</p>
+                <div class="testimonial-author">
+                    <strong>Senior Digital Product Manager</strong>
+                    <span>Shell Exploration</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Used -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="two-col">
+                <div class="two-col-content">
+                    <p class="section-label">Capabilities Applied</p>
+                    <h2>Full-Spectrum Enterprise UX</h2>
+                    <p>This engagement spans the full range of our capabilities—from foundational research to production design systems. We've grown alongside Shell's digital transformation, adapting our approach as needs evolved.</p>
+                    <p>What started as single projects has become an embedded partnership, with Daito serving as the trusted UX partner for Shell's exploration technology portfolio.</p>
+                </div>
+                <div>
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 32px;">
+                        <h4 style="color: var(--shell-yellow); font-size: 14px; margin-bottom: 20px; letter-spacing: 1px;">SERVICES DELIVERED</h4>
+                        <ul style="list-style: none; font-size: 15px; line-height: 2.2; opacity: 0.85;">
+                            <li>→ Enterprise UX Research</li>
+                            <li>→ Global User Workshops</li>
+                            <li>→ Industrial Interface Design</li>
+                            <li>→ Design Systems</li>
+                            <li>→ Mobile Design</li>
+                            <li>→ AI/Agent Experience Design</li>
+                            <li>→ Field Research</li>
+                            <li>→ Usability Testing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready to transform your enterprise software?</h2>
+        <p>Let's discuss how research-driven design can improve your team's productivity and decision-making.</p>
+        <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <img src="images/daito-logo.webp" alt="Daito Design" class="footer-logo">
+            <div style="display: flex; align-items: center; gap: 24px;">
+                <a href="https://www.linkedin.com/company/daitodesign/" target="_blank" rel="noopener" style="color: var(--sand); opacity: 0.7; text-decoration: none; font-size: 13px; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">LinkedIn</a>
+                <span style="color: var(--sand); opacity: 0.5; font-size: 13px;">© 2026 Daito Design. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3LC Case Study | Daito Design</title>
+    <meta name="description" content="How Daito Design helped 3LC transform powerful ML technology into a product data scientists love—securing $1.8M in seed funding with Shell Ventures.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --sand: #F5F0E8;
+            --charcoal: #1A1A1A;
+            --oxblood: #6B0F1A;
+            --oxblood-light: #8B1A28;
+            /* 3LC Brand Colors - Navy/Yellow */
+            --3lc-navy: #0D1B2A;
+            --3lc-dark: #1B263B;
+            --3lc-yellow: #FFD60A;
+            --3lc-yellow-light: #FFF07C;
+            --3lc-cyan: #00D4FF;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--sand);
+            color: var(--charcoal);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(13, 27, 42, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 0 60px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo-img {
+            height: 72px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--sand);
+            text-decoration: none;
+            font-size: 13px;
+            opacity: 0.75;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover { opacity: 1; }
+
+        .nav-cta {
+            background: var(--oxblood) !important;
+            padding: 10px 20px !important;
+            border-radius: 4px;
+            opacity: 1 !important;
+        }
+
+        /* Hero */
+        .case-hero {
+            min-height: 85vh;
+            background: var(--3lc-navy);
+            display: flex;
+            align-items: center;
+            padding: 120px 60px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 214, 10, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 550px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .case-meta {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--3lc-yellow);
+            padding: 6px 14px;
+            border: 1px solid rgba(255, 214, 10, 0.3);
+            border-radius: 20px;
+        }
+
+        .case-hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            font-weight: 400;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .case-hero h1 em {
+            font-style: italic;
+            color: var(--3lc-yellow);
+        }
+
+        .case-hero .lead {
+            font-size: 18px;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--3lc-yellow);
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50%;
+            max-width: 700px;
+            z-index: 0;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 214, 10, 0.2);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 100px 60px;
+        }
+
+        .section-dark {
+            background: var(--charcoal);
+            color: var(--sand);
+        }
+
+        .section-3lc {
+            background: var(--3lc-navy);
+            color: white;
+        }
+
+        .section-3lc-alt {
+            background: var(--3lc-dark);
+            color: white;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--oxblood);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .section-dark .section-label,
+        .section-3lc .section-label,
+        .section-3lc-alt .section-label {
+            color: var(--3lc-yellow);
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            font-weight: 400;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .lead-text {
+            font-size: 18px;
+            opacity: 0.8;
+            max-width: 700px;
+            line-height: 1.75;
+        }
+
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .two-col-content p {
+            margin-bottom: 20px;
+            opacity: 0.85;
+            line-height: 1.8;
+        }
+
+        /* Challenge Section */
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .challenge-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255, 214, 10, 0.1);
+            border-radius: 8px;
+            padding: 32px;
+        }
+
+        .challenge-card h4 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: var(--3lc-yellow);
+        }
+
+        .challenge-card p {
+            font-size: 14px;
+            opacity: 0.7;
+            line-height: 1.7;
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 32px 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--oxblood);
+            color: var(--sand);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 500;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            font-size: 13px;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        /* Product Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .feature-card {
+            background: rgba(255, 214, 10, 0.05);
+            border: 1px solid rgba(255, 214, 10, 0.15);
+            border-radius: 8px;
+            padding: 32px;
+        }
+
+        .feature-card h4 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: var(--3lc-yellow);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            opacity: 0.75;
+            line-height: 1.7;
+        }
+
+        /* Image Gallery - 3LC Dashboard Style */
+        .dashboard-showcase {
+            margin: 48px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 214, 10, 0.2);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .dashboard-showcase img {
+            width: 100%;
+            display: block;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin: 48px 0;
+        }
+
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--3lc-navy);
+            aspect-ratio: 16/10;
+            border: 1px solid rgba(255, 214, 10, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: opacity 0.3s, transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+
+        .gallery-full {
+            grid-column: 1 / -1;
+            aspect-ratio: 21/9;
+        }
+
+        /* Results */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .result-card {
+            text-align: center;
+            padding: 40px 24px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .result-card-dark {
+            background: var(--3lc-dark);
+            border: 1px solid rgba(255, 214, 10, 0.15);
+        }
+
+        .result-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            font-weight: 500;
+            color: var(--oxblood);
+            line-height: 1;
+        }
+
+        .result-card-dark .result-value {
+            color: var(--3lc-yellow);
+        }
+
+        .result-label {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-top: 12px;
+            line-height: 1.4;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background: linear-gradient(135deg, var(--oxblood) 0%, var(--oxblood-light) 100%);
+            padding: 80px;
+            border-radius: 12px;
+            margin-top: 64px;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 200px;
+            color: rgba(255,255,255,0.1);
+            position: absolute;
+            top: -20px;
+            left: 40px;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-style: italic;
+            color: white;
+            line-height: 1.5;
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            margin-top: 32px;
+            color: white;
+        }
+
+        .testimonial-author strong {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .testimonial-author span {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 100px 60px;
+            background: var(--3lc-navy);
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: white;
+            opacity: 0.7;
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--3lc-yellow);
+            color: var(--3lc-navy);
+        }
+
+        .btn-primary:hover {
+            background: var(--3lc-yellow-light);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            padding: 48px 60px;
+            border-top: 1px solid rgba(245, 240, 232, 0.08);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            height: 48px;
+            width: auto;
+        }
+
+        .footer-content span {
+            color: var(--sand);
+            opacity: 0.5;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .case-hero { padding: 100px 40px 60px; }
+            .case-hero h1 { font-size: 42px; }
+            .hero-image { display: none; }
+            .two-col { grid-template-columns: 1fr; gap: 48px; }
+            .challenge-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 24px; }
+            .nav-links { display: none; }
+            .section { padding: 64px 24px; }
+            .case-hero h1 { font-size: 32px; }
+            .process-steps, .results-grid { grid-template-columns: 1fr; }
+            .testimonial { padding: 48px 32px; }
+            .testimonial-text { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" aria-label="Daito Design Home">
+            <img src="images/daito-logo.webp" alt="Daito Design" class="nav-logo-img">
+        </a>
+        <ul class="nav-links">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="agentic-experience.html">Agentic Experience</a></li>
+            <li><a href="case-studies.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="case-hero">
+        <div class="hero-content">
+            <div class="case-meta">
+                <span class="meta-tag">AI/ML</span>
+                <span class="meta-tag">Product Design</span>
+                <span class="meta-tag">Data-Centric AI</span>
+            </div>
+            <h1>Better, Faster, & <em>Smaller AI Models</em></h1>
+            <p class="lead">3LC had powerful technology for improving ML models through data quality. We helped them translate that capability into a product data scientists actually love—securing $1.8M in seed funding with Shell Ventures participation.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">30x</div>
+                    <div class="stat-label">Fewer False Positives</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">$1.8M</div>
+                    <div class="stat-label">Seed Funding</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">40+</div>
+                    <div class="stat-label">User Interviews</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- Replace with: images/3lc-hero.png -->
+            <img src="images/3lc-hero.png" alt="3LC Platform - Data Visualization Dashboard" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80'">
+        </div>
+    </section>
+
+    <!-- Challenge -->
+    <section class="section section-3lc">
+        <div class="container">
+            <p class="section-label">The Challenge</p>
+            <h2>Illuminating the ML Black Box</h2>
+            <p class="lead-text">3LC came to us with a powerful technology—a way to improve ML models by fixing training data in real-time. They needed help translating that technical capability into a product that data scientists would actually use and love.</p>
+
+            <div class="challenge-grid">
+                <div class="challenge-card">
+                    <h4>Technical Complexity</h4>
+                    <p>The underlying technology was sophisticated—real-time data editing, model retraining, metrics tracking. Making this accessible without dumbing it down was the core challenge.</p>
+                </div>
+                <div class="challenge-card">
+                    <h4>Developer Audience</h4>
+                    <p>Data scientists and ML engineers are demanding users. They want power and flexibility, not hand-holding. The product needed to feel like a tool for experts.</p>
+                </div>
+                <div class="challenge-card">
+                    <h4>Market Positioning</h4>
+                    <p>The data-centric AI space was emerging but undefined. 3LC needed clear positioning that explained their unique approach: "Three Lines of Code to better models."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach -->
+    <section class="section">
+        <div class="container">
+            <p class="section-label">Our Approach</p>
+            <h2>Research-Driven Product Development</h2>
+            <p class="lead-text">We embedded with 3LC's team for 18 months, conducting deep user research, defining product strategy, and designing the end-to-end experience.</p>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>User Research</h4>
+                    <p>40+ interviews with ML engineers and data scientists across energy, finance, and healthcare sectors.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Market Analysis</h4>
+                    <p>Competitive analysis of the emerging data-centric AI landscape. Identifying white space and positioning.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Product Strategy</h4>
+                    <p>Defining the "Three Lines of Code" positioning. Developer-first tool with enterprise-grade security.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Design & Launch</h4>
+                    <p>End-to-end UX/UI design, design system, usability testing, and launch support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Dashboard Showcase -->
+    <section class="section section-3lc-alt">
+        <div class="container">
+            <p class="section-label">The Work</p>
+            <h2>A Platform Built for Data Scientists</h2>
+            <p class="lead-text">We designed every aspect of the 3LC platform—from data visualization to sample editing to metrics dashboards—with the needs of ML practitioners at the center.</p>
+
+            <!-- Main Dashboard Screenshot -->
+            <div class="dashboard-showcase">
+                <!-- Replace with: images/3lc-dashboard.png -->
+                <img src="images/3lc-dashboard.png" alt="3LC Dashboard - Metrics and Data Visualization" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80'">
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>Data Visualization</h4>
+                    <p>Interactive 3D visualization of training data distributions, outliers, and quality issues. Making invisible data problems visible.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Sample Editing</h4>
+                    <p>Direct editing of training samples with real-time model impact preview. Fix data, improve models, see results immediately.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Metrics Dashboard</h4>
+                    <p>Track model performance improvements over time. Connect data changes to outcome improvements with clear causality.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Integration Patterns</h4>
+                    <p>Seamless integration with existing ML workflows. Jupyter notebooks, Python scripts, CI/CD pipelines.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Progressive Disclosure</h4>
+                    <p>Complex functionality revealed as needed. Power users get depth, new users get clarity.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Dark Theme UI</h4>
+                    <p>Navy and yellow design system optimized for long work sessions. Professional feel that respects data scientists' expertise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section">
+        <div class="container">
+            <p class="section-label">Results</p>
+            <h2>From Concept to Funded Product</h2>
+            <p class="lead-text">Our 18-month partnership took 3LC from promising technology to funded product with enterprise customers and a clear path to market leadership.</p>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-value">$1.8M</div>
+                    <div class="result-label">Seed funding secured with Shell Ventures</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">30x</div>
+                    <div class="result-label">Reduction in false positives for customers</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">75%</div>
+                    <div class="result-label">Reduction in training time</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">Equinor</div>
+                    <div class="result-label">Enterprise partnership secured</div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text">The team understood both the technical complexity and the user experience challenges. They helped us turn a powerful technology into a product that data scientists actually enjoy using. That's rare.</p>
+                <div class="testimonial-author">
+                    <strong>Co-founder</strong>
+                    <span>3LC</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Used -->
+    <section class="section section-3lc">
+        <div class="container">
+            <div class="two-col">
+                <div class="two-col-content">
+                    <p class="section-label">Capabilities Applied</p>
+                    <h2>Full Product Development Partnership</h2>
+                    <p>This engagement covered the full spectrum of product development—from foundational research through launch and beyond. We became an extension of 3LC's team, sharing in the mission of making data-centric AI accessible.</p>
+                    <p>The result: a product that's both technically sophisticated and genuinely delightful to use. Data scientists don't just tolerate 3LC—they advocate for it.</p>
+                </div>
+                <div>
+                    <div style="background: rgba(255, 214, 10, 0.05); border-radius: 8px; padding: 32px; border: 1px solid rgba(255, 214, 10, 0.15);">
+                        <h4 style="color: var(--3lc-yellow); font-size: 14px; margin-bottom: 20px; letter-spacing: 1px;">SERVICES DELIVERED</h4>
+                        <ul style="list-style: none; font-size: 15px; line-height: 2.2; opacity: 0.85;">
+                            <li>→ User Research (40+ interviews)</li>
+                            <li>→ Competitive Analysis</li>
+                            <li>→ Market Positioning</li>
+                            <li>→ Product Strategy</li>
+                            <li>→ UX/UI Design</li>
+                            <li>→ Design System</li>
+                            <li>→ Usability Testing</li>
+                            <li>→ Launch Support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Building a data or AI product?</h2>
+        <p>Let's discuss how research-driven design can help you find product-market fit.</p>
+        <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <img src="images/daito-logo.webp" alt="Daito Design" class="footer-logo">
+            <div style="display: flex; align-items: center; gap: 24px;">
+                <a href="https://www.linkedin.com/company/daitodesign/" target="_blank" rel="noopener" style="color: var(--sand); opacity: 0.7; text-decoration: none; font-size: 13px; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">LinkedIn</a>
+                <span style="color: var(--sand); opacity: 0.5; font-size: 13px;">© 2026 Daito Design. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

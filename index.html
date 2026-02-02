@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Daito Design - Enterprise UX for energy, maritime & industrial operations. 15+ years designing control rooms, SCADA systems, and human-AI collaboration interfaces.">
+  <meta name="keywords" content="industrial UX, enterprise UX, control room design, SCADA, agentic experience design, human-AI collaboration">
+  <meta name="author" content="Daito Design">
+  <meta name="theme-color" content="#1A1A1A">
+
+  <!-- Open Graph / Social Media Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://daitodesign.com/">
+  <meta property="og:title" content="Daito Design | Industrial UX & Enterprise Experience Design">
+  <meta property="og:description" content="Enterprise software that works for the people who actually use it. From offshore platforms to control rooms.">
+  <meta property="og:image" content="https://daitodesign.com/images/og-image.jpg">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://daitodesign.com/">
+  <meta name="twitter:title" content="Daito Design | Industrial UX & Enterprise Experience Design">
+  <meta name="twitter:description" content="Enterprise software that works for the people who actually use it.">
+  <meta name="twitter:image" content="https://daitodesign.com/images/og-image.jpg">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://daitodesign.com/">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Daito Design",
+    "url": "https://daitodesign.com",
+    "description": "Industrial UX & Agentic Experience Design",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "901 W. 9th Street, Suite 102",
+      "addressLocality": "Austin",
+      "addressRegion": "TX",
+      "postalCode": "78703",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@daitodesign.com",
+      "contactType": "sales"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/daitodesign/"
+    ]
+  }
+  </script>
+
+  <title>Daito Design | Industrial UX & Enterprise Experience Design</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- GSAP for scroll animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="favicon.webp">
+</head>
+<body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="Daito Design Home">
+          <img src="images/daito-logo.webp" alt="Daito Design" class="nav-logo-img" style="height: 72px; width: auto;">
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="agentic-experience.html" class="nav-link">Agentic Experience</a></li>
+          <li><a href="case-studies.html" class="nav-link">Work</a></li>
+          <li><a href="blog.html" class="nav-link">Insights</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero" style="position: relative; overflow: hidden;">
+      <!-- Hero Background with Ken Burns Animation -->
+      <style>
+        @keyframes kenburns {
+          0% { transform: scale(1) translateX(0); }
+          50% { transform: scale(1.1) translateX(-2%); }
+          100% { transform: scale(1) translateX(0); }
+        }
+        .hero-bg-animated {
+          animation: kenburns 20s ease-in-out infinite;
+        }
+      </style>
+      <div style="position: absolute; inset: 0; z-index: 0;">
+        <img src="https://images.pexels.com/photos/3216911/pexels-photo-3216911.jpeg?auto=compress&cs=tinysrgb&w=1920"
+             alt="Offshore drilling rig on water"
+             class="hero-bg-animated"
+             style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(to right, var(--sand) 0%, rgba(245,240,232,0.7) 40%, rgba(245,240,232,0.3) 100%);"></div>
+      </div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <div class="hero-content">
+          <span class="eyebrow hero-eyebrow">Industrial UX & Experience Design</span>
+          <h1 class="hero-title">We design for the field.</h1>
+          <p class="hero-subtitle">
+            Enterprise software that works for the people who actually use it. From offshore platforms to control rooms.
+          </p>
+          <div class="hero-cta">
+            <a href="case-studies.html" class="btn btn-primary btn-lg btn-arrow" style="background-color: #722F37; border-color: #722F37;">
+              See Our Work
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-indicator-line"></div>
+      </div>
+    </section>
+
+    <!-- Statement Section 1 - Pinned -->
+    <section class="section-full statement-section bg-sand-light">
+      <div class="container">
+        <p class="statement-text reveal">
+          Most enterprise software is designed by people who've never used it.
+          <span class="highlight">We're different.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="section section-xl bg-charcoal" style="color: var(--sand); position: relative; overflow: hidden;">
+      <!-- Background image -->
+      <div style="position: absolute; inset: 0; z-index: 0;">
+        <img src="https://images.pexels.com/photos/1716008/pexels-photo-1716008.jpeg?auto=compress&cs=tinysrgb&w=1920"
+             alt="Oil rig platform silhouette at sunrise"
+             style="width: 100%; height: 100%; object-fit: cover; opacity: 0.25;">
+      </div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center;">
+          <div class="reveal-left">
+            <span class="eyebrow" style="color: var(--oxblood-light);">Our Approach</span>
+            <h2 class="text-title" style="color: var(--white); margin-bottom: var(--space-8);">
+              We go to the field.
+            </h2>
+            <p class="text-body-lg" style="color: var(--sand-darker); margin-bottom: var(--space-8); max-width: 50ch;">
+              Before we design anything, we immerse ourselves in your users' world. We've been on oil platforms, inside control rooms, on factory floors, and at control centers around the globe.
+            </p>
+            <p class="text-body-lg" style="color: var(--sand-darker); max-width: 50ch;">
+              Because you can't design for operators if you've never watched them operate.
+            </p>
+          </div>
+          <div class="reveal-right">
+            <!-- Field image -->
+            <div style="position: relative; margin-bottom: var(--space-8);">
+              <img src="https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg?auto=compress&cs=tinysrgb&w=800"
+                   alt="Engineer in hard hat inspecting machinery"
+                   class="field-img"
+                   style="width: 100%; aspect-ratio: 16/10; object-fit: cover; transition: filter 0.5s ease;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--charcoal) 0%, transparent 30%);"></div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+              <div style="padding: var(--space-6); background: var(--charcoal-light);">
+                <div class="metric-value" style="color: var(--oxblood-light);">10</div>
+                <div class="metric-label" style="color: var(--sand-darker);">Years in Business</div>
+              </div>
+              <div style="padding: var(--space-6); background: var(--charcoal-light);">
+                <div class="metric-value" style="color: var(--oxblood-light);">8+</div>
+                <div class="metric-label" style="color: var(--sand-darker);">Fortune 500 Clients</div>
+              </div>
+              <div style="padding: var(--space-6); background: var(--charcoal-light);">
+                <div class="metric-value" style="color: var(--oxblood-light);">1000s</div>
+                <div class="metric-label" style="color: var(--sand-darker);">Hours of Field Insights</div>
+              </div>
+              <div style="padding: var(--space-6); background: var(--charcoal-light);">
+                <div class="metric-value" style="color: var(--oxblood-light);">8</div>
+                <div class="metric-label" style="color: var(--sand-darker);">Year Shell Partnership</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="section section-xl">
+      <div class="container">
+        <div class="text-center mb-16 reveal">
+          <span class="eyebrow">What We Do</span>
+          <h2 class="text-title mb-6">End-to-end enterprise UX.</h2>
+          <p class="text-body-lg text-charcoal-soft max-w-50ch mx-auto">
+            From initial research through design, development support, and change management.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-number" aria-hidden="true">01</div>
+            <h3 class="service-title">Pre-Product</h3>
+            <p class="service-description">
+              Validate before you build. Market research, user studies, and strategic direction.
+            </p>
+            <ul class="service-list">
+              <li>Product-Market Fit Testing</li>
+              <li>User Research & Ethnography</li>
+              <li>Competitive Analysis</li>
+              <li>Strategic Workshops</li>
+            </ul>
+            <a href="services.html#pre-product" class="btn btn-ghost btn-arrow">
+              Learn More
+              <span class="arrow">→</span>
+            </a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number" aria-hidden="true">02</div>
+            <h3 class="service-title">Product</h3>
+            <p class="service-description">
+              Design that works under pressure. Industrial-grade UX for critical systems.
+            </p>
+            <ul class="service-list">
+              <li>UX/UI Design</li>
+              <li>Design Systems</li>
+              <li>Prototyping & Testing</li>
+              <li>Agentic Experience Design</li>
+            </ul>
+            <a href="services.html#product" class="btn btn-ghost btn-arrow">
+              Learn More
+              <span class="arrow">→</span>
+            </a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number" aria-hidden="true">03</div>
+            <h3 class="service-title">Post-Product</h3>
+            <p class="service-description">
+              Adoption is everything. We ensure your investment delivers results.
+            </p>
+            <ul class="service-list">
+              <li>Change Management</li>
+              <li>Training & Enablement</li>
+              <li>Adoption Analytics</li>
+              <li>Continuous Optimization</li>
+            </ul>
+            <a href="services.html#post-product" class="btn btn-ghost btn-arrow">
+              Learn More
+              <span class="arrow">→</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agentic Experience Highlight -->
+    <section class="section section-xl bg-sand-dark">
+      <div class="container">
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center;">
+          <div class="reveal">
+            <span class="eyebrow">New Capability</span>
+            <h2 class="text-title mb-6">
+              Agentic Experience<br>
+              <span class="text-oxblood">Design (AXD)</span>
+            </h2>
+            <p class="text-body-lg text-charcoal-soft mb-8">
+              The future of enterprise software isn't interfaces—it's agents. We're pioneering the design of AI-human collaboration for industrial environments.
+            </p>
+            <p class="text-body text-charcoal-soft mb-10">
+              Our enterprise human factors approach ensures AI agents work with your people, not against them. Because autonomy without trust is just automation.
+            </p>
+            <a href="agentic-experience.html" class="btn btn-accent btn-arrow">
+              Explore AXD
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+          <div class="reveal-scale" style="position: relative; aspect-ratio: 1; overflow: hidden;">
+            <img src="https://images.pexels.com/photos/4508751/pexels-photo-4508751.jpeg?auto=compress&cs=tinysrgb&w=800"
+                 alt="Data center server racks with monitoring"
+                 style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,26,0.6) 0%, rgba(114,47,55,0.4) 100%);"></div>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+              <div style="text-align: center; color: var(--white); padding: var(--space-12);">
+                <div style="font-family: var(--font-display); font-size: var(--text-6xl); font-weight: var(--weight-light); line-height: 1; margin-bottom: var(--space-4);">AXD</div>
+                <div style="font-size: var(--text-sm); letter-spacing: var(--tracking-widest); text-transform: uppercase; opacity: 0.7;">Human-Centered AI</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Case Studies Section -->
+    <section class="section section-xl">
+      <div class="container">
+        <div class="text-center mb-16 reveal">
+          <span class="eyebrow">Case Studies</span>
+          <h2 class="text-title mb-6">Work that works.</h2>
+          <p class="text-body-lg text-charcoal-soft max-w-50ch mx-auto">
+            Real results for enterprise clients across energy, financial services, and industrial sectors.
+          </p>
+        </div>
+
+        <!-- Shearwater Geo Case Study -->
+        <div style="margin-bottom: var(--space-24);">
+          <div class="case-study-featured">
+            <div class="case-study-image" style="position: relative; overflow: hidden;">
+              <img src="images/Vessel DCH 001.jpg"
+                   alt="SW Duchess seismic vessel at sea"
+                   class="case-study-img"
+                   style="width: 100%; height: 100%; object-fit: cover; transition: filter 0.5s ease;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,26,26,0.6) 0%, transparent 60%);"></div>
+              <div style="position: absolute; bottom: var(--space-8); left: var(--space-8); color: white;">
+                <div style="font-family: var(--font-display); font-size: var(--text-5xl); font-weight: 300; line-height: 1;">Shearwater Geo</div>
+                <div style="font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7;">Marine • Offshore Seismic</div>
+              </div>
+            </div>
+            <div class="case-study-content bg-sand-light">
+              <span class="case-study-client">Featured Work</span>
+              <h3 class="case-study-title">Digital twin for seismic fleet operations</h3>
+              <p class="case-study-excerpt">
+                Built a real-time digital twin for offshore seismic vessels. Transformed operations from once-daily updates to live fleet visibility and decision-making.
+              </p>
+              <div class="case-study-metrics">
+                <div class="metric">
+                  <div class="metric-value">1x/Day→Live</div>
+                  <div class="metric-label">Real-Time Ops</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-value">Digital Twin</div>
+                  <div class="metric-label">Fleet Visibility</div>
+                </div>
+              </div>
+              <a href="case-studies.html" class="btn btn-outline btn-arrow">
+                View Case Study
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Constellation Case Study -->
+        <div style="margin-bottom: var(--space-24);">
+          <div class="case-study-featured" style="direction: rtl;">
+            <div class="case-study-image" style="position: relative; overflow: hidden;">
+              <img src="https://images.pexels.com/photos/256219/pexels-photo-256219.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                   alt="Control room with multiple monitoring screens"
+                   class="case-study-img"
+                   style="width: 100%; height: 100%; object-fit: cover; transition: filter 0.5s ease;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,26,26,0.6) 0%, transparent 60%);"></div>
+              <div style="position: absolute; bottom: var(--space-8); left: var(--space-8); color: white;">
+                <div style="font-family: var(--font-display); font-size: var(--text-4xl); font-weight: 300; line-height: 1;">Constellation</div>
+                <div style="font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7;">Energy • Nuclear Operations</div>
+              </div>
+            </div>
+            <div class="case-study-content bg-sand" style="direction: ltr;">
+              <span class="case-study-client">Energy Sector</span>
+              <h3 class="case-study-title">Digital procedures & AI-powered work management</h3>
+              <p class="case-study-excerpt">
+                Transformed static paper procedures into intelligent digital workflows. Consolidated 8 legacy systems while maintaining nuclear-grade safety margins.
+              </p>
+              <div class="case-study-metrics">
+                <div class="metric">
+                  <div class="metric-value">~1M</div>
+                  <div class="metric-label">Hours Saved</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-value">85%</div>
+                  <div class="metric-label">Compliance Gain</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-value">8</div>
+                  <div class="metric-label">Systems Unified</div>
+                </div>
+              </div>
+              <a href="case-studies.html" class="btn btn-outline btn-arrow">
+                View Case Study
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- NTT Case Study -->
+        <div style="margin-bottom: var(--space-24);">
+          <div class="case-study-featured">
+            <div class="case-study-image" style="position: relative; overflow: hidden;">
+              <img src="images/Laser Rust Removal.jpg"
+                   alt="NTT laser rust removal technology in action"
+                   class="case-study-img"
+                   style="width: 100%; height: 100%; object-fit: cover; transition: filter 0.5s ease;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,26,26,0.6) 0%, transparent 60%);"></div>
+              <div style="position: absolute; bottom: var(--space-8); left: var(--space-8); color: white;">
+                <div style="font-family: var(--font-display); font-size: var(--text-6xl); font-weight: 300; line-height: 1;">NTT</div>
+                <div style="font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; margin-top: 8px;">Industrial • Laser Technology</div>
+              </div>
+            </div>
+            <div class="case-study-content bg-sand-light">
+              <span class="case-study-client">Industrial Technology</span>
+              <h3 class="case-study-title">Laser rust removal system interface</h3>
+              <p class="case-study-excerpt">
+                Designed the operator interface for NTT's industrial laser rust removal technology. Simplified complex laser parameters for field technicians while ensuring safety-critical operation.
+              </p>
+              <div class="case-study-metrics">
+                <div class="metric">
+                  <div class="metric-value">50%</div>
+                  <div class="metric-label">Faster Training</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-value">Zero</div>
+                  <div class="metric-label">Safety Incidents</div>
+                </div>
+              </div>
+              <a href="case-studies.html" class="btn btn-outline btn-arrow">
+                View Case Study
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shell Case Study -->
+        <div style="margin-bottom: var(--space-24);">
+          <div class="case-study-featured" style="direction: rtl;">
+            <div class="case-study-image" style="position: relative; overflow: hidden;">
+              <img src="https://images.pexels.com/photos/3192662/pexels-photo-3192662.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                   alt="Offshore oil platform"
+                   class="case-study-img"
+                   style="width: 100%; height: 100%; object-fit: cover; transition: filter 0.5s ease;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,26,26,0.6) 0%, transparent 60%);"></div>
+              <div style="position: absolute; bottom: var(--space-8); left: var(--space-8); color: white;">
+                <div style="font-family: var(--font-display); font-size: var(--text-6xl); font-weight: 300; line-height: 1;">Shell</div>
+                <div style="font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7;">Energy • Global Operations</div>
+              </div>
+            </div>
+            <div class="case-study-content bg-sand" style="direction: ltr;">
+              <span class="case-study-client">8-Year Partnership</span>
+              <h3 class="case-study-title">Enterprise geoscience AI suite transformation</h3>
+              <p class="case-study-excerpt">
+                Partnered with Shell for 8 years across 4 continents, redesigning exploration tools used by hundreds of geoscientists to make billion-dollar drilling decisions.
+              </p>
+              <div class="case-study-metrics">
+                <div class="metric">
+                  <div class="metric-value">8</div>
+                  <div class="metric-label">Year Partnership</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-value">4</div>
+                  <div class="metric-label">Continents</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-value">Faster</div>
+                  <div class="metric-label">More Accurate</div>
+                </div>
+              </div>
+              <a href="case-studies.html" class="btn btn-outline btn-arrow">
+                View Case Study
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statement Section 2 -->
+    <section class="section-full statement-section">
+      <div class="container">
+        <p class="statement-text reveal">
+          We've been on oil platforms, inside control rooms, and at control centers around the globe.
+        </p>
+      </div>
+    </section>
+
+    <!-- Client Logos -->
+    <section class="clients-section">
+      <div class="container">
+        <div class="text-center mb-12 reveal">
+          <span class="eyebrow">Trusted By</span>
+        </div>
+        <div class="clients-grid reveal-stagger">
+          <div class="client-logo">
+            <div style="font-weight: 600; font-size: var(--text-lg); color: var(--charcoal-medium);">Shell</div>
+          </div>
+          <div class="client-logo">
+            <div style="font-weight: 600; font-size: var(--text-lg); color: var(--charcoal-medium);">Exelon</div>
+          </div>
+          <div class="client-logo">
+            <div style="font-weight: 600; font-size: var(--text-lg); color: var(--charcoal-medium);">NTT</div>
+          </div>
+          <div class="client-logo">
+            <div style="font-weight: 600; font-size: var(--text-lg); color: var(--charcoal-medium);">Constellation</div>
+          </div>
+          <div class="client-logo">
+            <div style="font-weight: 600; font-size: var(--text-lg); color: var(--charcoal-medium);">Schneider Electric</div>
+          </div>
+          <div class="client-logo">
+            <div style="font-weight: 600; font-size: var(--text-lg); color: var(--charcoal-medium);">EOG</div>
+          </div>
+          <div class="client-logo">
+            <div style="font-weight: 600; font-size: var(--text-lg); color: var(--charcoal-medium);">Halliburton</div>
+          </div>
+          <div class="client-logo">
+            <div style="font-weight: 600; font-size: var(--text-lg); color: var(--charcoal-medium);">Weatherford</div>
+          </div>
+          <div class="client-logo">
+            <div style="font-weight: 600; font-size: var(--text-lg); color: var(--charcoal-medium);">Air Liquide</div>
+          </div>
+          <div class="client-logo">
+            <div style="font-weight: 600; font-size: var(--text-lg); color: var(--charcoal-medium);">LCRA</div>
+          </div>
+          <div class="client-logo">
+            <div style="font-weight: 600; font-size: var(--text-lg); color: var(--charcoal-medium);">TDECU</div>
+          </div>
+          <div class="client-logo">
+            <div style="font-weight: 600; font-size: var(--text-lg); color: var(--charcoal-medium);">Bluware</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industries -->
+    <section class="section section-xl bg-charcoal" style="color: var(--sand);">
+      <div class="container">
+        <div class="text-center mb-16 reveal">
+          <span class="eyebrow" style="color: var(--oxblood-light);">Industries</span>
+          <h2 class="text-title" style="color: var(--white);">Where we work.</h2>
+        </div>
+        <div class="grid grid-4 reveal-stagger" style="text-align: center;">
+          <div style="padding: var(--space-8);">
+            <div style="margin-bottom: var(--space-4);">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="var(--oxblood-light)" stroke-width="1.5" style="display: inline-block;">
+                <path d="M24 4v8M24 36v8M4 24h8M36 24h8"/>
+                <circle cx="24" cy="24" r="12"/>
+                <path d="M24 16v16M18 24h12"/>
+              </svg>
+            </div>
+            <h4 style="color: var(--white); font-family: var(--font-body); font-size: var(--text-lg); margin-bottom: var(--space-2);">Energy</h4>
+            <p style="color: var(--charcoal-soft); font-size: var(--text-sm);">Oil, Gas, Renewables, Utilities</p>
+          </div>
+          <div style="padding: var(--space-8);">
+            <div style="margin-bottom: var(--space-4);">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="var(--oxblood-light)" stroke-width="1.5" style="display: inline-block;">
+                <rect x="6" y="6" width="36" height="36" rx="2"/>
+                <path d="M6 18h36M18 18v24"/>
+                <path d="M24 30l6-8 6 8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h4 style="color: var(--white); font-family: var(--font-body); font-size: var(--text-lg); margin-bottom: var(--space-2);">Financial Services</h4>
+            <p style="color: var(--charcoal-soft); font-size: var(--text-sm);">Trading, Banking, Insurance</p>
+          </div>
+          <div style="padding: var(--space-8);">
+            <div style="margin-bottom: var(--space-4);">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="var(--oxblood-light)" stroke-width="1.5" style="display: inline-block;">
+                <path d="M8 42h32"/>
+                <rect x="12" y="26" width="8" height="16"/>
+                <rect x="28" y="18" width="8" height="24"/>
+                <path d="M16 26v-8l8-8 8 8v2"/>
+                <circle cx="16" cy="14" r="2"/>
+              </svg>
+            </div>
+            <h4 style="color: var(--white); font-family: var(--font-body); font-size: var(--text-lg); margin-bottom: var(--space-2);">Industrial</h4>
+            <p style="color: var(--charcoal-soft); font-size: var(--text-sm);">Manufacturing, Logistics, Supply Chain</p>
+          </div>
+          <div style="padding: var(--space-8);">
+            <div style="margin-bottom: var(--space-4);">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="var(--oxblood-light)" stroke-width="1.5" style="display: inline-block;">
+                <path d="M24 4v12M18 10h12"/>
+                <circle cx="24" cy="28" r="14"/>
+                <path d="M24 20v16M16 28h16"/>
+              </svg>
+            </div>
+            <h4 style="color: var(--white); font-family: var(--font-body); font-size: var(--text-lg); margin-bottom: var(--space-2);">Healthcare</h4>
+            <p style="color: var(--charcoal-soft); font-size: var(--text-sm);">Medical Devices, Pharma, Health Systems</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Insights -->
+    <section class="section section-xl">
+      <div class="container">
+        <div class="flex justify-between items-end mb-12 reveal">
+          <div>
+            <span class="eyebrow">Insights</span>
+            <h2 class="text-title">Latest thinking.</h2>
+          </div>
+          <a href="blog.html" class="btn btn-ghost btn-arrow">
+            View All
+            <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <div class="blog-grid reveal-stagger">
+          <article class="blog-card">
+            <div class="blog-card-image" style="position: relative; overflow: hidden;">
+              <img src="https://images.pexels.com/photos/15970032/pexels-photo-15970032.jpeg?auto=compress&cs=tinysrgb&w=600"
+                   alt="Oil refinery plant with pipelines"
+                   class="blog-img"
+                   style="width: 100%; height: 100%; object-fit: cover; transition: filter 0.4s ease;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,26,26,0.5) 0%, transparent 50%);"></div>
+            </div>
+            <div class="blog-card-meta">
+              <span class="blog-card-tag">AI • Agentic Systems</span>
+            </div>
+            <h3 class="blog-card-title">Where Are You on Your Agent Journey?</h3>
+            <p class="blog-card-excerpt">The shift from traditional UI to agentic systems is fundamentally changing enterprise UX design.</p>
+            <a href="blog/agent-journey.html" class="blog-card-link btn-arrow">
+              Read More <span class="arrow">→</span>
+            </a>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-image" style="position: relative; overflow: hidden;">
+              <img src="https://images.pexels.com/photos/28175630/pexels-photo-28175630.jpeg?auto=compress&cs=tinysrgb&w=600"
+                   alt="Wind turbines in rural landscape"
+                   class="blog-img"
+                   style="width: 100%; height: 100%; object-fit: cover; transition: filter 0.4s ease;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,26,26,0.5) 0%, transparent 50%);"></div>
+            </div>
+            <div class="blog-card-meta">
+              <span class="blog-card-tag">Enterprise UX</span>
+            </div>
+            <h3 class="blog-card-title">Why Enterprise Software Needs Enterprise UX</h3>
+            <p class="blog-card-excerpt">Consumer-grade design doesn't work for mission-critical systems. Here's what does.</p>
+            <a href="blog/enterprise-ux.html" class="blog-card-link btn-arrow">
+              Read More <span class="arrow">→</span>
+            </a>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-image" style="position: relative; overflow: hidden;">
+              <img src="https://images.pexels.com/photos/262353/pexels-photo-262353.jpeg?auto=compress&cs=tinysrgb&w=600"
+                   alt="Cargo ship with containers at sunset"
+                   class="blog-img"
+                   style="width: 100%; height: 100%; object-fit: cover; transition: filter 0.4s ease;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,26,26,0.5) 0%, transparent 50%);"></div>
+            </div>
+            <div class="blog-card-meta">
+              <span class="blog-card-tag">Human-AI Collaboration</span>
+            </div>
+            <h3 class="blog-card-title">The Indispensable Role of Human-AI Collaboration</h3>
+            <p class="blog-card-excerpt">Why the most effective AI systems are designed for partnership, not replacement.</p>
+            <a href="blog/human-ai-collaboration.html" class="blog-card-link btn-arrow">
+              Read More <span class="arrow">→</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-xl bg-oxblood" style="color: var(--white);">
+      <div class="container text-center">
+        <div class="reveal">
+          <h2 class="text-display" style="color: var(--white); margin-bottom: var(--space-8);">
+            Let's talk.
+          </h2>
+          <p class="text-body-lg max-w-50ch mx-auto mb-12" style="color: rgba(255,255,255,0.8);">
+            Whether you're reimagining an existing product or building something new, we'd love to hear about it.
+          </p>
+          <a href="contact.html" class="btn btn-lg" style="background: var(--white); color: var(--oxblood);">
+            Schedule Consultation
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Clutch Social Proof -->
+  <section style="background: var(--sand-light); padding: var(--space-12) 0; border-top: 1px solid var(--sand-dark);">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-8); flex-wrap: wrap;">
+        <a href="https://clutch.co/profile/daito-design" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: var(--space-6); text-decoration: none; color: var(--charcoal);">
+          <!-- Clutch Logo -->
+          <svg width="80" height="24" viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.5 5C6.15 5 1 10.15 1 16.5S6.15 28 12.5 28c4.1 0 7.7-2.15 9.75-5.38l-4.5-2.6c-1.15 1.8-3.1 3-5.25 3-3.6 0-6.5-2.9-6.5-6.5s2.9-6.5 6.5-6.5c2.15 0 4.1 1.2 5.25 3l4.5-2.6C20.2 7.15 16.6 5 12.5 5z" fill="#E62415"/>
+            <path d="M28 6h4v17h-4V6zm10 0h4v17h-4V6zm10 0h4v7h7v-7h4v17h-4v-6h-7v6h-4V6zm20 0h4v17h-4V6z" fill="#17313B"/>
+            <path d="M76 6h12v4h-4v13h-4V10h-4V6z" fill="#17313B"/>
+            <path d="M92 6h4v7l6-7h5l-7 8 7 9h-5l-6-8v8h-4V6z" fill="#17313B"/>
+          </svg>
+
+          <!-- Rating -->
+          <div style="display: flex; flex-direction: column; align-items: flex-start;">
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <span style="font-weight: 700; font-size: var(--text-xl); color: var(--charcoal);">5.0</span>
+              <div style="display: flex; gap: 2px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#E62415"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#E62415"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#E62415"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#E62415"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#E62415"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+            </div>
+            <span style="font-size: var(--text-sm); color: var(--charcoal-medium);">12 Reviews on Clutch</span>
+          </div>
+        </a>
+
+        <div style="height: 40px; width: 1px; background: var(--sand-dark);"></div>
+
+        <div style="text-align: center;">
+          <div style="font-size: var(--text-sm); color: var(--charcoal-medium); text-transform: uppercase; letter-spacing: 0.05em;">Top UX Design Agency</div>
+          <div style="font-weight: 600; color: var(--charcoal);">Industrial & Enterprise Software</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="images/daito-logo.webp" alt="Daito Design" style="height: 48px; width: auto;">
+          </div>
+          <p class="footer-tagline">
+            The leader in industrial UX and enterprise experience design.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#pre-product">Pre-Product</a></li>
+            <li><a href="services.html#product">Product</a></li>
+            <li><a href="services.html#post-product">Post-Product</a></li>
+            <li><a href="agentic-experience.html">Agentic Experience</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="case-studies.html">Work</a></li>
+            <li><a href="blog.html">Insights</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Austin HQ</h4>
+          <ul class="footer-links">
+            <li>901 W. 9th Street, Suite 102</li>
+            <li>Austin, Texas 78703</li>
+            <li style="margin-top: var(--space-4);"><a href="mailto:jared.huke@daitodesign.com">jared.huke@daitodesign.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Daito Design. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="https://www.linkedin.com/company/daitodesign/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

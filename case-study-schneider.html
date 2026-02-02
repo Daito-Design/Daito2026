@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schneider Electric Case Study | Daito Design</title>
+    <meta name="description" content="How Daito Design transformed Schneider Electric's AI autonomous operations presentations into investor-ready visual experiences for ADIPEC 2025.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --sand: #F5F0E8;
+            --charcoal: #1A1A1A;
+            --oxblood: #722F37;
+            --oxblood-light: #8B3A42;
+            --schneider-green: #3DCD58;
+            --schneider-dark: #0F1C24;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--sand);
+            color: var(--charcoal);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(26, 26, 26, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 0 60px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo-img { height: 72px; width: auto; }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--sand);
+            text-decoration: none;
+            font-size: 13px;
+            opacity: 0.75;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover { opacity: 1; }
+
+        .nav-cta {
+            background: var(--oxblood) !important;
+            padding: 10px 20px !important;
+            border-radius: 4px;
+            opacity: 1 !important;
+        }
+
+        .case-hero {
+            min-height: 85vh;
+            background: var(--schneider-dark);
+            display: flex;
+            align-items: center;
+            padding: 120px 60px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(61, 205, 88, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .case-meta {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--schneider-green);
+            padding: 6px 14px;
+            border: 1px solid rgba(61, 205, 88, 0.3);
+            border-radius: 20px;
+        }
+
+        .case-hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 400;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .case-hero h1 em {
+            font-style: italic;
+            color: var(--schneider-green);
+        }
+
+        .case-hero .lead {
+            font-size: 18px;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+        }
+
+        .stat { text-align: left; }
+
+        .stat-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--schneider-green);
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: -5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 55%;
+            max-width: 800px;
+            z-index: 0;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+        }
+
+        .section { padding: 100px 60px; }
+        .section-dark { background: var(--charcoal); color: var(--sand); }
+        .section-schneider { background: var(--schneider-dark); color: white; }
+
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--oxblood);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .section-dark .section-label,
+        .section-schneider .section-label { color: var(--schneider-green); }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            font-weight: 400;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .lead-text {
+            font-size: 18px;
+            opacity: 0.8;
+            max-width: 700px;
+            line-height: 1.75;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .two-col-content p {
+            margin-bottom: 20px;
+            opacity: 0.85;
+            line-height: 1.8;
+        }
+
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .challenge-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 32px;
+        }
+
+        .challenge-card h4 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: var(--schneider-green);
+        }
+
+        .challenge-card p {
+            font-size: 14px;
+            opacity: 0.7;
+            line-height: 1.7;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 32px 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--oxblood);
+            color: var(--sand);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 500;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            font-size: 13px;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        .design-system {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .design-element {
+            background: rgba(15, 28, 36, 0.6);
+            border-radius: 8px;
+            padding: 28px;
+            border: 1px solid rgba(61, 205, 88, 0.15);
+        }
+
+        .design-element h4 {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            color: var(--schneider-green);
+            letter-spacing: 0.5px;
+        }
+
+        .color-swatches {
+            display: flex;
+            gap: 8px;
+        }
+
+        .swatch {
+            width: 48px;
+            height: 48px;
+            border-radius: 6px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .result-card {
+            text-align: center;
+            padding: 40px 24px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .result-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            font-weight: 500;
+            color: var(--oxblood);
+            line-height: 1;
+        }
+
+        .result-label {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-top: 12px;
+            line-height: 1.4;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, var(--oxblood) 0%, var(--oxblood-light) 100%);
+            padding: 80px;
+            border-radius: 12px;
+            margin-top: 64px;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 200px;
+            color: rgba(255,255,255,0.1);
+            position: absolute;
+            top: -20px;
+            left: 40px;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-style: italic;
+            color: white;
+            line-height: 1.5;
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            margin-top: 32px;
+            color: white;
+        }
+
+        .testimonial-author strong {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .testimonial-author span {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 100px 60px;
+            background: var(--charcoal);
+        }
+
+        .cta-section h2 { color: var(--sand); margin-bottom: 16px; }
+
+        .cta-section p {
+            color: var(--sand);
+            opacity: 0.7;
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary { background: var(--oxblood); color: var(--sand); }
+        .btn-primary:hover { background: var(--oxblood-light); transform: translateY(-2px); }
+
+        footer {
+            background: var(--charcoal);
+            padding: 48px 60px;
+            border-top: 1px solid rgba(245, 240, 232, 0.08);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-logo { height: 48px; width: auto; }
+
+        .footer-content span {
+            color: var(--sand);
+            opacity: 0.5;
+            font-size: 13px;
+        }
+
+        @media (max-width: 1024px) {
+            .case-hero { padding: 100px 40px 60px; }
+            .case-hero h1 { font-size: 42px; }
+            .hero-image { display: none; }
+            .two-col { grid-template-columns: 1fr; gap: 48px; }
+            .challenge-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr 1fr; }
+            .design-system { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 24px; }
+            .nav-links { display: none; }
+            .section { padding: 64px 24px; }
+            .case-hero h1 { font-size: 32px; }
+            .process-steps, .results-grid { grid-template-columns: 1fr; }
+            .testimonial { padding: 48px 32px; }
+            .testimonial-text { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" aria-label="Daito Design Home">
+            <img src="images/daito-logo.webp" alt="Daito Design" class="nav-logo-img">
+        </a>
+        <ul class="nav-links">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="agentic-experience.html">Agentic Experience</a></li>
+            <li><a href="case-studies.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+    </nav>
+
+    <section class="case-hero">
+        <div class="hero-content">
+            <div class="case-meta">
+                <span class="meta-tag">Agentic Experience Design</span>
+                <span class="meta-tag">ADIPEC 2025</span>
+                <span class="meta-tag">Energy</span>
+            </div>
+            <h1>Visualizing <em>Autonomous Operations</em> for Schneider Electric</h1>
+            <p class="lead">We transformed complex AI system architectures into investor-ready visual experiences, helping Schneider Electric communicate their autonomous operations vision at the world's largest energy conference.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">6</div>
+                    <div class="stat-label">Presentations Redesigned</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">50%</div>
+                    <div class="stat-label">Faster Iteration Cycles</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Export Errors</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80" alt="AI Dashboard Interface">
+        </div>
+    </section>
+
+    <section class="section section-schneider">
+        <div class="container">
+            <p class="section-label">The Challenge</p>
+            <h2>Translating Complex AI Systems into Clear Visual Stories</h2>
+            <p class="lead-text">Schneider Electric needed to present their autonomous operations platform to investors and enterprise clients at ADIPEC 2025. The challenge: dense technical schematics that overwhelmed rather than inspired.</p>
+
+            <div class="challenge-grid">
+                <div class="challenge-card">
+                    <h4>Technical Complexity</h4>
+                    <p>Six separate presentations covering AI adoption roadmaps, each with intricate data flows and system architectures that needed simplification without losing accuracy.</p>
+                </div>
+                <div class="challenge-card">
+                    <h4>Dual Audience</h4>
+                    <p>Materials needed to work as standalone decks that tell a complete story, and as guided walkthroughs with sales teams—requiring flexible, modular design.</p>
+                </div>
+                <div class="challenge-card">
+                    <h4>Brand Differentiation</h4>
+                    <p>Standing out on a crowded exhibition floor against competitors with massive booths and budgets. Design needed to convey innovation and credibility simultaneously.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <p class="section-label">Our Approach</p>
+            <h2>Agentic Experience Design for Enterprise AI</h2>
+            <p class="lead-text">We applied our AXD framework to create visual experiences that communicate AI capabilities while maintaining human understanding and trust.</p>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>System Mapping</h4>
+                    <p>Deep-dive into Schneider's AI architecture to understand data flows, decision points, and human-agent interactions.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Visual Translation</h4>
+                    <p>Transformed technical schematics into intuitive visual hierarchies that reveal complexity progressively.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Design System</h4>
+                    <p>Created a cohesive visual language with standardized layouts, motion rules, and color logic across all presentations.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Production Pipeline</h4>
+                    <p>Built an efficient Figma-to-PowerPoint workflow that reduced export errors and enabled rapid iterations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-schneider">
+        <div class="container">
+            <p class="section-label">Design System</p>
+            <h2>A Visual Language for Autonomous Intelligence</h2>
+            <p class="lead-text">We created a consistent design language combining dark spatial layers, neon accents, and glass-like depth. This approach gave Schneider's AI presentations a futuristic but credible tone.</p>
+
+            <div class="design-system">
+                <div class="design-element">
+                    <h4>Color Palette</h4>
+                    <div class="color-swatches">
+                        <div class="swatch" style="background: #0F1C24;"></div>
+                        <div class="swatch" style="background: #3DCD58;"></div>
+                        <div class="swatch" style="background: #00D4FF;"></div>
+                        <div class="swatch" style="background: #1A3A4A;"></div>
+                        <div class="swatch" style="background: #FFFFFF;"></div>
+                    </div>
+                    <p style="margin-top: 16px; font-size: 13px; opacity: 0.6;">Dark spatial base with Schneider green accents and cyan highlights for data visualization.</p>
+                </div>
+                <div class="design-element">
+                    <h4>Typography</h4>
+                    <div style="font-family: 'Inter', sans-serif;">
+                        <div style="font-size: 28px; font-weight: 600; color: white; margin-bottom: 8px;">Inter Bold</div>
+                        <div style="font-size: 13px; opacity: 0.6;">Clean, technical, highly legible at any size. Perfect for data-dense presentations.</div>
+                    </div>
+                </div>
+                <div class="design-element">
+                    <h4>Visual Principles</h4>
+                    <ul style="font-size: 13px; opacity: 0.8; line-height: 1.8; list-style: none;">
+                        <li>• Progressive disclosure of complexity</li>
+                        <li>• Glass-like depth and layering</li>
+                        <li>• Animated data flows</li>
+                        <li>• Consistent motion language</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <p class="section-label">Results</p>
+            <h2>Impact at ADIPEC 2025</h2>
+            <p class="lead-text">By visualizing intelligence through clarity and emotion, Schneider's booth presentations stood out among competitors, positioning the brand as both technologically advanced and design-driven.</p>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-value">6</div>
+                    <div class="result-label">Presentations unified into one cohesive visual identity</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">50%</div>
+                    <div class="result-label">Reduction in redesign time with modular framework</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">0</div>
+                    <div class="result-label">Export errors with new Figma-to-PPT pipeline</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">#1</div>
+                    <div class="result-label">Design-forward presence at ADIPEC exhibition</div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text">The team understood exactly what we needed: a way to communicate complex AI systems without overwhelming our audience. The result was presentations that actually generated conversations instead of glazed-over looks.</p>
+                <div class="testimonial-author">
+                    <strong>VP of Digital Solutions</strong>
+                    <span>Schneider Electric</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <div class="two-col">
+                <div class="two-col-content">
+                    <p class="section-label">Capabilities Applied</p>
+                    <h2>Agentic Experience Design in Action</h2>
+                    <p>This project showcased our core AXD principles: making AI systems understandable, building appropriate trust through clear visualization, and creating interfaces that support human decision-making.</p>
+                    <p>We worked closely with Schneider's VP and Senior Designer, coordinating iterations and building a production workflow that will serve them for years to come.</p>
+                </div>
+                <div>
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 32px;">
+                        <h4 style="color: var(--schneider-green); font-size: 14px; margin-bottom: 20px; letter-spacing: 1px;">SERVICES DELIVERED</h4>
+                        <ul style="list-style: none; font-size: 15px; line-height: 2.2; opacity: 0.85;">
+                            <li>→ Agentic Experience Design</li>
+                            <li>→ AI System Visualization</li>
+                            <li>→ Presentation Design</li>
+                            <li>→ Design System Creation</li>
+                            <li>→ Production Workflow Design</li>
+                            <li>→ Figma-to-PowerPoint Pipeline</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to visualize your AI systems?</h2>
+        <p>Let's talk about how Agentic Experience Design can help communicate your technology's value.</p>
+        <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <img src="images/daito-logo.webp" alt="Daito Design" class="footer-logo">
+            <div style="display: flex; align-items: center; gap: 24px;">
+                <a href="https://www.linkedin.com/company/daitodesign/" target="_blank" rel="noopener" style="color: var(--sand); opacity: 0.7; text-decoration: none; font-size: 13px; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">LinkedIn</a>
+                <span style="color: var(--sand); opacity: 0.5; font-size: 13px;">© 2026 Daito Design. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

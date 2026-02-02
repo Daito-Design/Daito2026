@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Where Are You on Your Agent Journey? - The shift from traditional UI to agentic systems is fundamentally changing enterprise UX design.">
+  <title>Where Are You on Your Agent Journey? | Daito Design</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    .blog-article {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: var(--space-32) var(--space-6);
+    }
+    .blog-article-header { margin-bottom: var(--space-12); }
+    .blog-article-meta {
+      display: flex;
+      gap: var(--space-4);
+      align-items: center;
+      margin-bottom: var(--space-6);
+      flex-wrap: wrap;
+    }
+    .blog-article-tag {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      color: var(--oxblood);
+    }
+    .blog-article-date {
+      font-size: var(--text-sm);
+      color: var(--charcoal-soft);
+    }
+    .blog-article-title {
+      font-size: var(--text-4xl);
+      line-height: var(--leading-tight);
+      margin-bottom: var(--space-6);
+    }
+    .blog-article-excerpt {
+      font-size: var(--text-xl);
+      color: var(--charcoal-soft);
+      line-height: var(--leading-relaxed);
+    }
+    .blog-article-hero {
+      width: 100vw;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      aspect-ratio: 21/9;
+      background: linear-gradient(135deg, var(--charcoal) 0%, var(--oxblood) 100%);
+      margin-bottom: var(--space-12);
+    }
+    .blog-article-content {
+      font-size: var(--text-lg);
+      line-height: var(--leading-loose);
+    }
+    .blog-article-content p { margin-bottom: var(--space-6); }
+    .blog-article-content h2 {
+      font-size: var(--text-3xl);
+      margin-top: var(--space-12);
+      margin-bottom: var(--space-6);
+    }
+    .blog-article-content h3 {
+      font-size: var(--text-2xl);
+      margin-top: var(--space-10);
+      margin-bottom: var(--space-4);
+    }
+    .blog-article-content blockquote {
+      border-left: 3px solid var(--oxblood);
+      padding-left: var(--space-6);
+      margin: var(--space-8) 0;
+      font-style: italic;
+      color: var(--charcoal-soft);
+    }
+    .blog-article-content ul, .blog-article-content ol {
+      margin: var(--space-6) 0;
+      padding-left: var(--space-8);
+    }
+    .blog-article-content li { margin-bottom: var(--space-3); }
+    .blog-article-author {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      padding: var(--space-8) 0;
+      border-top: 1px solid var(--sand-dark);
+      margin-top: var(--space-12);
+    }
+    .blog-article-author-avatar {
+      width: 64px;
+      height: 64px;
+      background: var(--oxblood);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+    }
+  </style>
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23722F37' rx='12' width='100' height='100'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='Georgia'>D</text></svg>">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="nav scrolled">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">
+          <div class="nav-logo-icon">D</div>
+          <span class="nav-logo-text">Daito Design</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="../services.html" class="nav-link">Services</a></li>
+          <li><a href="../agentic-experience.html" class="nav-link">Agentic Experience</a></li>
+          <li><a href="../case-studies.html" class="nav-link">Work</a></li>
+          <li><a href="../blog.html" class="nav-link">Insights</a></li>
+          <li><a href="../about.html" class="nav-link">About</a></li>
+          <li><a href="../contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <article class="blog-article">
+      <header class="blog-article-header reveal">
+        <div class="blog-article-meta">
+          <span class="blog-article-tag">AI • Multi-Agent Systems • Future of Work</span>
+          <span class="blog-article-date">May 28, 2025</span>
+        </div>
+        <h1 class="blog-article-title">Where Are You on Your Agent Journey?</h1>
+        <p class="blog-article-excerpt">
+          The shift from traditional UI to agentic systems is fundamentally changing how we approach enterprise UX design. Here's how to navigate this transformation.
+        </p>
+      </header>
+
+      <div class="blog-article-hero" aria-hidden="true"></div>
+
+      <div class="blog-article-content reveal">
+        <p>
+          The landscape of enterprise software is undergoing a fundamental transformation. For decades, we've designed user interfaces—screens, buttons, forms, and workflows that humans navigate to accomplish their goals. But something profound is shifting: we're moving from designing interfaces to designing agent experiences.
+        </p>
+
+        <h2>The End of Traditional UI Design?</h2>
+
+        <p>
+          Not quite—but the role of the UI is changing dramatically. In an agentic world, the interface becomes less about direct manipulation and more about supervision, guidance, and collaboration with AI agents that can take actions on behalf of users.
+        </p>
+
+        <p>
+          Consider a typical workflow in enterprise software today: a user logs in, navigates through multiple screens, fills out forms, makes selections, reviews data, and executes actions. Each step requires human attention and input.
+        </p>
+
+        <p>
+          Now imagine that same workflow with agentic AI: the user expresses an intent—perhaps through natural language—and an AI agent handles the navigation, data entry, validation, and execution. The user's role shifts from operator to supervisor.
+        </p>
+
+        <blockquote>
+          "The best interface is no interface at all. But when you need one, it should be about trust, transparency, and control."
+        </blockquote>
+
+        <h2>The Five Stages of the Agent Journey</h2>
+
+        <p>
+          Based on our work with enterprise clients across energy, financial services, and industrial sectors, we've identified five stages organizations typically move through as they adopt agentic AI:
+        </p>
+
+        <h3>Stage 1: Automation Islands</h3>
+        <p>
+          Most organizations start here—implementing RPA and basic automation for discrete, well-defined tasks. The UI remains largely unchanged; automation happens behind the scenes.
+        </p>
+
+        <h3>Stage 2: AI-Assisted Workflows</h3>
+        <p>
+          AI begins to surface recommendations and insights within existing interfaces. Users still make all decisions, but they're informed by AI analysis. This is where many organizations are today.
+        </p>
+
+        <h3>Stage 3: Semi-Autonomous Agents</h3>
+        <p>
+          AI agents can execute multi-step workflows with human approval at key decision points. The interface shifts toward exception handling and oversight rather than step-by-step operation.
+        </p>
+
+        <h3>Stage 4: Supervised Autonomy</h3>
+        <p>
+          Agents operate independently within defined boundaries, escalating to humans only when encountering novel situations or high-stakes decisions. Interface design focuses on monitoring, alerts, and intervention.
+        </p>
+
+        <h3>Stage 5: Collaborative Intelligence</h3>
+        <p>
+          Multiple AI agents work together, with humans participating as strategic directors rather than tactical operators. The "interface" becomes more about conversation, goal-setting, and review than direct manipulation.
+        </p>
+
+        <h2>What This Means for Your Organization</h2>
+
+        <p>
+          If you're leading digital transformation at an enterprise organization, now is the time to start thinking about your agent journey. Consider these questions:
+        </p>
+
+        <ul>
+          <li>Where does your organization currently sit on the agent journey?</li>
+          <li>What workflows are candidates for agentic transformation?</li>
+          <li>How will you build and maintain user trust in AI agents?</li>
+          <li>What new skills does your UX team need to develop?</li>
+        </ul>
+
+        <p>
+          At Daito Design, we're helping enterprise clients navigate this transformation—from strategy and research through design and change management. If you're ready to explore what agentic AI means for your organization, <a href="../contact.html">we'd love to start a conversation</a>.
+        </p>
+      </div>
+
+      <div class="blog-article-author">
+        <div class="blog-article-author-avatar">D</div>
+        <div>
+          <h4 style="font-weight: 600; margin-bottom: var(--space-1);">Daito Design Team</h4>
+          <p style="font-size: var(--text-sm); color: var(--charcoal-soft); margin: 0;">Industrial UX & Experience Design</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Related Posts -->
+    <section class="section section-lg bg-sand-light">
+      <div class="container">
+        <h2 class="text-center mb-12">Related Insights</h2>
+        <div class="blog-grid" style="max-width: 900px; margin: 0 auto;">
+          <article class="blog-card">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, var(--oxblood) 0%, var(--charcoal-light) 100%);"></div>
+            <div class="blog-card-meta">
+              <span class="blog-card-tag">Enterprise Software • UX</span>
+            </div>
+            <h3 class="blog-card-title">Designing Agentic Systems for the Enterprise</h3>
+            <a href="agentic-systems.html" class="blog-card-link">Read More →</a>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, var(--charcoal-light) 0%, var(--oxblood-dark) 100%);"></div>
+            <div class="blog-card-meta">
+              <span class="blog-card-tag">Human-AI Collaboration</span>
+            </div>
+            <h3 class="blog-card-title">The Indispensable Role of Human-AI Collaboration</h3>
+            <a href="human-ai-collaboration.html" class="blog-card-link">Read More →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-lg" style="background: var(--oxblood); color: var(--white);">
+      <div class="container text-center">
+        <h2 style="color: var(--white); margin-bottom: var(--space-6);">Ready to start your agent journey?</h2>
+        <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto var(--space-10);">
+          Let's discuss how we can help your organization navigate the transition to agentic AI.
+        </p>
+        <a href="../contact.html" class="btn btn-lg" style="background: var(--white); color: var(--oxblood);">Start a Conversation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0;">
+        <p class="footer-copyright">© 2026 Daito Design. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../blog.html">Back to Blog</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
