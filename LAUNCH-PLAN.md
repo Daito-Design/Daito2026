@@ -13,7 +13,7 @@
 - [ ] Approve launch
 
 ### Shawn Reilly (Operations Manager)
-- [ ] Provide headshot photo (only team member missing)
+- [x] Provide headshot photo ✅
 - [ ] Coordinate launch timeline
 - [ ] QA checklist completion
 
@@ -59,7 +59,7 @@
 - ✅ Tyler McCoy
 - ✅ Raafia Jessa
 - ✅ Rakesh Maisuria
-- ❌ Shawn Reilly (needs photo)
+- ✅ Shawn Reilly
 
 ### Blog Page
 - All 10 blog card images added
