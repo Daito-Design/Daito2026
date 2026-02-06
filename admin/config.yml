@@ -14,27 +14,25 @@ publish_mode: editorial_workflow
 site_url: https://daito2026.vercel.app
 
 collections:
-  # Case Studies Collection
+  # Case Studies — file-based collection (HTML files, no frontmatter)
   - name: "case-studies"
     label: "Case Studies"
-    folder: "/"
-    create: false
-    extension: "html"
-    format: "frontmatter"
-    filter: {field: "type", value: "case-study"}
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Client", name: "client", widget: "string"}
-      - {label: "Hero Image", name: "hero_image", widget: "image"}
-      - {label: "Hero Headline", name: "hero_headline", widget: "string"}
-      - {label: "Stats", name: "stats", widget: "list", fields: [
-          {label: "Label", name: "label", widget: "string"},
-          {label: "Value", name: "value", widget: "string"}
-        ]}
-      - {label: "Challenge", name: "challenge", widget: "markdown"}
-      - {label: "Solution", name: "solution", widget: "markdown"}
-      - {label: "Results", name: "results", widget: "markdown"}
-      - {label: "Gallery Images", name: "gallery", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
+    files:
+      - label: "Shell"
+        name: "shell"
+        file: "shell.html"
+        fields:
+          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
+      - label: "Constellation"
+        name: "constellation"
+        file: "constellation.html"
+        fields:
+          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
+      - label: "3LC"
+        name: "3lc"
+        file: "3lc.html"
+        fields:
+          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
 
   # Images/Media Manager
   - name: "images"
