@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shell Case Study - Animated Background v2</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      overflow: hidden;
+      background: #1A1714;
+    }
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <script>
+    const canvas = document.getElementById('bg');
+    const ctx = canvas.getContext('2d');
+
+    // High DPI support
+    const dpr = window.devicePixelRatio || 1;
+
+    function resize() {
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      ctx.scale(dpr, dpr);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Shell brand colors
+    const colors = {
+      charcoal: '#1A1714',
+      yellow: '#FBCE07',
+      yellowFaded: 'rgba(251, 206, 7, 0.15)',
+      sand: '#F5F0E8',
+      sandFaded: 'rgba(245, 240, 232, 0.08)'
+    };
+
+    // Floating geometric particles (NO curves - dots and squares only)
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+
+      reset() {
+        this.x = Math.random() * window.innerWidth;
+        this.y = Math.random() * window.innerHeight;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = (Math.random() - 0.5) * 0.3;
+        this.speedY = (Math.random() - 0.5) * 0.3;
+        this.opacity = Math.random() * 0.5 + 0.1;
+        this.type = Math.random() > 0.7 ? 'square' : 'dot';
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        // Wrap around edges
+        if (this.x < -10) this.x = window.innerWidth + 10;
+        if (this.x > window.innerWidth + 10) this.x = -10;
+        if (this.y < -10) this.y = window.innerHeight + 10;
+        if (this.y > window.innerHeight + 10) this.y = -10;
+      }
+
+      draw() {
+        ctx.fillStyle = `rgba(245, 240, 232, ${this.opacity})`;
+
+        if (this.type === 'square') {
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate(Date.now() * 0.0001 * this.speedX);
+          ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size);
+          ctx.restore();
+        } else {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size/2, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+    }
+
+    // Hexagonal grid
+    class HexGrid {
+      constructor() {
+        this.hexSize = 60;
+        this.time = 0;
+      }
+
+      drawHex(cx, cy, size, opacity) {
+        ctx.beginPath();
+        for (let i = 0; i < 6; i++) {
+          const angle = (Math.PI / 3) * i - Math.PI / 6;
+          const x = cx + size * Math.cos(angle);
+          const y = cy + size * Math.sin(angle);
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.strokeStyle = `rgba(251, 206, 7, ${opacity})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+
+      draw() {
+        this.time += 0.005;
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        const hexH = this.hexSize * Math.sqrt(3);
+
+        for (let row = -1; row < h / hexH + 2; row++) {
+          for (let col = -1; col < w / (this.hexSize * 1.5) + 2; col++) {
+            const x = col * this.hexSize * 1.5;
+            const y = row * hexH + (col % 2 ? hexH / 2 : 0);
+
+            // Subtle wave animation for opacity
+            const dist = Math.sqrt((x - w/2) ** 2 + (y - h/2) ** 2);
+            const wave = Math.sin(dist * 0.005 - this.time * 2) * 0.5 + 0.5;
+            const opacity = 0.03 + wave * 0.05;
+
+            this.drawHex(x, y, this.hexSize * 0.4, opacity);
+          }
+        }
+      }
+    }
+
+    // Floating photos effect (Ken Burns simulation)
+    class FloatingPhoto {
+      constructor(index) {
+        this.index = index;
+        this.reset();
+      }
+
+      reset() {
+        const positions = [
+          { x: 0.2, y: 0.3 },
+          { x: 0.7, y: 0.25 },
+          { x: 0.5, y: 0.6 },
+          { x: 0.15, y: 0.7 },
+          { x: 0.8, y: 0.65 }
+        ];
+        const pos = positions[this.index % positions.length];
+
+        this.x = pos.x * window.innerWidth;
+        this.y = pos.y * window.innerHeight;
+        this.width = 180 + Math.random() * 60;
+        this.height = this.width * 0.65;
+        this.rotation = (Math.random() - 0.5) * 10;
+        this.driftX = (Math.random() - 0.5) * 0.15;
+        this.driftY = (Math.random() - 0.5) * 0.1;
+        this.driftRot = (Math.random() - 0.5) * 0.02;
+        this.opacity = 0.6 + Math.random() * 0.3;
+        this.scale = 0.9 + Math.random() * 0.2;
+        this.scaleDir = Math.random() > 0.5 ? 0.0001 : -0.0001;
+      }
+
+      update() {
+        this.x += this.driftX;
+        this.y += this.driftY;
+        this.rotation += this.driftRot;
+        this.scale += this.scaleDir;
+
+        if (this.scale > 1.1 || this.scale < 0.85) {
+          this.scaleDir *= -1;
+        }
+      }
+
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation * Math.PI / 180);
+        ctx.scale(this.scale, this.scale);
+
+        // Photo frame (placeholder - represents where actual images would go)
+        const w = this.width;
+        const h = this.height;
+
+        // Shadow
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+        ctx.shadowBlur = 20;
+        ctx.shadowOffsetX = 5;
+        ctx.shadowOffsetY = 5;
+
+        // White border (photo frame)
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity * 0.9})`;
+        ctx.fillRect(-w/2 - 8, -h/2 - 8, w + 16, h + 16);
+
+        // Photo placeholder with gradient
+        const gradient = ctx.createLinearGradient(-w/2, -h/2, w/2, h/2);
+        gradient.addColorStop(0, '#2a2520');
+        gradient.addColorStop(0.5, '#3d3530');
+        gradient.addColorStop(1, '#252018');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(-w/2, -h/2, w, h);
+
+        // Subtle Shell yellow accent line
+        ctx.fillStyle = `rgba(251, 206, 7, ${this.opacity * 0.6})`;
+        ctx.fillRect(-w/2, h/2 - 4, w, 4);
+
+        ctx.restore();
+      }
+    }
+
+    // Initialize elements
+    const particles = Array.from({ length: 80 }, () => new Particle());
+    const hexGrid = new HexGrid();
+    const photos = Array.from({ length: 5 }, (_, i) => new FloatingPhoto(i));
+
+    // Animation loop
+    function animate() {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+
+      // Clear with charcoal background
+      ctx.fillStyle = colors.charcoal;
+      ctx.fillRect(0, 0, w, h);
+
+      // Subtle radial gradient overlay
+      const radGrad = ctx.createRadialGradient(w/2, h/2, 0, w/2, h/2, w * 0.7);
+      radGrad.addColorStop(0, 'rgba(251, 206, 7, 0.03)');
+      radGrad.addColorStop(1, 'transparent');
+      ctx.fillStyle = radGrad;
+      ctx.fillRect(0, 0, w, h);
+
+      // Draw hex grid
+      hexGrid.draw();
+
+      // Draw and update particles
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+
+      // Draw floating photos
+      photos.forEach(p => {
+        p.update();
+        p.draw();
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
+</html>

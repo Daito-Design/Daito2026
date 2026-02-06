@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shell - Abstract Ken Burns v3</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { overflow: hidden; background: #0d0b09; }
+    canvas { display: block; width: 100vw; height: 100vh; }
+  </style>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <script>
+    const canvas = document.getElementById('bg');
+    const ctx = canvas.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+
+    let width, height;
+    function resize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.scale(dpr, dpr);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Shell colors
+    const YELLOW = '#FBCE07';
+    const CHARCOAL = '#1A1714';
+    const SAND = '#F5F0E8';
+
+    // Ken Burns - Global camera transform
+    const camera = {
+      x: 0,
+      y: 0,
+      zoom: 1,
+      targetX: 0,
+      targetY: 0,
+      targetZoom: 1,
+      time: 0,
+
+      update() {
+        this.time += 0.0003;
+
+        // Slow, cinematic drift
+        this.targetX = Math.sin(this.time * 0.7) * width * 0.08;
+        this.targetY = Math.cos(this.time * 0.5) * height * 0.06;
+        this.targetZoom = 1 + Math.sin(this.time * 0.3) * 0.15;
+
+        // Smooth interpolation
+        this.x += (this.targetX - this.x) * 0.002;
+        this.y += (this.targetY - this.y) * 0.002;
+        this.zoom += (this.targetZoom - this.zoom) * 0.002;
+      },
+
+      apply() {
+        ctx.translate(width/2, height/2);
+        ctx.scale(this.zoom, this.zoom);
+        ctx.translate(-width/2 + this.x, -height/2 + this.y);
+      }
+    };
+
+    // Abstract layered shapes
+    class AbstractLayer {
+      constructor(depth) {
+        this.depth = depth;
+        this.shapes = [];
+        this.generateShapes();
+      }
+
+      generateShapes() {
+        const count = 3 + Math.floor(Math.random() * 4);
+        for (let i = 0; i < count; i++) {
+          this.shapes.push({
+            x: Math.random() * width * 1.5 - width * 0.25,
+            y: Math.random() * height * 1.5 - height * 0.25,
+            size: 100 + Math.random() * 400,
+            rotation: Math.random() * Math.PI * 2,
+            rotSpeed: (Math.random() - 0.5) * 0.0002,
+            type: Math.floor(Math.random() * 3), // 0: circle, 1: hex, 2: triangle
+            opacity: 0.02 + Math.random() * 0.06
+          });
+        }
+      }
+
+      draw() {
+        const parallax = 1 - this.depth * 0.3;
+
+        this.shapes.forEach(s => {
+          s.rotation += s.rotSpeed;
+
+          ctx.save();
+          ctx.translate(s.x * parallax, s.y * parallax);
+          ctx.rotate(s.rotation);
+
+          // Gradient fill
+          const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, s.size);
+
+          if (this.depth < 0.3) {
+            grad.addColorStop(0, `rgba(251, 206, 7, ${s.opacity * 1.5})`);
+            grad.addColorStop(1, 'transparent');
+          } else {
+            grad.addColorStop(0, `rgba(245, 240, 232, ${s.opacity})`);
+            grad.addColorStop(1, 'transparent');
+          }
+
+          ctx.fillStyle = grad;
+
+          if (s.type === 0) {
+            // Soft circle
+            ctx.beginPath();
+            ctx.arc(0, 0, s.size, 0, Math.PI * 2);
+            ctx.fill();
+          } else if (s.type === 1) {
+            // Hexagon
+            ctx.beginPath();
+            for (let i = 0; i < 6; i++) {
+              const angle = (Math.PI / 3) * i;
+              const x = s.size * Math.cos(angle);
+              const y = s.size * Math.sin(angle);
+              i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+            }
+            ctx.closePath();
+            ctx.fill();
+          } else {
+            // Triangle
+            ctx.beginPath();
+            for (let i = 0; i < 3; i++) {
+              const angle = (Math.PI * 2 / 3) * i - Math.PI / 2;
+              const x = s.size * Math.cos(angle);
+              const y = s.size * Math.sin(angle);
+              i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+            }
+            ctx.closePath();
+            ctx.fill();
+          }
+
+          ctx.restore();
+        });
+      }
+    }
+
+    // Flowing lines - abstract energy
+    class FlowField {
+      constructor() {
+        this.lines = [];
+        this.time = 0;
+
+        for (let i = 0; i < 12; i++) {
+          this.lines.push({
+            startX: Math.random() * width,
+            startY: Math.random() * height,
+            length: 200 + Math.random() * 400,
+            angle: Math.random() * Math.PI * 2,
+            speed: 0.0005 + Math.random() * 0.001,
+            thickness: 1 + Math.random() * 2,
+            offset: Math.random() * 1000
+          });
+        }
+      }
+
+      draw() {
+        this.time += 0.01;
+
+        this.lines.forEach(line => {
+          const wave = Math.sin(this.time * line.speed * 100 + line.offset);
+          const currentAngle = line.angle + wave * 0.3;
+
+          ctx.save();
+          ctx.translate(line.startX, line.startY);
+          ctx.rotate(currentAngle);
+
+          // Gradient line
+          const grad = ctx.createLinearGradient(0, 0, line.length, 0);
+          grad.addColorStop(0, 'transparent');
+          grad.addColorStop(0.3, `rgba(251, 206, 7, 0.15)`);
+          grad.addColorStop(0.7, `rgba(251, 206, 7, 0.15)`);
+          grad.addColorStop(1, 'transparent');
+
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = line.thickness;
+          ctx.lineCap = 'round';
+
+          ctx.beginPath();
+          ctx.moveTo(0, 0);
+
+          // Subtle curve
+          const ctrl1X = line.length * 0.3;
+          const ctrl1Y = wave * 30;
+          const ctrl2X = line.length * 0.7;
+          const ctrl2Y = -wave * 30;
+
+          ctx.bezierCurveTo(ctrl1X, ctrl1Y, ctrl2X, ctrl2Y, line.length, 0);
+          ctx.stroke();
+
+          ctx.restore();
+        });
+      }
+    }
+
+    // Subtle grid overlay
+    class GridOverlay {
+      draw() {
+        ctx.strokeStyle = 'rgba(251, 206, 7, 0.03)';
+        ctx.lineWidth = 1;
+
+        const spacing = 80;
+
+        for (let x = -spacing; x < width + spacing * 2; x += spacing) {
+          ctx.beginPath();
+          ctx.moveTo(x, -spacing);
+          ctx.lineTo(x, height + spacing);
+          ctx.stroke();
+        }
+
+        for (let y = -spacing; y < height + spacing * 2; y += spacing) {
+          ctx.beginPath();
+          ctx.moveTo(-spacing, y);
+          ctx.lineTo(width + spacing, y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Floating particles - minimal dots
+    class MinimalParticles {
+      constructor() {
+        this.particles = [];
+        for (let i = 0; i < 40; i++) {
+          this.particles.push({
+            x: Math.random() * width * 1.5,
+            y: Math.random() * height * 1.5,
+            size: 1 + Math.random() * 2,
+            speedX: (Math.random() - 0.5) * 0.2,
+            speedY: (Math.random() - 0.5) * 0.2,
+            opacity: 0.2 + Math.random() * 0.4
+          });
+        }
+      }
+
+      draw() {
+        this.particles.forEach(p => {
+          p.x += p.speedX;
+          p.y += p.speedY;
+
+          if (p.x < -50) p.x = width + 50;
+          if (p.x > width + 50) p.x = -50;
+          if (p.y < -50) p.y = height + 50;
+          if (p.y > height + 50) p.y = -50;
+
+          ctx.fillStyle = `rgba(245, 240, 232, ${p.opacity})`;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fill();
+        });
+      }
+    }
+
+    // Initialize layers
+    const layers = [
+      new AbstractLayer(0.1),
+      new AbstractLayer(0.3),
+      new AbstractLayer(0.6),
+      new AbstractLayer(0.9)
+    ];
+    const flowField = new FlowField();
+    const grid = new GridOverlay();
+    const particles = new MinimalParticles();
+
+    // Main animation
+    function animate() {
+      // Deep charcoal base
+      ctx.fillStyle = '#0d0b09';
+      ctx.fillRect(0, 0, width, height);
+
+      // Update camera (Ken Burns)
+      camera.update();
+
+      ctx.save();
+      camera.apply();
+
+      // Draw layers back to front
+      layers.forEach(layer => layer.draw());
+
+      // Subtle grid
+      grid.draw();
+
+      // Flowing energy lines
+      flowField.draw();
+
+      // Minimal particles
+      particles.draw();
+
+      ctx.restore();
+
+      // Vignette
+      const vignette = ctx.createRadialGradient(
+        width/2, height/2, height * 0.3,
+        width/2, height/2, height * 0.9
+      );
+      vignette.addColorStop(0, 'transparent');
+      vignette.addColorStop(1, 'rgba(0, 0, 0, 0.5)');
+      ctx.fillStyle = vignette;
+      ctx.fillRect(0, 0, width, height);
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
+</html>

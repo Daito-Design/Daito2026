@@ -1,0 +1,123 @@
+<!--
+HERO VIDEO COMPONENT
+Copy this pattern to each case study's hero section
+
+Replace the hero-image div with this video component
+Add the CSS to the page's <style> section
+-->
+
+<!-- ============================================
+     OPTION 1: SELF-HOSTED VIDEO
+     Best for: control, performance, no external dependencies
+     ============================================ -->
+
+<div class="hero-video">
+    <video
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="images/YOUR_FALLBACK_IMAGE.jpg"
+    >
+        <source src="videos/YOUR_CASE_STUDY_hero.mp4" type="video/mp4">
+        <!-- Fallback for browsers without video support -->
+        <img src="images/YOUR_FALLBACK_IMAGE.jpg" alt="Hero Image">
+    </video>
+    <!-- Optional: dark gradient overlay for text readability -->
+    <div class="video-overlay"></div>
+</div>
+
+
+<!-- ============================================
+     CSS TO ADD TO EACH CASE STUDY PAGE
+     ============================================ -->
+
+<style>
+.hero-video {
+    position: absolute;
+    right: -5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55%;
+    max-width: 800px;
+    z-index: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+}
+
+.hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(0,0,0,0.3) 0%,
+        transparent 50%
+    );
+    pointer-events: none;
+}
+
+/* Mobile: hide video, show fallback poster */
+@media (max-width: 1024px) {
+    .hero-video {
+        display: none;
+    }
+}
+
+/* Reduced motion: pause video */
+@media (prefers-reduced-motion: reduce) {
+    .hero-video video {
+        animation: none;
+    }
+}
+</style>
+
+
+<!-- ============================================
+     EXAMPLE: SHELL CASE STUDY HERO
+     ============================================ -->
+
+<section class="case-hero">
+    <div class="hero-content">
+        <div class="case-meta">
+            <span class="meta-tag">Oil & Gas</span>
+            <span class="meta-tag">Enterprise UX</span>
+            <span class="meta-tag">Since 2018</span>
+        </div>
+        <h1>Designing <em>Fluid Interfaces</em> for Subsurface Navigation</h1>
+        <p class="lead">Since 2018, we've partnered with one of the world's largest energy companies...</p>
+        <!-- Stats here -->
+    </div>
+
+    <!-- VIDEO HERO (replaces .hero-image) -->
+    <div class="hero-video">
+        <video autoplay muted loop playsinline poster="images/Seismic Acquisition Platforms.jpg">
+            <source src="videos/shell_hero.mp4" type="video/mp4">
+            <img src="images/Seismic Acquisition Platforms.jpg" alt="Seismic Data Visualization">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+</section>
+
+
+<!-- ============================================
+     VIDEO FILE NAMING CONVENTION
+     ============================================
+
+     Place generated videos in: 04_Website/videos/
+
+     shell_hero.mp4         - Shell case study
+     constellation_hero.mp4 - Constellation case study
+     schneider_hero.mp4     - Schneider Electric case study
+     tdecu_hero.mp4         - TDECU case study
+     bluware_hero.mp4       - Bluware case study
+     3lc_hero.mp4           - 3LC case study
+
+-->

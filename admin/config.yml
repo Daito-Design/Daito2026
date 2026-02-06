@@ -7,9 +7,6 @@ backend:
 media_folder: "images"
 public_folder: "/images"
 
-# Editorial workflow (creates PRs for review)
-publish_mode: editorial_workflow
-
 # Site URL for previews
 site_url: https://daito2026.vercel.app
 
@@ -20,38 +17,86 @@ collections:
     files:
       - label: "Shell"
         name: "shell"
-        file: "shell.html"
+        file: "case-study-shell.html"
         fields:
           - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
       - label: "Constellation"
         name: "constellation"
-        file: "constellation.html"
+        file: "case-study-constellation.html"
         fields:
           - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
       - label: "3LC"
         name: "3lc"
-        file: "3lc.html"
+        file: "case-study-3lc.html"
+        fields:
+          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
+      - label: "Schneider"
+        name: "schneider"
+        file: "case-study-schneider.html"
+        fields:
+          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
+      - label: "Bluware"
+        name: "bluware"
+        file: "case-study-bluware.html"
+        fields:
+          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
+      - label: "TDECU"
+        name: "tdecu"
+        file: "case-study-tdecu.html"
         fields:
           - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
 
-  # Images/Media Manager
-  - name: "images"
-    label: "Image Library"
+  # Blog Posts — file-based (plain HTML, no frontmatter)
+  - name: "blog"
+    label: "Blog Posts"
     files:
-      - label: "Case Study Images"
-        name: "case-study-images"
-        file: "images/_manifest.json"
+      - label: "Agent Journey Mapping"
+        name: "agent-journey"
+        file: "blog/agent-journey.html"
         fields:
-          - label: "Images"
-            name: "images"
-            widget: "list"
-            fields:
-              - {label: "Image", name: "src", widget: "image"}
-              - {label: "Alt Text", name: "alt", widget: "string"}
-              - {label: "Used In", name: "used_in", widget: "string"}
-              - {label: "Notes", name: "notes", widget: "text", required: false}
+          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
+      - label: "Enterprise UX"
+        name: "enterprise-ux"
+        file: "blog/enterprise-ux.html"
+        fields:
+          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
+      - label: "Human-AI Collaboration"
+        name: "human-ai-collaboration"
+        file: "blog/human-ai-collaboration.html"
+        fields:
+          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
 
-  # Content Issues Tracker (synced with Google Sheet concept)
+  # Key Pages
+  - name: "pages"
+    label: "Site Pages"
+    files:
+      - label: "Homepage"
+        name: "index"
+        file: "index.html"
+        fields:
+          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
+      - label: "About"
+        name: "about"
+        file: "about.html"
+        fields:
+          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
+      - label: "Services"
+        name: "services"
+        file: "services.html"
+        fields:
+          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
+      - label: "Contact"
+        name: "contact"
+        file: "contact.html"
+        fields:
+          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
+      - label: "Agentic Experience"
+        name: "agentic-experience"
+        file: "agentic-experience.html"
+        fields:
+          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
+
+  # Content Issues Tracker
   - name: "content-issues"
     label: "Content Issues"
     files:
@@ -70,22 +115,6 @@ collections:
               - {label: "Action Required", name: "action", widget: "text"}
               - {label: "Status", name: "status", widget: "select", options: ["Open", "In Progress", "Complete"]}
 
-  # Blog Posts
-  - name: "blog"
-    label: "Blog Posts"
-    folder: "blog"
-    create: true
-    slug: "{{slug}}"
-    extension: "html"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Author", name: "author", widget: "string", default: "Jared Huke"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Categories", name: "categories", widget: "list"}
-      - {label: "Featured Image", name: "featured_image", widget: "image", required: false}
-      - {label: "Excerpt", name: "excerpt", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
-
   # Site Settings
   - name: "settings"
     label: "Site Settings"
@@ -97,3 +126,15 @@ collections:
           - {label: "Primary Color (Sand)", name: "sand", widget: "string", default: "#F5F0E8"}
           - {label: "Secondary Color (Charcoal)", name: "charcoal", widget: "string", default: "#1A1A1A"}
           - {label: "Accent Color (Oxblood)", name: "oxblood", widget: "string", default: "#722F37"}
+      - label: "Image Library"
+        name: "case-study-images"
+        file: "images/_manifest.json"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            fields:
+              - {label: "Image", name: "src", widget: "image"}
+              - {label: "Alt Text", name: "alt", widget: "string"}
+              - {label: "Used In", name: "used_in", widget: "string"}
+              - {label: "Notes", name: "notes", widget: "text", required: false}
