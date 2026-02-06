@@ -1,0 +1,14 @@
+# Confidential documents - DO NOT commit
+LAUNCH-PLAN.md
+*.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Admin config with secrets
+# admin/config.yml is tracked but be careful with auth tokens
