@@ -16,9 +16,17 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23722F37' rx='12' width='100' height='100'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='Georgia'>D</text></svg>">
-
-  <!-- HubSpot Tracking (placeholder) -->
-  <!-- <script src="//js.hs-scripts.com/YOUR_HUBSPOT_ID.js" async defer></script> -->
+  <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7HPF8C3VXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7HPF8C3VXH');
+</script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/26031505.js"></script>
+  <!-- End of HubSpot Embed Code -->
 </head>
 <body>
   <!-- Navigation -->
@@ -330,5 +338,167 @@
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
+
+  <script>
+    // HubSpot Form Integration - Agentic Manual Download Form
+    (function() {
+      var _hsq = window._hsq = window._hsq || [];
+      const PORTAL_ID = '26031505';
+      const FORMS_ENDPOINT = 'https://forms.hubspot.com/collected-forms/submit/v1/' + PORTAL_ID;
+
+      // Note: Update this to actual PDF URL when available
+      const PDF_DOWNLOAD_URL = 'https://www.daitodesign.com/downloads/agentic-manual-part1.pdf';
+
+      const manualForm = document.getElementById('agentic-manual-form');
+      if (!manualForm) return;
+
+      manualForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Collect form data
+        const formData = {
+          firstname: document.getElementById('firstName').value,
+          email: document.getElementById('email').value,
+          company: document.getElementById('company').value,
+          role: document.getElementById('role').value
+        };
+
+        // Validate required fields
+        if (!formData.firstname || !formData.email) {
+          alert('Please fill in your first name and email.');
+          return;
+        }
+
+        // Push to HubSpot _hsq array
+        _hsq.push(['identify', {
+          email: formData.email,
+          firstname: formData.firstname,
+          company: formData.company,
+          jobtitle: formData.role
+        }]);
+        _hsq.push(['trackPageView']);
+
+        // Also submit to HubSpot collected forms endpoint
+        const payload = {
+          fields: [
+            { name: 'firstname', value: formData.firstname },
+            { name: 'email', value: formData.email },
+            { name: 'company', value: formData.company },
+            { name: 'jobtitle', value: formData.role }
+          ],
+          context: {
+            pageUri: window.location.href,
+            pageName: document.title
+          }
+        };
+
+        fetch(FORMS_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        })
+        .then(() => {
+          // Trigger download
+          const link = document.createElement('a');
+          link.href = PDF_DOWNLOAD_URL;
+          link.download = 'Agentic-Manual-Part1.pdf';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+
+          // Show success message
+          showSuccessMessage(formData.firstname);
+        })
+        .catch(error => {
+          console.error('HubSpot submission error:', error);
+          // Still trigger download even if submission fails
+          const link = document.createElement('a');
+          link.href = PDF_DOWNLOAD_URL;
+          link.download = 'Agentic-Manual-Part1.pdf';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          showSuccessMessage(formData.firstname);
+        });
+      });
+
+      function showSuccessMessage(firstName) {
+        const formContainer = manualForm.parentElement;
+        const successHTML = `
+          <div style="
+            background: var(--white);
+            padding: var(--space-10);
+            box-shadow: var(--shadow-lg);
+            border-radius: 8px;
+            text-align: center;
+            animation: slideIn 0.5s ease;
+          ">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--oxblood)" stroke-width="2" style="margin: 0 auto var(--space-4); display: block;">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <h3 style="
+              font-family: 'Cormorant Garamond', Georgia, serif;
+              font-size: 1.75rem;
+              color: var(--charcoal);
+              margin-bottom: var(--space-3);
+              font-weight: 400;
+            ">Download started, ${firstName}!</h3>
+            <p style="
+              color: var(--charcoal-soft);
+              font-size: 1rem;
+              margin-bottom: var(--space-4);
+              line-height: 1.6;
+            ">Your copy of Part 1 is downloading now. Check your downloads folder.</p>
+            <p style="
+              color: var(--charcoal-soft);
+              font-size: 0.875rem;
+              margin-bottom: var(--space-6);
+            ">We'll also send you the full Agentic Manual framework over the next 4 weeks, plus exclusive webinar invitations.</p>
+
+            <div style="
+              background: var(--sand-light);
+              border-left: 4px solid var(--oxblood);
+              padding: var(--space-6);
+              border-radius: 6px;
+              margin-bottom: var(--space-6);
+              text-align: left;
+            ">
+              <h4 style="
+                font-family: 'Cormorant Garamond', Georgia, serif;
+                font-size: 1.125rem;
+                color: var(--charcoal);
+                margin-bottom: var(--space-3);
+                font-weight: 500;
+              ">What's inside Part 1:</h4>
+              <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: var(--space-2); color: var(--charcoal-soft);">✓ The HAS Map Overview & Core Principles</li>
+                <li style="margin-bottom: var(--space-2); color: var(--charcoal-soft);">✓ Framework for Calibrated Trust</li>
+                <li style="margin-bottom: var(--space-2); color: var(--charcoal-soft);">✓ Real-world Enterprise Case Studies</li>
+                <li style="color: var(--charcoal-soft);">✓ Implementation Checklist</li>
+              </ul>
+            </div>
+
+            <a href="blog.html" style="
+              display: inline-block;
+              padding: var(--space-4) var(--space-8);
+              background: var(--oxblood);
+              color: var(--white);
+              text-decoration: none;
+              border-radius: 6px;
+              font-weight: 500;
+            ">Read More Articles</a>
+          </div>
+        `;
+        formContainer.innerHTML = successHTML;
+      }
+    })();
+  </script>
+  <style>
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </body>
 </html>

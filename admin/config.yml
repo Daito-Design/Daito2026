@@ -1,0 +1,101 @@
+backend:
+  name: github
+  repo: jaredhuke/Daito2026
+  branch: main
+
+# Media files
+media_folder: "images"
+public_folder: "/images"
+
+# Editorial workflow (creates PRs for review)
+publish_mode: editorial_workflow
+
+# Site URL for previews
+site_url: https://daito2026.vercel.app
+
+collections:
+  # Case Studies Collection
+  - name: "case-studies"
+    label: "Case Studies"
+    folder: "/"
+    create: false
+    extension: "html"
+    format: "frontmatter"
+    filter: {field: "type", value: "case-study"}
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Client", name: "client", widget: "string"}
+      - {label: "Hero Image", name: "hero_image", widget: "image"}
+      - {label: "Hero Headline", name: "hero_headline", widget: "string"}
+      - {label: "Stats", name: "stats", widget: "list", fields: [
+          {label: "Label", name: "label", widget: "string"},
+          {label: "Value", name: "value", widget: "string"}
+        ]}
+      - {label: "Challenge", name: "challenge", widget: "markdown"}
+      - {label: "Solution", name: "solution", widget: "markdown"}
+      - {label: "Results", name: "results", widget: "markdown"}
+      - {label: "Gallery Images", name: "gallery", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
+
+  # Images/Media Manager
+  - name: "images"
+    label: "Image Library"
+    files:
+      - label: "Case Study Images"
+        name: "case-study-images"
+        file: "images/_manifest.json"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            fields:
+              - {label: "Image", name: "src", widget: "image"}
+              - {label: "Alt Text", name: "alt", widget: "string"}
+              - {label: "Used In", name: "used_in", widget: "string"}
+              - {label: "Notes", name: "notes", widget: "text", required: false}
+
+  # Content Issues Tracker (synced with Google Sheet concept)
+  - name: "content-issues"
+    label: "Content Issues"
+    files:
+      - label: "Issues to Fix"
+        name: "issues"
+        file: "admin/issues.json"
+        fields:
+          - label: "Issues"
+            name: "issues"
+            widget: "list"
+            fields:
+              - {label: "Priority", name: "priority", widget: "select", options: ["HIGH", "MEDIUM", "LOW"]}
+              - {label: "Page", name: "page", widget: "string"}
+              - {label: "Issue", name: "issue", widget: "string"}
+              - {label: "Current State", name: "current_state", widget: "string"}
+              - {label: "Action Required", name: "action", widget: "text"}
+              - {label: "Status", name: "status", widget: "select", options: ["Open", "In Progress", "Complete"]}
+
+  # Blog Posts
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Author", name: "author", widget: "string", default: "Jared Huke"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Categories", name: "categories", widget: "list"}
+      - {label: "Featured Image", name: "featured_image", widget: "image", required: false}
+      - {label: "Excerpt", name: "excerpt", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Site Settings
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Brand Colors"
+        name: "brand"
+        file: "admin/brand.json"
+        fields:
+          - {label: "Primary Color (Sand)", name: "sand", widget: "string", default: "#F5F0E8"}
+          - {label: "Secondary Color (Charcoal)", name: "charcoal", widget: "string", default: "#1A1A1A"}
+          - {label: "Accent Color (Oxblood)", name: "oxblood", widget: "string", default: "#722F37"}

@@ -1,0 +1,68 @@
+{
+  "issues": [
+    {
+      "priority": "HIGH",
+      "page": "case-study-shell.html",
+      "issue": "Wrong hero image",
+      "current_state": "Shearwater Geo seismic vessel",
+      "action": "Replace with Shell offshore/refinery imagery",
+      "status": "Open"
+    },
+    {
+      "priority": "HIGH",
+      "page": "case-study-shell.html",
+      "issue": "Wrong gallery image 1",
+      "current_state": "Vessel DCH 001.jpg - Shearwater",
+      "action": "Replace with Shell imagery",
+      "status": "Open"
+    },
+    {
+      "priority": "HIGH",
+      "page": "case-study-shell.html",
+      "issue": "Wrong gallery image 2",
+      "current_state": "Seismic Acquisition Platforms (1).jpg",
+      "action": "Replace with Shell imagery",
+      "status": "Open"
+    },
+    {
+      "priority": "HIGH",
+      "page": "case-study-shell.html",
+      "issue": "Wrong gallery image 3",
+      "current_state": "Screenshot - Shearwater aerial",
+      "action": "Replace with Shell imagery",
+      "status": "Open"
+    },
+    {
+      "priority": "HIGH",
+      "page": "case-study-tdecu.html",
+      "issue": "Missing hero image",
+      "current_state": "No image specified",
+      "action": "Add credit union/community image",
+      "status": "Open"
+    },
+    {
+      "priority": "HIGH",
+      "page": "case-study-bluware.html",
+      "issue": "Missing hero image",
+      "current_state": "No image specified",
+      "action": "Add marine/ocean technology image",
+      "status": "Open"
+    },
+    {
+      "priority": "MEDIUM",
+      "page": "case-study-schneider.html",
+      "issue": "Using stock photo",
+      "current_state": "Unsplash industrial image",
+      "action": "Consider proprietary Schneider image",
+      "status": "Open"
+    },
+    {
+      "priority": "MEDIUM",
+      "page": "index.html",
+      "issue": "Video placeholders",
+      "current_state": "Ken Burns videos not yet generated",
+      "action": "Generate 6 case study videos",
+      "status": "In Progress"
+    }
+  ]
+}

@@ -579,6 +579,17 @@
             }
         }
     </style>
+  <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7HPF8C3VXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7HPF8C3VXH');
+</script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/26031505.js"></script>
+  <!-- End of HubSpot Embed Code -->
 </head>
 <body>
     <!-- Navigation -->
@@ -1127,12 +1138,65 @@
             </div>
 
             <!-- Share Results -->
-            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(194, 178, 128, 0.2);">
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-bottom: 1px solid rgba(194, 178, 128, 0.2); padding-bottom: 2rem;">
                 <p style="color: var(--gray-300); font-size: 0.875rem; margin-bottom: 1rem;">Share your results</p>
                 <div style="display: flex; justify-content: center; gap: 1rem;">
                     <a href="#" onclick="shareLinkedIn()" style="color: var(--sand); text-decoration: none; padding: 0.75rem 1.5rem; border: 1px solid var(--sand); border-radius: 6px; font-size: 0.875rem; transition: all 0.3s;">Share on LinkedIn</a>
                     <a href="#" onclick="copyResults()" style="color: var(--gray-300); text-decoration: none; padding: 0.75rem 1.5rem; border: 1px solid var(--gray-600); border-radius: 6px; font-size: 0.875rem; transition: all 0.3s;">Copy Results</a>
                 </div>
+            </div>
+
+            <!-- Get Full Report Form -->
+            <div style="margin-top: 2rem;">
+                <h3 style="
+                    font-family: var(--font-serif);
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    color: var(--sand);
+                    margin-bottom: 1rem;
+                    text-align: center;
+                ">Get Your Full Report</h3>
+                <p style="
+                    text-align: center;
+                    color: var(--charcoal-soft);
+                    margin-bottom: 1.5rem;
+                    font-size: 0.9rem;
+                ">Enter your email to receive your detailed risk assessment report including personalized recommendations.</p>
+                <form id="report-capture-form" style="
+                    max-width: 400px;
+                    margin: 0 auto;
+                    display: flex;
+                    gap: 0.75rem;
+                ">
+                    <input type="email" placeholder="your@email.com" required style="
+                        flex: 1;
+                        padding: 0.875rem 1rem;
+                        background: rgba(255, 255, 255, 0.1);
+                        border: 1px solid var(--charcoal-light);
+                        border-radius: 6px;
+                        color: var(--white);
+                        font-family: var(--font-sans);
+                        font-size: 0.875rem;
+                    ">
+                    <input type="hidden" id="assessmentScores" name="assessmentScores" value="">
+                    <button type="submit" style="
+                        padding: 0.875rem 1.5rem;
+                        background: var(--oxblood);
+                        color: var(--white);
+                        border: none;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        font-weight: 500;
+                        font-size: 0.875rem;
+                        transition: all 0.3s;
+                    ">Get Report</button>
+                </form>
+                <p style="
+                    text-align: center;
+                    color: var(--gray-300);
+                    font-size: 0.75rem;
+                    margin-top: 0.75rem;
+                ">We'll send your personalized report immediately to your inbox.</p>
             </div>
         </div>
     </main>
@@ -1414,6 +1478,104 @@
                 alert('Results copied to clipboard!');
             });
         }
+
+        // HubSpot Form Integration - Assessment Report Capture Form
+        (function() {
+            var _hsq = window._hsq = window._hsq || [];
+            const PORTAL_ID = '26031505';
+            const FORMS_ENDPOINT = 'https://forms.hubspot.com/collected-forms/submit/v1/' + PORTAL_ID;
+
+            const reportForm = document.getElementById('report-capture-form');
+            if (!reportForm) return;
+
+            reportForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const emailInput = reportForm.querySelector('input[type="email"]');
+                const email = emailInput.value;
+
+                if (!email) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+
+                // Capture current assessment scores
+                const scores = calculateRiskScores();
+                const avgScore = Math.round((scores.data + scores.business + scores.human + scores.compliance) / 4);
+                const level = getRiskLevel(avgScore);
+
+                // Populate hidden scores field
+                document.getElementById('assessmentScores').value = `Overall: ${avgScore}% (${level.toUpperCase()}), Data: ${scores.data}%, Business: ${scores.business}%, Human: ${scores.human}%, Compliance: ${scores.compliance}%`;
+
+                // Push to HubSpot _hsq array
+                _hsq.push(['identify', {
+                    email: email,
+                    agentic_risk_assessment_overall: avgScore,
+                    agentic_risk_assessment_data: scores.data,
+                    agentic_risk_assessment_business: scores.business,
+                    agentic_risk_assessment_human: scores.human,
+                    agentic_risk_assessment_compliance: scores.compliance,
+                    agentic_risk_level: level
+                }]);
+                _hsq.push(['trackPageView']);
+
+                // Submit to HubSpot collected forms endpoint
+                const payload = {
+                    fields: [
+                        { name: 'email', value: email },
+                        { name: 'agentic_risk_assessment_overall', value: avgScore.toString() },
+                        { name: 'agentic_risk_assessment_data', value: scores.data.toString() },
+                        { name: 'agentic_risk_assessment_business', value: scores.business.toString() },
+                        { name: 'agentic_risk_assessment_human', value: scores.human.toString() },
+                        { name: 'agentic_risk_assessment_compliance', value: scores.compliance.toString() },
+                        { name: 'agentic_risk_level', value: level }
+                    ],
+                    context: {
+                        pageUri: window.location.href,
+                        pageName: document.title,
+                        pageTitle: 'Assessment Report Delivery'
+                    }
+                };
+
+                fetch(FORMS_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                })
+                .then(() => {
+                    showReportSuccessMessage();
+                })
+                .catch(error => {
+                    console.error('HubSpot submission error:', error);
+                    showReportSuccessMessage();
+                });
+            });
+
+            function showReportSuccessMessage() {
+                const formContainer = reportForm.parentElement;
+                const successHTML = `
+                    <div style="
+                        text-align: center;
+                        padding: 1.5rem;
+                        background: rgba(114, 47, 55, 0.15);
+                        border-left: 4px solid var(--oxblood-light);
+                        border-radius: 8px;
+                        animation: slideIn 0.5s ease;
+                    ">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--oxblood-light)" stroke-width="2" style="margin: 0 auto var(--space-2) auto; display: block;">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        <p style="
+                            color: var(--sand);
+                            font-size: 0.9rem;
+                            margin: 0;
+                        ">Check your inbox! Your personalized assessment report is on the way.</p>
+                    </div>
+                `;
+                formContainer.innerHTML = successHTML;
+            }
+        })();
     </script>
 </body>
 </html>
