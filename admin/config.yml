@@ -2,7 +2,6 @@ backend:
   name: github
   repo: jaredhuke/Daito2026
   branch: main
-  auth_type: pkce
 
 # Media files
 media_folder: "images"
