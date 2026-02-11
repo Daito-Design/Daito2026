@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3LC/TDECU - Financial Data Visualization</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #1A1A1A;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        #canvas-container {
+            width: 100%;
+            height: 100vh;
+        }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <div id="canvas-container"></div>
+    <script>
+        // 3LC/TDECU Financial - Data flow and approval workflow visualization
+        // Brand color: Teal (#0D9488) - Professional financial theme
+
+        const TEAL = [13, 148, 136];
+        const TEAL_LIGHT = [45, 212, 191];
+        const TEAL_ACCENT = [20, 184, 166];
+
+        let dataStreams = [];
+        let nodes = [];
+        let approvalPulses = [];
+        let gridOffset = 0;
+        let time = 0;
+
+        class DataStream {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                // Start from left or right edge
+                if (random() > 0.5) {
+                    this.x = -50;
+                    this.direction = 1;
+                } else {
+                    this.x = width + 50;
+                    this.direction = -1;
+                }
+                this.y = random(height);
+                this.speed = random(2, 5);
+                this.segments = [];
+                this.maxSegments = floor(random(20, 50));
+                this.thickness = random(1, 3);
+                this.alpha = random(100, 200);
+            }
+
+            update() {
+                // Add new segment
+                this.segments.unshift({x: this.x, y: this.y});
+                if (this.segments.length > this.maxSegments) {
+                    this.segments.pop();
+                }
+
+                // Move with slight wave
+                this.x += this.speed * this.direction;
+                this.y += sin(this.x * 0.02 + time) * 0.5;
+
+                // Reset if off screen
+                if ((this.direction > 0 && this.x > width + 100) ||
+                    (this.direction < 0 && this.x < -100)) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                noFill();
+                beginShape();
+                for (let i = 0; i < this.segments.length; i++) {
+                    let seg = this.segments[i];
+                    let segAlpha = map(i, 0, this.segments.length, this.alpha, 0);
+                    stroke(TEAL_LIGHT[0], TEAL_LIGHT[1], TEAL_LIGHT[2], segAlpha);
+                    strokeWeight(this.thickness * map(i, 0, this.segments.length, 1, 0.2));
+                    if (i === 0) {
+                        curveVertex(seg.x, seg.y);
+                    }
+                    curveVertex(seg.x, seg.y);
+                }
+                endShape();
+
+                // Head glow
+                if (this.segments.length > 0) {
+                    let head = this.segments[0];
+                    noStroke();
+                    for (let s = 10; s > 0; s -= 2) {
+                        let glowAlpha = map(s, 0, 10, this.alpha, 10);
+                        fill(TEAL_LIGHT[0], TEAL_LIGHT[1], TEAL_LIGHT[2], glowAlpha);
+                        ellipse(head.x, head.y, s, s);
+                    }
+                }
+            }
+        }
+
+        class WorkflowNode {
+            constructor(x, y, type) {
+                this.x = x;
+                this.y = y;
+                this.type = type; // 'start', 'process', 'decision', 'end'
+                this.size = type === 'decision' ? 40 : 50;
+                this.pulse = random(TWO_PI);
+                this.connections = [];
+                this.active = false;
+                this.activeTimer = 0;
+            }
+
+            update() {
+                this.pulse += 0.03;
+                if (this.active) {
+                    this.activeTimer++;
+                    if (this.activeTimer > 60) {
+                        this.active = false;
+                        this.activeTimer = 0;
+                        // Trigger next node
+                        if (this.connections.length > 0) {
+                            let next = random(this.connections);
+                            next.activate();
+                        }
+                    }
+                }
+            }
+
+            activate() {
+                this.active = true;
+                this.activeTimer = 0;
+                approvalPulses.push({
+                    x: this.x,
+                    y: this.y,
+                    radius: 0,
+                    maxRadius: 80,
+                    alpha: 150
+                });
+            }
+
+            draw() {
+                push();
+                translate(this.x, this.y);
+
+                let pulseSize = this.size + sin(this.pulse) * 3;
+                let glowIntensity = this.active ? 1.5 : 1;
+
+                // Outer glow
+                noStroke();
+                for (let s = pulseSize * 1.5 * glowIntensity; s > 0; s -= 3) {
+                    let alpha = map(s, 0, pulseSize * 1.5, 80 * glowIntensity, 5);
+                    fill(TEAL[0], TEAL[1], TEAL[2], alpha);
+
+                    if (this.type === 'decision') {
+                        // Diamond shape
+                        push();
+                        rotate(PI/4);
+                        rectMode(CENTER);
+                        rect(0, 0, s * 0.7, s * 0.7, 2);
+                        pop();
+                    } else if (this.type === 'start' || this.type === 'end') {
+                        // Rounded rectangle
+                        rectMode(CENTER);
+                        rect(0, 0, s * 1.2, s * 0.6, s * 0.3);
+                    } else {
+                        // Rectangle
+                        rectMode(CENTER);
+                        rect(0, 0, s, s * 0.6, 4);
+                    }
+                }
+
+                // Border
+                stroke(TEAL_ACCENT[0], TEAL_ACCENT[1], TEAL_ACCENT[2], 150 * glowIntensity);
+                strokeWeight(1.5);
+                noFill();
+
+                if (this.type === 'decision') {
+                    push();
+                    rotate(PI/4);
+                    rectMode(CENTER);
+                    rect(0, 0, pulseSize * 0.5, pulseSize * 0.5, 2);
+                    pop();
+                } else if (this.type === 'start' || this.type === 'end') {
+                    rectMode(CENTER);
+                    rect(0, 0, pulseSize * 0.9, pulseSize * 0.45, pulseSize * 0.22);
+                } else {
+                    rectMode(CENTER);
+                    rect(0, 0, pulseSize * 0.75, pulseSize * 0.45, 3);
+                }
+
+                // Icon inside
+                if (this.active) {
+                    fill(TEAL_LIGHT[0], TEAL_LIGHT[1], TEAL_LIGHT[2]);
+                    noStroke();
+                    // Checkmark for active
+                    let checkSize = pulseSize * 0.15;
+                    strokeWeight(2);
+                    stroke(TEAL_LIGHT[0], TEAL_LIGHT[1], TEAL_LIGHT[2]);
+                    noFill();
+                    beginShape();
+                    vertex(-checkSize, 0);
+                    vertex(-checkSize * 0.3, checkSize * 0.6);
+                    vertex(checkSize, -checkSize * 0.4);
+                    endShape();
+                }
+
+                pop();
+            }
+        }
+
+        function setup() {
+            let canvas = createCanvas(windowWidth, windowHeight);
+            canvas.parent('canvas-container');
+
+            // Create data streams
+            for (let i = 0; i < 15; i++) {
+                dataStreams.push(new DataStream());
+            }
+
+            // Create workflow nodes in a pattern
+            let centerX = width / 2;
+            let centerY = height / 2;
+
+            // Create a workflow pattern
+            let startNode = new WorkflowNode(centerX - 300, centerY, 'start');
+            let processNode1 = new WorkflowNode(centerX - 100, centerY - 80, 'process');
+            let processNode2 = new WorkflowNode(centerX - 100, centerY + 80, 'process');
+            let decisionNode = new WorkflowNode(centerX + 100, centerY, 'decision');
+            let processNode3 = new WorkflowNode(centerX + 250, centerY - 60, 'process');
+            let endNode = new WorkflowNode(centerX + 350, centerY + 60, 'end');
+
+            // Set up connections
+            startNode.connections = [processNode1, processNode2];
+            processNode1.connections = [decisionNode];
+            processNode2.connections = [decisionNode];
+            decisionNode.connections = [processNode3, endNode];
+            processNode3.connections = [endNode];
+
+            nodes = [startNode, processNode1, processNode2, decisionNode, processNode3, endNode];
+        }
+
+        function draw() {
+            // Dark background
+            background(26, 26, 26, 40);
+
+            time += 0.02;
+            gridOffset += 0.5;
+
+            // Draw flowing grid
+            stroke(TEAL[0], TEAL[1], TEAL[2], 15);
+            strokeWeight(0.5);
+
+            let gridSize = 40;
+            let offset = gridOffset % gridSize;
+
+            // Vertical lines moving right
+            for (let x = -gridSize + offset; x < width + gridSize; x += gridSize) {
+                line(x, 0, x, height);
+            }
+
+            // Horizontal lines
+            for (let y = 0; y < height; y += gridSize) {
+                line(0, y, width, y);
+            }
+
+            // Draw and update data streams
+            for (let stream of dataStreams) {
+                stream.update();
+                stream.draw();
+            }
+
+            // Draw connections between workflow nodes
+            stroke(TEAL[0], TEAL[1], TEAL[2], 60);
+            strokeWeight(2);
+            for (let node of nodes) {
+                for (let connection of node.connections) {
+                    // Draw arrow line
+                    let dx = connection.x - node.x;
+                    let dy = connection.y - node.y;
+                    let d = sqrt(dx*dx + dy*dy);
+
+                    // Offset start and end points
+                    let startOffset = node.size * 0.5;
+                    let endOffset = connection.size * 0.5;
+
+                    let x1 = node.x + (dx/d) * startOffset;
+                    let y1 = node.y + (dy/d) * startOffset;
+                    let x2 = connection.x - (dx/d) * endOffset;
+                    let y2 = connection.y - (dy/d) * endOffset;
+
+                    line(x1, y1, x2, y2);
+
+                    // Arrowhead
+                    let angle = atan2(dy, dx);
+                    let arrowSize = 8;
+                    fill(TEAL[0], TEAL[1], TEAL[2], 60);
+                    noStroke();
+                    push();
+                    translate(x2, y2);
+                    rotate(angle);
+                    triangle(0, 0, -arrowSize, -arrowSize/2, -arrowSize, arrowSize/2);
+                    pop();
+                    stroke(TEAL[0], TEAL[1], TEAL[2], 60);
+                    strokeWeight(2);
+                }
+            }
+
+            // Update and draw approval pulses
+            for (let i = approvalPulses.length - 1; i >= 0; i--) {
+                let pulse = approvalPulses[i];
+                pulse.radius += 2;
+                pulse.alpha = map(pulse.radius, 0, pulse.maxRadius, 150, 0);
+
+                noFill();
+                stroke(TEAL_LIGHT[0], TEAL_LIGHT[1], TEAL_LIGHT[2], pulse.alpha);
+                strokeWeight(2);
+                ellipse(pulse.x, pulse.y, pulse.radius * 2, pulse.radius * 2);
+
+                if (pulse.radius > pulse.maxRadius) {
+                    approvalPulses.splice(i, 1);
+                }
+            }
+
+            // Update and draw workflow nodes
+            for (let node of nodes) {
+                node.update();
+                node.draw();
+            }
+
+            // Periodically trigger workflow animation
+            if (frameCount % 180 === 0 && nodes.length > 0) {
+                nodes[0].activate();
+            }
+
+            // Add floating data indicators
+            noStroke();
+            for (let i = 0; i < 5; i++) {
+                let x = (time * 50 + i * 200) % (width + 100) - 50;
+                let y = height * 0.2 + sin(time + i) * 30;
+
+                fill(TEAL_ACCENT[0], TEAL_ACCENT[1], TEAL_ACCENT[2], 40);
+                rectMode(CENTER);
+                rect(x, y, 60, 20, 3);
+
+                // Fake bar chart inside
+                fill(TEAL_LIGHT[0], TEAL_LIGHT[1], TEAL_LIGHT[2], 80);
+                for (let j = 0; j < 4; j++) {
+                    let barHeight = random(5, 12);
+                    rect(x - 20 + j * 12, y + 5 - barHeight/2, 6, barHeight, 1);
+                }
+            }
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+    </script>
+</body>
+</html>

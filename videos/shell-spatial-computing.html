@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shell - Spatial Computing Visualization</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #1A1A1A;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        #canvas-container {
+            width: 100%;
+            height: 100vh;
+        }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <div id="canvas-container"></div>
+    <script>
+        // Shell Spatial Computing - Energy data visualization
+        // Brand color: #FBCE07 (Shell Yellow)
+
+        const SHELL_YELLOW = '#FBCE07';
+        const SHELL_YELLOW_RGB = [251, 206, 7];
+
+        let nodes = [];
+        let dataPackets = [];
+        let gridLines = [];
+        let time = 0;
+
+        function setup() {
+            let canvas = createCanvas(windowWidth, windowHeight);
+            canvas.parent('canvas-container');
+
+            // Create spatial computing grid nodes
+            let spacing = 120;
+            for (let x = -spacing; x < width + spacing * 2; x += spacing) {
+                for (let y = -spacing; y < height + spacing * 2; y += spacing) {
+                    nodes.push({
+                        x: x + random(-20, 20),
+                        y: y + random(-20, 20),
+                        baseX: x,
+                        baseY: y,
+                        pulse: random(TWO_PI),
+                        connections: [],
+                        active: random() > 0.3
+                    });
+                }
+            }
+
+            // Create connections between nearby nodes
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    let d = dist(nodes[i].baseX, nodes[i].baseY, nodes[j].baseX, nodes[j].baseY);
+                    if (d < spacing * 1.5 && random() > 0.3) {
+                        nodes[i].connections.push(j);
+                    }
+                }
+            }
+        }
+
+        function draw() {
+            // Dark background with subtle fade for trails
+            background(26, 26, 26, 25);
+
+            time += 0.01;
+
+            // Update node positions with gentle floating motion
+            for (let node of nodes) {
+                node.x = node.baseX + sin(time + node.pulse) * 8;
+                node.y = node.baseY + cos(time * 0.7 + node.pulse) * 8;
+                node.pulse += 0.002;
+            }
+
+            // Draw grid connections
+            for (let i = 0; i < nodes.length; i++) {
+                let node = nodes[i];
+                for (let j of node.connections) {
+                    let other = nodes[j];
+                    let d = dist(node.x, node.y, other.x, other.y);
+                    let alpha = map(d, 0, 200, 60, 10);
+
+                    // Gradient line effect
+                    stroke(SHELL_YELLOW_RGB[0], SHELL_YELLOW_RGB[1], SHELL_YELLOW_RGB[2], alpha);
+                    strokeWeight(0.5);
+                    line(node.x, node.y, other.x, other.y);
+                }
+            }
+
+            // Create new data packets periodically
+            if (frameCount % 15 === 0) {
+                let startNode = floor(random(nodes.length));
+                if (nodes[startNode].connections.length > 0) {
+                    let endIdx = random(nodes[startNode].connections);
+                    dataPackets.push({
+                        startNode: startNode,
+                        endNode: endIdx,
+                        progress: 0,
+                        speed: random(0.01, 0.03),
+                        size: random(3, 8)
+                    });
+                }
+            }
+
+            // Update and draw data packets
+            for (let i = dataPackets.length - 1; i >= 0; i--) {
+                let packet = dataPackets[i];
+                packet.progress += packet.speed;
+
+                if (packet.progress >= 1) {
+                    // Chain to next node or remove
+                    let currentNode = nodes[packet.endNode];
+                    if (currentNode.connections.length > 0 && random() > 0.3) {
+                        packet.startNode = packet.endNode;
+                        packet.endNode = random(currentNode.connections);
+                        packet.progress = 0;
+                    } else {
+                        dataPackets.splice(i, 1);
+                        continue;
+                    }
+                }
+
+                // Calculate packet position
+                let start = nodes[packet.startNode];
+                let end = nodes[packet.endNode];
+                let x = lerp(start.x, end.x, packet.progress);
+                let y = lerp(start.y, end.y, packet.progress);
+
+                // Draw glowing packet
+                noStroke();
+                for (let s = packet.size * 3; s > 0; s -= 2) {
+                    let alpha = map(s, 0, packet.size * 3, 200, 20);
+                    fill(SHELL_YELLOW_RGB[0], SHELL_YELLOW_RGB[1], SHELL_YELLOW_RGB[2], alpha);
+                    ellipse(x, y, s, s);
+                }
+            }
+
+            // Draw nodes
+            for (let node of nodes) {
+                if (!node.active) continue;
+
+                let pulseSize = 4 + sin(time * 2 + node.pulse) * 2;
+
+                // Outer glow
+                noStroke();
+                for (let s = pulseSize * 2; s > 0; s -= 2) {
+                    let alpha = map(s, 0, pulseSize * 2, 100, 10);
+                    fill(SHELL_YELLOW_RGB[0], SHELL_YELLOW_RGB[1], SHELL_YELLOW_RGB[2], alpha);
+                    ellipse(node.x, node.y, s, s);
+                }
+
+                // Core
+                fill(SHELL_YELLOW);
+                ellipse(node.x, node.y, pulseSize * 0.5, pulseSize * 0.5);
+            }
+
+            // Add occasional "spatial scan" effect
+            if (frameCount % 300 < 60) {
+                let scanProgress = (frameCount % 300) / 60;
+                let scanY = scanProgress * height;
+
+                stroke(SHELL_YELLOW_RGB[0], SHELL_YELLOW_RGB[1], SHELL_YELLOW_RGB[2], 30);
+                strokeWeight(2);
+                line(0, scanY, width, scanY);
+
+                // Highlight nodes near scan line
+                for (let node of nodes) {
+                    if (abs(node.y - scanY) < 20) {
+                        noStroke();
+                        fill(SHELL_YELLOW_RGB[0], SHELL_YELLOW_RGB[1], SHELL_YELLOW_RGB[2], 100);
+                        ellipse(node.x, node.y, 20, 20);
+                    }
+                }
+            }
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+    </script>
+</body>
+</html>

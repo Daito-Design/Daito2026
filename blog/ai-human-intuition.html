@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Meets Human Intuition - How to balance artificial intelligence capabilities with human judgment and intuition.">
+  <title>AI Meets Human Intuition | Daito Design</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    .blog-article { max-width: 740px; margin: 0 auto; padding: var(--space-32) var(--space-6); }
+    .blog-article-header { margin-bottom: var(--space-12); }
+    .blog-article-meta { display: flex; gap: var(--space-4); align-items: center; margin-bottom: var(--space-6); flex-wrap: wrap; }
+    .blog-article-tag { font-size: var(--text-xs); font-weight: 500; letter-spacing: var(--tracking-wide); color: var(--oxblood); }
+    .blog-article-date { font-size: var(--text-sm); color: var(--charcoal-soft); }
+    .blog-article-title { font-size: var(--text-4xl); line-height: var(--leading-tight); margin-bottom: var(--space-6); }
+    .blog-article-excerpt { font-size: var(--text-xl); color: var(--charcoal-soft); line-height: var(--leading-relaxed); }
+    .blog-article-hero { width: 100vw; margin-left: 50%; transform: translateX(-50%); aspect-ratio: 21/9; background: linear-gradient(135deg, var(--charcoal) 0%, var(--oxblood) 100%); margin-bottom: var(--space-12); }
+    .blog-article-content { font-size: var(--text-lg); line-height: var(--leading-loose); }
+    .blog-article-content p { margin-bottom: var(--space-6); }
+    .blog-article-content h2 { font-size: var(--text-3xl); margin-top: var(--space-12); margin-bottom: var(--space-6); }
+    .blog-article-content h3 { font-size: var(--text-2xl); margin-top: var(--space-10); margin-bottom: var(--space-4); }
+    .blog-article-content blockquote { border-left: 3px solid var(--oxblood); padding-left: var(--space-6); margin: var(--space-8) 0; font-style: italic; color: var(--charcoal-soft); }
+    .blog-article-content ul, .blog-article-content ol { margin: var(--space-6) 0; padding-left: var(--space-8); }
+    .blog-article-content li { margin-bottom: var(--space-3); }
+    .blog-article-author { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-8) 0; border-top: 1px solid var(--sand-dark); margin-top: var(--space-12); }
+    .blog-article-author-avatar { width: 64px; height: 64px; background: var(--oxblood); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-display); font-size: var(--text-xl); }
+  </style>
+
+  <link rel="icon" type="image/webp" href="../favicon.webp">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HPF8C3VXH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7HPF8C3VXH');
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="nav scrolled">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">
+          <img src="../images/daito-logo.webp" alt="Daito Design" class="nav-logo-img" style="height: 72px; width: auto;">
+        </a>
+        <ul class="nav-links">
+          <li><a href="../services.html" class="nav-link">Services</a></li>
+          <li><a href="../agentic-experience.html" class="nav-link">Agentic Experience</a></li>
+          <li><a href="../case-studies.html" class="nav-link">Work</a></li>
+          <li><a href="../blog.html" class="nav-link">Insights</a></li>
+          <li><a href="../about.html" class="nav-link">About</a></li>
+          <li><a href="../contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <article class="blog-article">
+      <header class="blog-article-header reveal">
+        <div class="blog-article-meta">
+          <span class="blog-article-tag">AI • Human Factors</span>
+          <span class="blog-article-date">February 18, 2025</span>
+        </div>
+        <h1 class="blog-article-title">AI Meets Human Intuition</h1>
+        <p class="blog-article-excerpt">The best enterprise decisions aren't purely analytical or purely intuitive. They combine AI's pattern recognition with human intuition's ability to understand context, values, and the unmeasurable factors that matter in decision-making.</p>
+      </header>
+
+      <div class="blog-article-hero" aria-hidden="true"></div>
+
+      <div class="blog-article-content reveal">
+        <p>
+          There's a persistent narrative about AI replacing human decision-making: algorithms are more objective, less biased, more consistent. There's truth here. AI systems can process more data than humans, identify patterns at scale, and make decisions without being swayed by fatigue, emotion, or personal preference. On many routine decisions, AI outperforms human intuition.
+        </p>
+
+        <p>
+          But this narrative misses something crucial. Human intuition—refined by experience and grounded in deep understanding of context—captures factors that are difficult or impossible to quantify. A seasoned engineer's intuition about whether a process change will work captures knowledge that goes far beyond the measurable data. An experienced trader's gut feel about a market inflection reflects pattern recognition from years of experience. An experienced project manager's intuition about whether a team can deliver a deadline accounts for team dynamics, organizational culture, and commitment factors that don't appear in project data.
+        </p>
+
+        <p>
+          The question isn't whether AI or human intuition is better. The question is how to combine them most effectively.
+        </p>
+
+        <h2>The Strengths and Limitations of Each</h2>
+
+        <p>
+          AI systems excel at pattern recognition in structured data. They can identify correlations and patterns that humans would miss. They're consistent—the same input produces the same output. They're not influenced by emotional state, time of day, or personal preference. And they can scale: one model can make decisions across thousands of cases.
+        </p>
+
+        <p>
+          But AI systems have blind spots. They struggle with out-of-distribution data—situations that are different from their training data. They can't easily incorporate soft factors like organizational culture, relationship history, or strategic intent. They tend to optimize for whatever metric they're given, sometimes in perverse ways. They can't ask clarifying questions or seek additional context. And fundamentally, they lack understanding of what they're optimizing for.
+        </p>
+
+        <p>
+          Human intuition, grounded in experience and tacit knowledge, excels at exactly the things AI struggles with. Experienced professionals understand context and can make judgments in novel situations. They grasp what actually matters to the organization and can make decisions that optimize for broader strategic goals. They can ask questions, gather additional context, and understand nuance. And they can take responsibility for their decisions.
+        </p>
+
+        <blockquote>
+          "The goal is not to replace human judgment with AI, but to augment human judgment with data, pattern recognition, and systematic analysis that AI provides."
+        </blockquote>
+
+        <p>
+          But human intuition has its own blind spots. It's biased—unconsciously influenced by recent experience, patterns from our past, demographic factors, and emotion. It doesn't scale—an expert can't personally make every decision. It's inconsistent—the same situation might produce different decisions depending on the expert's mood, time of day, or what they read that morning.
+        </p>
+
+        <h2>Designing for Human-AI Collaboration</h2>
+
+        <p>
+          The organizations that succeed at AI deployment aren't trying to replace human intuition. They're designing systems where human expertise and AI capability combine. This requires different thinking about how to design and deploy AI.
+        </p>
+
+        <p>
+          First, recognize that different decisions have different characteristics. Some are routine and well-structured: most of the variability in the outcome is captured by measurable factors. For these, AI can often make better decisions than humans. Other decisions are novel and poorly structured: success depends on factors that can't be easily measured. For these, experienced human judgment combined with analytical support is usually better than algorithms alone.
+        </p>
+
+        <p>
+          Second, design AI systems to support human decision-making rather than replace it. Instead of an algorithm that makes the decision, create one that analyses the situation, identifies patterns, surfaces alternative perspectives, and flags factors the human should consider. The human, armed with this analysis, makes the final decision.
+        </p>
+
+        <p>
+          Third, build learning loops. When a human overrides an AI recommendation and that override turns out to be right, the system should learn from it. When the AI's recommendation would have been better, the human should understand why so they can learn. Learning is bidirectional.
+        </p>
+
+        <p>
+          Fourth, recognize the limits of both AI and human judgment. Some decisions are too important to make without both—a combination of careful analytical work and human judgment. Other decisions are routine enough to automate, but with careful monitoring to catch when the AI's assumptions break down.
+        </p>
+
+        <h2>Building the Organization for Hybrid Decision-Making</h2>
+
+        <p>
+          Moving toward human-AI collaboration requires organizational change. Workers need training in how to effectively use AI recommendations. They need to understand what the AI is doing and why, so they can apply appropriate skepticism. Leaders need to be explicit about which decisions should be made by humans, which by algorithms, and which through collaboration.
+        </p>
+
+        <p>
+          Organizations that master this—that combine the data analytical power of AI with the contextual understanding and judgment of experienced professionals—make better decisions and build more engaged, capable teams. At Daito Design, we help organizations design for human-AI collaboration. From identifying which decisions should be augmented with AI, to designing interfaces that support effective collaboration, to building the organizational culture around hybrid decision-making. <a href="../contact.html">Let's discuss what this means for your organization.</a>
+        </p>
+      </div>
+
+      <div class="blog-article-author">
+        <div class="blog-article-avatar">D</div>
+        <div>
+          <div style="font-weight: 600;">Daito Design</div>
+          <div style="font-size: var(--text-sm); color: var(--charcoal-soft);">Industrial UX & Agentic Experience Design</div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <section class="section bg-sand-light">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: var(--space-8);"><span class="eyebrow">Related Insights</span></div>
+      <div style="display: flex; gap: var(--space-8); justify-content: center; flex-wrap: wrap;">
+        <a href="../blog.html" class="btn btn-outline">View All Insights</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" style="background: var(--charcoal); color: var(--sand);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-12); padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <div>
+          <img src="../images/daito-logo.webp" alt="Daito Design" style="height: 48px; width: auto; margin-bottom: var(--space-6); filter: brightness(0) invert(1);">
+          <p style="font-size: var(--text-base); color: rgba(255,255,255,0.7); line-height: 1.6; max-width: 280px;">The leader in industrial UX and enterprise experience design.</p>
+        </div>
+        <div>
+          <h4 style="color: var(--white); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-4);">Services</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: var(--space-2);"><a href="../services.html#pre-product" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Pre-Product</a></li>
+            <li style="margin-bottom: var(--space-2);"><a href="../services.html#product" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Product</a></li>
+            <li style="margin-bottom: var(--space-2);"><a href="../services.html#post-product" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Post-Product</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--white); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-4);">Company</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: var(--space-2);"><a href="../about.html" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">About</a></li>
+            <li style="margin-bottom: var(--space-2);"><a href="../case-studies.html" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Work</a></li>
+            <li style="margin-bottom: var(--space-2);"><a href="../blog.html" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Insights</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--white); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-4);">Contact</h4>
+          <a href="mailto:info@daitodesign.com" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm);">info@daitodesign.com</a>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--space-6) 0;">
+        <p style="font-size: var(--text-xs); color: rgba(255,255,255,0.5);">© 2026 Daisho Global Holdings, Inc.</p>
+        <a href="../privacy.html" style="font-size: var(--text-xs); color: rgba(255,255,255,0.5);">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

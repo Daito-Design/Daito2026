@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Predictive Maintenance AI Agents - How autonomous agents transform equipment maintenance from reactive to proactive.">
+  <title>Predictive Maintenance AI Agents | Daito Design</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    .blog-article { max-width: 740px; margin: 0 auto; padding: var(--space-32) var(--space-6); }
+    .blog-article-header { margin-bottom: var(--space-12); }
+    .blog-article-meta { display: flex; gap: var(--space-4); align-items: center; margin-bottom: var(--space-6); flex-wrap: wrap; }
+    .blog-article-tag { font-size: var(--text-xs); font-weight: 500; letter-spacing: var(--tracking-wide); color: var(--oxblood); }
+    .blog-article-date { font-size: var(--text-sm); color: var(--charcoal-soft); }
+    .blog-article-title { font-size: var(--text-4xl); line-height: var(--leading-tight); margin-bottom: var(--space-6); }
+    .blog-article-excerpt { font-size: var(--text-xl); color: var(--charcoal-soft); line-height: var(--leading-relaxed); }
+    .blog-article-hero { width: 100vw; margin-left: 50%; transform: translateX(-50%); aspect-ratio: 21/9; background: linear-gradient(135deg, var(--charcoal) 0%, var(--oxblood) 100%); margin-bottom: var(--space-12); }
+    .blog-article-content { font-size: var(--text-lg); line-height: var(--leading-loose); }
+    .blog-article-content p { margin-bottom: var(--space-6); }
+    .blog-article-content h2 { font-size: var(--text-3xl); margin-top: var(--space-12); margin-bottom: var(--space-6); }
+    .blog-article-content h3 { font-size: var(--text-2xl); margin-top: var(--space-10); margin-bottom: var(--space-4); }
+    .blog-article-content blockquote { border-left: 3px solid var(--oxblood); padding-left: var(--space-6); margin: var(--space-8) 0; font-style: italic; color: var(--charcoal-soft); }
+    .blog-article-content ul, .blog-article-content ol { margin: var(--space-6) 0; padding-left: var(--space-8); }
+    .blog-article-content li { margin-bottom: var(--space-3); }
+    .blog-article-author { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-8) 0; border-top: 1px solid var(--sand-dark); margin-top: var(--space-12); }
+    .blog-article-author-avatar { width: 64px; height: 64px; background: var(--oxblood); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-display); font-size: var(--text-xl); }
+  </style>
+
+  <link rel="icon" type="image/webp" href="../favicon.webp">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HPF8C3VXH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7HPF8C3VXH');
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="nav scrolled">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">
+          <img src="../images/daito-logo.webp" alt="Daito Design" class="nav-logo-img" style="height: 72px; width: auto;">
+        </a>
+        <ul class="nav-links">
+          <li><a href="../services.html" class="nav-link">Services</a></li>
+          <li><a href="../agentic-experience.html" class="nav-link">Agentic Experience</a></li>
+          <li><a href="../case-studies.html" class="nav-link">Work</a></li>
+          <li><a href="../blog.html" class="nav-link">Insights</a></li>
+          <li><a href="../about.html" class="nav-link">About</a></li>
+          <li><a href="../contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <article class="blog-article">
+      <header class="blog-article-header reveal">
+        <div class="blog-article-meta">
+          <span class="blog-article-tag">AI Agents • Industrial</span>
+          <span class="blog-article-date">March 4, 2025</span>
+        </div>
+        <h1 class="blog-article-title">Predictive Maintenance AI Agents</h1>
+        <p class="blog-article-excerpt">Predictive maintenance represents one of the highest-ROI applications of agentic AI. By shifting from reactive repair to proactive maintenance, organizations can reduce downtime, extend equipment lifespan, and dramatically improve operational efficiency.</p>
+      </header>
+
+      <div class="blog-article-hero" aria-hidden="true"></div>
+
+      <div class="blog-article-content reveal">
+        <p>
+          Equipment failure is one of the costliest problems in industrial operations. A production line going down costs thousands of dollars per hour. A pump failure in an oil and gas facility can disrupt critical operations. A transformer failure in an energy grid can affect entire regions. Traditionally, organizations manage this through two approaches: run equipment until it fails, then repair it (reactive maintenance), or follow a fixed maintenance schedule regardless of actual equipment condition (preventive maintenance).
+        </p>
+
+        <p>
+          Both approaches are expensive. Reactive maintenance leads to unexpected downtime, emergency repair costs, and potential damage to other equipment. Preventive maintenance involves unnecessary maintenance on equipment that's still healthy, wasting time and resources.
+        </p>
+
+        <p>
+          Predictive maintenance using agentic AI offers a third way: continuously monitor equipment health, predict when maintenance will be needed, and schedule it precisely when it's needed. An AI agent monitors sensor data in real-time, learns the signatures of equipment degradation, predicts failure risk, and recommends maintenance actions before failures occur. The result is equipment that runs longer, fails less often, and operates more efficiently.
+        </p>
+
+        <h2>How Predictive Maintenance Agents Work</h2>
+
+        <p>
+          Effective predictive maintenance agents combine several capabilities. First, they collect and analyze data from multiple sources: equipment sensors measuring vibration, temperature, pressure, and acoustic signals; operational logs showing runtime and load conditions; maintenance histories showing what work has been done; and environmental factors that affect equipment performance.
+        </p>
+
+        <p>
+          The agent learns patterns associated with healthy equipment operation. What's normal vibration for a bearing at a given speed? What temperature pattern indicates efficient operation? The agent builds a baseline, and then continuously monitors for deviations from that baseline. When patterns suggest degradation starting to occur, the agent escalates.
+        </p>
+
+        <blockquote>
+          "The real power of predictive maintenance isn't just catching failures earlier—it's understanding the health trajectory of every piece of equipment and optimizing maintenance timing for maximum efficiency."
+        </blockquote>
+
+        <p>
+          An effective agent doesn't just say "failure is likely." It provides context: What specific component is showing degradation? How confident is the prediction? What data is this based on? What happens if maintenance is delayed? What's the current status of maintenance teams and schedules? Can maintenance be bundled with other work to improve efficiency?
+        </p>
+
+        <h2>The Design Challenge: From Prediction to Action</h2>
+
+        <p>
+          The technical challenge of building a predictive model is significant but relatively straightforward for experienced data science teams. The harder challenge is designing how this prediction translates into action in a complex organizational context.
+        </p>
+
+        <p>
+          Consider a simple case: an agent predicts that Pump A will fail in two weeks. What happens next? Several things depend on context the agent needs to understand:
+        </p>
+
+        <ul>
+          <li><strong>Maintenance availability:</strong> Do maintenance technicians have capacity? When? Can they handle this type of maintenance?</li>
+          <li><strong>Operational constraints:</strong> Can we schedule maintenance during low-demand periods? What's the cost of downtime?</li>
+          <li><strong>Parts availability:</strong> Are replacement parts in stock? How long to procure if needed?</li>
+          <li><strong>Uncertainty management:</strong> What if the prediction is wrong? What if maintenance is delayed? What's the confidence interval?</li>
+          <li><strong>Organizational communication:</strong> Who needs to know? What level of detail matters to operations managers versus maintenance technicians?</li>
+        </ul>
+
+        <p>
+          A well-designed predictive maintenance agent integrates with all these systems. It doesn't just predict failure—it recommends the optimal maintenance action given current constraints, communicates that recommendation to the right people with the right level of detail, tracks whether maintenance was completed, learns from maintenance outcomes, and continuously refines its future predictions.
+        </p>
+
+        <h2>From Agent to Business Value</h2>
+
+        <p>
+          Organizations that implement predictive maintenance effectively see measurable improvements: 25-40% reduction in maintenance costs, 35-45% decrease in equipment downtime, and extension of equipment lifespan by years in many cases. But achieving these benefits requires more than deploying a model.
+        </p>
+
+        <p>
+          It requires designing workflows where maintenance predictions integrate with operations scheduling. It requires building interfaces that maintenance teams trust and understand. It requires change management: helping teams transition from reactive, firefighting culture to proactive, planned maintenance culture. It requires governance: how do you validate that predictions are accurate? How do you handle false positives? How do you continuously improve the system?
+        </p>
+
+        <p>
+          At Daito Design, we help industrial organizations implement end-to-end predictive maintenance systems. From assessing which equipment and metrics matter most, to designing the predictive models, to creating interfaces that operators trust, to building the organizational change needed for success. If you're operating industrial equipment and not using predictive maintenance, you're leaving significant value on the table. <a href="../contact.html">Let's discuss how to capture it.</a>
+        </p>
+      </div>
+
+      <div class="blog-article-author">
+        <div class="blog-article-author-avatar">D</div>
+        <div>
+          <div style="font-weight: 600;">Daito Design</div>
+          <div style="font-size: var(--text-sm); color: var(--charcoal-soft);">Industrial UX & Agentic Experience Design</div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <section class="section bg-sand-light">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: var(--space-8);"><span class="eyebrow">Related Insights</span></div>
+      <div style="display: flex; gap: var(--space-8); justify-content: center; flex-wrap: wrap;">
+        <a href="../blog.html" class="btn btn-outline">View All Insights</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" style="background: var(--charcoal); color: var(--sand);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-12); padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <div>
+          <img src="../images/daito-logo.webp" alt="Daito Design" style="height: 48px; width: auto; margin-bottom: var(--space-6); filter: brightness(0) invert(1);">
+          <p style="font-size: var(--text-base); color: rgba(255,255,255,0.7); line-height: 1.6; max-width: 280px;">The leader in industrial UX and enterprise experience design.</p>
+        </div>
+        <div>
+          <h4 style="color: var(--white); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-4);">Services</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: var(--space-2);"><a href="../services.html#pre-product" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Pre-Product</a></li>
+            <li style="margin-bottom: var(--space-2);"><a href="../services.html#product" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Product</a></li>
+            <li style="margin-bottom: var(--space-2);"><a href="../services.html#post-product" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Post-Product</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--white); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-4);">Company</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: var(--space-2);"><a href="../about.html" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">About</a></li>
+            <li style="margin-bottom: var(--space-2);"><a href="../case-studies.html" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Work</a></li>
+            <li style="margin-bottom: var(--space-2);"><a href="../blog.html" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Insights</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--white); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-4);">Contact</h4>
+          <a href="mailto:info@daitodesign.com" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm);">info@daitodesign.com</a>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--space-6) 0;">
+        <p style="font-size: var(--text-xs); color: rgba(255,255,255,0.5);">© 2026 Daisho Global Holdings, Inc.</p>
+        <a href="../privacy.html" style="font-size: var(--text-xs); color: rgba(255,255,255,0.5);">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

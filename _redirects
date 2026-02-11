@@ -1,0 +1,64 @@
+# Daito Design - URL Redirects
+# For Vercel/Netlify deployment
+# Format: /old-path /new-path status-code
+
+# Clean URLs to .html (SEO migration from old site)
+/blog               /blog.html              301
+/work               /case-studies.html      301
+/about              /about.html             301
+/contact            /contact.html           301
+/services           /services.html          301
+/industries         /industries.html        301
+/privacy            /privacy.html           301
+
+# Old service pages to new combined services page
+/pre-product        /services.html#pre-product      301
+/product            /services.html#product          301
+/post-product       /services.html#post-product     301
+
+# Agentic pages
+/agentic-experience     /agentic-experience.html    301
+/agentic-assessment     /agentic-assessment.html    301
+/agentic-manual         /agentic-manual.html        301
+
+# Case study redirects (old format to new)
+/work/shell                         /case-study-shell.html          301
+/work/constellation                 /case-study-constellation.html  301
+/work/tdecu                         /case-study-tdecu.html          301
+/work/bluware                       /case-study-bluware.html        301
+/work/3lc                           /case-study-3lc.html            301
+/work/schneider                     /case-study-schneider.html      301
+/case-studies                       /case-studies.html              301
+
+# Blog post redirects (old to new)
+/blog/where-are-you-on-your-agent-journey           /blog/agent-journey.html            301
+/blog/why-enterprise-software-needs-enterprise-ux   /blog/enterprise-ux.html            301
+/blog/the-indispensable-role-of-human-ai-collaboration /blog/human-ai-collaboration.html 301
+/blog/designing-agentic-systems-for-the-enterprise  /blog/agentic-systems-enterprise.html   301
+/blog/rethinking-ux-for-agentic-workflows           /blog/ux-agentic-workflows.html         301
+/blog/why-ai-alone-isnt-enough                      /blog/ai-alone-not-enough.html          301
+/blog/artificial-immune-systems-ai-security         /blog/ai-immune-systems.html            301
+/blog/ignite-innovation-empower-workforce           /blog/ignite-innovation.html            301
+/blog/predictive-maintenance-ai-agents              /blog/predictive-maintenance.html       301
+/blog/agent-experience-design-axd                   /blog/axd-secret-weapon.html            301
+/blog/ai-compliance-regulatory-standards            /blog/ai-compliance.html                301
+/blog/ai-meets-human-intuition                      /blog/ai-human-intuition.html           301
+/blog/ai-agents-vision-pro-maritime                 /blog/ai-vision-pro-maritime.html       301
+/blog/apple-vision-pro-spatial-computing            /blog/vision-pro-spatial.html           301
+/blog/ai-in-healthcare                              /blog/ai-healthcare.html                301
+/blog/managing-global-supply-chains-ai              /blog/ai-supply-chains.html             301
+/blog/rise-of-the-hybrid-user                       /blog/hybrid-user.html                  301
+/blog/multi-agent-systems-spatial-computing         /blog/multi-agent-spatial.html          301
+/blog/ai-agents-optimizing-drilling                 /blog/ai-drilling.html                  301
+/blog/post-user-age                                 /blog/post-user-age.html                301
+
+# Book page
+/book               /book-design-at-the-extremes.html   301
+
+# Catch-all for index
+/index              /                                   301
+/index.html         /                                   301
+/home               /                                   301
+
+# 404 fallback
+/*                  /404.html                           404

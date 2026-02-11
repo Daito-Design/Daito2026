@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rethinking UX for Agentic Workflows - How user experience design fundamentally changes when AI agents become active participants in your workflows.">
+  <title>Rethinking UX for Agentic Workflows | Daito Design</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    .blog-article { max-width: 740px; margin: 0 auto; padding: var(--space-32) var(--space-6); }
+    .blog-article-header { margin-bottom: var(--space-12); }
+    .blog-article-meta { display: flex; gap: var(--space-4); align-items: center; margin-bottom: var(--space-6); flex-wrap: wrap; }
+    .blog-article-tag { font-size: var(--text-xs); font-weight: 500; letter-spacing: var(--tracking-wide); color: var(--oxblood); }
+    .blog-article-date { font-size: var(--text-sm); color: var(--charcoal-soft); }
+    .blog-article-title { font-size: var(--text-4xl); line-height: var(--leading-tight); margin-bottom: var(--space-6); }
+    .blog-article-excerpt { font-size: var(--text-xl); color: var(--charcoal-soft); line-height: var(--leading-relaxed); }
+    .blog-article-hero { width: 100vw; margin-left: 50%; transform: translateX(-50%); aspect-ratio: 21/9; background: linear-gradient(135deg, var(--charcoal) 0%, var(--oxblood) 100%); margin-bottom: var(--space-12); }
+    .blog-article-content { font-size: var(--text-lg); line-height: var(--leading-loose); }
+    .blog-article-content p { margin-bottom: var(--space-6); }
+    .blog-article-content h2 { font-size: var(--text-3xl); margin-top: var(--space-12); margin-bottom: var(--space-6); }
+    .blog-article-content h3 { font-size: var(--text-2xl); margin-top: var(--space-10); margin-bottom: var(--space-4); }
+    .blog-article-content blockquote { border-left: 3px solid var(--oxblood); padding-left: var(--space-6); margin: var(--space-8) 0; font-style: italic; color: var(--charcoal-soft); }
+    .blog-article-content ul, .blog-article-content ol { margin: var(--space-6) 0; padding-left: var(--space-8); }
+    .blog-article-content li { margin-bottom: var(--space-3); }
+    .blog-article-author { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-8) 0; border-top: 1px solid var(--sand-dark); margin-top: var(--space-12); }
+    .blog-article-author-avatar { width: 64px; height: 64px; background: var(--oxblood); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-display); font-size: var(--text-xl); }
+  </style>
+
+  <link rel="icon" type="image/webp" href="../favicon.webp">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HPF8C3VXH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7HPF8C3VXH');
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="nav scrolled">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">
+          <img src="../images/daito-logo.webp" alt="Daito Design" class="nav-logo-img" style="height: 72px; width: auto;">
+        </a>
+        <ul class="nav-links">
+          <li><a href="../services.html" class="nav-link">Services</a></li>
+          <li><a href="../agentic-experience.html" class="nav-link">Agentic Experience</a></li>
+          <li><a href="../case-studies.html" class="nav-link">Work</a></li>
+          <li><a href="../blog.html" class="nav-link">Insights</a></li>
+          <li><a href="../about.html" class="nav-link">About</a></li>
+          <li><a href="../contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <article class="blog-article">
+      <header class="blog-article-header reveal">
+        <div class="blog-article-meta">
+          <span class="blog-article-tag">UX Design • Agentic Systems</span>
+          <span class="blog-article-date">March 26, 2025</span>
+        </div>
+        <h1 class="blog-article-title">Rethinking UX for Agentic Workflows</h1>
+        <p class="blog-article-excerpt">When AI agents become active participants in your workflows, the fundamental nature of user experience design changes. It's no longer about designing for users to operate systems—it's about designing for collaboration.</p>
+      </header>
+
+      <div class="blog-article-hero" aria-hidden="true"></div>
+
+      <div class="blog-article-content reveal">
+        <p>
+          For sixty years, the discipline of user experience design has been built on a simple premise: humans are the primary agents making decisions and taking actions within systems. We design interfaces that present information, accept input, and execute commands based on human choices. The system is reactive; the human is the initiator.
+        </p>
+
+        <p>
+          This fundamental assumption is now changing. In agentic workflows, artificial intelligence agents become active participants—perceiving their environment, making decisions, proposing actions, and asking humans for guidance or approval. The interaction model shifts from "human directs, system responds" to "agent acts, human supervises."
+        </p>
+
+        <p>
+          This shift creates entirely new UX challenges. Traditional UX design patterns—information architecture, navigation, form design, feedback mechanisms—were optimized for single human actors. Agentic workflows demand new patterns optimized for multi-agent collaboration.
+        </p>
+
+        <h2>The Five New UX Paradigms for Agentic Systems</h2>
+
+        <p>
+          Based on our work designing interfaces for AI-agent workflows in energy management, financial services, and industrial operations, we've identified five core design paradigms that differ fundamentally from traditional UI design.
+        </p>
+
+        <h3>From Information Presentation to Reasoning Transparency</h3>
+
+        <p>
+          Traditional UX presents information: dashboards show metrics, reports display data, alerts highlight anomalies. But in agentic workflows, users need to understand not just what the agent observed, but how it reasoned about what it observed. Why did the agent recommend this action? What data influenced that decision? What assumptions did it make?
+        </p>
+
+        <p>
+          This requires designing for explainability. Rather than just showing results, interfaces must surface the agent's reasoning chain. This might include confidence scores, alternative interpretations the agent considered but rejected, relevant historical examples, or explicit flagging of uncertain data. The interface becomes a window into the agent's mind.
+        </p>
+
+        <h3>From Notification to Negotiation</h3>
+
+        <p>
+          Traditional alerts notify humans of issues and ask for action. But when an agent has already proposed a solution, the interaction becomes more nuanced. The human doesn't just need to understand the problem—they need to evaluate the agent's proposed solution, perhaps suggest alternatives, and negotiate the path forward.
+        </p>
+
+        <blockquote>
+          "The best agentic interfaces treat humans and AI as collaborators, not as masters and servants."
+        </blockquote>
+
+        <p>
+          This means designing interfaces that show not just what the agent proposes, but why, with space for human input that can redirect the agent without requiring starting from scratch.
+        </p>
+
+        <h3>From Static to Dynamic Configuration</h3>
+
+        <p>
+          In traditional systems, users configure behavior once—through settings, preferences, or role-based permissions—and that configuration remains static. But agentic systems learn and adapt. As an agent gains experience with a user's preferences, the "default" behavior should shift.
+        </p>
+
+        <p>
+          The UX challenge becomes designing for continuous calibration. How does a user teach an agent their preferences? How are those preferences displayed, updated, and refined? How do users understand what the agent has learned about them?
+        </p>
+
+        <h3>From Reactive to Predictive Interaction</h3>
+
+        <p>
+          Traditional interfaces wait for user input and then respond. Agentic systems should anticipate user needs based on context and history. "Based on your typical evening routine, would you like me to start this process now?" This shifts the interaction model from purely reactive to proactive, requiring new patterns for requests, suggestions, and optional actions.
+        </p>
+
+        <h3>From Binary Approval to Graduated Authority</h3>
+
+        <p>
+          Many agentic workflows use binary approval patterns: either approve or reject the agent's proposed action. But real collaboration is more nuanced. Some actions might be approved unconditionally; others might be approved with modifications; others might need escalation to a higher authority; others might need human override if they exceed certain parameters.
+        </p>
+
+        <p>
+          Designing effective graduated authority means creating clear pathways for different levels of human involvement while maintaining system efficiency. If everything requires explicit approval, you've negated the benefit of agentic automation. If nothing does, you lose human oversight.
+        </p>
+
+        <h2>Practical Application: From Theory to Design Patterns</h2>
+
+        <p>
+          So what do these paradigms look like in practice? Consider a specific workflow: an industrial maintenance agent monitoring equipment health. In a traditional system, this might be a dashboard showing sensor data with alerts when thresholds are exceeded. An operator sees an alert, investigates the data, decides whether maintenance is needed, and schedules the repair.
+        </p>
+
+        <p>
+          In an agentic workflow, the agent continuously monitors equipment, predicts failure patterns, and recommends maintenance actions. But the UX challenge is: how does the operator understand what the agent is doing and why? How do they maintain oversight without constant monitoring?
+        </p>
+
+        <p>
+          The answer involves several design elements working together: a timeline showing the agent's reasoning over time, explainability features that surface the data driving each recommendation, pattern recognition that helps the operator learn what the agent "knows," approval mechanisms that allow graduated authority based on risk level, and feedback loops where operator decisions train the agent's future behavior.
+        </p>
+
+        <h2>The Future of UX Design</h2>
+
+        <p>
+          The UX profession stands at an inflection point. We're transitioning from designing interfaces for humans to operate, toward designing collaborative spaces where humans and AI agents work together. This requires new skills, new patterns, and new ways of thinking about interaction design.
+        </p>
+
+        <p>
+          Organizations that master this transition—that learn to design agentic workflows with the same rigor and creativity applied to human-centered design—will create dramatically more powerful and efficient systems. At Daito Design, we're developing the design methodologies and patterns needed to navigate this transformation. <a href="../contact.html">Let's explore what this means for your organization.</a>
+        </p>
+      </div>
+
+      <div class="blog-article-author">
+        <div class="blog-article-author-avatar">D</div>
+        <div>
+          <div style="font-weight: 600;">Daito Design</div>
+          <div style="font-size: var(--text-sm); color: var(--charcoal-soft);">Industrial UX & Agentic Experience Design</div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <section class="section bg-sand-light">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: var(--space-8);"><span class="eyebrow">Related Insights</span></div>
+      <div style="display: flex; gap: var(--space-8); justify-content: center; flex-wrap: wrap;">
+        <a href="../blog.html" class="btn btn-outline">View All Insights</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" style="background: var(--charcoal); color: var(--sand);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-12); padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <div>
+          <img src="../images/daito-logo.webp" alt="Daito Design" style="height: 48px; width: auto; margin-bottom: var(--space-6); filter: brightness(0) invert(1);">
+          <p style="font-size: var(--text-base); color: rgba(255,255,255,0.7); line-height: 1.6; max-width: 280px;">The leader in industrial UX and enterprise experience design.</p>
+        </div>
+        <div>
+          <h4 style="color: var(--white); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-4);">Services</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: var(--space-2);"><a href="../services.html#pre-product" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Pre-Product</a></li>
+            <li style="margin-bottom: var(--space-2);"><a href="../services.html#product" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Product</a></li>
+            <li style="margin-bottom: var(--space-2);"><a href="../services.html#post-product" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Post-Product</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--white); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-4);">Company</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: var(--space-2);"><a href="../about.html" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">About</a></li>
+            <li style="margin-bottom: var(--space-2);"><a href="../case-studies.html" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Work</a></li>
+            <li style="margin-bottom: var(--space-2);"><a href="../blog.html" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Insights</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--white); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-4);">Contact</h4>
+          <a href="mailto:info@daitodesign.com" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm);">info@daitodesign.com</a>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--space-6) 0;">
+        <p style="font-size: var(--text-xs); color: rgba(255,255,255,0.5);">© 2026 Daisho Global Holdings, Inc.</p>
+        <a href="../privacy.html" style="font-size: var(--text-xs); color: rgba(255,255,255,0.5);">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

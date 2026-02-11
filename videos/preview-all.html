@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study Video Backgrounds - Preview</title>
+    <style>
+        :root {
+            --sand: #F5F0E8;
+            --charcoal: #1A1A1A;
+            --oxblood: #722F37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--charcoal);
+            color: var(--sand);
+            min-height: 100vh;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(245, 240, 232, 0.6);
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .video-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .video-frame {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .color-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .shell-dot { background: #FBCE07; }
+        .constellation-dot { background: #64B4FF; }
+        .tdecu-dot { background: #0D9488; }
+
+        .video-desc {
+            color: rgba(245, 240, 232, 0.6);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .actions {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--oxblood);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #8a3a44;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--sand);
+            border: 1px solid rgba(245, 240, 232, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(245, 240, 232, 0.1);
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 60px auto 0;
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .instructions h3 {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: var(--sand);
+        }
+
+        .instructions p, .instructions li {
+            color: rgba(245, 240, 232, 0.7);
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .instructions code {
+            background: rgba(0,0,0,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        .instructions pre {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .instructions pre code {
+            background: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Case Study Video Backgrounds</h1>
+    <p class="subtitle">Animated backgrounds for featured case studies • Daito Design 2026</p>
+
+    <div class="grid">
+        <!-- Shell -->
+        <div class="video-card">
+            <iframe class="video-frame" src="shell-spatial-computing.html"></iframe>
+            <div class="video-info">
+                <div class="video-title">
+                    <span class="color-dot shell-dot"></span>
+                    Shell - Spatial Computing
+                </div>
+                <p class="video-desc">
+                    Energy data visualization with flowing particles representing spatial computing data nodes and real-time wellsite monitoring.
+                </p>
+                <div class="actions">
+                    <a href="shell-spatial-computing.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Constellation -->
+        <div class="video-card">
+            <iframe class="video-frame" src="constellation-nuclear.html"></iframe>
+            <div class="video-info">
+                <div class="video-title">
+                    <span class="color-dot constellation-dot"></span>
+                    Constellation - Nuclear Energy
+                </div>
+                <p class="video-desc">
+                    Atomic orbital visualization showing electron movement, energy waves, and nuclear reaction patterns.
+                </p>
+                <div class="actions">
+                    <a href="constellation-nuclear.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TDECU/3LC -->
+        <div class="video-card">
+            <iframe class="video-frame" src="tdecu-financial.html"></iframe>
+            <div class="video-info">
+                <div class="video-title">
+                    <span class="color-dot tdecu-dot"></span>
+                    3LC/TDECU - Financial Services
+                </div>
+                <p class="video-desc">
+                    Financial workflow visualization with data streams, approval process nodes, and task management indicators.
+                </p>
+                <div class="actions">
+                    <a href="tdecu-financial.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h2>Usage Instructions</h2>
+
+        <h3>Option 1: Use as HTML Background (Recommended)</h3>
+        <p>Embed directly in the case study page using an iframe:</p>
+        <pre><code>&lt;div class="video-background"&gt;
+    &lt;iframe src="videos/shell-spatial-computing.html" frameborder="0"&gt;&lt;/iframe&gt;
+&lt;/div&gt;</code></pre>
+
+        <h3>Option 2: Convert to MP4 Video</h3>
+        <p>To create MP4 files for better performance and compatibility:</p>
+        <ol>
+            <li>Open the HTML file in Chrome at your desired resolution</li>
+            <li>Use screen recording software (OBS, QuickTime, or Chrome DevTools)</li>
+            <li>Record for 10-15 seconds (animations loop smoothly)</li>
+            <li>Export as MP4 with H.264 codec</li>
+        </ol>
+
+        <h3>Option 3: Command Line Recording (Advanced)</h3>
+        <p>Use headless Chrome with ffmpeg:</p>
+        <pre><code># Install puppeteer-screen-recorder
+npm install puppeteer puppeteer-screen-recorder
+
+# Or use Chrome's native recording
+google-chrome --headless --screenshot --window-size=1920,1080 shell-spatial-computing.html</code></pre>
+
+        <h3>Customization</h3>
+        <p>Each animation is fully customizable. Edit the JavaScript in each HTML file to adjust:</p>
+        <ul>
+            <li><strong>Colors:</strong> Change the color constants at the top</li>
+            <li><strong>Speed:</strong> Adjust animation speed values</li>
+            <li><strong>Density:</strong> Change particle count and grid spacing</li>
+            <li><strong>Effects:</strong> Add/remove visual elements</li>
+        </ul>
+    </div>
+</body>
+</html>

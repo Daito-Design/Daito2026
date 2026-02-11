@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Daito Design - Enterprise UX for energy, maritime & industrial operations.">
+  <title>Daito Design | Sans-Serif Alternative</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="favicon.webp">
+
+  <!-- Sans-Serif Fonts - DM Sans for headlines, Inter for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --font-display: 'DM Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+
+      --sand: #F5F0E8;
+      --sand-light: #FAF8F4;
+      --sand-dark: #EDE6D9;
+      --charcoal: #1A1A1A;
+      --charcoal-light: #2A2A2A;
+      --oxblood: #722F37;
+      --oxblood-light: #8B3A42;
+      --white: #FFFFFF;
+
+      --space-2: 0.5rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+
+      --text-xs: 0.75rem;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-lg: 1.125rem;
+      --text-xl: 1.25rem;
+      --text-2xl: 1.5rem;
+      --text-4xl: 2.25rem;
+      --text-5xl: 3rem;
+      --text-6xl: 3.75rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--sand);
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(245, 240, 232, 0.95);
+      backdrop-filter: blur(10px);
+      padding: var(--space-4) 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo-img {
+      height: 72px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: var(--space-8);
+      align-items: center;
+    }
+
+    .nav-link {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--charcoal);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-cta {
+      background: var(--oxblood);
+      color: var(--white);
+      padding: var(--space-2) var(--space-6);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--sand) 0%, rgba(245,240,232,0.7) 40%, rgba(245,240,232,0.3) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding-top: 100px;
+    }
+
+    .eyebrow {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--oxblood);
+      margin-bottom: var(--space-4);
+      display: block;
+    }
+
+    /* SANS-SERIF HEADLINE - The key difference */
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 400;
+      line-height: 1.05;
+      color: var(--charcoal);
+      margin-bottom: var(--space-6);
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-body);
+      font-size: var(--text-xl);
+      color: rgba(26, 26, 26, 0.7);
+      max-width: 520px;
+      margin-bottom: var(--space-8);
+      line-height: 1.6;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--oxblood);
+      color: var(--white);
+      padding: var(--space-4) var(--space-8);
+      font-size: var(--text-base);
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--oxblood-light);
+    }
+
+    /* Statement Section */
+    .statement-section {
+      padding: var(--space-16) 0;
+      background: var(--sand-light);
+    }
+
+    .statement-text {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 400;
+      line-height: 1.4;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      color: var(--charcoal);
+    }
+
+    .statement-text .highlight {
+      color: var(--oxblood);
+      font-weight: 500;
+    }
+
+    /* Value Proposition Section */
+    .value-section {
+      padding: var(--space-16) 0;
+      background: var(--charcoal);
+      color: var(--sand);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .value-section .bg-image {
+      position: absolute;
+      inset: 0;
+      opacity: 0.25;
+    }
+
+    .value-section .bg-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: var(--text-4xl);
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: var(--space-8);
+      letter-spacing: -0.01em;
+    }
+
+    .section-body {
+      font-size: var(--text-lg);
+      color: rgba(245, 240, 232, 0.8);
+      line-height: 1.7;
+      margin-bottom: var(--space-6);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+    }
+
+    .metric-card {
+      background: var(--charcoal-light);
+      padding: var(--space-6);
+    }
+
+    .metric-value {
+      font-family: var(--font-display);
+      font-size: var(--text-4xl);
+      font-weight: 500;
+      color: var(--oxblood-light);
+      margin-bottom: var(--space-2);
+    }
+
+    .metric-label {
+      font-size: var(--text-sm);
+      color: rgba(245, 240, 232, 0.6);
+    }
+
+    /* Services Section */
+    .services-section {
+      padding: var(--space-16) 0;
+      background: var(--sand);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .section-header-title {
+      font-family: var(--font-display);
+      font-size: var(--text-4xl);
+      font-weight: 400;
+      margin-bottom: var(--space-4);
+      letter-spacing: -0.01em;
+    }
+
+    .section-header-subtitle {
+      font-size: var(--text-lg);
+      color: rgba(26, 26, 26, 0.6);
+      max-width: 600px;
+      margin: 0 auto var(--space-12);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8);
+    }
+
+    .service-card {
+      background: var(--sand-light);
+      padding: var(--space-8);
+      border: 1px solid rgba(26, 26, 26, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(26, 26, 26, 0.1);
+    }
+
+    .service-number {
+      font-family: var(--font-display);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--oxblood);
+      margin-bottom: var(--space-4);
+    }
+
+    .service-title {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 500;
+      margin-bottom: var(--space-4);
+    }
+
+    .service-description {
+      font-size: var(--text-base);
+      color: rgba(26, 26, 26, 0.7);
+      margin-bottom: var(--space-6);
+    }
+
+    .service-list {
+      list-style: none;
+      margin-bottom: var(--space-6);
+    }
+
+    .service-list li {
+      font-size: var(--text-sm);
+      color: rgba(26, 26, 26, 0.6);
+      padding: var(--space-2) 0;
+      border-bottom: 1px solid rgba(26, 26, 26, 0.06);
+    }
+
+    /* AXD Section */
+    .axd-section {
+      padding: var(--space-16) 0;
+      background: var(--sand-dark);
+    }
+
+    .axd-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: center;
+    }
+
+    .axd-title {
+      font-family: var(--font-display);
+      font-size: var(--text-4xl);
+      font-weight: 400;
+      margin-bottom: var(--space-6);
+      letter-spacing: -0.01em;
+    }
+
+    .axd-title .accent {
+      color: var(--oxblood);
+    }
+
+    .axd-visual {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-light) 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .axd-visual::before {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 1px solid var(--oxblood-light);
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    .axd-visual::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: pulse 3s ease-in-out infinite 0.5s;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.1); opacity: 0.1; }
+    }
+
+    .axd-label {
+      position: absolute;
+      bottom: var(--space-6);
+      left: var(--space-6);
+      right: var(--space-6);
+      background: rgba(26, 26, 26, 0.85);
+      backdrop-filter: blur(8px);
+      padding: var(--space-4) var(--space-6);
+      border-radius: 6px;
+      border-left: 3px solid var(--oxblood);
+    }
+
+    .axd-label-title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .axd-label-subtitle {
+      font-size: var(--text-xs);
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 4px;
+    }
+
+    .btn-accent {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--oxblood);
+      color: var(--white);
+      padding: var(--space-4) var(--space-6);
+      font-size: var(--text-base);
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: var(--space-16) 0;
+      background: var(--oxblood);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: var(--text-5xl);
+      font-weight: 400;
+      margin-bottom: var(--space-6);
+      letter-spacing: -0.02em;
+    }
+
+    .cta-subtitle {
+      font-size: var(--text-lg);
+      opacity: 0.8;
+      max-width: 500px;
+      margin: 0 auto var(--space-8);
+    }
+
+    .btn-white {
+      display: inline-block;
+      background: var(--white);
+      color: var(--oxblood);
+      padding: var(--space-4) var(--space-8);
+      font-size: var(--text-base);
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--charcoal);
+      color: var(--sand);
+      padding: var(--space-16) 0 var(--space-8);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: var(--space-12);
+      margin-bottom: var(--space-12);
+      padding-bottom: var(--space-12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-brand p {
+      font-size: var(--text-base);
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+      max-width: 280px;
+      margin-bottom: var(--space-4);
+    }
+
+    .footer-title {
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      margin-bottom: var(--space-4);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: var(--space-2);
+    }
+
+    .footer-links a {
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: var(--text-xs);
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Comparison Banner */
+    .comparison-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--charcoal);
+      color: var(--white);
+      padding: var(--space-4);
+      z-index: 200;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-8);
+    }
+
+    .comparison-banner span {
+      font-size: var(--text-sm);
+    }
+
+    .comparison-banner strong {
+      color: var(--oxblood-light);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .value-grid,
+      .axd-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Comparison Banner -->
+  <div class="comparison-banner">
+    <span><strong>ALTERNATIVE DESIGN:</strong> Sans-Serif Font (DM Sans)</span>
+    <span>|</span>
+    <span>Compare with current serif design (Cormorant Garamond)</span>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html">
+          <img src="images/daito-logo.webp" alt="Daito Design" class="nav-logo-img">
+        </a>
+        <ul class="nav-links">
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="agentic-experience.html" class="nav-link">Agentic Experience</a></li>
+          <li><a href="case-studies.html" class="nav-link">Work</a></li>
+          <li><a href="blog.html" class="nav-link">Insights</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg">
+        <img src="https://images.pexels.com/photos/3216911/pexels-photo-3216911.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Offshore drilling rig">
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">Industrial UX & Experience Design</span>
+          <h1 class="hero-title">We design for the field.</h1>
+          <p class="hero-subtitle">
+            Enterprise software that works for the people who actually use it. From offshore platforms to control rooms.
+          </p>
+          <a href="case-studies.html" class="btn-primary">
+            See Our Work
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statement Section -->
+    <section class="statement-section">
+      <div class="container">
+        <p class="statement-text">
+          Most enterprise software is designed by people who've never used it.
+          <span class="highlight">We're different.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="value-section">
+      <div class="bg-image">
+        <img src="https://images.pexels.com/photos/1716008/pexels-photo-1716008.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Oil rig platform">
+      </div>
+      <div class="container">
+        <div class="value-grid">
+          <div>
+            <span class="eyebrow" style="color: var(--oxblood-light);">Our Approach</span>
+            <h2 class="section-title">We go to the field.</h2>
+            <p class="section-body">
+              Before we design anything, we immerse ourselves in your users' world. We've been on oil platforms, inside control rooms, on factory floors, and at control centers around the globe.
+            </p>
+            <p class="section-body">
+              Because you can't design for operators if you've never watched them operate.
+            </p>
+          </div>
+          <div>
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <div class="metric-value">10</div>
+                <div class="metric-label">Years in Business</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-value">8+</div>
+                <div class="metric-label">Fortune 500 Clients</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-value">1000s</div>
+                <div class="metric-label">Hours of Field Insights</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-value">8</div>
+                <div class="metric-label">Year Shell Partnership</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+      <div class="container">
+        <div class="text-center">
+          <span class="eyebrow">What We Do</span>
+          <h2 class="section-header-title">End-to-end enterprise UX.</h2>
+          <p class="section-header-subtitle">
+            From initial research through design, development support, and change management.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-number">01</div>
+            <h3 class="service-title">Pre-Product</h3>
+            <p class="service-description">
+              Validate before you build. Market research, user studies, and strategic direction.
+            </p>
+            <ul class="service-list">
+              <li>Product-Market Fit Testing</li>
+              <li>User Research & Ethnography</li>
+              <li>Competitive Analysis</li>
+              <li>Strategic Workshops</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">02</div>
+            <h3 class="service-title">Product</h3>
+            <p class="service-description">
+              Design that works under pressure. Industrial-grade UX for critical systems.
+            </p>
+            <ul class="service-list">
+              <li>UX/UI Design</li>
+              <li>Design Systems</li>
+              <li>Prototyping & Testing</li>
+              <li>Agentic Experience Design</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">03</div>
+            <h3 class="service-title">Post-Product</h3>
+            <p class="service-description">
+              Adoption is everything. We ensure your investment delivers results.
+            </p>
+            <ul class="service-list">
+              <li>Change Management</li>
+              <li>Training & Enablement</li>
+              <li>Adoption Analytics</li>
+              <li>Continuous Optimization</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- AXD Section -->
+    <section class="axd-section">
+      <div class="container">
+        <div class="axd-grid">
+          <div>
+            <span class="eyebrow">New Capability</span>
+            <h2 class="axd-title">
+              Agentic Experience<br>
+              <span class="accent">Design (AXD)</span>
+            </h2>
+            <p class="section-body" style="color: rgba(26,26,26,0.7);">
+              The future of enterprise software isn't interfaces. It's agents. We're pioneering the design of AI-human collaboration for industrial environments.
+            </p>
+            <p style="color: rgba(26,26,26,0.6); margin-bottom: var(--space-8);">
+              Our enterprise human factors approach ensures AI agents work with your people, not against them. Because autonomy without trust is just automation.
+            </p>
+            <a href="agentic-experience.html" class="btn-accent">
+              Explore AXD
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+          <div class="axd-visual">
+            <div class="axd-label">
+              <div class="axd-label-title">Agentic Experience Design</div>
+              <div class="axd-label-subtitle">Human-AI Collaboration Framework</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-title">Let's talk.</h2>
+        <p class="cta-subtitle">
+          Whether you're reimagining an existing product or building something new, we'd love to hear about it.
+        </p>
+        <a href="contact.html" class="btn-white">Schedule Consultation</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/daito-logo.webp" alt="Daito Design" style="height: 48px; filter: brightness(0) invert(1); margin-bottom: var(--space-6);">
+          <p>The leader in industrial UX and enterprise experience design.</p>
+          <a href="mailto:info@daitodesign.com" style="color: var(--oxblood-light); font-size: var(--text-sm);">info@daitodesign.com</a>
+        </div>
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#pre-product">Pre-Product</a></li>
+            <li><a href="services.html#product">Product</a></li>
+            <li><a href="services.html#post-product">Post-Product</a></li>
+            <li><a href="agentic-experience.html">Agentic Experience</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="case-studies.html">Work</a></li>
+            <li><a href="blog.html">Insights</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Locations</h4>
+          <p style="color: var(--white); font-size: var(--text-sm); margin-bottom: var(--space-2);">Austin HQ</p>
+          <p style="color: rgba(255,255,255,0.6); font-size: var(--text-xs); margin-bottom: var(--space-4);">901 W. 9th Street, Suite 102<br>Austin, Texas 78703</p>
+          <p style="color: var(--white); font-size: var(--text-sm); margin-bottom: var(--space-2);">Amsterdam</p>
+          <p style="color: rgba(255,255,255,0.6); font-size: var(--text-xs);">Keizersgracht 391A<br>1016 EJ Amsterdam</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Daisho Global Holdings, Inc. All rights reserved.</p>
+        <div style="display: flex; gap: var(--space-6);">
+          <a href="privacy.html" style="color: rgba(255,255,255,0.5); text-decoration: none;">Privacy</a>
+          <a href="terms.html" style="color: rgba(255,255,255,0.5); text-decoration: none;">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

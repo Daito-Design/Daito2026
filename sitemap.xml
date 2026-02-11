@@ -3,116 +3,240 @@
   <!-- Main Pages -->
   <url>
     <loc>https://daitodesign.com/</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://daitodesign.com/services.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://daitodesign.com/agentic-experience.html</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://daitodesign.com/case-studies.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <loc>https://daitodesign.com/industries.html</loc>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://daitodesign.com/about.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://daitodesign.com/contact.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://daitodesign.com/blog.html</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
 
-  <!-- Agentic Tools -->
+  <!-- Agentic Experience Pages -->
+  <url>
+    <loc>https://daitodesign.com/agentic-experience.html</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://daitodesign.com/agentic-assessment.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://daitodesign.com/agentic-manual.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Case Studies -->
   <url>
-    <loc>https://daitodesign.com/case-study-shell.html</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>yearly</changefreq>
+    <loc>https://daitodesign.com/case-studies.html</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/case-study-shell.html</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://daitodesign.com/case-study-constellation.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://daitodesign.com/case-study-3lc.html</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://daitodesign.com/case-study-bluware.html</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://daitodesign.com/case-study-tdecu.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/case-study-bluware.html</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/case-study-3lc.html</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://daitodesign.com/case-study-schneider.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
-  <!-- Blog Posts -->
+  <!-- Blog -->
+  <url>
+    <loc>https://daitodesign.com/blog.html</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/blog/agent-journey.html</loc>
+    <lastmod>2025-05-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <url>
     <loc>https://daitodesign.com/blog/enterprise-ux.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2025-04-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://daitodesign.com/blog/human-ai-collaboration.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://daitodesign.com/blog/agent-journey.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <loc>https://daitodesign.com/blog/agentic-systems-enterprise.html</loc>
+    <lastmod>2025-05-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/blog/ux-agentic-workflows.html</loc>
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/blog/ai-alone-not-enough.html</loc>
+    <lastmod>2025-03-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/blog/ai-immune-systems.html</loc>
+    <lastmod>2025-03-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/blog/ignite-innovation.html</loc>
+    <lastmod>2025-03-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/blog/predictive-maintenance.html</loc>
+    <lastmod>2025-03-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/blog/axd-secret-weapon.html</loc>
+    <lastmod>2025-02-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/blog/ai-compliance.html</loc>
+    <lastmod>2025-02-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/blog/ai-human-intuition.html</loc>
+    <lastmod>2025-02-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/blog/ai-vision-pro-maritime.html</loc>
+    <lastmod>2025-02-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/blog/vision-pro-spatial.html</loc>
+    <lastmod>2025-02-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/blog/ai-healthcare.html</loc>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/blog/ai-supply-chains.html</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/blog/hybrid-user.html</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/blog/multi-agent-spatial.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/blog/ai-drilling.html</loc>
+    <lastmod>2024-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daitodesign.com/blog/post-user-age.html</loc>
+    <lastmod>2024-10-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Book -->
+  <url>
+    <loc>https://daitodesign.com/book-design-at-the-extremes.html</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Legal -->
+  <url>
+    <loc>https://daitodesign.com/privacy.html</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

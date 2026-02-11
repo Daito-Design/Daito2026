@@ -1,6 +1,29 @@
-# Daito Design robots.txt
+# Daito Design - robots.txt
+# https://daitodesign.com
+
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap
 Sitemap: https://daitodesign.com/sitemap.xml
+
+# Disallow admin and internal pages
+Disallow: /admin/
+Disallow: /video-gen/
+Disallow: /videos/
+
+# Disallow duplicate/alternative pages
+Disallow: /homepage-sans-serif-alternative.html
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /

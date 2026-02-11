@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="We are Moving to a Post User Age - The transition from user-centric design to agent-centric systems design.">
+  <title>We are Moving to a Post User Age | Daito Design</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    .blog-article { max-width: 740px; margin: 0 auto; padding: var(--space-32) var(--space-6); }
+    .blog-article-header { margin-bottom: var(--space-12); }
+    .blog-article-meta { display: flex; gap: var(--space-4); align-items: center; margin-bottom: var(--space-6); flex-wrap: wrap; }
+    .blog-article-tag { font-size: var(--text-xs); font-weight: 500; letter-spacing: var(--tracking-wide); color: var(--oxblood); }
+    .blog-article-date { font-size: var(--text-sm); color: var(--charcoal-soft); }
+    .blog-article-title { font-size: var(--text-4xl); line-height: var(--leading-tight); margin-bottom: var(--space-6); }
+    .blog-article-excerpt { font-size: var(--text-xl); color: var(--charcoal-soft); line-height: var(--leading-relaxed); }
+    .blog-article-hero { width: 100vw; margin-left: 50%; transform: translateX(-50%); aspect-ratio: 21/9; background: linear-gradient(135deg, var(--charcoal) 0%, var(--oxblood) 100%); margin-bottom: var(--space-12); }
+    .blog-article-content { font-size: var(--text-lg); line-height: var(--leading-loose); }
+    .blog-article-content p { margin-bottom: var(--space-6); }
+    .blog-article-content h2 { font-size: var(--text-3xl); margin-top: var(--space-12); margin-bottom: var(--space-6); }
+    .blog-article-content h3 { font-size: var(--text-2xl); margin-top: var(--space-10); margin-bottom: var(--space-4); }
+    .blog-article-content blockquote { border-left: 3px solid var(--oxblood); padding-left: var(--space-6); margin: var(--space-8) 0; font-style: italic; color: var(--charcoal-soft); }
+    .blog-article-content ul, .blog-article-content ol { margin: var(--space-6) 0; padding-left: var(--space-8); }
+    .blog-article-content li { margin-bottom: var(--space-3); }
+    .blog-article-author { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-8) 0; border-top: 1px solid var(--sand-dark); margin-top: var(--space-12); }
+    .blog-article-author-avatar { width: 64px; height: 64px; background: var(--oxblood); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-display); font-size: var(--text-xl); }
+  </style>
+
+  <link rel="icon" type="image/webp" href="../favicon.webp">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HPF8C3VXH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7HPF8C3VXH');
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="nav scrolled">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">
+          <img src="../images/daito-logo.webp" alt="Daito Design" class="nav-logo-img" style="height: 72px; width: auto;">
+        </a>
+        <ul class="nav-links">
+          <li><a href="../services.html" class="nav-link">Services</a></li>
+          <li><a href="../agentic-experience.html" class="nav-link">Agentic Experience</a></li>
+          <li><a href="../case-studies.html" class="nav-link">Work</a></li>
+          <li><a href="../blog.html" class="nav-link">Insights</a></li>
+          <li><a href="../about.html" class="nav-link">About</a></li>
+          <li><a href="../contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <article class="blog-article">
+      <header class="blog-article-header reveal">
+        <div class="blog-article-meta">
+          <span class="blog-article-tag">Future of UX • AI</span>
+          <span class="blog-article-date">October 8, 2024</span>
+        </div>
+        <h1 class="blog-article-title">We are Moving to a Post User Age</h1>
+        <p class="blog-article-excerpt">The age of user-centric design is giving way to an era of agent-centric systems. We're not replacing users—we're creating systems where humans and AI agents collaborate as unified entities.</p>
+      </header>
+
+      <div class="blog-article-hero" aria-hidden="true"></div>
+
+      <div class="blog-article-content reveal">
+        <p>
+          The principle of user-centered design has dominated software design for fifty years. It's been a profound improvement over what came before—systems designed by engineers with no understanding of actual user needs. User research, personas, usability testing, iterative design—these practices emerged because humans are the ones using software, and their needs matter.
+        </p>
+
+        <p>
+          But something fundamental is changing. In increasingly sophisticated systems, the primary user is not a human. It's an AI agent. Or more precisely, it's a system composed of AI agents, human workers, and organizational processes working together. The "user" of a modern supply chain system is not the supply chain manager alone—it's the manager plus optimization agents plus forecasting agents plus logistics coordinators all working as a unified system.
+        </p>
+
+        <p>
+          This shift from user-centric design to what we might call agent-centric systems design represents a fundamental rethinking of how we approach software and organizational design.
+        </p>
+
+        <h2>What Was User-Centered Design?</h2>
+
+        <p>
+          User-centered design emerged from recognizing that systems designed by engineers for engineering elegance often didn't serve actual users well. The discipline developed practices to understand user needs, iteratively test designs with real users, and optimize for user experience. This was transformative. It produced software that was genuinely more useful and usable.
+        </p>
+
+        <p>
+          User-centered design is built on a fundamental assumption: there is a human who operates the system. The system's purpose is to help that human accomplish goals. The design optimizes for that human's cognitive load, learning curve, and efficiency. This assumption has been valid for decades and has produced remarkable improvements in software.
+        </p>
+
+        <p>
+          But the assumption breaks when the primary agent operating the system is not a human. When AI agents are autonomous actors within systems, designing for human users alone becomes insufficient.
+        </p>
+
+        <h2>Agent-Centric Systems Design</h2>
+
+        <p>
+          In agent-centric systems, we must design for multiple actors simultaneously: humans, AI agents, organizational processes, and external systems. The challenge becomes dramatically more complex. An interface that makes sense to humans might confuse an AI agent. A workflow that's efficient for humans might create inefficiencies for agents. An interaction pattern that works for one human-AI pair might fail for another.
+        </p>
+
+        <blockquote>
+          "We're not moving away from caring about human needs. We're expanding our perspective to also care about what agents need to operate effectively within human-supervised systems."
+        </blockquote>
+
+        <p>
+          Agent-centric systems design requires several shifts. First, we must design interfaces that are useful to multiple actors—humans and agents—simultaneously. This means different interaction patterns for humans and agents, but integrated into a coherent system. A human interacts with a dashboard and makes decisions. An agent reads structured data and executes recommendations. Both need to operate on the same underlying data and state.
+        </p>
+
+        <p>
+          Second, we must design for learning and improvement. Both humans and agents should learn from outcomes. When an agent makes a recommendation and a human overrides it, the system should support the human learning why the override was better, and the agent learning from the correction. This bidirectional learning is central to agent-centric systems.
+        </p>
+
+        <p>
+          Third, we must design for accountability and governance. In systems with multiple agents, it becomes unclear who is responsible for outcomes. Agent-centric design must embed clear accountability: who decided this? Who is responsible if it goes wrong? Can decisions be audited and reviewed?
+        </p>
+
+        <h2>What This Means for Design Practice</h2>
+
+        <p>
+          The shift from user-centered design to agent-centric systems design has profound implications for design practice. Design teams need different skills: understanding how AI agents perceive and operate, not just how humans do. Design research must investigate agent behavior and capabilities, not just human behavior. Usability testing must evaluate whether systems support effective human-agent collaboration, not just whether humans find them intuitive.
+        </p>
+
+        <p>
+          This doesn't mean abandoning user-centered design principles. It means extending them. We still care deeply about human needs, human learning, and human experience. But we now must care equally about agent needs, agent learning, and agent effectiveness. We're designing for a more complex system where both matter.
+        </p>
+
+        <p>
+          Organizations that recognize this shift and adapt their design practice early will have significant advantages. They'll design systems that humans and agents can collaborate within effectively. They'll avoid the mistakes that come from optimizing for humans alone while ignoring agent needs. They'll build organizational capabilities that compound over time.
+        </p>
+
+        <p>
+          We're living through a profound shift in how systems are designed and how organizations operate. We've moved from the industrial age to the information age to the age of ubiquitous computing. Now we're entering the age of ubiquitous agency—where autonomous agents are normal parts of organizational systems. Understanding and designing for this world is becoming essential. At Daito Design, we're helping organizations navigate this transition. <a href="../contact.html">Let's discuss what agent-centric systems design means for your organization.</a>
+        </p>
+      </div>
+
+      <div class="blog-article-author">
+        <div class="blog-article-avatar">D</div>
+        <div>
+          <div style="font-weight: 600;">Daito Design</div>
+          <div style="font-size: var(--text-sm); color: var(--charcoal-soft);">Industrial UX & Agentic Experience Design</div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <section class="section bg-sand-light">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: var(--space-8);"><span class="eyebrow">Related Insights</span></div>
+      <div style="display: flex; gap: var(--space-8); justify-content: center; flex-wrap: wrap;">
+        <a href="../blog.html" class="btn btn-outline">View All Insights</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" style="background: var(--charcoal); color: var(--sand);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-12); padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <div>
+          <img src="../images/daito-logo.webp" alt="Daito Design" style="height: 48px; width: auto; margin-bottom: var(--space-6); filter: brightness(0) invert(1);">
+          <p style="font-size: var(--text-base); color: rgba(255,255,255,0.7); line-height: 1.6; max-width: 280px;">The leader in industrial UX and enterprise experience design.</p>
+        </div>
+        <div>
+          <h4 style="color: var(--white); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-4);">Services</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: var(--space-2);"><a href="../services.html#pre-product" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Pre-Product</a></li>
+            <li style="margin-bottom: var(--space-2);"><a href="../services.html#product" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Product</a></li>
+            <li style="margin-bottom: var(--space-2);"><a href="../services.html#post-product" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Post-Product</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--white); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-4);">Company</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: var(--space-2);"><a href="../about.html" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">About</a></li>
+            <li style="margin-bottom: var(--space-2);"><a href="../case-studies.html" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Work</a></li>
+            <li style="margin-bottom: var(--space-2);"><a href="../blog.html" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-decoration: none;">Insights</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--white); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-4);">Contact</h4>
+          <a href="mailto:info@daitodesign.com" style="color: rgba(255,255,255,0.7); font-size: var(--text-sm);">info@daitodesign.com</a>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--space-6) 0;">
+        <p style="font-size: var(--text-xs); color: rgba(255,255,255,0.5);">© 2026 Daisho Global Holdings, Inc.</p>
+        <a href="../privacy.html" style="font-size: var(--text-xs); color: rgba(255,255,255,0.5);">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

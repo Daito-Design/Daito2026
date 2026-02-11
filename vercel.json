@@ -11,7 +11,18 @@
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" }
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains; preload" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://js-eu1.hs-scripts.com https://js.hs-scripts.com https://widget.clutch.co https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://*.hubspot.com https://*.hs-scripts.com https://*.hsforms.com https://*.hscollectedforms.net; frame-src 'self' https://widget.clutch.co https://*.hubspot.com https://*.hsforms.com; object-src 'none'; base-uri 'self'; form-action 'self' https://*.hubspot.com https://*.hsforms.com; upgrade-insecure-requests" }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
       ]
     },
     {
@@ -22,6 +33,18 @@
     },
     {
       "source": "/js/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*).webp",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
@@ -41,6 +64,16 @@
     {
       "source": "/axd",
       "destination": "/agentic-experience.html",
+      "permanent": false
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html",
+      "permanent": false
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html",
       "permanent": false
     }
   ]
