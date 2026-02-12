@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: jaredhuke/Daito2026
+  repo: Daito-Design/Daito2026
   branch: main
   base_url: https://daito2026.vercel.app/api
 
