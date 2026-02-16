@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: jaredhuke/Daito2026
+  repo: Daito-Design/Daito2026
   branch: main
 
 # Media files
