@@ -1,0 +1,128 @@
+{
+  "slug": "schneider",
+  "client": "Schneider Electric",
+  "industry": "Energy",
+  "year": "2025",
+  "hero": {
+    "headline": "Visualizing the Art of the Possible for Schneider Electric",
+    "subtitle": "We brought 6 AI-driven concepts to life for ADIPEC 2025, transforming complex autonomous operations visions into compelling visual experiences that showcase the future of energy management.",
+    "image": "/images/case-schneider-hero.jpg",
+    "metrics": [
+      { "value": "6", "label": "AI Concepts Visualized" },
+      { "value": "ADIPEC", "label": "2025 Exhibition" },
+      { "value": "Future", "label": "Art of the Possible" }
+    ]
+  },
+  "challenge": {
+    "heading": "The Challenge",
+    "intro": "Schneider Electric needed to showcase 6 AI-driven concepts at ADIPEC 2025—not just explain existing technology, but paint a compelling vision of autonomous operations and what the future could look like.",
+    "cards": [
+      {
+        "title": "6 AI Concepts",
+        "description": "Six distinct AI-driven visions for autonomous operations, each requiring unique visual storytelling to communicate possibility without overpromising."
+      },
+      {
+        "title": "Future Visualization",
+        "description": "Showing the 'art of the possible'—not just current capabilities, but where AI-powered energy management is heading. Inspiring without being speculative."
+      },
+      {
+        "title": "ADIPEC Presence",
+        "description": "Standing out at the world's largest energy conference. Creating visual experiences that position Schneider as the leader in AI-driven autonomous operations."
+      }
+    ]
+  },
+  "approach": {
+    "heading": "Our Approach",
+    "intro": "We applied our AXD framework to create visual experiences that communicate AI capabilities while maintaining human understanding and trust.",
+    "steps": [
+      {
+        "number": "1",
+        "title": "System Mapping",
+        "description": "Deep-dive into Schneider's AI architecture to understand data flows, decision points, and human-agent interactions."
+      },
+      {
+        "number": "2",
+        "title": "Visual Translation",
+        "description": "Transformed technical schematics into intuitive visual hierarchies that reveal complexity progressively."
+      },
+      {
+        "number": "3",
+        "title": "Design System",
+        "description": "Created a cohesive visual language with standardized layouts, motion rules, and color logic across all presentations."
+      },
+      {
+        "number": "4",
+        "title": "Production Pipeline",
+        "description": "Built an efficient Figma-to-PowerPoint workflow that reduced export errors and enabled rapid iterations."
+      }
+    ]
+  },
+  "work": {
+    "heading": "The Work",
+    "intro": "We created a consistent design language combining dark spatial layers, neon accents, and glass-like depth. This approach gave Schneider's AI presentations a futuristic but credible tone.",
+    "cards": [
+      {
+        "title": "Color Palette",
+        "description": "Dark spatial base with Schneider green accents and cyan highlights for data visualization. Consistent across all AI concept presentations."
+      },
+      {
+        "title": "Typography",
+        "description": "Clean, technical Inter typeface, highly legible at any size. Perfect for data-dense presentations and technical accuracy."
+      },
+      {
+        "title": "Visual Principles",
+        "description": "Progressive disclosure of complexity, glass-like depth and layering, animated data flows, and consistent motion language."
+      },
+      {
+        "title": "Agentic Experience Design",
+        "description": "Applied AXD framework to create visual experiences that communicate AI capabilities while maintaining human understanding and trust."
+      },
+      {
+        "title": "Presentation Design",
+        "description": "Six distinct yet cohesive presentations, each showcasing unique AI-driven autonomous operations concepts."
+      },
+      {
+        "title": "Production Workflow",
+        "description": "Figma-to-PowerPoint pipeline enabling efficient iteration and rapid deployment of presentation updates."
+      }
+    ]
+  },
+  "results": {
+    "heading": "Results",
+    "intro": "Six AI-driven concepts brought to life, showcasing the art of the possible for autonomous operations. Schneider's presentations stood out as the most visually compelling at ADIPEC.",
+    "metrics": [
+      {
+        "value": "6",
+        "label": "AI Concepts Visualized",
+        "description": "All six concepts presented with unified visual language and consistent design principles."
+      },
+      {
+        "value": "Art of",
+        "label": "the Possible Showcased",
+        "description": "Future-forward vision of autonomous operations communicated clearly and compellingly."
+      },
+      {
+        "value": "Unified",
+        "label": "Visual Identity Across All Concepts",
+        "description": "Consistent design system enabling rapid iteration and brand coherence."
+      },
+      {
+        "value": "#1",
+        "label": "Design-Forward Presence",
+        "description": "Most visually compelling presentations at ADIPEC 2025."
+      }
+    ]
+  },
+  "services": [
+    "Agentic Experience Design",
+    "AI System Visualization",
+    "Presentation Design",
+    "Design System Creation",
+    "Production Workflow Design",
+    "Figma-to-PowerPoint Pipeline"
+  ],
+  "cta": {
+    "heading": "Ready to visualize your AI systems?",
+    "button_text": "Start a Conversation"
+  }
+}

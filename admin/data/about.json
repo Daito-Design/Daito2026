@@ -1,0 +1,124 @@
+{
+  "hero": {
+    "eyebrow": "About Daito",
+    "headline": "We design for the people who build the world.",
+    "subtitle": "15 years of enterprise UX expertise. From offshore platforms to control rooms. We understand extreme conditions."
+  },
+  "story": {
+    "heading": "Our Story",
+    "subheading": "How a small team of designers became trusted partners for the world's most complex enterprises.",
+    "paragraphs": [
+      "Daito Design was founded on a simple insight: enterprise software is broken because it's designed by people who have never used it. We set out to change that.",
+      "Over the past 15 years, we've spent time on offshore platforms, in nuclear control rooms, and alongside geoscientists making billion-dollar decisions. We've learned that great design isn't about aesthetics—it's about understanding the real constraints of extreme environments.",
+      "Our approach is radically different. We don't accept abstractions. We visit your sites. We shadow your operators. We understand your workflows before we touch a design tool. And we stick around—most of our client relationships span years, not months."
+    ]
+  },
+  "values": {
+    "heading": "Our Values",
+    "cards": [
+      {
+        "title": "Context Over Assumption",
+        "description": "We design in context, not in conference rooms. Every decision is grounded in real-world observation and user feedback."
+      },
+      {
+        "title": "Clarity Over Decoration",
+        "description": "Enterprise software saves lives and moves billions. Every pixel has a purpose. No ornament, only clarity."
+      },
+      {
+        "title": "Partnership Over Projection",
+        "description": "We embed ourselves in your organization. Our success is measured by your success, not by deliverables."
+      }
+    ]
+  },
+  "global_presence": {
+    "heading": "Global Presence",
+    "intro": "We work with enterprises across 6 continents. Our team operates from multiple hubs, allowing us to work in your timezone and understand your local context.",
+    "locations": [
+      {
+        "city": "Austin, TX",
+        "type": "HQ",
+        "description": "US headquarters. Home to our core design and strategy team."
+      },
+      {
+        "city": "London, UK",
+        "type": "Office",
+        "description": "European base serving North Sea energy clients and UK enterprises."
+      },
+      {
+        "city": "Singapore",
+        "type": "Studio",
+        "description": "Asia-Pacific office working with regional energy and maritime operators."
+      },
+      {
+        "city": "Amsterdam, NL",
+        "type": "Office",
+        "description": "European research and design studio."
+      }
+    ]
+  },
+  "expertise": {
+    "heading": "Our Expertise",
+    "cards": [
+      {
+        "title": "Industrial UX",
+        "description": "Control rooms, SCADA systems, real-time monitoring. Design that works in extreme conditions."
+      },
+      {
+        "title": "Enterprise Software",
+        "description": "Large-scale systems for complex organizations. Governance, change management, training."
+      },
+      {
+        "title": "Design Systems",
+        "description": "Component libraries and design governance that scale across dozens of applications."
+      },
+      {
+        "title": "User Research",
+        "description": "Contextual inquiry in the field. Understanding workflows before design."
+      },
+      {
+        "title": "Agentic Experience Design",
+        "description": "Human-AI collaboration interfaces for the next generation of enterprise software."
+      },
+      {
+        "title": "Digital Transformation",
+        "description": "Strategy and governance for converting legacy systems to modern platforms."
+      }
+    ]
+  },
+  "team": {
+    "heading": "Our Team",
+    "subtitle": "Small, senior, focused. Deep expertise in enterprise design and complex problem-solving.",
+    "members": [
+      {
+        "name": "Jared Huke",
+        "title": "Founder & Creative Director",
+        "image": "/images/team-jared.jpg"
+      },
+      {
+        "name": "Shawn Reilly",
+        "title": "Operations & Strategy",
+        "image": "/images/team-shawn.jpg"
+      },
+      {
+        "name": "Damon Daood",
+        "title": "Senior Designer",
+        "image": "/images/team-damon.jpg"
+      },
+      {
+        "name": "Joe Santori",
+        "title": "Design & Technology",
+        "image": "/images/team-joe.jpg"
+      },
+      {
+        "name": "Russell Buyse",
+        "title": "Business Development",
+        "image": "/images/team-russell.jpg"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Want to work with us?",
+    "body": "Whether you're transforming a legacy system or building the next generation of enterprise software, we'd love to talk about your challenge.",
+    "button_text": "Start a Conversation"
+  }
+}

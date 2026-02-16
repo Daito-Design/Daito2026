@@ -1,140 +1,509 @@
 backend:
   name: github
-  repo: Daito-Design/Daito2026
+  repo: jaredhuke/Daito2026
   branch: main
+  base_url: https://daito2026.vercel.app
+  auth_endpoint: api/auth
 
-# Media files
 media_folder: "images"
 public_folder: "/images"
-
-# Site URL for previews
 site_url: https://daito2026.vercel.app
 
+# Collections
 collections:
-  # Case Studies — file-based collection (HTML files, no frontmatter)
-  - name: "case-studies"
-    label: "Case Studies"
+  # ==================== PAGES ====================
+  
+  - name: "homepage"
+    label: "Homepage"
     files:
-      - label: "Shell"
-        name: "shell"
-        file: "case-study-shell.html"
+      - name: "homepage"
+        label: "Homepage Data"
+        file: "admin/data/homepage.json"
+        format: "json"
         fields:
-          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "Constellation"
-        name: "constellation"
-        file: "case-study-constellation.html"
-        fields:
-          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "3LC"
-        name: "3lc"
-        file: "case-study-3lc.html"
-        fields:
-          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "Schneider"
-        name: "schneider"
-        file: "case-study-schneider.html"
-        fields:
-          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "Bluware"
-        name: "bluware"
-        file: "case-study-bluware.html"
-        fields:
-          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "TDECU"
-        name: "tdecu"
-        file: "case-study-tdecu.html"
-        fields:
-          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
-
-  # Blog Posts — file-based (plain HTML, no frontmatter)
-  - name: "blog"
-    label: "Blog Posts"
-    files:
-      - label: "Agent Journey Mapping"
-        name: "agent-journey"
-        file: "blog/agent-journey.html"
-        fields:
-          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "Enterprise UX"
-        name: "enterprise-ux"
-        file: "blog/enterprise-ux.html"
-        fields:
-          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "Human-AI Collaboration"
-        name: "human-ai-collaboration"
-        file: "blog/human-ai-collaboration.html"
-        fields:
-          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
-
-  # Key Pages
-  - name: "pages"
-    label: "Site Pages"
-    files:
-      - label: "Homepage"
-        name: "index"
-        file: "index.html"
-        fields:
-          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "About"
-        name: "about"
-        file: "about.html"
-        fields:
-          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "Services"
-        name: "services"
-        file: "services.html"
-        fields:
-          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "Contact"
-        name: "contact"
-        file: "contact.html"
-        fields:
-          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "Agentic Experience"
-        name: "agentic-experience"
-        file: "agentic-experience.html"
-        fields:
-          - {label: "Content", name: "body", widget: "code", default_language: "html", output_code_only: true}
-
-  # Content Issues Tracker
-  - name: "content-issues"
-    label: "Content Issues"
-    files:
-      - label: "Issues to Fix"
-        name: "issues"
-        file: "admin/issues.json"
-        fields:
-          - label: "Issues"
-            name: "issues"
-            widget: "list"
+          # Hero Section
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            collapsed: false
             fields:
-              - {label: "Priority", name: "priority", widget: "select", options: ["HIGH", "MEDIUM", "LOW"]}
-              - {label: "Page", name: "page", widget: "string"}
-              - {label: "Issue", name: "issue", widget: "string"}
-              - {label: "Current State", name: "current_state", widget: "string"}
-              - {label: "Action Required", name: "action", widget: "text"}
-              - {label: "Status", name: "status", widget: "select", options: ["Open", "In Progress", "Complete"]}
+              - { label: "Eyebrow (Label)", name: "eyebrow", widget: "string", hint: "e.g., 'Industrial UX & Experience Design'" }
+              - { label: "Headline", name: "headline", widget: "string", hint: "Main hero title. Keep it punchy." }
+              - { label: "Subtitle", name: "subtitle", widget: "text", hint: "Supporting text (2-3 sentences)" }
+              - { label: "Background Image", name: "background_image", widget: "image", hint: "Hero background (recommended: 1920x1080)" }
+              - { label: "CTA Button Text", name: "cta_text", widget: "string", default: "See Our Work" }
+              - { label: "CTA Button Link", name: "cta_link", widget: "string", default: "/case-studies.html" }
 
-  # Site Settings
-  - name: "settings"
+          # Trust Strip
+          - label: "Trust Strip (Clients)"
+            name: "trust_strip"
+            widget: "object"
+            collapsed: false
+            fields:
+              - label: "Featured Clients"
+                name: "clients"
+                widget: "list"
+                field: { label: "Client Name", name: "name", widget: "string" }
+                hint: "List of client names shown on trust strip"
+
+          # Statement Section
+          - label: "Statement Section"
+            name: "statement"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Main Quote", name: "text", widget: "string", hint: "Main statement (e.g., 'Most enterprise software...'" }
+              - { label: "Highlighted Word/Phrase", name: "highlight", widget: "string", hint: "The part to highlight (e.g., 'We're different.')" }
+
+          # Value Proposition
+          - label: "Value Proposition Section"
+            name: "value_prop"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Body Text (Markdown)", name: "body", widget: "markdown" }
+
+          # Services Overview
+          - label: "Services Overview Section"
+            name: "services_section"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - label: "Service Cards"
+                name: "services"
+                widget: "list"
+                collapsed: true
+                fields:
+                  - { label: "Number/Icon", name: "number", widget: "string", hint: "01, 02, 03" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - label: "Services List"
+                    name: "services_list"
+                    widget: "list"
+                    field: { label: "Service", name: "service", widget: "string" }
+
+          # Featured Case Studies
+          - label: "Featured Case Studies"
+            name: "featured_cases"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Case Studies"
+                name: "cases"
+                widget: "list"
+                collapsed: true
+                fields:
+                  - { label: "Client Name", name: "client", widget: "string" }
+                  - { label: "Headline", name: "headline", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Metric 1 Value", name: "metric1_value", widget: "string" }
+                  - { label: "Metric 1 Label", name: "metric1_label", widget: "string" }
+                  - { label: "Metric 2 Value", name: "metric2_value", widget: "string" }
+                  - { label: "Metric 2 Label", name: "metric2_label", widget: "string" }
+                  - { label: "Featured Image", name: "image", widget: "image" }
+                  - { label: "Link", name: "link", widget: "string", hint: "/case-study-shell.html" }
+
+          # Industries Section
+          - label: "Industries Section"
+            name: "industries"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Industry Cards"
+                name: "cards"
+                widget: "list"
+                collapsed: true
+                fields:
+                  - { label: "Industry Name", name: "name", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Icon Name", name: "icon_name", widget: "string", hint: "CSS class or SVG name" }
+
+          # Insights/Blog Section
+          - label: "Insights Section"
+            name: "insights"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Article Cards"
+                name: "articles"
+                widget: "list"
+                collapsed: true
+                fields:
+                  - { label: "Article Tag", name: "tag", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Excerpt", name: "excerpt", widget: "text" }
+                  - { label: "Featured Image", name: "image", widget: "image" }
+                  - { label: "Link", name: "link", widget: "string" }
+
+          # Bottom CTA
+          - label: "Bottom CTA Section"
+            name: "cta_section"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Body Text", name: "body", widget: "text" }
+              - { label: "Button Text", name: "button_text", widget: "string" }
+              - { label: "Button Link", name: "button_link", widget: "string" }
+
+  # ==================== ABOUT PAGE ====================
+
+  - name: "about"
+    label: "About Page"
+    files:
+      - name: "about"
+        label: "About Page Data"
+        file: "admin/data/about.json"
+        format: "json"
+        fields:
+          # Hero
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Headline", name: "headline", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "text" }
+
+          # Story Section
+          - label: "Story Section"
+            name: "story"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Subheading", name: "subheading", widget: "string" }
+              - label: "Body Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "text", widget: "markdown" }
+
+          # Values
+          - label: "Values Section"
+            name: "values"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Value Cards"
+                name: "cards"
+                widget: "list"
+                collapsed: true
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "markdown" }
+
+          # Global Presence
+          - label: "Global Presence Section"
+            name: "global_presence"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Intro Text", name: "intro", widget: "markdown" }
+              - label: "Locations"
+                name: "locations"
+                widget: "list"
+                collapsed: true
+                fields:
+                  - { label: "City", name: "city", widget: "string" }
+                  - { label: "Location Type", name: "type", widget: "string", hint: "HQ, Office, Studio" }
+                  - { label: "Description", name: "description", widget: "text" }
+
+          # Expertise
+          - label: "Expertise Section"
+            name: "expertise"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Expertise Cards"
+                name: "cards"
+                widget: "list"
+                collapsed: true
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "markdown" }
+
+          # Team
+          - label: "Team Section"
+            name: "team"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - label: "Team Members"
+                name: "members"
+                widget: "list"
+                collapsed: true
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Photo", name: "image", widget: "image" }
+
+          # CTA
+          - label: "Bottom CTA"
+            name: "cta"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Body Text", name: "body", widget: "markdown" }
+              - { label: "Button Text", name: "button_text", widget: "string" }
+
+  # ==================== SERVICES PAGE ====================
+
+  - name: "services"
+    label: "Services Page"
+    files:
+      - name: "services"
+        label: "Services Page Data"
+        file: "admin/data/services.json"
+        format: "json"
+        fields:
+          # Hero
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Headline", name: "headline", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "text" }
+
+          # Service Phases
+          - label: "Service Phases"
+            name: "phases"
+            widget: "list"
+            collapsed: false
+            fields:
+              - { label: "Phase Number/Label", name: "number", widget: "string", hint: "01, 02, 03 or 'Phase 1'" }
+              - { label: "Phase Heading", name: "heading", widget: "string" }
+              - { label: "Phase Description", name: "description", widget: "markdown" }
+              - label: "Service Cards"
+                name: "services"
+                widget: "list"
+                collapsed: true
+                fields:
+                  - { label: "Service Title", name: "title", widget: "string" }
+                  - { label: "Service Description", name: "description", widget: "markdown" }
+
+          # Industries
+          - label: "Industries Section"
+            name: "industries"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Industry Cards"
+                name: "cards"
+                widget: "list"
+                collapsed: true
+                fields:
+                  - { label: "Industry Name", name: "name", widget: "string" }
+                  - { label: "Description", name: "description", widget: "markdown" }
+                  - label: "Featured Clients"
+                    name: "clients"
+                    widget: "list"
+                    field: { label: "Client", name: "client", widget: "string" }
+
+          # CTA
+          - label: "Bottom CTA"
+            name: "cta"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Button Text", name: "button_text", widget: "string" }
+
+  # ==================== CASE STUDIES ====================
+
+  - name: "case_studies"
+    label: "Case Studies"
+    folder: "admin/data/case-studies"
+    create: true
+    format: "json"
+    identifier_field: "slug"
+    fields:
+      # Meta
+      - { label: "Page Slug", name: "slug", widget: "string", hint: "shell, constellation, schneider, 3lc, bluware, tdecu" }
+      - { label: "Client Name", name: "client", widget: "string" }
+      - { label: "Industry", name: "industry", widget: "string", hint: "Energy, Nuclear, Manufacturing, etc." }
+      - { label: "Year/Date", name: "year", widget: "string", hint: "2018-Present or 2024" }
+
+      # Hero Section
+      - label: "Hero Section"
+        name: "hero"
+        widget: "object"
+        collapsed: false
+        fields:
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Subtitle/Lead", name: "subtitle", widget: "markdown" }
+          - { label: "Hero Image", name: "image", widget: "image" }
+          - label: "Hero Metrics"
+            name: "metrics"
+            widget: "list"
+            max: 3
+            collapsed: true
+            fields:
+              - { label: "Value", name: "value", widget: "string", hint: "e.g., '2018'" }
+              - { label: "Label", name: "label", widget: "string", hint: "e.g., 'Founding Year'" }
+
+      # Challenge Section
+      - label: "Challenge Section"
+        name: "challenge"
+        widget: "object"
+        collapsed: false
+        fields:
+          - { label: "Section Heading", name: "heading", widget: "string", default: "The Challenge" }
+          - { label: "Intro Paragraph", name: "intro", widget: "markdown" }
+          - label: "Challenge Cards"
+            name: "cards"
+            widget: "list"
+            max: 3
+            collapsed: true
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "markdown" }
+
+      # Approach Section
+      - label: "Approach Section"
+        name: "approach"
+        widget: "object"
+        collapsed: false
+        fields:
+          - { label: "Section Heading", name: "heading", widget: "string", default: "Our Approach" }
+          - { label: "Intro Paragraph", name: "intro", widget: "markdown" }
+          - label: "Process Steps"
+            name: "steps"
+            widget: "list"
+            max: 4
+            collapsed: true
+            fields:
+              - { label: "Step Number", name: "number", widget: "string", hint: "1, 2, 3, 4" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "markdown" }
+
+      # Work/Deliverables Section
+      - label: "Work Section"
+        name: "work"
+        widget: "object"
+        collapsed: false
+        fields:
+          - { label: "Section Heading", name: "heading", widget: "string", default: "The Work" }
+          - { label: "Intro Text", name: "intro", widget: "markdown" }
+          - label: "Deliverable Cards"
+            name: "cards"
+            widget: "list"
+            collapsed: true
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "markdown" }
+
+      # Results Section
+      - label: "Results Section"
+        name: "results"
+        widget: "object"
+        collapsed: false
+        fields:
+          - { label: "Section Heading", name: "heading", widget: "string", default: "Results" }
+          - { label: "Intro Paragraph", name: "intro", widget: "markdown" }
+          - label: "Result Metrics"
+            name: "metrics"
+            widget: "list"
+            max: 4
+            collapsed: true
+            fields:
+              - { label: "Value", name: "value", widget: "string", hint: "e.g., '50%', '6/5'" }
+              - { label: "Label", name: "label", widget: "string", hint: "Efficiency Improvement" }
+              - { label: "Description", name: "description", widget: "markdown" }
+
+      # Services Used
+      - label: "Services Used"
+        name: "services"
+        widget: "list"
+        field: { label: "Service", name: "service", widget: "string" }
+        hint: "List of service areas (e.g., UX Research, Design System, etc.)"
+
+      # Bottom CTA
+      - label: "CTA Section"
+        name: "cta"
+        widget: "object"
+        collapsed: false
+        fields:
+          - { label: "Heading", name: "heading", widget: "string", default: "Ready to transform your enterprise software?" }
+          - { label: "Button Text", name: "button_text", widget: "string", default: "Get in Touch" }
+
+  # ==================== GLOBAL SETTINGS ====================
+
+  - name: "site_settings"
     label: "Site Settings"
     files:
-      - label: "Brand Colors"
-        name: "brand"
-        file: "admin/brand.json"
+      - name: "settings"
+        label: "Brand & Global Settings"
+        file: "admin/data/settings.json"
+        format: "json"
         fields:
-          - {label: "Primary Color (Sand)", name: "sand", widget: "string", default: "#F5F0E8"}
-          - {label: "Secondary Color (Charcoal)", name: "charcoal", widget: "string", default: "#1A1A1A"}
-          - {label: "Accent Color (Oxblood)", name: "oxblood", widget: "string", default: "#722F37"}
-      - label: "Image Library"
-        name: "case-study-images"
-        file: "images/_manifest.json"
-        fields:
-          - label: "Images"
-            name: "images"
-            widget: "list"
+          - label: "Brand Colors"
+            name: "colors"
+            widget: "object"
+            collapsed: false
             fields:
-              - {label: "Image", name: "src", widget: "image"}
-              - {label: "Alt Text", name: "alt", widget: "string"}
-              - {label: "Used In", name: "used_in", widget: "string"}
-              - {label: "Notes", name: "notes", widget: "text", required: false}
+              - { label: "Primary (Oxblood)", name: "primary", widget: "color", enableAlpha: false, default: "#722F37" }
+              - { label: "Secondary (Sand)", name: "secondary", widget: "color", enableAlpha: false, default: "#F5F0E8" }
+              - { label: "Accent (Charcoal)", name: "accent", widget: "color", enableAlpha: false, default: "#1A1A1A" }
+              - { label: "Success", name: "success", widget: "color", enableAlpha: false, default: "#10B981" }
+              - { label: "Warning", name: "warning", widget: "color", enableAlpha: false, default: "#F59E0B" }
+              - { label: "Error", name: "error", widget: "color", enableAlpha: false, default: "#EF4444" }
+
+          - label: "Company Information"
+            name: "company"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Company Name", name: "name", widget: "string", default: "Daito Design" }
+              - { label: "Tagline", name: "tagline", widget: "string", hint: "Short description" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string" }
+              - { label: "Website URL", name: "website", widget: "string" }
+
+          - label: "Social Links"
+            name: "social"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "LinkedIn", name: "linkedin", widget: "string" }
+              - { label: "Twitter", name: "twitter", widget: "string" }
+              - { label: "Instagram", name: "instagram", widget: "string" }
+
+          - label: "Analytics"
+            name: "analytics"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Google Analytics ID", name: "google_analytics", widget: "string", hint: "e.g., G-XXXXXXXXXX" }
+
+  # ==================== CONTENT ISSUES ====================
+
+  - name: "content_issues"
+    label: "Content Issues / Todos"
+    folder: "admin/issues"
+    create: true
+    format: "json"
+    identifier_field: "title"
+    fields:
+      - { label: "Issue Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "markdown" }
+      - { label: "Page", name: "page", widget: "select", options: ["homepage", "about", "services", "case-study-shell", "case-study-constellation", "case-study-schneider", "case-study-3lc", "case-study-bluware", "case-study-tdecu", "other"] }
+      - { label: "Priority", name: "priority", widget: "select", options: ["Low", "Medium", "High", "Critical"] }
+      - { label: "Status", name: "status", widget: "select", options: ["To Do", "In Progress", "Done"] }
+      - { label: "Assigned To", name: "assigned_to", widget: "string" }
+      - { label: "Created Date", name: "date", widget: "datetime" }

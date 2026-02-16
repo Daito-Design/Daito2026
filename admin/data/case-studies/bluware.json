@@ -1,0 +1,121 @@
+{
+  "slug": "bluware",
+  "client": "Bluware",
+  "industry": "Geo-Technology",
+  "year": "2021-2024",
+  "hero": {
+    "headline": "Embedded Design for Subsurface Intelligence",
+    "subtitle": "Bluware develops sophisticated seismic interpretation software for geoscientists. We embedded with their product team for 3+ years, delivering continuous design support as a true product partner.",
+    "image": "/images/case-bluware-hero.jpg",
+    "metrics": [
+      { "value": "3+", "label": "Year Embedded Partnership" },
+      { "value": "35%", "label": "Usability Score Increase" },
+      { "value": "8", "label": "Major Releases Shipped" }
+    ]
+  },
+  "challenge": {
+    "heading": "The Challenge",
+    "intro": "Bluware's technology enables seismic data analysis that was previously impossible, but powerful technology needs intuitive interfaces to realize its potential. The mandate: design interfaces that match the sophistication of the technology without dumbing it down.",
+    "cards": [
+      {
+        "title": "The Design POD Model",
+        "description": "Rather than project-based engagements, we embedded a dedicated design team directly into Bluware's product organization. Sprint-aligned delivery. Continuous improvement. True partnership."
+      }
+    ]
+  },
+  "approach": {
+    "heading": "Our Approach",
+    "intro": "We operate as an extension of Bluware's product team, participating in sprints, responding to evolving requirements, and maintaining deep domain expertise.",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Sprint-Aligned Delivery",
+        "description": "Design work synchronized with development cycles. No handoff delays. Immediate feedback loops. Continuous iteration."
+      },
+      {
+        "number": "2",
+        "title": "Domain Expertise",
+        "description": "After 3+ years, we understand seismic interpretation workflows deeply. We challenge assumptions and propose solutions."
+      },
+      {
+        "number": "3",
+        "title": "Predictable Capacity",
+        "description": "Dedicated design resources available when needed. No ramp-up time for new projects. Institutional knowledge preserved."
+      },
+      {
+        "number": "4",
+        "title": "Continuous Partnership",
+        "description": "Years 4+ extending embedded partnership, delivering sustained value through product evolution."
+      }
+    ]
+  },
+  "work": {
+    "heading": "The Work",
+    "intro": "Our embedded partnership spans the full product design lifecycle, from competitive intelligence to production-ready interfaces.",
+    "cards": [
+      {
+        "title": "Competitive Intelligence",
+        "description": "Deep analysis of the geo-tech landscape. Understanding where Bluware's technology creates unique value. Identifying UX patterns that work in subsurface interpretation."
+      },
+      {
+        "title": "Product Design",
+        "description": "End-to-end UX/UI for Bluware's interpretation platform. Complex data visualization. Multi-panel workflows. Precision controls for specialist users."
+      },
+      {
+        "title": "Website & Content",
+        "description": "Product marketing design for launches and campaigns. Communicating sophisticated technology to technical audiences."
+      },
+      {
+        "title": "Design System",
+        "description": "Comprehensive component library ensuring consistency across the product portfolio. Documentation enabling internal teams to extend the design."
+      },
+      {
+        "title": "User Research",
+        "description": "Continuous research with geoscientist users to validate design decisions and identify new opportunities."
+      },
+      {
+        "title": "Product Strategy",
+        "description": "Strategic input on roadmap priorities and feature positioning based on deep domain knowledge and user insights."
+      }
+    ]
+  },
+  "results": {
+    "heading": "Results",
+    "intro": "The Design POD model delivers continuous value: deeply embedded partnership that grows with the product.",
+    "metrics": [
+      {
+        "value": "35%",
+        "label": "Increase in Usability Scores",
+        "description": "Measurable improvements in user satisfaction and interface effectiveness."
+      },
+      {
+        "value": "3+",
+        "label": "Years of Embedded Partnership",
+        "description": "Long-term commitment demonstrating sustained value and deep product integration."
+      },
+      {
+        "value": "8",
+        "label": "Major Releases Shipped",
+        "description": "Continuous product evolution supported by integrated design partnership."
+      },
+      {
+        "value": "Global",
+        "label": "Geoscientist User Base",
+        "description": "Platform used by geoscientists worldwide for subsurface interpretation and analysis."
+      }
+    ]
+  },
+  "services": [
+    "Competitive Analysis",
+    "User Research",
+    "Product Strategy",
+    "UX/UI Design",
+    "Design Systems",
+    "Website Design",
+    "Embedded Design Partnership"
+  ],
+  "cta": {
+    "heading": "Need embedded design support?",
+    "button_text": "Start a Conversation"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "hero": {
+    "eyebrow": "How We Work",
+    "headline": "End-to-end enterprise UX.",
+    "subtitle": "From initial discovery through design systems and ongoing support. We bring deep expertise in industrial and enterprise experience design."
+  },
+  "phases": [
+    {
+      "number": "01",
+      "heading": "Discovery & Research",
+      "description": "Understanding your world before we design. Field visits, user interviews, workflow mapping, and contextual analysis.",
+      "services": [
+        {
+          "title": "Contextual Inquiry",
+          "description": "On-site observation of your users and workflows in their actual environment."
+        },
+        {
+          "title": "User Interviews",
+          "description": "Deep conversations with operators, managers, and decision-makers about their needs and pain points."
+        },
+        {
+          "title": "Workflow Mapping",
+          "description": "Detailed documentation of how work actually happens (not how you think it happens)."
+        },
+        {
+          "title": "Competitive Analysis",
+          "description": "Understanding how similar challenges are solved in comparable industries."
+        }
+      ]
+    },
+    {
+      "number": "02",
+      "heading": "Strategy & Design",
+      "description": "Creating the vision and bringing it to life. Conceptual frameworks, interaction design, and visual systems.",
+      "services": [
+        {
+          "title": "Product Strategy",
+          "description": "Defining scope, phasing, and roadmap aligned with business goals."
+        },
+        {
+          "title": "Information Architecture",
+          "description": "Organizing complex information into intuitive mental models."
+        },
+        {
+          "title": "Interaction Design",
+          "description": "Designing how users interact with the system at every touch point."
+        },
+        {
+          "title": "Visual Design",
+          "description": "Creating clarity and consistency through thoughtful visual hierarchy and design systems."
+        }
+      ]
+    },
+    {
+      "number": "03",
+      "heading": "Implementation & Scale",
+      "description": "Building sustainable systems that work across organizations. Design systems, governance, and change management.",
+      "services": [
+        {
+          "title": "Design Systems",
+          "description": "Component libraries, design tokens, and documentation for consistent implementation at scale."
+        },
+        {
+          "title": "Development Handoff",
+          "description": "Detailed specifications, interactive prototypes, and ongoing support for engineering teams."
+        },
+        {
+          "title": "Usability Testing",
+          "description": "Validation with real users throughout the development process."
+        },
+        {
+          "title": "Training & Documentation",
+          "description": "Ensuring your team can maintain and extend the design system over time."
+        }
+      ]
+    }
+  ],
+  "industries": {
+    "heading": "Industries We Serve",
+    "cards": [
+      {
+        "name": "Energy & Utilities",
+        "description": "Oil, gas, nuclear, renewables. From exploration to operations to grid management.",
+        "clients": ["Shell", "Constellation", "Exelon"]
+      },
+      {
+        "name": "Maritime & Offshore",
+        "description": "Shipping, offshore operations, subsea infrastructure. Safety-critical at global scale.",
+        "clients": ["Shell", "Global Maritime"]
+      },
+      {
+        "name": "Industrial Operations",
+        "description": "Manufacturing, mining, utilities. Where operational efficiency directly impacts bottom line.",
+        "clients": ["Shell", "Mining Operations"]
+      },
+      {
+        "name": "Financial Services",
+        "description": "Trading, operations, compliance. High-stakes decision-making with regulatory complexity.",
+        "clients": ["Financial Institutions"]
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Let's talk about your enterprise software challenge.",
+    "button_text": "Get in Touch"
+  }
+}

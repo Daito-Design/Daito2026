@@ -1,0 +1,25 @@
+{
+  "colors": {
+    "primary": "#722F37",
+    "secondary": "#F5F0E8",
+    "accent": "#1A1A1A",
+    "success": "#10B981",
+    "warning": "#F59E0B",
+    "error": "#EF4444"
+  },
+  "company": {
+    "name": "Daito Design",
+    "tagline": "Industrial UX & Enterprise Experience Design",
+    "email": "info@daitodesign.com",
+    "phone": "+1 (512) 555-0123",
+    "website": "https://daitodesign.com"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/daitodesign/",
+    "twitter": "https://twitter.com/daitodesign",
+    "instagram": "https://instagram.com/daitodesign"
+  },
+  "analytics": {
+    "google_analytics": "G-7HPF8C3VXH"
+  }
+}

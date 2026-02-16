@@ -1,0 +1,130 @@
+{
+  "slug": "3lc",
+  "client": "3LC",
+  "industry": "AI/ML",
+  "year": "2022-2024",
+  "hero": {
+    "headline": "Better, Faster, & Smaller AI Models",
+    "subtitle": "3LC had powerful technology for improving ML models through data quality. We partnered on strategic brand development, customer research, and product formulation to translate that capability into a product data scientists actually love.",
+    "image": "/images/case-3lc-hero.png",
+    "metrics": [
+      { "value": "40+", "label": "User Interviews" },
+      { "value": "Brand", "label": "Strategy & Positioning" },
+      { "value": "Product", "label": "Market Fit Achieved" }
+    ]
+  },
+  "challenge": {
+    "heading": "The Challenge",
+    "intro": "3LC came to us with a powerful technology: a way to improve ML models by fixing training data in real-time. They needed help translating that technical capability into a product that data scientists would actually use and love.",
+    "cards": [
+      {
+        "title": "Technical Complexity",
+        "description": "The underlying technology was sophisticated: real-time data editing, model retraining, metrics tracking. Making this accessible without dumbing it down was the core challenge."
+      },
+      {
+        "title": "Developer Audience",
+        "description": "Data scientists and ML engineers are demanding users. They want power and flexibility, not hand-holding. The product needed to feel like a tool for experts."
+      },
+      {
+        "title": "Market Positioning",
+        "description": "The data-centric AI space was emerging but undefined. 3LC needed clear positioning that explained their unique approach: 'Three Lines of Code to better models.'"
+      }
+    ]
+  },
+  "approach": {
+    "heading": "Our Approach",
+    "intro": "We embedded with 3LC's team for 18 months, conducting deep user research, defining product strategy, and designing the end-to-end experience.",
+    "steps": [
+      {
+        "number": "1",
+        "title": "User Research",
+        "description": "40+ interviews with ML engineers and data scientists across energy, finance, and healthcare sectors."
+      },
+      {
+        "number": "2",
+        "title": "Market Analysis",
+        "description": "Competitive analysis of the emerging data-centric AI landscape. Identifying white space and positioning."
+      },
+      {
+        "number": "3",
+        "title": "Product Strategy",
+        "description": "Defining the 'Three Lines of Code' positioning. Developer-first tool with enterprise-grade security."
+      },
+      {
+        "number": "4",
+        "title": "Design & Launch",
+        "description": "End-to-end UX/UI design, design system, usability testing, and launch support."
+      }
+    ]
+  },
+  "work": {
+    "heading": "The Work",
+    "intro": "We designed every aspect of the 3LC platform, from data visualization to sample editing to metrics dashboards, with the needs of ML practitioners at the center.",
+    "cards": [
+      {
+        "title": "Data Visualization",
+        "description": "Interactive 3D visualization of training data distributions, outliers, and quality issues. Making invisible data problems visible."
+      },
+      {
+        "title": "Sample Editing",
+        "description": "Direct editing of training samples with real-time model impact preview. Fix data, improve models, see results immediately."
+      },
+      {
+        "title": "Metrics Dashboard",
+        "description": "Track model performance improvements over time. Connect data changes to outcome improvements with clear causality."
+      },
+      {
+        "title": "Integration Patterns",
+        "description": "Seamless integration with existing ML workflows. Jupyter notebooks, Python scripts, CI/CD pipelines."
+      },
+      {
+        "title": "Progressive Disclosure",
+        "description": "Complex functionality revealed as needed. Power users get depth, new users get clarity."
+      },
+      {
+        "title": "Dark Theme UI",
+        "description": "Navy and yellow design system optimized for long work sessions. Professional feel that respects data scientists' expertise."
+      }
+    ]
+  },
+  "results": {
+    "heading": "Results",
+    "intro": "Our 18-month partnership took 3LC from promising technology to market-ready product with enterprise customers and clear brand positioning.",
+    "metrics": [
+      {
+        "value": "40+",
+        "label": "Customer Interviews Conducted",
+        "description": "Deep user research revealing market needs and opportunities."
+      },
+      {
+        "value": "$1.8M",
+        "label": "Seed Funding Secured",
+        "description": "With Daito's UX and marketing work as foundation, 3LC raised seed round from quality investors."
+      },
+      {
+        "value": "Equinor",
+        "label": "Enterprise Partnership",
+        "description": "Secured partnership with Equinor, major energy company, leveraging Daito's agentic experience positioning."
+      },
+      {
+        "value": "Product",
+        "label": "Market-Ready & Loved",
+        "description": "Platform that data scientists advocate for, not just tolerate."
+      }
+    ]
+  },
+  "services": [
+    "User Research (40+ interviews)",
+    "Competitive Analysis",
+    "Market Positioning",
+    "Product Strategy",
+    "UX/UI Design",
+    "Design System",
+    "Usability Testing",
+    "Launch Support"
+  ],
+  "cta": {
+    "heading": "Building a data or AI product?",
+    "button_text": "Start a Conversation"
+  }
+}

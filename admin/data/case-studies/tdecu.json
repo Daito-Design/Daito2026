@@ -1,0 +1,129 @@
+{
+  "slug": "tdecu",
+  "client": "TDECU",
+  "industry": "Financial Services",
+  "year": "2019-Present",
+  "hero": {
+    "headline": "Transforming Member Experience for Texas's Largest Credit Union",
+    "subtitle": "For over five years, we've partnered with TDECU on deep operational insights, bottleneck identification, go-to-market strategic planning, and executive decision support—research-driven transformation for 350,000+ credit union members.",
+    "image": "/images/case-tdecu-hero.jpg",
+    "metrics": [
+      { "value": "350K+", "label": "Members Served" },
+      { "value": "40%", "label": "Reduced Click Paths" },
+      { "value": "Exec", "label": "Decision Support" }
+    ]
+  },
+  "challenge": {
+    "heading": "The Challenge",
+    "intro": "One of Texas's largest credit unions, serving over 350,000 members, faced a critical inflection point. Member expectations had shifted toward digital-first experiences, but the organization's digital ecosystem had evolved organically, creating fragmented experiences that didn't reflect their commitment to service excellence.",
+    "cards": [
+      {
+        "title": "Operational Bottlenecks",
+        "description": "Years of organic growth had created friction points across digital and physical channels. Long click paths and fragmented workflows were slowing member journeys and increasing support costs."
+      },
+      {
+        "title": "Strategic Decision Gaps",
+        "description": "Executive leadership needed data-driven insights to guide go-to-market strategy, brand positioning, and digital investment decisions—not just opinions and assumptions."
+      },
+      {
+        "title": "Untapped Member Intelligence",
+        "description": "Despite serving 350,000+ members, TDECU lacked systematic research programs to uncover bottlenecks, validate brand positioning, and inform strategic planning at the highest levels."
+      }
+    ]
+  },
+  "approach": {
+    "heading": "Our Approach",
+    "intro": "We built a comprehensive research program that gave TDECU unprecedented visibility into member needs, then translated those insights into strategic action.",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Click Path Optimization",
+        "description": "Systematic analysis of member journeys to identify and eliminate friction. Reduced click paths by 40% across critical workflows."
+      },
+      {
+        "number": "2",
+        "title": "Bottleneck Identification",
+        "description": "Deep operational insights revealing where member journeys break down. Data-driven recommendations that remove friction points."
+      },
+      {
+        "number": "3",
+        "title": "Brand Validation Testing",
+        "description": "Large-scale market research validating brand positioning with target demographics. Ensuring TDECU's brand promise resonates with members."
+      },
+      {
+        "number": "4",
+        "title": "Executive Decision Support",
+        "description": "Research presentations to the highest levels of leadership. Go-to-market strategic planning informed by member insights."
+      }
+    ]
+  },
+  "work": {
+    "heading": "The Work",
+    "intro": "Our embedded partnership with TDECU spans strategic research, digital transformation, and ongoing operational optimization.",
+    "cards": [
+      {
+        "title": "Website Strategy",
+        "description": "Aligning digital presence with brand promise. Creating a website experience that reflects TDECU's member-first values while enabling efficient self-service."
+      },
+      {
+        "title": "Channel Optimization",
+        "description": "Data-driven improvements based on member behavior insights. Understanding how members prefer to interact, and designing experiences that meet them where they are."
+      },
+      {
+        "title": "Member Research",
+        "description": "Systematic research programs uncovering member needs, validating positioning, and informing strategic planning at executive level."
+      },
+      {
+        "title": "Brand Validation",
+        "description": "Large-scale market testing ensuring TDECU's brand positioning resonates with current and prospective members across demographics."
+      },
+      {
+        "title": "Journey Optimization",
+        "description": "Reducing click paths, eliminating bottlenecks, and streamlining critical workflows like account opening and loan applications."
+      },
+      {
+        "title": "Ongoing Partnership",
+        "description": "Embedded team model providing continuous UX support and strategic guidance across digital transformation initiatives."
+      }
+    ]
+  },
+  "results": {
+    "heading": "Results",
+    "intro": "Deep operational insights, bottleneck removal, and executive decision support have transformed how TDECU understands and serves its members.",
+    "metrics": [
+      {
+        "value": "40%",
+        "label": "Reduced Click Paths",
+        "description": "Significant streamlining of critical member journeys across digital channels."
+      },
+      {
+        "value": "5+",
+        "label": "Years of Strategic Partnership",
+        "description": "Sustained engagement delivering continuous value and strategic insights."
+      },
+      {
+        "value": "C-Suite",
+        "label": "Executive Decision Support",
+        "description": "Regular research presentations and strategic planning sessions with top leadership."
+      },
+      {
+        "value": "350K+",
+        "label": "Members Impacted",
+        "description": "Improvements benefiting entire member base across all digital and physical channels."
+      }
+    ]
+  },
+  "services": [
+    "Member Research",
+    "Channel Strategy",
+    "Brand Research",
+    "Usability Testing",
+    "Website Strategy",
+    "Digital Transformation",
+    "Executive Decision Support"
+  ],
+  "cta": {
+    "heading": "Ready to understand your customers?",
+    "button_text": "Start a Conversation"
+  }
+}
