@@ -11,8 +11,9 @@ site_url: https://daito2026.vercel.app
 
 # Collections
 collections:
+
   # ==================== PAGES ====================
-  
+
   - name: "homepage"
     label: "Homepage"
     files:
@@ -80,10 +81,10 @@ collections:
                   - { label: "Number/Icon", name: "number", widget: "string", hint: "01, 02, 03" }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
-                  - label: "Services List"
-                    name: "services_list"
-                    widget: "list"
-                    field: { label: "Service", name: "service", widget: "string" }
+              - label: "Services List"
+                name: "services_list"
+                widget: "list"
+                field: { label: "Service", name: "service", widget: "string" }
 
           # Featured Case Studies
           - label: "Featured Case Studies"
@@ -162,7 +163,6 @@ collections:
         file: "admin/data/about.json"
         format: "json"
         fields:
-          # Hero
           - label: "Hero Section"
             name: "hero"
             widget: "object"
@@ -171,8 +171,6 @@ collections:
               - { label: "Eyebrow", name: "eyebrow", widget: "string" }
               - { label: "Headline", name: "headline", widget: "string" }
               - { label: "Subtitle", name: "subtitle", widget: "text" }
-
-          # Story Section
           - label: "Story Section"
             name: "story"
             widget: "object"
@@ -184,8 +182,6 @@ collections:
                 name: "paragraphs"
                 widget: "list"
                 field: { label: "Paragraph", name: "text", widget: "markdown" }
-
-          # Values
           - label: "Values Section"
             name: "values"
             widget: "object"
@@ -199,8 +195,6 @@ collections:
                 fields:
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "markdown" }
-
-          # Global Presence
           - label: "Global Presence Section"
             name: "global_presence"
             widget: "object"
@@ -216,8 +210,6 @@ collections:
                   - { label: "City", name: "city", widget: "string" }
                   - { label: "Location Type", name: "type", widget: "string", hint: "HQ, Office, Studio" }
                   - { label: "Description", name: "description", widget: "text" }
-
-          # Expertise
           - label: "Expertise Section"
             name: "expertise"
             widget: "object"
@@ -231,8 +223,6 @@ collections:
                 fields:
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "markdown" }
-
-          # Team
           - label: "Team Section"
             name: "team"
             widget: "object"
@@ -248,8 +238,6 @@ collections:
                   - { label: "Name", name: "name", widget: "string" }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Photo", name: "image", widget: "image" }
-
-          # CTA
           - label: "Bottom CTA"
             name: "cta"
             widget: "object"
@@ -269,7 +257,6 @@ collections:
         file: "admin/data/services.json"
         format: "json"
         fields:
-          # Hero
           - label: "Hero Section"
             name: "hero"
             widget: "object"
@@ -278,8 +265,6 @@ collections:
               - { label: "Eyebrow", name: "eyebrow", widget: "string" }
               - { label: "Headline", name: "headline", widget: "string" }
               - { label: "Subtitle", name: "subtitle", widget: "text" }
-
-          # Service Phases
           - label: "Service Phases"
             name: "phases"
             widget: "list"
@@ -295,8 +280,6 @@ collections:
                 fields:
                   - { label: "Service Title", name: "title", widget: "string" }
                   - { label: "Service Description", name: "description", widget: "markdown" }
-
-          # Industries
           - label: "Industries Section"
             name: "industries"
             widget: "object"
@@ -310,12 +293,10 @@ collections:
                 fields:
                   - { label: "Industry Name", name: "name", widget: "string" }
                   - { label: "Description", name: "description", widget: "markdown" }
-                  - label: "Featured Clients"
-                    name: "clients"
-                    widget: "list"
-                    field: { label: "Client", name: "client", widget: "string" }
-
-          # CTA
+              - label: "Featured Clients"
+                name: "clients"
+                widget: "list"
+                field: { label: "Client", name: "client", widget: "string" }
           - label: "Bottom CTA"
             name: "cta"
             widget: "object"
@@ -339,6 +320,13 @@ collections:
       - { label: "Industry", name: "industry", widget: "string", hint: "Energy, Nuclear, Manufacturing, etc." }
       - { label: "Year/Date", name: "year", widget: "string", hint: "2018-Present or 2024" }
 
+      # Tags
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        field: { label: "Tag", name: "tag", widget: "string" }
+        hint: "Display tags shown in hero area"
+
       # Hero Section
       - label: "Hero Section"
         name: "hero"
@@ -347,7 +335,8 @@ collections:
         fields:
           - { label: "Headline", name: "headline", widget: "string" }
           - { label: "Subtitle/Lead", name: "subtitle", widget: "markdown" }
-          - { label: "Hero Image", name: "image", widget: "image" }
+          - { label: "Hero Image", name: "image", widget: "image", required: false }
+          - { label: "Hero Image Alt Text", name: "image_alt", widget: "string", required: false }
           - label: "Hero Metrics"
             name: "metrics"
             widget: "list"
@@ -363,7 +352,8 @@ collections:
         widget: "object"
         collapsed: false
         fields:
-          - { label: "Section Heading", name: "heading", widget: "string", default: "The Challenge" }
+          - { label: "Section Label", name: "label", widget: "string", default: "The Challenge" }
+          - { label: "Section Heading", name: "heading", widget: "string" }
           - { label: "Intro Paragraph", name: "intro", widget: "markdown" }
           - label: "Challenge Cards"
             name: "cards"
@@ -380,7 +370,8 @@ collections:
         widget: "object"
         collapsed: false
         fields:
-          - { label: "Section Heading", name: "heading", widget: "string", default: "Our Approach" }
+          - { label: "Section Label", name: "label", widget: "string", default: "Our Approach" }
+          - { label: "Section Heading", name: "heading", widget: "string" }
           - { label: "Intro Paragraph", name: "intro", widget: "markdown" }
           - label: "Process Steps"
             name: "steps"
@@ -398,7 +389,8 @@ collections:
         widget: "object"
         collapsed: false
         fields:
-          - { label: "Section Heading", name: "heading", widget: "string", default: "The Work" }
+          - { label: "Section Label", name: "label", widget: "string", default: "The Work" }
+          - { label: "Section Heading", name: "heading", widget: "string" }
           - { label: "Intro Text", name: "intro", widget: "markdown" }
           - label: "Deliverable Cards"
             name: "cards"
@@ -408,13 +400,30 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "markdown" }
 
+      # Gallery Section
+      - label: "Gallery"
+        name: "gallery"
+        widget: "object"
+        collapsed: true
+        required: false
+        fields:
+          - label: "Gallery Images"
+            name: "images"
+            widget: "list"
+            collapsed: true
+            fields:
+              - { label: "Image", name: "src", widget: "image" }
+              - { label: "Alt Text", name: "alt", widget: "string" }
+              - { label: "Full Width", name: "full_width", widget: "boolean", default: false }
+
       # Results Section
       - label: "Results Section"
         name: "results"
         widget: "object"
         collapsed: false
         fields:
-          - { label: "Section Heading", name: "heading", widget: "string", default: "Results" }
+          - { label: "Section Label", name: "label", widget: "string", default: "Results" }
+          - { label: "Section Heading", name: "heading", widget: "string" }
           - { label: "Intro Paragraph", name: "intro", widget: "markdown" }
           - label: "Result Metrics"
             name: "metrics"
@@ -425,6 +434,32 @@ collections:
               - { label: "Value", name: "value", widget: "string", hint: "e.g., '50%', '6/5'" }
               - { label: "Label", name: "label", widget: "string", hint: "Efficiency Improvement" }
               - { label: "Description", name: "description", widget: "markdown" }
+
+      # Testimonial
+      - label: "Testimonial"
+        name: "testimonial"
+        widget: "object"
+        collapsed: false
+        required: false
+        fields:
+          - { label: "Quote", name: "quote", widget: "text" }
+          - { label: "Author/Title", name: "author", widget: "string" }
+          - { label: "Company", name: "company", widget: "string" }
+
+      # Capabilities Section
+      - label: "Capabilities Section"
+        name: "capabilities"
+        widget: "object"
+        collapsed: false
+        required: false
+        fields:
+          - { label: "Section Label", name: "label", widget: "string", default: "Capabilities Applied" }
+          - { label: "Section Heading", name: "heading", widget: "string" }
+          - { label: "Body Text", name: "body", widget: "markdown" }
+          - label: "Services Delivered"
+            name: "services"
+            widget: "list"
+            field: { label: "Service", name: "service", widget: "string" }
 
       # Services Used
       - label: "Services Used"
@@ -440,6 +475,7 @@ collections:
         collapsed: false
         fields:
           - { label: "Heading", name: "heading", widget: "string", default: "Ready to transform your enterprise software?" }
+          - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
           - { label: "Button Text", name: "button_text", widget: "string", default: "Get in Touch" }
 
   # ==================== GLOBAL SETTINGS ====================
@@ -463,7 +499,6 @@ collections:
               - { label: "Success", name: "success", widget: "color", enableAlpha: false, default: "#10B981" }
               - { label: "Warning", name: "warning", widget: "color", enableAlpha: false, default: "#F59E0B" }
               - { label: "Error", name: "error", widget: "color", enableAlpha: false, default: "#EF4444" }
-
           - label: "Company Information"
             name: "company"
             widget: "object"
@@ -474,7 +509,6 @@ collections:
               - { label: "Email", name: "email", widget: "string" }
               - { label: "Phone", name: "phone", widget: "string" }
               - { label: "Website URL", name: "website", widget: "string" }
-
           - label: "Social Links"
             name: "social"
             widget: "object"
@@ -483,7 +517,6 @@ collections:
               - { label: "LinkedIn", name: "linkedin", widget: "string" }
               - { label: "Twitter", name: "twitter", widget: "string" }
               - { label: "Instagram", name: "instagram", widget: "string" }
-
           - label: "Analytics"
             name: "analytics"
             widget: "object"
