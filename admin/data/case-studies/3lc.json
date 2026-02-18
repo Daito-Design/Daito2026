@@ -3,18 +3,34 @@
   "client": "3LC",
   "industry": "AI/ML",
   "year": "2022-2024",
+  "tags": [
+    "AI/ML",
+    "Product Design",
+    "Data-Centric AI"
+  ],
   "hero": {
     "headline": "Better, Faster, & Smaller AI Models",
     "subtitle": "3LC had powerful technology for improving ML models through data quality. We partnered on strategic brand development, customer research, and product formulation to translate that capability into a product data scientists actually love.",
-    "image": "/images/case-3lc-hero.png",
+    "image": "images/3lc-hero.png",
+    "image_alt": "3LC Platform - Data Visualization Dashboard",
     "metrics": [
-      { "value": "40+", "label": "User Interviews" },
-      { "value": "Brand", "label": "Strategy & Positioning" },
-      { "value": "Product", "label": "Market Fit Achieved" }
+      {
+        "value": "40+",
+        "label": "User Interviews"
+      },
+      {
+        "value": "Brand",
+        "label": "Strategy & Positioning"
+      },
+      {
+        "value": "Product",
+        "label": "Market Fit Achieved"
+      }
     ]
   },
   "challenge": {
-    "heading": "The Challenge",
+    "label": "The Challenge",
+    "heading": "Illuminating the ML Black Box",
     "intro": "3LC came to us with a powerful technology: a way to improve ML models by fixing training data in real-time. They needed help translating that technical capability into a product that data scientists would actually use and love.",
     "cards": [
       {
@@ -32,7 +48,8 @@
     ]
   },
   "approach": {
-    "heading": "Our Approach",
+    "label": "Our Approach",
+    "heading": "Research-Driven Product Development",
     "intro": "We embedded with 3LC's team for 18 months, conducting deep user research, defining product strategy, and designing the end-to-end experience.",
     "steps": [
       {
@@ -58,7 +75,8 @@
     ]
   },
   "work": {
-    "heading": "The Work",
+    "label": "The Work",
+    "heading": "A Platform Built for Data Scientists",
     "intro": "We designed every aspect of the 3LC platform, from data visualization to sample editing to metrics dashboards, with the needs of ML practitioners at the center.",
     "cards": [
       {
@@ -87,8 +105,18 @@
       }
     ]
   },
+  "gallery": {
+    "images": [
+      {
+        "src": "images/3lc-dashboard.png",
+        "alt": "3LC Dashboard - Metrics and Data Visualization",
+        "full_width": true
+      }
+    ]
+  },
   "results": {
-    "heading": "Results",
+    "label": "Results",
+    "heading": "From Technology to Market-Ready Product",
     "intro": "Our 18-month partnership took 3LC from promising technology to market-ready product with enterprise customers and clear brand positioning.",
     "metrics": [
       {
@@ -97,20 +125,40 @@
         "description": "Deep user research revealing market needs and opportunities."
       },
       {
-        "value": "$1.8M",
-        "label": "Seed Funding Secured",
+        "value": "Brand",
+        "label": "Identity and Positioning Defined",
+        "description": "Strategic brand development creating clear market differentiation."
+      },
+      {
+        "value": "Funded",
+        "label": "Seed Round with Shell Ventures",
         "description": "With Daito's UX and marketing work as foundation, 3LC raised seed round from quality investors."
       },
       {
         "value": "Equinor",
-        "label": "Enterprise Partnership",
+        "label": "Enterprise Partnership Secured",
         "description": "Secured partnership with Equinor, major energy company, leveraging Daito's agentic experience positioning."
-      },
-      {
-        "value": "Product",
-        "label": "Market-Ready & Loved",
-        "description": "Platform that data scientists advocate for, not just tolerate."
       }
+    ]
+  },
+  "testimonial": {
+    "quote": "The team understood both the technical complexity and the user experience challenges. They helped us turn a powerful technology into a product that data scientists actually enjoy using. That's rare.",
+    "author": "Co-founder",
+    "company": "3LC"
+  },
+  "capabilities": {
+    "label": "Capabilities Applied",
+    "heading": "Full Product Development Partnership",
+    "body": "This engagement covered the full spectrum of product development, from foundational research through launch and beyond. We became an extension of 3LC's team, sharing in the mission of making data-centric AI accessible. The result: a product that's both technically sophisticated and genuinely delightful to use. Data scientists don't just tolerate 3LC. They advocate for it.",
+    "services": [
+      "User Research (40+ interviews)",
+      "Competitive Analysis",
+      "Market Positioning",
+      "Product Strategy",
+      "UX/UI Design",
+      "Design System",
+      "Usability Testing",
+      "Launch Support"
     ]
   },
   "services": [
@@ -125,6 +173,7 @@
   ],
   "cta": {
     "heading": "Building a data or AI product?",
+    "subtitle": "Let's discuss how research-driven design can help you find product-market fit.",
     "button_text": "Start a Conversation"
   }
 }
