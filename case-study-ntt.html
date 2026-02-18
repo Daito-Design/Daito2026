@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTT Sonority | Daito Design</title>
+    <meta name="description" content="NTT was developing Sonority — a novel product using bone conduction and spatial audio technology. We helped translate engineering concepts into something c">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --sand: #F5F0E8;
+            --charcoal: #1A1A1A;
+            --oxblood: #722F37;
+            --oxblood-light: #8B3A42;
+            --brand-accent: #6C3CBC;
+            --brand-accent-light: #8B5CF6;
+            --brand-dark: #0D0A1A;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--sand); color: var(--charcoal); line-height: 1.7; font-size: 16px; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(26,26,26,0.97); backdrop-filter: blur(12px); padding: 0 60px; height: 80px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo-img { height: 72px; width: auto; }
+        .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+        .nav-links a { color: var(--sand); text-decoration: none; font-size: 13px; opacity: 0.75; transition: opacity 0.3s; }
+        .nav-links a:hover { opacity: 1; }
+        .nav-cta { background: var(--oxblood) !important; padding: 10px 20px !important; border-radius: 4px; opacity: 1 !important; }
+        .case-hero { min-height: 85vh; background: var(--brand-dark); display: flex; align-items: center; padding: 120px 60px 80px; position: relative; overflow: hidden; }
+        .case-hero::before { content: ''; position: absolute; top: 0; right: 0; width: 60%; height: 100%; background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 60%); pointer-events: none; }
+        .hero-content { max-width: 680px; position: relative; z-index: 1; }
+        .case-meta { display: flex; gap: 24px; margin-bottom: 32px; flex-wrap: wrap; }
+        .meta-tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--brand-accent); padding: 6px 14px; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; }
+        .case-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 400; color: white; line-height: 1.15; margin-bottom: 24px; }
+        .case-hero h1 em { font-style: italic; color: var(--brand-accent); }
+        .case-hero .lead { font-size: 18px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 40px; }
+        .hero-stats { display: flex; gap: 48px; }
+        .stat { text-align: left; }
+        .stat-value { font-family: 'Cormorant Garamond', serif; font-size: 42px; color: var(--brand-accent); font-weight: 500; line-height: 1; }
+        .stat-label { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 6px; letter-spacing: 0.5px; }
+        .section { padding: 100px 60px; }
+        .section-dark { background: var(--charcoal); color: var(--sand); }
+        .section-brand { background: var(--brand-dark); color: white; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--oxblood); margin-bottom: 16px; font-weight: 500; }
+        .section-dark .section-label, .section-brand .section-label { color: var(--brand-accent); }
+        h2 { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 400; margin-bottom: 24px; line-height: 1.2; }
+        .lead-text { font-size: 18px; opacity: 0.8; max-width: 700px; line-height: 1.75; margin-bottom: 0; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .two-col-content p { margin-bottom: 20px; opacity: 0.85; line-height: 1.8; }
+        .challenge-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+        .challenge-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 32px; }
+        .challenge-card h4 { font-size: 18px; font-weight: 500; margin-bottom: 12px; color: var(--brand-accent); }
+        .challenge-card p { font-size: 14px; opacity: 0.7; line-height: 1.7; }
+        .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+        .process-step { text-align: center; padding: 32px 20px; background: white; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+        .step-number { width: 48px; height: 48px; background: var(--oxblood); color: var(--sand); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; margin: 0 auto 20px; }
+        .process-step h4 { font-size: 16px; font-weight: 600; margin-bottom: 10px; }
+        .process-step p { font-size: 13px; opacity: 0.7; line-height: 1.6; }
+        .apps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+        .apps-grid.two-col-grid { grid-template-columns: repeat(2, 1fr); }
+        .app-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 32px; }
+        .app-card h4 { font-size: 20px; font-weight: 500; margin-bottom: 12px; color: var(--brand-accent); font-family: 'Cormorant Garamond', serif; }
+        .app-card p { font-size: 14px; opacity: 0.75; line-height: 1.7; }
+        .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 48px; }
+        .results-grid.three-col { grid-template-columns: repeat(3, 1fr); }
+        .result-card { text-align: center; padding: 40px 24px; background: white; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .result-value { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 500; color: var(--oxblood); line-height: 1; }
+        .result-label { font-size: 14px; opacity: 0.7; margin-top: 12px; line-height: 1.4; }
+        .cta-section { text-align: center; padding: 100px 60px; background: var(--charcoal); }
+        .cta-section h2 { color: var(--sand); margin-bottom: 16px; }
+        .cta-section p { color: var(--sand); opacity: 0.7; max-width: 500px; margin: 0 auto 32px; }
+        .btn { display: inline-block; padding: 16px 32px; border-radius: 4px; font-size: 14px; font-weight: 500; text-decoration: none; transition: all 0.3s; }
+        .btn-primary { background: var(--oxblood); color: var(--sand); }
+        .btn-primary:hover { background: var(--oxblood-light); transform: translateY(-2px); }
+        footer { background: var(--charcoal); padding: 48px 60px; border-top: 1px solid rgba(245,240,232,0.08); }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
+        .footer-logo { height: 48px; width: auto; }
+        @media (max-width: 1024px) {
+            .case-hero { padding: 100px 40px 60px; }
+            .case-hero h1 { font-size: 42px; }
+            .two-col { grid-template-columns: 1fr; gap: 48px; }
+            .challenge-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr 1fr; }
+            .apps-grid, .apps-grid.two-col-grid { grid-template-columns: 1fr; }
+            .results-grid, .results-grid.three-col { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            nav { padding: 0 24px; }
+            .nav-links { display: none; }
+            .section { padding: 64px 24px; }
+            .case-hero { padding: 100px 24px 60px; }
+            .case-hero h1 { font-size: 32px; }
+            .process-steps, .results-grid, .results-grid.three-col { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 24px; }
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HPF8C3VXH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-7HPF8C3VXH');
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" aria-label="Daito Design Home">
+            <img src="images/daito-logo.webp" alt="Daito Design" class="nav-logo-img">
+        </a>
+        <ul class="nav-links">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="agentic-experience.html">Agentic Experience</a></li>
+            <li><a href="case-studies.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+    </nav>
+
+    <section class="case-hero">
+        <div class="hero-content">
+            <div class="case-meta">
+            <span class="meta-tag">Technology</span>
+            <span class="meta-tag">Product Innovation</span>
+            <span class="meta-tag">Spatial Audio</span>
+            </div>
+            <h1>Visualizing Invisible Technology for Spatial Audio Innovation</h1>
+            <p class="lead">NTT was developing Sonority — a novel product using bone conduction and spatial audio technology. We helped translate engineering concepts into something consumers could understand and get excited about.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Proposal Win Rate</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">Major Projects</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">Audio</div>
+                    <div class="stat-label">Product Innovation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-brand">
+        <div class="container">
+            <p class="section-label">The Challenge</p>
+            <h2>Making Invisible Technology Tangible</h2>
+            <p class="lead-text">How do you visualize invisible technology? How do you communicate an audio experience through visual media? NTT needed to bring complex bone conduction and spatial audio technology to life for consumers and investors.</p>
+            <div class="challenge-grid">
+                <div class="challenge-card">
+                    <h4>Invisible Technology</h4>
+                    <p>Bone conduction and spatial audio are inherently invisible. The design challenge was making users feel and understand something they can't see.</p>
+                </div>
+                <div class="challenge-card">
+                    <h4>Technical Complexity</h4>
+                    <p>The engineering behind spatial audio is sophisticated. Communicating this without overwhelming non-technical audiences required careful visual translation.</p>
+                </div>
+                <div class="challenge-card">
+                    <h4>Consumer Market</h4>
+                    <p>Moving from engineering concept to consumer product required understanding listener preferences and mental models around audio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <p class="section-label">Our Approach</p>
+            <h2>How We Approached It</h2>
+            <p class="lead-text">We combined deep user research into audio experiences with creative product visualization to bridge the gap between engineering and consumer understanding.</p>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Audio Research</h4>
+                    <p>Deep research into audio experiences, listener preferences, and user mental models around spatial audio.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Product Visualization</h4>
+                    <p>Technical product rendering and illustration that makes complex audio technology tangible.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Concept Communication</h4>
+                    <p>Developing visual language that explains spatial audio concepts to non-technical audiences.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Market Validation</h4>
+                    <p>Music research and consumer testing to inform product positioning decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-brand">
+        <div class="container">
+            <p class="section-label">The Work</p>
+            <h2>What We Built</h2>
+            <p class="lead-text">Product visualization and user research that translated engineering innovation into consumer-ready concepts.</p>
+            <div class="apps-grid">
+                <div class="app-card">
+                    <h4>Product Visualization</h4>
+                    <p>Technical product rendering and illustration bringing invisible audio technology to life through compelling visual narratives.</p>
+                </div>
+                <div class="app-card">
+                    <h4>User Research</h4>
+                    <p>Deep research into listener preferences and mental models around spatial audio, informing product development decisions.</p>
+                </div>
+                <div class="app-card">
+                    <h4>Concept Communication</h4>
+                    <p>Marketing and presentation assets that make complex technology accessible and exciting to consumers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <p class="section-label">Results</p>
+            <h2>The Impact</h2>
+            <p class="lead-text">Creative excellence in translating engineering concepts into compelling consumer-facing experiences.</p>
+            <div class="results-grid three-col">
+                <div class="result-card">
+                    <div class="result-value">100%</div>
+                    <div class="result-label">Proposal Win Rate</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">2</div>
+                    <div class="result-label">Major Projects Delivered</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">Creative</div>
+                    <div class="result-label">Excellence in Technical Visualization</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <div class="two-col">
+                <div class="two-col-content">
+                    <p class="section-label">Capabilities Applied</p>
+                    <h2>Services Delivered</h2>
+                    <p>This engagement drew on our deepest expertise in enterprise UX — combining field research, strategic design, and rigorous implementation support to meet the real demands of Technology environments.</p>
+                    <p>Our work with NTT Sonority reflects the kind of embedded partnership we build with clients — not just delivering designs, but understanding the operational context deeply enough to challenge assumptions.</p>
+                </div>
+                <div>
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 32px;">
+                        <h4 style="color: var(--brand-accent); font-size: 14px; margin-bottom: 20px; letter-spacing: 1px;">SERVICES DELIVERED</h4>
+                        <ul style="list-style: none; font-size: 15px; line-height: 2.2; opacity: 0.85;">
+                            <li>→ Product Visualization</li>
+                            <li>→ Technical Illustration</li>
+                            <li>→ User Research</li>
+                            <li>→ Concept Communication</li>
+                            <li>→ Consumer Electronics Design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Launching innovative technology?</h2>
+        <p>Let's talk about how we can bring the same depth of expertise to your challenge.</p>
+        <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <img src="images/daito-logo-white.webp" alt="Daito Design" class="footer-logo">
+            <div style="display: flex; align-items: center; gap: 24px;">
+                <a href="https://www.linkedin.com/company/daitodesign/" target="_blank" rel="noopener" style="color: var(--sand); opacity: 0.7; text-decoration: none; font-size: 13px; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">LinkedIn</a>
+                <span style="color: var(--sand); opacity: 0.5; font-size: 13px;">© 2026 Daito Design. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
