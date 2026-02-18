@@ -1,0 +1,115 @@
+{
+  "slug": "lcra",
+  "client": "LCRA",
+  "industry": "Utilities",
+  "year": "Engagement",
+  "phase": "product",
+  "hero": {
+    "headline": "Redesigning Grid Operations for Texas's Largest Public Power Utility",
+    "subtitle": "LCRA (Lower Colorado River Authority) needed improved situational awareness during peak demand and emergency conditions. We redesigned the operator interface for 24/7 critical operations.",
+    "image": "/images/case-lcra-hero.jpg",
+    "metrics": [
+      { "value": "50%", "label": "Faster Decisions" },
+      { "value": "24/7", "label": "Operations Support" },
+      { "value": "Grid", "label": "Control Room" }
+    ]
+  },
+  "challenge": {
+    "heading": "The Challenge",
+    "intro": "LCRA needed to redesign the operator interface for Texas's largest public power utility. The goal: improved situational awareness during peak demand and emergency conditions — when seconds matter.",
+    "cards": [
+      {
+        "title": "24/7 Critical Operations",
+        "description": "Grid operators work around the clock. The interface must support sustained attention during normal operations and rapid response during emergencies."
+      },
+      {
+        "title": "Peak Demand Visibility",
+        "description": "During peak demand events, operators need instant visibility into grid status, load distribution, and available reserves."
+      },
+      {
+        "title": "Emergency Response",
+        "description": "When conditions deteriorate, the interface must shift from monitoring mode to action mode — clearly guiding operators through emergency protocols."
+      }
+    ]
+  },
+  "approach": {
+    "heading": "Our Approach",
+    "intro": "We studied control room operations to understand how operators maintain situational awareness across complex systems.",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Control Room Research",
+        "description": "Observation and interviews with grid operators during both normal and high-stress conditions."
+      },
+      {
+        "number": "2",
+        "title": "Information Hierarchy",
+        "description": "Designing progressive disclosure that shows the right information at the right level of detail for each operational context."
+      },
+      {
+        "number": "3",
+        "title": "Emergency Visualization",
+        "description": "Creating clear visual escalation patterns that shift the interface from monitoring to action during emergencies."
+      },
+      {
+        "number": "4",
+        "title": "Validation",
+        "description": "Testing with operators under simulated peak demand and emergency scenarios."
+      }
+    ]
+  },
+  "work": {
+    "heading": "The Work",
+    "intro": "A complete redesign of the grid operations interface optimized for sustained attention and rapid emergency response.",
+    "cards": [
+      {
+        "title": "Operator Interface Redesign",
+        "description": "Complete redesign of the primary control room interface with improved information hierarchy and visual clarity."
+      },
+      {
+        "title": "Emergency Visualization",
+        "description": "Visual escalation system that clearly communicates severity and guides operator response during critical conditions."
+      },
+      {
+        "title": "Peak Demand Monitoring",
+        "description": "Real-time dashboard for monitoring grid load, reserves, and distribution during high-demand periods."
+      }
+    ]
+  },
+  "results": {
+    "heading": "Results",
+    "intro": "Measurable improvements in operator decision-making speed and situational awareness during critical operations.",
+    "metrics": [
+      {
+        "value": "50%",
+        "label": "Faster Decisions in Critical Situations",
+        "description": "Operators make critical decisions 50% faster with the redesigned interface."
+      },
+      {
+        "value": "24/7",
+        "label": "Operations Support Enabled",
+        "description": "Interface designed for sustained 24/7 operation with reduced cognitive fatigue."
+      },
+      {
+        "value": "Improved",
+        "label": "Situational Awareness",
+        "description": "Control room operators report significantly improved understanding of grid status."
+      },
+      {
+        "value": "Better",
+        "label": "Emergency Response",
+        "description": "Clear visual escalation patterns improve emergency response capabilities."
+      }
+    ]
+  },
+  "services": [
+    "Control Room Design",
+    "Operator Interface Design",
+    "Emergency Visualization",
+    "Utility UX Research"
+  ],
+  "cta": {
+    "heading": "Designing for critical operations?",
+    "button_text": "Start a Conversation"
+  }
+}

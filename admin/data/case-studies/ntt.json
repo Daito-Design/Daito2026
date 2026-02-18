@@ -1,0 +1,111 @@
+{
+  "slug": "ntt",
+  "client": "NTT Sonority",
+  "industry": "Technology",
+  "year": "Engagement",
+  "phase": "pre-product",
+  "hero": {
+    "headline": "Visualizing Invisible Technology for Spatial Audio Innovation",
+    "subtitle": "NTT was developing Sonority — a novel product using bone conduction and spatial audio technology. We helped translate engineering concepts into something consumers could understand and get excited about.",
+    "image": "/images/case-ntt-hero.jpg",
+    "metrics": [
+      { "value": "100%", "label": "Proposal Win Rate" },
+      { "value": "2", "label": "Major Projects" },
+      { "value": "Audio", "label": "Product Innovation" }
+    ]
+  },
+  "challenge": {
+    "heading": "The Challenge",
+    "intro": "How do you visualize invisible technology? How do you communicate an audio experience through visual media? NTT needed to bring complex bone conduction and spatial audio technology to life for consumers and investors.",
+    "cards": [
+      {
+        "title": "Invisible Technology",
+        "description": "Bone conduction and spatial audio are inherently invisible. The design challenge was making users feel and understand something they can't see."
+      },
+      {
+        "title": "Technical Complexity",
+        "description": "The engineering behind spatial audio is sophisticated. Communicating this without overwhelming non-technical audiences required careful visual translation."
+      },
+      {
+        "title": "Consumer Market",
+        "description": "Moving from engineering concept to consumer product required understanding listener preferences and mental models around audio."
+      }
+    ]
+  },
+  "approach": {
+    "heading": "Our Approach",
+    "intro": "We combined deep user research into audio experiences with creative product visualization to bridge the gap between engineering and consumer understanding.",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Audio Research",
+        "description": "Deep research into audio experiences, listener preferences, and user mental models around spatial audio."
+      },
+      {
+        "number": "2",
+        "title": "Product Visualization",
+        "description": "Technical product rendering and illustration that makes complex audio technology tangible."
+      },
+      {
+        "number": "3",
+        "title": "Concept Communication",
+        "description": "Developing visual language that explains spatial audio concepts to non-technical audiences."
+      },
+      {
+        "number": "4",
+        "title": "Market Validation",
+        "description": "Music research and consumer testing to inform product positioning decisions."
+      }
+    ]
+  },
+  "work": {
+    "heading": "The Work",
+    "intro": "Product visualization and user research that translated engineering innovation into consumer-ready concepts.",
+    "cards": [
+      {
+        "title": "Product Visualization",
+        "description": "Technical product rendering and illustration bringing invisible audio technology to life through compelling visual narratives."
+      },
+      {
+        "title": "User Research",
+        "description": "Deep research into listener preferences and mental models around spatial audio, informing product development decisions."
+      },
+      {
+        "title": "Concept Communication",
+        "description": "Marketing and presentation assets that make complex technology accessible and exciting to consumers."
+      }
+    ]
+  },
+  "results": {
+    "heading": "Results",
+    "intro": "Creative excellence in translating engineering concepts into compelling consumer-facing experiences.",
+    "metrics": [
+      {
+        "value": "100%",
+        "label": "Proposal Win Rate",
+        "description": "Every proposal to NTT was won, demonstrating alignment and value delivery."
+      },
+      {
+        "value": "2",
+        "label": "Major Projects Delivered",
+        "description": "Two significant engagements covering product visualization and consumer research."
+      },
+      {
+        "value": "Creative",
+        "label": "Excellence in Technical Visualization",
+        "description": "Helped NTT communicate invisible technology in ways consumers could understand and get excited about."
+      }
+    ]
+  },
+  "services": [
+    "Product Visualization",
+    "Technical Illustration",
+    "User Research",
+    "Concept Communication",
+    "Consumer Electronics Design"
+  ],
+  "cta": {
+    "heading": "Launching innovative technology?",
+    "button_text": "Start a Conversation"
+  }
+}

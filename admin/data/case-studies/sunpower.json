@@ -1,0 +1,121 @@
+{
+  "slug": "sunpower",
+  "client": "SunPower / MaxMetis",
+  "industry": "Solar Energy",
+  "year": "Multi-phase",
+  "phase": "product",
+  "hero": {
+    "headline": "A Multi-User Mobile Ecosystem for Solar Operations",
+    "subtitle": "SunPower needed to transform solar O&M capabilities with a comprehensive digital platform serving technicians in the field, managers monitoring portfolios, and customers tracking investments.",
+    "image": "/images/case-sunpower-hero.jpg",
+    "metrics": [
+      { "value": "3", "label": "User Platforms" },
+      { "value": "IoT", "label": "Sensor Integration" },
+      { "value": "Mobile", "label": "First Design" }
+    ]
+  },
+  "challenge": {
+    "heading": "The Challenge",
+    "intro": "SunPower needed to transform their solar operations and maintenance capabilities with a comprehensive digital platform. The challenge: create a multi-user mobile ecosystem that serves technicians in the field, managers monitoring portfolios, and customers tracking their solar investments.",
+    "cards": [
+      {
+        "title": "Multi-User Complexity",
+        "description": "Three distinct user types — field technicians, operations managers, and end customers — each with fundamentally different needs, contexts, and technical literacy."
+      },
+      {
+        "title": "Field Conditions",
+        "description": "Technicians work on rooftops and in the field, often with connectivity challenges. Mobile-first design was non-negotiable."
+      },
+      {
+        "title": "Real-Time Data",
+        "description": "IoT sensor networks, weather data, and predictive maintenance algorithms all needed to feed into a coherent user experience."
+      }
+    ]
+  },
+  "approach": {
+    "heading": "Our Approach",
+    "intro": "We designed from the field up — starting with technician workflows, then building management and customer layers on the same data foundation.",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Field Research",
+        "description": "On-site observation with technicians during installations and maintenance. Understanding the physical realities of rooftop work."
+      },
+      {
+        "number": "2",
+        "title": "Platform Architecture",
+        "description": "Designing a unified data layer that serves three distinct interface paradigms — mobile for techs, dashboard for managers, portal for customers."
+      },
+      {
+        "number": "3",
+        "title": "IoT Integration",
+        "description": "Connecting sensor networks, weather APIs, and predictive maintenance models into actionable interface elements."
+      },
+      {
+        "number": "4",
+        "title": "Iterative Testing",
+        "description": "Usability testing with all three user groups to validate that each interface served its audience effectively."
+      }
+    ]
+  },
+  "work": {
+    "heading": "The Work",
+    "intro": "We designed and delivered a complete multi-platform ecosystem spanning field operations, portfolio management, and customer engagement.",
+    "cards": [
+      {
+        "title": "Technician Mobile App",
+        "description": "Field-first mobile application for installation and maintenance workflows. Offline-capable, designed for outdoor use."
+      },
+      {
+        "title": "Operations Dashboard",
+        "description": "Portfolio-wide monitoring and management interface. Real-time performance analytics and work order management."
+      },
+      {
+        "title": "Customer Portal",
+        "description": "Customer-facing monitoring interface showing solar investment performance, savings, and system health."
+      },
+      {
+        "title": "Predictive Maintenance",
+        "description": "Integration of predictive algorithms to optimize maintenance schedules and reduce unnecessary truck rolls."
+      }
+    ]
+  },
+  "results": {
+    "heading": "Results",
+    "intro": "A unified platform that reduced operational friction across all three user types while improving maintenance efficiency.",
+    "metrics": [
+      {
+        "value": "Fewer",
+        "label": "Truck Rolls",
+        "description": "Remote diagnostics and predictive maintenance reduced unnecessary site visits."
+      },
+      {
+        "value": "Faster",
+        "label": "Issue Resolution",
+        "description": "Mobile-first field workflows accelerated time from diagnosis to fix."
+      },
+      {
+        "value": "Higher",
+        "label": "Customer Satisfaction",
+        "description": "Transparency and real-time monitoring improved customer trust and engagement."
+      },
+      {
+        "value": "Optimized",
+        "label": "Maintenance Schedules",
+        "description": "Predictive data insights enabled proactive rather than reactive maintenance."
+      }
+    ]
+  },
+  "services": [
+    "Mobile UX Design",
+    "Multi-Platform Architecture",
+    "Field Research",
+    "IoT Integration Design",
+    "Dashboard Design",
+    "Customer Portal Design"
+  ],
+  "cta": {
+    "heading": "Building a multi-platform product?",
+    "button_text": "Start a Conversation"
+  }
+}

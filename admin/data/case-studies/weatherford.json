@@ -1,0 +1,110 @@
+{
+  "slug": "weatherford",
+  "client": "Weatherford",
+  "industry": "Oil & Gas",
+  "year": "Multi-project",
+  "phase": "product",
+  "hero": {
+    "headline": "Mobile Solutions for Demanding Oilfield Environments",
+    "subtitle": "Weatherford needed mobile solutions for field service workers operating in harsh oilfield conditions — intermittent connectivity, extreme temperatures, and safety-critical operations.",
+    "image": "/images/case-weatherford-hero.jpg",
+    "metrics": [
+      { "value": "Field", "label": "Service Mobile" },
+      { "value": "Offline", "label": "Capable" },
+      { "value": "Industrial", "label": "Environment" }
+    ]
+  },
+  "challenge": {
+    "heading": "The Challenge",
+    "intro": "Weatherford needed mobile solutions for field service workers in demanding oilfield environments. Workers needed reliable tools that function in connectivity-challenged locations with extreme physical conditions.",
+    "cards": [
+      {
+        "title": "Harsh Environments",
+        "description": "Oilfield conditions include extreme temperatures, dust, gloved operation, and limited visibility. Mobile interfaces must work despite physical constraints."
+      },
+      {
+        "title": "Connectivity Challenges",
+        "description": "Remote oilfield locations often lack reliable connectivity. Applications must function offline and sync when connection is available."
+      },
+      {
+        "title": "Safety-Critical Operations",
+        "description": "Field service decisions have safety implications. The interface must prevent errors and guide workers through proper procedures."
+      }
+    ]
+  },
+  "approach": {
+    "heading": "Our Approach",
+    "intro": "We designed from the field, understanding the physical and operational realities before committing to interface decisions.",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Field Research",
+        "description": "On-site observation with field service workers in oilfield environments."
+      },
+      {
+        "number": "2",
+        "title": "Mobile-First Design",
+        "description": "Interface design optimized for gloved operation, outdoor visibility, and intermittent connectivity."
+      },
+      {
+        "number": "3",
+        "title": "Offline Architecture",
+        "description": "Designing data sync patterns that keep workers productive regardless of connectivity status."
+      },
+      {
+        "number": "4",
+        "title": "Safety Integration",
+        "description": "Building safety protocols and error prevention into every workflow."
+      }
+    ]
+  },
+  "work": {
+    "heading": "The Work",
+    "intro": "Mobile field service applications designed for the realities of oilfield work.",
+    "cards": [
+      {
+        "title": "Field Service Mobile App",
+        "description": "Purpose-built mobile application for field service workflows in harsh oilfield environments."
+      },
+      {
+        "title": "Offline-Capable Architecture",
+        "description": "Data sync patterns enabling full functionality without continuous connectivity."
+      },
+      {
+        "title": "Industrial Interface Design",
+        "description": "Interfaces optimized for gloved use, outdoor visibility, and safety-critical operations."
+      }
+    ]
+  },
+  "results": {
+    "heading": "Results",
+    "intro": "Field workers empowered with mobile-first tools designed for their actual working conditions.",
+    "metrics": [
+      {
+        "value": "Mobile",
+        "label": "First Decision Support",
+        "description": "Field service workers empowered with purpose-built mobile tools."
+      },
+      {
+        "value": "Offline",
+        "label": "Capable Workflows",
+        "description": "Workers remain productive in connectivity-challenged environments."
+      },
+      {
+        "value": "Industrial",
+        "label": "Environment Optimized",
+        "description": "Interface design addressing real field conditions — not office assumptions."
+      }
+    ]
+  },
+  "services": [
+    "Mobile UX Design",
+    "Field Research",
+    "Industrial Interface Design",
+    "Offline Architecture"
+  ],
+  "cta": {
+    "heading": "Need mobile tools for field workers?",
+    "button_text": "Start a Conversation"
+  }
+}

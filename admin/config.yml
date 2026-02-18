@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: jaredhuke/Daito2026
+  repo: Daito-Design/Daito2026
   branch: main
   base_url: https://daito2026.vercel.app
   auth_endpoint: api/auth
@@ -9,9 +9,12 @@ media_folder: "images"
 public_folder: "/images"
 site_url: https://daito2026.vercel.app
 
+# Disable HTML preview pane — show only the editable rich text toolbar
+editor:
+  preview: false
+
 # Collections
 collections:
-
   # ==================== PAGES ====================
 
   - name: "homepage"
@@ -30,7 +33,7 @@ collections:
             fields:
               - { label: "Eyebrow (Label)", name: "eyebrow", widget: "string", hint: "e.g., 'Industrial UX & Experience Design'" }
               - { label: "Headline", name: "headline", widget: "string", hint: "Main hero title. Keep it punchy." }
-              - { label: "Subtitle", name: "subtitle", widget: "text", hint: "Supporting text (2-3 sentences)" }
+              - { label: "Subtitle", name: "subtitle", widget: "markdown", hint: "Supporting text (2-3 sentences)" }
               - { label: "Background Image", name: "background_image", widget: "image", hint: "Hero background (recommended: 1920x1080)" }
               - { label: "CTA Button Text", name: "cta_text", widget: "string", default: "See Our Work" }
               - { label: "CTA Button Link", name: "cta_link", widget: "string", default: "/case-studies.html" }
@@ -46,6 +49,8 @@ collections:
                 widget: "list"
                 field: { label: "Client Name", name: "name", widget: "string" }
                 hint: "List of client names shown on trust strip"
+              - { label: "Clutch Rating", name: "clutch_rating", widget: "string", hint: "e.g., '5.0'", required: false }
+              - { label: "Clutch Badge Image", name: "clutch_badge", widget: "image", required: false, hint: "Clutch award badge" }
 
           # Statement Section
           - label: "Statement Section"
@@ -53,8 +58,23 @@ collections:
             widget: "object"
             collapsed: false
             fields:
-              - { label: "Main Quote", name: "text", widget: "string", hint: "Main statement (e.g., 'Most enterprise software...'" }
+              - { label: "Main Quote", name: "text", widget: "markdown", hint: "Main statement (e.g., 'Most enterprise software...')" }
               - { label: "Highlighted Word/Phrase", name: "highlight", widget: "string", hint: "The part to highlight (e.g., 'We're different.')" }
+
+          # Metrics Grid (15+ Years, 9+ Fortune 500, etc.)
+          - label: "Metrics Grid"
+            name: "metrics_grid"
+            widget: "object"
+            collapsed: false
+            fields:
+              - label: "Metrics"
+                name: "metrics"
+                widget: "list"
+                max: 4
+                collapsed: true
+                fields:
+                  - { label: "Value", name: "value", widget: "string", hint: "e.g., '15+'" }
+                  - { label: "Label", name: "label", widget: "string", hint: "e.g., 'Years Experience'" }
 
           # Value Proposition
           - label: "Value Proposition Section"
@@ -63,7 +83,16 @@ collections:
             collapsed: false
             fields:
               - { label: "Heading", name: "heading", widget: "string" }
-              - { label: "Body Text (Markdown)", name: "body", widget: "markdown" }
+              - { label: "Body Text", name: "body", widget: "markdown" }
+
+          # Client Logos
+          - label: "Client Logos Section"
+            name: "client_logos"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Main Logo Image", name: "logo_image", widget: "image", required: false }
+              - { label: "Additional Clients Text", name: "additional_text", widget: "string", hint: "e.g., 'Also: Publicis · Weatherford · LCRA...'", required: false }
 
           # Services Overview
           - label: "Services Overview Section"
@@ -80,11 +109,11 @@ collections:
                 fields:
                   - { label: "Number/Icon", name: "number", widget: "string", hint: "01, 02, 03" }
                   - { label: "Title", name: "title", widget: "string" }
-                  - { label: "Description", name: "description", widget: "text" }
-              - label: "Services List"
-                name: "services_list"
-                widget: "list"
-                field: { label: "Service", name: "service", widget: "string" }
+                  - { label: "Description", name: "description", widget: "markdown" }
+                  - label: "Services List"
+                    name: "services_list"
+                    widget: "list"
+                    field: { label: "Service", name: "service", widget: "string" }
 
           # Featured Case Studies
           - label: "Featured Case Studies"
@@ -99,13 +128,18 @@ collections:
                 collapsed: true
                 fields:
                   - { label: "Client Name", name: "client", widget: "string" }
+                  - { label: "Sector Tags", name: "tags", widget: "string", hint: "e.g., 'Energy · AI · Geoscience'", required: false }
                   - { label: "Headline", name: "headline", widget: "string" }
-                  - { label: "Description", name: "description", widget: "text" }
-                  - { label: "Metric 1 Value", name: "metric1_value", widget: "string" }
-                  - { label: "Metric 1 Label", name: "metric1_label", widget: "string" }
-                  - { label: "Metric 2 Value", name: "metric2_value", widget: "string" }
-                  - { label: "Metric 2 Label", name: "metric2_label", widget: "string" }
+                  - { label: "Description", name: "description", widget: "markdown" }
                   - { label: "Featured Image", name: "image", widget: "image" }
+                  - label: "Metrics"
+                    name: "metrics"
+                    widget: "list"
+                    max: 3
+                    collapsed: true
+                    fields:
+                      - { label: "Value", name: "value", widget: "string" }
+                      - { label: "Label", name: "label", widget: "string" }
                   - { label: "Link", name: "link", widget: "string", hint: "/case-study-shell.html" }
 
           # Industries Section
@@ -121,8 +155,21 @@ collections:
                 collapsed: true
                 fields:
                   - { label: "Industry Name", name: "name", widget: "string" }
-                  - { label: "Description", name: "description", widget: "text" }
-                  - { label: "Icon Name", name: "icon_name", widget: "string", hint: "CSS class or SVG name" }
+                  - { label: "Description", name: "description", widget: "markdown" }
+                  - { label: "Icon/SVG", name: "icon_name", widget: "string", hint: "CSS class or SVG name" }
+                  - { label: "Industry Image", name: "image", widget: "image", required: false }
+
+          # Assessment CTA
+          - label: "Assessment CTA Section"
+            name: "assessment_cta"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string", hint: "e.g., 'Free Assessment'" }
+              - { label: "Question", name: "question", widget: "string", hint: "e.g., 'Is Your AI Initiative at Risk?'" }
+              - { label: "Body Text", name: "body", widget: "markdown" }
+              - { label: "Button Text", name: "button_text", widget: "string" }
+              - { label: "Button Link", name: "button_link", widget: "string" }
 
           # Insights/Blog Section
           - label: "Insights Section"
@@ -138,7 +185,7 @@ collections:
                 fields:
                   - { label: "Article Tag", name: "tag", widget: "string" }
                   - { label: "Title", name: "title", widget: "string" }
-                  - { label: "Excerpt", name: "excerpt", widget: "text" }
+                  - { label: "Excerpt", name: "excerpt", widget: "markdown" }
                   - { label: "Featured Image", name: "image", widget: "image" }
                   - { label: "Link", name: "link", widget: "string" }
 
@@ -149,7 +196,7 @@ collections:
             collapsed: false
             fields:
               - { label: "Heading", name: "heading", widget: "string" }
-              - { label: "Body Text", name: "body", widget: "text" }
+              - { label: "Body Text", name: "body", widget: "markdown" }
               - { label: "Button Text", name: "button_text", widget: "string" }
               - { label: "Button Link", name: "button_link", widget: "string" }
 
@@ -163,6 +210,7 @@ collections:
         file: "admin/data/about.json"
         format: "json"
         fields:
+          # Hero
           - label: "Hero Section"
             name: "hero"
             widget: "object"
@@ -170,7 +218,10 @@ collections:
             fields:
               - { label: "Eyebrow", name: "eyebrow", widget: "string" }
               - { label: "Headline", name: "headline", widget: "string" }
-              - { label: "Subtitle", name: "subtitle", widget: "text" }
+              - { label: "Subtitle", name: "subtitle", widget: "markdown" }
+              - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+
+          # Story Section
           - label: "Story Section"
             name: "story"
             widget: "object"
@@ -182,6 +233,17 @@ collections:
                 name: "paragraphs"
                 widget: "list"
                 field: { label: "Paragraph", name: "text", widget: "markdown" }
+              - label: "Story Metrics"
+                name: "metrics"
+                widget: "list"
+                max: 4
+                collapsed: true
+                required: false
+                fields:
+                  - { label: "Value", name: "value", widget: "string", hint: "e.g., '15+'" }
+                  - { label: "Label", name: "label", widget: "string", hint: "e.g., 'Years Experience'" }
+
+          # Values
           - label: "Values Section"
             name: "values"
             widget: "object"
@@ -195,6 +257,8 @@ collections:
                 fields:
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "markdown" }
+
+          # Global Presence
           - label: "Global Presence Section"
             name: "global_presence"
             widget: "object"
@@ -208,8 +272,11 @@ collections:
                 collapsed: true
                 fields:
                   - { label: "City", name: "city", widget: "string" }
-                  - { label: "Location Type", name: "type", widget: "string", hint: "HQ, Office, Studio" }
-                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Location Type", name: "type", widget: "select", options: ["Headquarters", "EU Headquarters", "Field Office", "Studio", "Office"], hint: "HQ, Office, Studio, etc." }
+                  - { label: "Region", name: "region", widget: "string", required: false, hint: "e.g., 'Energy Corridor', 'East Coast', 'Asia Pacific'" }
+                  - { label: "Description", name: "description", widget: "markdown" }
+
+          # Expertise
           - label: "Expertise Section"
             name: "expertise"
             widget: "object"
@@ -223,6 +290,9 @@ collections:
                 fields:
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "markdown" }
+                  - { label: "Icon/Image", name: "icon", widget: "image", required: false }
+
+          # Team
           - label: "Team Section"
             name: "team"
             widget: "object"
@@ -238,6 +308,10 @@ collections:
                   - { label: "Name", name: "name", widget: "string" }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Photo", name: "image", widget: "image" }
+                  - { label: "Bio", name: "bio", widget: "markdown", required: false }
+                  - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
+
+          # CTA
           - label: "Bottom CTA"
             name: "cta"
             widget: "object"
@@ -257,6 +331,7 @@ collections:
         file: "admin/data/services.json"
         format: "json"
         fields:
+          # Hero
           - label: "Hero Section"
             name: "hero"
             widget: "object"
@@ -264,7 +339,10 @@ collections:
             fields:
               - { label: "Eyebrow", name: "eyebrow", widget: "string" }
               - { label: "Headline", name: "headline", widget: "string" }
-              - { label: "Subtitle", name: "subtitle", widget: "text" }
+              - { label: "Subtitle", name: "subtitle", widget: "markdown" }
+              - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+
+          # Service Phases
           - label: "Service Phases"
             name: "phases"
             widget: "list"
@@ -273,6 +351,7 @@ collections:
               - { label: "Phase Number/Label", name: "number", widget: "string", hint: "01, 02, 03 or 'Phase 1'" }
               - { label: "Phase Heading", name: "heading", widget: "string" }
               - { label: "Phase Description", name: "description", widget: "markdown" }
+              - { label: "Background Style", name: "bg_style", widget: "select", options: ["light", "white", "dark"], default: "white", required: false }
               - label: "Service Cards"
                 name: "services"
                 widget: "list"
@@ -280,6 +359,9 @@ collections:
                 fields:
                   - { label: "Service Title", name: "title", widget: "string" }
                   - { label: "Service Description", name: "description", widget: "markdown" }
+                  - { label: "Service Image", name: "image", widget: "image", required: false }
+
+          # Industries
           - label: "Industries Section"
             name: "industries"
             widget: "object"
@@ -293,17 +375,22 @@ collections:
                 fields:
                   - { label: "Industry Name", name: "name", widget: "string" }
                   - { label: "Description", name: "description", widget: "markdown" }
-              - label: "Featured Clients"
-                name: "clients"
-                widget: "list"
-                field: { label: "Client", name: "client", widget: "string" }
+                  - { label: "Industry Image", name: "image", widget: "image", required: false }
+                  - label: "Featured Clients"
+                    name: "clients"
+                    widget: "list"
+                    field: { label: "Client", name: "client", widget: "string" }
+
+          # CTA
           - label: "Bottom CTA"
             name: "cta"
             widget: "object"
             collapsed: false
             fields:
               - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Body Text", name: "body", widget: "markdown", required: false }
               - { label: "Button Text", name: "button_text", widget: "string" }
+              - { label: "Button Link", name: "button_link", widget: "string", default: "/contact.html" }
 
   # ==================== CASE STUDIES ====================
 
@@ -319,13 +406,9 @@ collections:
       - { label: "Client Name", name: "client", widget: "string" }
       - { label: "Industry", name: "industry", widget: "string", hint: "Energy, Nuclear, Manufacturing, etc." }
       - { label: "Year/Date", name: "year", widget: "string", hint: "2018-Present or 2024" }
-
-      # Tags
-      - label: "Tags"
-        name: "tags"
-        widget: "list"
-        field: { label: "Tag", name: "tag", widget: "string" }
-        hint: "Display tags shown in hero area"
+      - { label: "Phase", name: "phase", widget: "select", options: ["Discovery", "Design", "Build", "Ongoing"], required: false }
+      - { label: "Brand Color (Primary)", name: "brand_color", widget: "color", enableAlpha: false, required: false, hint: "Client's primary brand color for case study styling" }
+      - { label: "Brand Color (Secondary)", name: "brand_color_secondary", widget: "color", enableAlpha: false, required: false }
 
       # Hero Section
       - label: "Hero Section"
@@ -335,8 +418,7 @@ collections:
         fields:
           - { label: "Headline", name: "headline", widget: "string" }
           - { label: "Subtitle/Lead", name: "subtitle", widget: "markdown" }
-          - { label: "Hero Image", name: "image", widget: "image", required: false }
-          - { label: "Hero Image Alt Text", name: "image_alt", widget: "string", required: false }
+          - { label: "Hero Image", name: "image", widget: "image" }
           - label: "Hero Metrics"
             name: "metrics"
             widget: "list"
@@ -352,8 +434,7 @@ collections:
         widget: "object"
         collapsed: false
         fields:
-          - { label: "Section Label", name: "label", widget: "string", default: "The Challenge" }
-          - { label: "Section Heading", name: "heading", widget: "string" }
+          - { label: "Section Heading", name: "heading", widget: "string", default: "The Challenge" }
           - { label: "Intro Paragraph", name: "intro", widget: "markdown" }
           - label: "Challenge Cards"
             name: "cards"
@@ -370,8 +451,7 @@ collections:
         widget: "object"
         collapsed: false
         fields:
-          - { label: "Section Label", name: "label", widget: "string", default: "Our Approach" }
-          - { label: "Section Heading", name: "heading", widget: "string" }
+          - { label: "Section Heading", name: "heading", widget: "string", default: "Our Approach" }
           - { label: "Intro Paragraph", name: "intro", widget: "markdown" }
           - label: "Process Steps"
             name: "steps"
@@ -389,8 +469,7 @@ collections:
         widget: "object"
         collapsed: false
         fields:
-          - { label: "Section Label", name: "label", widget: "string", default: "The Work" }
-          - { label: "Section Heading", name: "heading", widget: "string" }
+          - { label: "Section Heading", name: "heading", widget: "string", default: "The Work" }
           - { label: "Intro Text", name: "intro", widget: "markdown" }
           - label: "Deliverable Cards"
             name: "cards"
@@ -399,22 +478,18 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "markdown" }
+              - { label: "Screenshot/Image", name: "image", widget: "image", required: false }
 
-      # Gallery Section
-      - label: "Gallery"
-        name: "gallery"
+      # Special Callout (e.g., Safety callout for Constellation)
+      - label: "Special Callout"
+        name: "callout"
         widget: "object"
         collapsed: true
         required: false
         fields:
-          - label: "Gallery Images"
-            name: "images"
-            widget: "list"
-            collapsed: true
-            fields:
-              - { label: "Image", name: "src", widget: "image" }
-              - { label: "Alt Text", name: "alt", widget: "string" }
-              - { label: "Full Width", name: "full_width", widget: "boolean", default: false }
+          - { label: "Callout Title", name: "title", widget: "string", required: false }
+          - { label: "Callout Body", name: "body", widget: "markdown", required: false }
+          - { label: "Callout Style", name: "style", widget: "select", options: ["info", "warning", "safety", "highlight"], default: "info", required: false }
 
       # Results Section
       - label: "Results Section"
@@ -422,44 +497,37 @@ collections:
         widget: "object"
         collapsed: false
         fields:
-          - { label: "Section Label", name: "label", widget: "string", default: "Results" }
-          - { label: "Section Heading", name: "heading", widget: "string" }
+          - { label: "Section Heading", name: "heading", widget: "string", default: "Results" }
           - { label: "Intro Paragraph", name: "intro", widget: "markdown" }
           - label: "Result Metrics"
             name: "metrics"
             widget: "list"
-            max: 4
+            max: 6
             collapsed: true
             fields:
-              - { label: "Value", name: "value", widget: "string", hint: "e.g., '50%', '6/5'" }
+              - { label: "Value", name: "value", widget: "string", hint: "e.g., '50%', '200+', '6/5'" }
               - { label: "Label", name: "label", widget: "string", hint: "Efficiency Improvement" }
               - { label: "Description", name: "description", widget: "markdown" }
 
       # Testimonial
-      - label: "Testimonial"
+      - label: "Client Testimonial"
         name: "testimonial"
         widget: "object"
-        collapsed: false
+        collapsed: true
         required: false
         fields:
-          - { label: "Quote", name: "quote", widget: "text" }
-          - { label: "Author/Title", name: "author", widget: "string" }
-          - { label: "Company", name: "company", widget: "string" }
+          - { label: "Quote", name: "quote", widget: "markdown", required: false }
+          - { label: "Author Name", name: "author", widget: "string", required: false }
+          - { label: "Author Title", name: "author_title", widget: "string", required: false }
 
-      # Capabilities Section
-      - label: "Capabilities Section"
-        name: "capabilities"
-        widget: "object"
-        collapsed: false
+      # Gallery / Screenshots
+      - label: "Project Gallery"
+        name: "gallery"
+        widget: "list"
+        collapsed: true
         required: false
-        fields:
-          - { label: "Section Label", name: "label", widget: "string", default: "Capabilities Applied" }
-          - { label: "Section Heading", name: "heading", widget: "string" }
-          - { label: "Body Text", name: "body", widget: "markdown" }
-          - label: "Services Delivered"
-            name: "services"
-            widget: "list"
-            field: { label: "Service", name: "service", widget: "string" }
+        field: { label: "Image", name: "image", widget: "image" }
+        hint: "Screenshots, mockups, and deliverable images"
 
       # Services Used
       - label: "Services Used"
@@ -475,8 +543,80 @@ collections:
         collapsed: false
         fields:
           - { label: "Heading", name: "heading", widget: "string", default: "Ready to transform your enterprise software?" }
-          - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
+          - { label: "Body Text", name: "body", widget: "markdown", required: false }
           - { label: "Button Text", name: "button_text", widget: "string", default: "Get in Touch" }
+          - { label: "Button Link", name: "button_link", widget: "string", default: "/contact.html" }
+
+  # ==================== BLOG / INSIGHTS ====================
+
+  - name: "blog"
+    label: "Blog & Insights"
+    folder: "admin/data/blog"
+    create: true
+    format: "json"
+    identifier_field: "title"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL-friendly name (e.g., agent-journey)" }
+      - { label: "Tags", name: "tags", widget: "string", hint: "e.g., 'AI · Agentic Systems'" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Excerpt", name: "excerpt", widget: "markdown", hint: "Short summary for card display" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ==================== NAVIGATION & FOOTER ====================
+
+  - name: "navigation"
+    label: "Navigation & Footer"
+    files:
+      - name: "nav_footer"
+        label: "Navigation & Footer Settings"
+        file: "admin/data/navigation.json"
+        format: "json"
+        fields:
+          - label: "Navigation"
+            name: "nav"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Logo Image", name: "logo", widget: "image" }
+              - { label: "Logo Alt Text", name: "logo_alt", widget: "string", default: "Daito Design" }
+              - label: "Nav Links"
+                name: "links"
+                widget: "list"
+                collapsed: true
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Brand Description", name: "description", widget: "markdown" }
+              - label: "Footer Columns"
+                name: "columns"
+                widget: "list"
+                collapsed: true
+                fields:
+                  - { label: "Column Title", name: "title", widget: "string" }
+                  - label: "Links"
+                    name: "links"
+                    widget: "list"
+                    collapsed: true
+                    fields:
+                      - { label: "Label", name: "label", widget: "string" }
+                      - { label: "URL", name: "url", widget: "string" }
+              - label: "Footer Locations"
+                name: "locations"
+                widget: "list"
+                collapsed: true
+                fields:
+                  - { label: "City", name: "city", widget: "string" }
+                  - { label: "Type", name: "type", widget: "string", hint: "HQ, Office" }
+              - { label: "Copyright Text", name: "copyright", widget: "string", default: "© 2026 Daito Design. All rights reserved." }
 
   # ==================== GLOBAL SETTINGS ====================
 
@@ -499,6 +639,7 @@ collections:
               - { label: "Success", name: "success", widget: "color", enableAlpha: false, default: "#10B981" }
               - { label: "Warning", name: "warning", widget: "color", enableAlpha: false, default: "#F59E0B" }
               - { label: "Error", name: "error", widget: "color", enableAlpha: false, default: "#EF4444" }
+
           - label: "Company Information"
             name: "company"
             widget: "object"
@@ -509,6 +650,9 @@ collections:
               - { label: "Email", name: "email", widget: "string" }
               - { label: "Phone", name: "phone", widget: "string" }
               - { label: "Website URL", name: "website", widget: "string" }
+              - { label: "Company Logo", name: "logo", widget: "image", required: false }
+              - { label: "Favicon", name: "favicon", widget: "image", required: false }
+
           - label: "Social Links"
             name: "social"
             widget: "object"
@@ -517,12 +661,25 @@ collections:
               - { label: "LinkedIn", name: "linkedin", widget: "string" }
               - { label: "Twitter", name: "twitter", widget: "string" }
               - { label: "Instagram", name: "instagram", widget: "string" }
+              - { label: "YouTube", name: "youtube", widget: "string", required: false }
+              - { label: "GitHub", name: "github", widget: "string", required: false }
+
+          - label: "SEO Defaults"
+            name: "seo"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Default Meta Title", name: "title", widget: "string", default: "Daito Design | Industrial UX & Enterprise Design" }
+              - { label: "Default Meta Description", name: "description", widget: "text" }
+              - { label: "OG Image", name: "og_image", widget: "image", required: false }
+
           - label: "Analytics"
             name: "analytics"
             widget: "object"
             collapsed: false
             fields:
               - { label: "Google Analytics ID", name: "google_analytics", widget: "string", hint: "e.g., G-XXXXXXXXXX" }
+              - { label: "Google Tag Manager ID", name: "gtm", widget: "string", required: false }
 
   # ==================== CONTENT ISSUES ====================
 
@@ -535,7 +692,7 @@ collections:
     fields:
       - { label: "Issue Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "markdown" }
-      - { label: "Page", name: "page", widget: "select", options: ["homepage", "about", "services", "case-study-shell", "case-study-constellation", "case-study-schneider", "case-study-3lc", "case-study-bluware", "case-study-tdecu", "other"] }
+      - { label: "Page", name: "page", widget: "select", options: ["homepage", "about", "services", "case-study-shell", "case-study-constellation", "case-study-schneider", "case-study-3lc", "case-study-bluware", "case-study-tdecu", "case-study-halliburton", "case-study-ntt", "case-study-int", "case-study-lcra", "case-study-sunpower", "case-study-weatherford", "blog", "navigation", "footer", "other"] }
       - { label: "Priority", name: "priority", widget: "select", options: ["Low", "Medium", "High", "Critical"] }
       - { label: "Status", name: "status", widget: "select", options: ["To Do", "In Progress", "Done"] }
       - { label: "Assigned To", name: "assigned_to", widget: "string" }

@@ -1,0 +1,116 @@
+{
+  "slug": "int",
+  "client": "INT (Interactive Network Technologies)",
+  "industry": "Industrial Software",
+  "year": "Ongoing",
+  "phase": "post-product",
+  "hero": {
+    "headline": "Usability Assessment and Design for Production Optimization Software",
+    "subtitle": "INT's production optimization platform is used by operators in 80+ countries. We conducted comprehensive usability assessment and redesign, plus explored next-generation spatial computing interfaces.",
+    "image": "/images/case-int-hero.jpg",
+    "metrics": [
+      { "value": "80+", "label": "Countries" },
+      { "value": "Full", "label": "Usability Audit" },
+      { "value": "Vision Pro", "label": "Spatial Concepts" }
+    ]
+  },
+  "challenge": {
+    "heading": "The Challenge",
+    "intro": "INT's production optimization platform is used by operators in 80+ countries. The software is powerful — but power had come at the cost of usability. Users struggled with complex workflows, inconsistent interfaces, and steep learning curves.",
+    "cards": [
+      {
+        "title": "Usability Debt",
+        "description": "Years of feature accumulation had created workflow complexity. Users struggled with task completion and navigation across the platform."
+      },
+      {
+        "title": "Global User Base",
+        "description": "Operators across 80+ countries with varying technical literacy and cultural contexts. Design solutions needed universal usability."
+      },
+      {
+        "title": "Future Vision",
+        "description": "Beyond fixing current issues, INT wanted to explore next-generation interfaces including spatial computing concepts."
+      }
+    ]
+  },
+  "approach": {
+    "heading": "Our Approach",
+    "intro": "We started with rigorous quantitative usability testing, then moved to evidence-based redesign and future exploration.",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Usability Assessment",
+        "description": "Task-based testing with representative users. Quantitative metrics: completion rates, time-on-task, errors."
+      },
+      {
+        "number": "2",
+        "title": "Prioritized Redesign",
+        "description": "Evidence-based improvement recommendations. Full UX/UI redesign targeting the highest-impact usability issues."
+      },
+      {
+        "number": "3",
+        "title": "Visual Consistency",
+        "description": "Symbol system and visual language consistency across the entire platform."
+      },
+      {
+        "number": "4",
+        "title": "Spatial Computing Exploration",
+        "description": "Vision Pro prototypes exploring next-generation interface paradigms for production optimization."
+      }
+    ]
+  },
+  "work": {
+    "heading": "The Work",
+    "intro": "From usability audit to redesign to spatial computing exploration — a comprehensive engagement spanning present optimization and future vision.",
+    "cards": [
+      {
+        "title": "Usability Testing",
+        "description": "Rigorous task-based testing generating quantitative metrics on completion rates, time-on-task, and error frequency."
+      },
+      {
+        "title": "UI Redesign",
+        "description": "Full UX/UI redesign based on usability findings, optimizing workflows for common tasks."
+      },
+      {
+        "title": "Symbol Systems",
+        "description": "Comprehensive visual language and symbol system ensuring consistency across the platform."
+      },
+      {
+        "title": "Spatial Computing Concepts",
+        "description": "Vision Pro prototypes exploring how production optimization could work in spatial computing environments."
+      }
+    ]
+  },
+  "results": {
+    "heading": "Results",
+    "intro": "Data-driven insights that changed how INT understands user challenges, plus a vision for the future of their platform.",
+    "metrics": [
+      {
+        "value": "80+",
+        "label": "Countries Using Platform",
+        "description": "Redesign benefits operators across INT's global user base."
+      },
+      {
+        "value": "Data",
+        "label": "Driven Insights",
+        "description": "First-ever quantitative usability data on what's actually hard for users."
+      },
+      {
+        "value": "Vision Pro",
+        "label": "Spatial Computing Concepts",
+        "description": "Next-generation interface prototypes exploring spatial computing paradigms."
+      }
+    ]
+  },
+  "services": [
+    "Usability Testing",
+    "Heuristic Evaluation",
+    "User Research",
+    "UI Design",
+    "Symbol Systems",
+    "Spatial Computing Concepts"
+  ],
+  "cta": {
+    "heading": "Need evidence-based UX improvement?",
+    "button_text": "Start a Conversation"
+  }
+}

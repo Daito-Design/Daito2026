@@ -91,28 +91,53 @@
     "members": [
       {
         "name": "Jared Huke",
-        "title": "Founder & Creative Director",
+        "title": "Founder",
         "image": "/images/team-jared.jpg"
       },
       {
-        "name": "Shawn Reilly",
-        "title": "Operations & Strategy",
-        "image": "/images/team-shawn.jpg"
-      },
-      {
-        "name": "Damon Daood",
-        "title": "Senior Designer",
-        "image": "/images/team-damon.jpg"
-      },
-      {
-        "name": "Joe Santori",
-        "title": "Design & Technology",
+        "name": "Joseph Santori",
+        "title": "Chief Design Officer",
         "image": "/images/team-joe.jpg"
       },
       {
+        "name": "Damon Daood",
+        "title": "VP, Visual Design",
+        "image": "/images/team-damon.jpg"
+      },
+      {
         "name": "Russell Buyse",
-        "title": "Business Development",
+        "title": "Chief Operations",
         "image": "/images/team-russell.jpg"
+      },
+      {
+        "name": "Rakesh Maisuria",
+        "title": "Principal Strategist",
+        "image": "/images/team-rakesh.jpg"
+      },
+      {
+        "name": "Shawn Reilly",
+        "title": "Project Manager",
+        "image": "/images/team-shawn.jpg"
+      },
+      {
+        "name": "Andrea August",
+        "title": "Lead Designer",
+        "image": "/images/team-andrea.jpg"
+      },
+      {
+        "name": "Sharon Chhin",
+        "title": "Lead Designer",
+        "image": "/images/team-sharon.jpg"
+      },
+      {
+        "name": "Raafia Jessa",
+        "title": "Senior Visual Designer",
+        "image": "/images/team-raafia.jpg"
+      },
+      {
+        "name": "Tyler McCoy",
+        "title": "Senior User Experience Designer",
+        "image": "/images/team-tyler.jpg"
       }
     ]
   },

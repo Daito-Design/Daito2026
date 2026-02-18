@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "logo": "/images/daito-logo.svg",
+    "logo_alt": "Daito Design",
+    "links": [
+      { "label": "Services", "url": "/services.html" },
+      { "label": "Work", "url": "/case-studies.html" },
+      { "label": "About", "url": "/about.html" },
+      { "label": "Insights", "url": "/blog.html" },
+      { "label": "Contact", "url": "/contact.html" }
+    ]
+  },
+  "footer": {
+    "description": "Enterprise UX design for the world's most complex industries. 15+ years of field-tested expertise.",
+    "columns": [
+      {
+        "title": "Services",
+        "links": [
+          { "label": "Pre-Product", "url": "/services.html#pre-product" },
+          { "label": "Product", "url": "/services.html#product" },
+          { "label": "Post-Product", "url": "/services.html#post-product" },
+          { "label": "Agentic Experience", "url": "/services.html#agentic" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "label": "About", "url": "/about.html" },
+          { "label": "Work", "url": "/case-studies.html" },
+          { "label": "Insights", "url": "/blog.html" },
+          { "label": "Contact", "url": "/contact.html" }
+        ]
+      }
+    ],
+    "locations": [
+      { "city": "Austin, TX", "type": "HQ" },
+      { "city": "Amsterdam, NL", "type": "EU HQ" }
+    ],
+    "copyright": "© 2026 Daito Design. All rights reserved."
+  }
+}
