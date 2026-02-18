@@ -3,18 +3,34 @@
   "client": "TDECU",
   "industry": "Financial Services",
   "year": "2019-Present",
+  "tags": [
+    "Financial Services",
+    "Member Research",
+    "5+ Year Partnership"
+  ],
   "hero": {
     "headline": "Transforming Member Experience for Texas's Largest Credit Union",
     "subtitle": "For over five years, we've partnered with TDECU on deep operational insights, bottleneck identification, go-to-market strategic planning, and executive decision support—research-driven transformation for 350,000+ credit union members.",
-    "image": "/images/case-tdecu-hero.jpg",
+    "image": "",
+    "image_alt": "",
     "metrics": [
-      { "value": "350K+", "label": "Members Served" },
-      { "value": "40%", "label": "Reduced Click Paths" },
-      { "value": "Exec", "label": "Decision Support" }
+      {
+        "value": "350K+",
+        "label": "Members Served"
+      },
+      {
+        "value": "40%",
+        "label": "Reduced Click Paths"
+      },
+      {
+        "value": "Exec",
+        "label": "Decision Support"
+      }
     ]
   },
   "challenge": {
-    "heading": "The Challenge",
+    "label": "The Challenge",
+    "heading": "Digital Transformation for Member-First Banking",
     "intro": "One of Texas's largest credit unions, serving over 350,000 members, faced a critical inflection point. Member expectations had shifted toward digital-first experiences, but the organization's digital ecosystem had evolved organically, creating fragmented experiences that didn't reflect their commitment to service excellence.",
     "cards": [
       {
@@ -32,34 +48,36 @@
     ]
   },
   "approach": {
-    "heading": "Our Approach",
+    "label": "Our Approach",
+    "heading": "Research-Driven Member Understanding",
     "intro": "We built a comprehensive research program that gave TDECU unprecedented visibility into member needs, then translated those insights into strategic action.",
     "steps": [
       {
         "number": "1",
         "title": "Click Path Optimization",
-        "description": "Systematic analysis of member journeys to identify and eliminate friction. Reduced click paths by 40% across critical workflows."
+        "description": "Systematic analysis of member journeys to identify and eliminate friction. Reduced click paths by 40% across critical workflows like account opening and loan applications."
       },
       {
         "number": "2",
         "title": "Bottleneck Identification",
-        "description": "Deep operational insights revealing where member journeys break down. Data-driven recommendations that remove friction points."
+        "description": "Deep operational insights revealing where member journeys break down. Data-driven recommendations that remove friction points and improve conversion at every stage."
       },
       {
         "number": "3",
         "title": "Brand Validation Testing",
-        "description": "Large-scale market research validating brand positioning with target demographics. Ensuring TDECU's brand promise resonates with members."
+        "description": "Large-scale market research validating brand positioning with target demographics. Ensuring TDECU's brand promise resonates with current and prospective members."
       },
       {
         "number": "4",
         "title": "Executive Decision Support",
-        "description": "Research presentations to the highest levels of leadership. Go-to-market strategic planning informed by member insights."
+        "description": "Research presentations to the highest levels of leadership. Go-to-market strategic planning informed by member insights, not assumptions."
       }
     ]
   },
   "work": {
-    "heading": "The Work",
-    "intro": "Our embedded partnership with TDECU spans strategic research, digital transformation, and ongoing operational optimization.",
+    "label": "The Work",
+    "heading": "Strategic Design Partnership",
+    "intro": "",
     "cards": [
       {
         "title": "Website Strategy",
@@ -70,47 +88,62 @@
         "description": "Data-driven improvements based on member behavior insights. Understanding how members prefer to interact, and designing experiences that meet them where they are."
       },
       {
-        "title": "Member Research",
-        "description": "Systematic research programs uncovering member needs, validating positioning, and informing strategic planning at executive level."
-      },
-      {
-        "title": "Brand Validation",
-        "description": "Large-scale market testing ensuring TDECU's brand positioning resonates with current and prospective members across demographics."
-      },
-      {
-        "title": "Journey Optimization",
-        "description": "Reducing click paths, eliminating bottlenecks, and streamlining critical workflows like account opening and loan applications."
-      },
-      {
         "title": "Ongoing Partnership",
-        "description": "Embedded team model providing continuous UX support and strategic guidance across digital transformation initiatives."
+        "description": "Embedded team model providing continuous UX support. We're not a vendor. We're an extension of TDECU's digital team."
+      },
+      {
+        "title": "Digital Transformation",
+        "description": "Supporting TDECU's evolution from traditional credit union to digital-first financial partner, without losing the human touch that members value."
       }
     ]
   },
+  "gallery": {
+    "images": []
+  },
   "results": {
-    "heading": "Results",
+    "label": "Results",
+    "heading": "Partnership Built on Impact",
     "intro": "Deep operational insights, bottleneck removal, and executive decision support have transformed how TDECU understands and serves its members.",
     "metrics": [
       {
         "value": "40%",
-        "label": "Reduced Click Paths",
-        "description": "Significant streamlining of critical member journeys across digital channels."
+        "label": "Reduced Click Paths in Critical Journeys",
+        "description": "Systematic optimization of member journeys across digital channels."
       },
       {
         "value": "5+",
         "label": "Years of Strategic Partnership",
-        "description": "Sustained engagement delivering continuous value and strategic insights."
+        "description": "Long-term embedded partnership growing with the organization."
       },
       {
         "value": "C-Suite",
         "label": "Executive Decision Support",
-        "description": "Regular research presentations and strategic planning sessions with top leadership."
+        "description": "Research presentations informing strategic decisions at the highest levels."
       },
       {
         "value": "350K+",
         "label": "Members Impacted",
-        "description": "Improvements benefiting entire member base across all digital and physical channels."
+        "description": "Research-driven improvements serving hundreds of thousands of credit union members."
       }
+    ]
+  },
+  "testimonial": {
+    "quote": "They helped us see our members in ways we never had before. The research changed how we make decisions, not just about digital, but about the entire member experience.",
+    "author": "VP of Digital Experience",
+    "company": "TDECU"
+  },
+  "capabilities": {
+    "label": "Capabilities Applied",
+    "heading": "Research That Drives Decisions",
+    "body": "TDECU exemplifies our belief that great design starts with deep understanding. Every strategic recommendation is grounded in member research, not assumptions or industry best practices. The result: a credit union that truly knows its members, and makes decisions accordingly.",
+    "services": [
+      "Member Research",
+      "Channel Strategy",
+      "Brand Research",
+      "Usability Testing",
+      "Website Strategy",
+      "Digital Transformation",
+      "Creative Testing"
     ]
   },
   "services": [
@@ -120,10 +153,11 @@
     "Usability Testing",
     "Website Strategy",
     "Digital Transformation",
-    "Executive Decision Support"
+    "Creative Testing"
   ],
   "cta": {
     "heading": "Ready to understand your customers?",
+    "subtitle": "Let's discuss how research-driven design can transform your member experience.",
     "button_text": "Start a Conversation"
   }
 }
