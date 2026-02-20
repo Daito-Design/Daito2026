@@ -101,6 +101,11 @@
       }
     ]
   },
+  "testimonial": {
+    "quote": "We finally have data on what's actually hard for users, not just what we assumed was hard.",
+    "author": "Product Director",
+    "author_title": "INT (Interactive Network Technologies)"
+  },
   "services": [
     "Usability Testing",
     "Heuristic Evaluation",

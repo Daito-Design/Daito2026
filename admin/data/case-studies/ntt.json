@@ -97,6 +97,11 @@
       }
     ]
   },
+  "testimonial": {
+    "quote": "They helped us translate engineering concepts into something consumers could understand and get excited about.",
+    "author": "Product Lead",
+    "author_title": "NTT Sonority"
+  },
   "services": [
     "Product Visualization",
     "Technical Illustration",

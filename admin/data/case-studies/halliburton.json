@@ -11,7 +11,8 @@
     "metrics": [
       { "value": "12→1", "label": "Systems Consolidated" },
       { "value": "35%", "label": "Efficiency Gain" },
-      { "value": "3", "label": "Project Phases" }
+      { "value": "3", "label": "Project Phases" },
+      { "value": "3", "label": "Engagement Phases" }
     ]
   },
   "challenge": {
@@ -82,7 +83,7 @@
   },
   "results": {
     "heading": "Results",
-    "intro": "The redesign delivered measurable improvements in engineer efficiency and decision-making speed.",
+    "intro": "The redesign delivered measurable improvements across all three phases of the engagement.",
     "metrics": [
       {
         "value": "12→1",
@@ -105,6 +106,11 @@
         "description": "Teams trained on UX methodology for ongoing autonomous improvement."
       }
     ]
+  },
+  "testimonial": {
+    "quote": "The new interface just makes sense. I can find what I need without thinking about it.",
+    "author": "Field Engineer",
+    "author_title": "Halliburton"
   },
   "services": [
     "User Research",

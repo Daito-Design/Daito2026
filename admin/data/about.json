@@ -92,52 +92,52 @@
       {
         "name": "Jared Huke",
         "title": "Founder",
-        "image": "/images/team-jared.jpg"
+        "image": "/images/team-jared.webp"
       },
       {
         "name": "Joseph Santori",
         "title": "Chief Design Officer",
-        "image": "/images/team-joe.jpg"
+        "image": "/images/team-member-1.webp"
       },
       {
         "name": "Damon Daood",
         "title": "VP, Visual Design",
-        "image": "/images/team-damon.jpg"
+        "image": "/images/team-member-2.webp"
       },
       {
         "name": "Russell Buyse",
         "title": "Chief Operations",
-        "image": "/images/team-russell.jpg"
+        "image": "/images/team-member-3.webp"
       },
       {
         "name": "Rakesh Maisuria",
         "title": "Principal Strategist",
-        "image": "/images/team-rakesh.jpg"
+        "image": "/images/team-rakesh.webp"
       },
       {
         "name": "Shawn Reilly",
         "title": "Project Manager",
-        "image": "/images/team-shawn.jpg"
+        "image": "/images/team-member-4.webp"
       },
       {
         "name": "Andrea August",
         "title": "Lead Designer",
-        "image": "/images/team-andrea.jpg"
+        "image": "/images/team-member-5.webp"
       },
       {
         "name": "Sharon Chhin",
         "title": "Lead Designer",
-        "image": "/images/team-sharon.jpg"
+        "image": "/images/team-member-6.webp"
       },
       {
         "name": "Raafia Jessa",
         "title": "Senior Visual Designer",
-        "image": "/images/team-raafia.jpg"
+        "image": "/images/team-member-7.webp"
       },
       {
         "name": "Tyler McCoy",
         "title": "Senior User Experience Designer",
-        "image": "/images/team-tyler.jpg"
+        "image": "/images/team-member-7.webp"
       }
     ]
   },

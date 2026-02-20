@@ -2,13 +2,21 @@
   "hero": {
     "eyebrow": "Industrial UX & Experience Design",
     "headline": "We design for the field.",
-    "subtitle": "Enterprise software that works for the people who actually use it. From offshore platforms to control rooms.",
+    "subtitle": "Enterprise software that works for the people who actually use it. From offshore platforms to control rooms to nuclear facilities.",
     "background_image": "/images/hero-offshore.jpg",
     "cta_text": "See Our Work",
     "cta_link": "/case-studies.html"
   },
   "trust_strip": {
-    "clients": ["Shell", "Constellation", "Exelon", "NTT"]
+    "clients": ["Shell", "Constellation", "Halliburton", "TDECU", "Schneider Electric", "3LC", "Bluware", "NTT", "SunPower", "INT", "LCRA", "Weatherford"]
+  },
+  "stats": {
+    "items": [
+      { "value": "15+", "label": "Years in Enterprise UX" },
+      { "value": "200+", "label": "Platforms Deployed" },
+      { "value": "6", "label": "Continents" },
+      { "value": "1M+", "label": "Hours Saved for Clients" }
+    ]
   },
   "statement": {
     "text": "Most enterprise software is designed by people who've never used it.",
@@ -48,35 +56,35 @@
       {
         "client": "Shell",
         "headline": "Designing Fluid Interfaces for Subsurface Navigation",
-        "description": "Since 2018, a partnership transforming exploration workflows across 6 continents.",
-        "metric1_value": "2018",
-        "metric1_label": "Partnership Start",
-        "metric2_value": "6",
-        "metric2_label": "Continents",
+        "description": "Since 2018, a partnership transforming exploration workflows across 6 continents. 200+ platforms served globally.",
+        "metric1_value": "200+",
+        "metric1_label": "Platforms Served",
+        "metric2_value": "40%",
+        "metric2_label": "Faster Task Completion",
         "image": "/images/case-shell-hero.jpg",
         "link": "/case-study-shell.html"
       },
       {
         "client": "Constellation Energy",
         "headline": "Digitizing Nuclear Procedures for America's Largest Clean Energy Producer",
-        "description": "Converting 50+ years of paper-based procedures into intuitive digital workflows.",
-        "metric1_value": "600+",
-        "metric1_label": "Procedures Digitized",
-        "metric2_value": "98%",
-        "metric2_label": "User Adoption",
+        "description": "Converting 50+ years of paper-based procedures into intelligent digital workflows with ~1M hours in estimated operational savings.",
+        "metric1_value": "~1M",
+        "metric1_label": "Hours Saved",
+        "metric2_value": "85%",
+        "metric2_label": "Compliance Improvement",
         "image": "/images/case-constellation-hero.jpg",
         "link": "/case-study-constellation.html"
       },
       {
-        "client": "Schneider Electric",
-        "headline": "Visualizing the Art of the Possible",
-        "description": "Strategic design for next-generation energy management platforms.",
-        "metric1_value": "3",
-        "metric1_label": "Major Platforms",
-        "metric2_value": "20M+",
-        "metric2_label": "Global Users",
-        "image": "/images/case-schneider-hero.jpg",
-        "link": "/case-study-schneider.html"
+        "client": "3LC",
+        "headline": "From Powerful Technology to a Product Data Scientists Actually Use",
+        "description": "Deep user research and product strategy that helped secure $1.8M seed funding with Shell Ventures and an Equinor enterprise partnership.",
+        "metric1_value": "$1.8M",
+        "metric1_label": "Seed Funding Enabled",
+        "metric2_value": "30x",
+        "metric2_label": "False Positive Reduction",
+        "image": "/images/case-3lc-hero.jpg",
+        "link": "/case-study-3lc.html"
       }
     ]
   },
@@ -86,22 +94,26 @@
       {
         "name": "Energy & Utilities",
         "description": "Oil, gas, nuclear, renewables. From exploration to operations.",
-        "icon_name": "energy"
+        "icon_name": "energy",
+        "clients": ["Shell", "Constellation", "LCRA", "SunPower"]
       },
       {
-        "name": "Maritime & Offshore",
-        "description": "Shipping, offshore operations, subsea work. Safety-critical at scale.",
-        "icon_name": "maritime"
+        "name": "Oilfield Services",
+        "description": "Field operations, data management, mobile tools for demanding environments.",
+        "icon_name": "industrial",
+        "clients": ["Halliburton", "Weatherford"]
       },
       {
-        "name": "Industrial Operations",
-        "description": "Manufacturing, mining, utilities. Where efficiency matters.",
-        "icon_name": "industrial"
+        "name": "Software & Technology",
+        "description": "B2B platforms, industrial software, data-centric AI tools.",
+        "icon_name": "tech",
+        "clients": ["3LC", "Bluware", "INT", "NTT"]
       },
       {
         "name": "Financial Services",
-        "description": "Trading, operations, compliance. High-stakes decision-making.",
-        "icon_name": "finance"
+        "description": "Credit unions, banking, member experience at scale.",
+        "icon_name": "finance",
+        "clients": ["TDECU"]
       }
     ]
   },
