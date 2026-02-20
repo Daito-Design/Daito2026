@@ -1,3 +1,4 @@
+// OAuth callback handler for Sveltia CMS GitHub authentication
 export default async function handler(req, res) {
   const { code } = req.query;
 
