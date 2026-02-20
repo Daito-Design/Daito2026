@@ -1,3 +1,4 @@
+// OAuth proxy for Sveltia CMS GitHub authentication
 export default function handler(req, res) {
   const clientId = process.env.OAUTH_GITHUB_CLIENT_ID;
 
