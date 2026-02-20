@@ -1,0 +1,152 @@
+{
+  "hero": {
+    "eyebrow": "Industrial UX & Experience Design",
+    "headline": "We design for the field.",
+    "subtitle": "Enterprise software that works for the people who actually use it. From offshore platforms to control rooms to nuclear facilities.",
+    "background_image": "/images/hero-offshore.jpg",
+    "cta_text": "See Our Work",
+    "cta_link": "/case-studies.html"
+  },
+  "trust_strip": {
+    "clients": ["Shell", "Constellation", "Halliburton", "TDECU", "Schneider Electric", "3LC", "Bluware", "NTT", "SunPower", "INT", "LCRA", "Weatherford"]
+  },
+  "stats": {
+    "items": [
+      { "value": "15+", "label": "Years in Enterprise UX" },
+      { "value": "200+", "label": "Platforms Deployed" },
+      { "value": "6", "label": "Continents" },
+      { "value": "1M+", "label": "Hours Saved for Clients" }
+    ]
+  },
+  "statement": {
+    "text": "Most enterprise software is designed by people who've never used it.",
+    "highlight": "We're different."
+  },
+  "value_prop": {
+    "heading": "Enterprise Complexity at Global Scale",
+    "body": "Our 15+ years in industrial UX means we understand the real constraints: extreme environments, safety-critical workflows, multi-disciplinary teams, and legacy system integration. We don't design in theory—we design in context."
+  },
+  "services_section": {
+    "heading": "What We Do",
+    "subtitle": "Full-spectrum enterprise experience design",
+    "services": [
+      {
+        "number": "01",
+        "title": "UX Research & Discovery",
+        "description": "Deep contextual research in the field. We interview, observe, and work alongside your users to understand real needs.",
+        "services_list": ["User Research", "Contextual Inquiry", "Workflow Mapping", "Personas"]
+      },
+      {
+        "number": "02",
+        "title": "Design & Interaction",
+        "description": "Thoughtful interface design that works in extreme conditions. Safety-first, clarity-first interactions.",
+        "services_list": ["UI/UX Design", "Interaction Design", "Accessibility", "Design Systems"]
+      },
+      {
+        "number": "03",
+        "title": "Strategy & Planning",
+        "description": "Roadmap and governance for large-scale digital transformation. We help you go fast without breaking things.",
+        "services_list": ["Product Strategy", "Roadmapping", "Change Management", "Training"]
+      }
+    ]
+  },
+  "featured_cases": {
+    "heading": "Featured Work",
+    "cases": [
+      {
+        "client": "Shell",
+        "headline": "Designing Fluid Interfaces for Subsurface Navigation",
+        "description": "Since 2018, a partnership transforming exploration workflows across 6 continents. 200+ platforms served globally.",
+        "metric1_value": "200+",
+        "metric1_label": "Platforms Served",
+        "metric2_value": "40%",
+        "metric2_label": "Faster Task Completion",
+        "image": "/images/case-shell-hero.jpg",
+        "link": "/case-study-shell.html"
+      },
+      {
+        "client": "Constellation Energy",
+        "headline": "Digitizing Nuclear Procedures for America's Largest Clean Energy Producer",
+        "description": "Converting 50+ years of paper-based procedures into intelligent digital workflows with ~1M hours in estimated operational savings.",
+        "metric1_value": "~1M",
+        "metric1_label": "Hours Saved",
+        "metric2_value": "85%",
+        "metric2_label": "Compliance Improvement",
+        "image": "/images/case-constellation-hero.jpg",
+        "link": "/case-study-constellation.html"
+      },
+      {
+        "client": "3LC",
+        "headline": "From Powerful Technology to a Product Data Scientists Actually Use",
+        "description": "Deep user research and product strategy that helped secure $1.8M seed funding with Shell Ventures and an Equinor enterprise partnership.",
+        "metric1_value": "$1.8M",
+        "metric1_label": "Seed Funding Enabled",
+        "metric2_value": "30x",
+        "metric2_label": "False Positive Reduction",
+        "image": "/images/case-3lc-hero.jpg",
+        "link": "/case-study-3lc.html"
+      }
+    ]
+  },
+  "industries": {
+    "heading": "Industries We Serve",
+    "cards": [
+      {
+        "name": "Energy & Utilities",
+        "description": "Oil, gas, nuclear, renewables. From exploration to operations.",
+        "icon_name": "energy",
+        "clients": ["Shell", "Constellation", "LCRA", "SunPower"]
+      },
+      {
+        "name": "Oilfield Services",
+        "description": "Field operations, data management, mobile tools for demanding environments.",
+        "icon_name": "industrial",
+        "clients": ["Halliburton", "Weatherford"]
+      },
+      {
+        "name": "Software & Technology",
+        "description": "B2B platforms, industrial software, data-centric AI tools.",
+        "icon_name": "tech",
+        "clients": ["3LC", "Bluware", "INT", "NTT"]
+      },
+      {
+        "name": "Financial Services",
+        "description": "Credit unions, banking, member experience at scale.",
+        "icon_name": "finance",
+        "clients": ["TDECU"]
+      }
+    ]
+  },
+  "insights": {
+    "heading": "Latest Insights",
+    "articles": [
+      {
+        "tag": "Design",
+        "title": "Designing for Extreme Environments",
+        "excerpt": "What we learned designing interfaces for offshore platforms, nuclear control rooms, and mining operations.",
+        "image": "/images/blog-extreme.jpg",
+        "link": "/blog/designing-for-extreme-environments.html"
+      },
+      {
+        "tag": "Strategy",
+        "title": "The Hidden Costs of Bad Enterprise UX",
+        "excerpt": "How poor interface design cascades through large organizations. A case study analysis.",
+        "image": "/images/blog-costs.jpg",
+        "link": "/blog/costs-of-bad-ux.html"
+      },
+      {
+        "tag": "Innovation",
+        "title": "Agentic Experience Design",
+        "excerpt": "The future of enterprise software: human-AI collaboration at scale.",
+        "image": "/images/blog-agentic.jpg",
+        "link": "/blog/agentic-experience-design.html"
+      }
+    ]
+  },
+  "cta_section": {
+    "heading": "Ready to transform your enterprise software?",
+    "body": "Let's talk about your biggest challenges. Whether it's a complete redesign or optimizing critical workflows, we have 15+ years of proven approaches.",
+    "button_text": "Get in Touch",
+    "button_link": "/contact.html"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "slug": "schneider",
+  "client": "Schneider Electric",
+  "industry": "Energy",
+  "year": "2025",
+  "tags": [
+    "Agentic Experience Design",
+    "ADIPEC 2025",
+    "Energy"
+  ],
+  "hero": {
+    "headline": "Visualizing the Art of the Possible for Schneider Electric",
+    "subtitle": "We brought 6 AI-driven concepts to life for ADIPEC 2025, transforming complex autonomous operations visions into compelling visual experiences that showcase the future of energy management.",
+    "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758",
+    "image_alt": "Industrial Energy Control Room",
+    "metrics": [
+      {
+        "value": "6",
+        "label": "AI Concepts Visualized"
+      },
+      {
+        "value": "ADIPEC",
+        "label": "2025 Exhibition"
+      },
+      {
+        "value": "Future",
+        "label": "Art of the Possible"
+      }
+    ]
+  },
+  "challenge": {
+    "label": "The Challenge",
+    "heading": "Visualizing the Art of the Possible",
+    "intro": "Schneider Electric needed to showcase 6 AI-driven concepts at ADIPEC 2025—not just explain existing technology, but paint a compelling vision of autonomous operations and what the future could look like.",
+    "cards": [
+      {
+        "title": "6 AI Concepts",
+        "description": "Six distinct AI-driven visions for autonomous operations, each requiring unique visual storytelling to communicate possibility without overpromising."
+      },
+      {
+        "title": "Future Visualization",
+        "description": "Showing the 'art of the possible'—not just current capabilities, but where AI-powered energy management is heading. Inspiring without being speculative."
+      },
+      {
+        "title": "ADIPEC Presence",
+        "description": "Standing out at the world's largest energy conference. Creating visual experiences that position Schneider as the leader in AI-driven autonomous operations."
+      }
+    ]
+  },
+  "approach": {
+    "label": "Our Approach",
+    "heading": "Agentic Experience Design for Enterprise AI",
+    "intro": "We applied our AXD framework to create visual experiences that communicate AI capabilities while maintaining human understanding and trust.",
+    "steps": [
+      {
+        "number": "1",
+        "title": "System Mapping",
+        "description": "Deep-dive into Schneider's AI architecture to understand data flows, decision points, and human-agent interactions."
+      },
+      {
+        "number": "2",
+        "title": "Visual Translation",
+        "description": "Transformed technical schematics into intuitive visual hierarchies that reveal complexity progressively."
+      },
+      {
+        "number": "3",
+        "title": "Design System",
+        "description": "Created a cohesive visual language with standardized layouts, motion rules, and color logic across all presentations."
+      },
+      {
+        "number": "4",
+        "title": "Production Pipeline",
+        "description": "Built an efficient Figma-to-PowerPoint workflow that reduced export errors and enabled rapid iterations."
+      }
+    ]
+  },
+  "design_system": {
+    "label": "Design System",
+    "heading": "A Visual Language for Autonomous Intelligence",
+    "intro": "We created a consistent design language combining dark spatial layers, neon accents, and glass-like depth. This approach gave Schneider's AI presentations a futuristic but credible tone.",
+    "elements": [
+      {
+        "title": "Color Palette",
+        "description": "Dark spatial base with Schneider green accents and cyan highlights for data visualization."
+      },
+      {
+        "title": "Typography",
+        "description": "Inter Bold — Clean, technical, highly legible at any size. Perfect for data-dense presentations."
+      },
+      {
+        "title": "Visual Principles",
+        "description": "Progressive disclosure of complexity, glass-like depth and layering, animated data flows, consistent motion language."
+      }
+    ]
+  },
+  "work": {
+    "label": "The Work",
+    "heading": "Design System",
+    "intro": "A Visual Language for Autonomous Intelligence",
+    "cards": [
+      {
+        "title": "Color Palette",
+        "description": "Dark spatial base with Schneider green accents and cyan highlights for data visualization."
+      },
+      {
+        "title": "Typography",
+        "description": "Inter Bold — Clean, technical, highly legible at any size. Perfect for data-dense presentations."
+      },
+      {
+        "title": "Visual Principles",
+        "description": "Progressive disclosure of complexity, glass-like depth and layering, animated data flows, consistent motion language."
+      }
+    ]
+  },
+  "gallery": {
+    "images": []
+  },
+  "results": {
+    "label": "Results",
+    "heading": "Impact at ADIPEC 2025",
+    "intro": "Six AI-driven concepts brought to life, showcasing the art of the possible for autonomous operations. Schneider's presentations stood out as the most visually compelling at ADIPEC.",
+    "metrics": [
+      {
+        "value": "6",
+        "label": "AI Concepts Visualized and Presented",
+        "description": "Six distinct AI-driven concepts brought to life through compelling visual storytelling."
+      },
+      {
+        "value": "Art of the Possible",
+        "label": "Showcased",
+        "description": "Painting a compelling vision of autonomous operations and the future of energy management."
+      },
+      {
+        "value": "Unified",
+        "label": "Visual Identity Across All Concepts",
+        "description": "Consistent design language ensuring cohesive brand presence at ADIPEC."
+      },
+      {
+        "value": "#1",
+        "label": "Design-Forward Presence at ADIPEC",
+        "description": "Schneider's presentations stood out as the most visually compelling at the conference."
+      }
+    ]
+  },
+  "testimonial": {
+    "quote": "The team understood exactly what we needed: a way to communicate complex AI systems without overwhelming our audience. The result was presentations that actually generated conversations instead of glazed-over looks.",
+    "author": "VP of Digital Solutions",
+    "company": "Schneider Electric"
+  },
+  "capabilities": {
+    "label": "Capabilities Applied",
+    "heading": "Agentic Experience Design in Action",
+    "body": "This project showcased our core AXD principles: making AI systems understandable, building appropriate trust through clear visualization, and creating interfaces that support human decision-making. We worked closely with Schneider's VP and Senior Designer, coordinating iterations and building a production workflow that will serve them for years to come.",
+    "services": [
+      "Agentic Experience Design",
+      "AI System Visualization",
+      "Presentation Design",
+      "Design System Creation",
+      "Production Workflow Design",
+      "Figma-to-PowerPoint Pipeline"
+    ]
+  },
+  "services": [
+    "Agentic Experience Design",
+    "AI System Visualization",
+    "Presentation Design",
+    "Design System Creation",
+    "Production Workflow Design",
+    "Figma-to-PowerPoint Pipeline"
+  ],
+  "cta": {
+    "heading": "Ready to visualize your AI systems?",
+    "subtitle": "Let's talk about how Agentic Experience Design can help communicate your technology's value.",
+    "button_text": "Start a Conversation"
+  }
+}

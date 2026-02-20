@@ -1,0 +1,107 @@
+{
+    "slug": "shell",
+    "client": "Shell",
+    "industry": "Oil & Gas",
+    "year": "2018-Present",
+    "tags": ["Oil & Gas", "Enterprise UX", "Since 2018"],
+    "hero": {
+          "headline": "Designing Fluid Interfaces for Subsurface Navigation",
+          "subtitle": "Since 2018, we've partnered with one of the world's largest energy companies to design fluid, intuitive interfaces for navigating complex subsurface data—tools that geoscientists rely on for billion-dollar drilling decisions across six continents.",
+          "image": "images/Seismic Acquisition Platforms.jpg",
+          "image_alt": "Seismic Acquisition Vessel",
+          "metrics": [
+                  { "value": "8", "label": "Year Partnership" },
+                  { "value": "40%", "label": "Faster Task Completion" },
+                  { "value": "60%", "label": "Fewer Data Entry Errors" }
+          ]
+    },
+    "challenge": {
+          "label": "The Challenge",
+          "heading": "Enterprise Complexity at Global Scale",
+          "intro": "One of the world's largest energy companies was digitally transforming how their geoscientists work. With exploration teams spanning six continents, thousands of specialist users, and decades of legacy systems, they needed a partner who could navigate enterprise complexity while delivering intuitive, powerful tools.",
+          "cards": [
+                  {
+                            "title": "Billion-Dollar Decisions",
+                            "description": "These applications inform drilling decisions worth hundreds of millions. Usability gaps don't just frustrate users. They can lead to costly mistakes in geological interpretation."
+                  },
+                  {
+                            "title": "Legacy System Debt",
+                            "description": "Decades of accumulated technical decisions had created a fragmented ecosystem. New tools needed to integrate seamlessly while modernizing the user experience."
+                  },
+                  {
+                            "title": "Extreme Environments",
+                            "description": "From offshore platforms with intermittent connectivity to research centers with demanding display requirements, design solutions needed to work everywhere."
+                  }
+          ]
+    },
+    "approach": {
+          "label": "Our Approach",
+          "heading": "Research-Driven Enterprise Design",
+          "intro": "We embedded ourselves in Shell's world, visiting platforms, shadowing interpreters, and understanding the nuances of geoscience workflows before designing a single screen.",
+          "steps": [
+                  { "number": "1", "title": "Field Research", "description": "On-platform observation across multiple continents. Understanding workflows in context, not conference rooms." },
+                  { "number": "2", "title": "User Workshops", "description": "Collaborative sessions with geoscientists, interpreters, and operations staff to define requirements." },
+                  { "number": "3", "title": "Design Systems", "description": "Creating consistency across the portfolio with scalable component libraries and interaction patterns." },
+                  { "number": "4", "title": "Iterative Delivery", "description": "Usability testing with representative users. Refinement based on real-world feedback." }
+          ]
+    },
+    "work": {
+          "label": "The Work",
+          "heading": "A Portfolio of Exploration Tools",
+          "intro": "Since 2018, we've designed and refined multiple applications, each addressing different aspects of the exploration workflow.",
+          "cards": [
+                  { "title": "Fluid Data Navigation", "description": "Intuitive interfaces for navigating subsurface data. Seamless transitions between seismic, well log, and geological model views with fluid interaction patterns." },
+                  { "title": "Collaborative Interpretation", "description": "Multi-user workspace with fluid workflows. Real-time collaboration, version control, and annotation systems designed for distributed geoscience teams." },
+                  { "title": "Digital Field Operations", "description": "Production digitization platform with fluid mobile experiences. Transitioning field operations from paper-based workflows to intuitive digital-first processes." },
+                  { "title": "Mobile Workbench", "description": "Field worker mobile solution for greenfield LNG plant operations: gloved use, intermittent connectivity, safety-critical workflows." },
+                  { "title": "AI Exploration Agent", "description": "Next-generation agentic experience design. Human-AI collaboration for geological interpretation and decision support." },
+                  { "title": "Design System", "description": "Unified component library ensuring visual and interaction consistency across the entire exploration tool portfolio." }
+          ]
+    },
+    "gallery": {
+          "label": "Field Research",
+          "heading": "Understanding Work in Context",
+          "intro": "Great enterprise software comes from understanding how people actually work, not how we assume they work. We've spent time on platforms, in control rooms, and alongside interpreters to inform every design decision.",
+          "images": [
+                  { "src": "images/Vessel DCH 001.jpg", "alt": "Seismic Survey Vessel", "full_width": false },
+                  { "src": "images/Seismic Acquisition Platforms (1).jpg", "alt": "Seismic Acquisition Platform", "full_width": false },
+                  { "src": "images/Screenshot 2026-02-02 at 10.24.59 AM.png", "alt": "Seismic Survey Vessel Aerial View", "full_width": true }
+          ]
+    },
+    "results": {
+          "label": "Results",
+          "heading": "Measurable Impact at Scale",
+          "intro": "Our partnership has delivered tangible improvements across Shell's exploration operations, from individual productivity gains to portfolio-wide efficiency.",
+          "metrics": [
+                  { "value": "8", "label": "Years of continuous partnership", "description": "" },
+                  { "value": "6", "label": "Continents with deployed solutions", "description": "" },
+                  { "value": "40%", "label": "Faster task completion in field", "description": "" },
+                  { "value": "60%", "label": "Reduction in data entry errors", "description": "" }
+          ]
+    },
+    "testimonial": {
+          "quote": "Before, our interpreters spent more time fighting the software than interpreting data. Now they can focus on the geology. Daito understood our domain deeply enough to challenge our assumptions. That's rare in a design partner.",
+          "author": "Senior Digital Product Manager",
+          "company": "Shell Exploration"
+    },
+    "capabilities": {
+          "label": "Capabilities Applied",
+          "heading": "Full-Spectrum Enterprise UX",
+          "body": "This engagement spans the full range of our capabilities, from foundational research to production design systems. We've grown alongside Shell's digital transformation, adapting our approach as needs evolved. What started as single projects has become an embedded partnership, with Daito serving as the trusted UX partner for Shell's exploration technology portfolio.",
+          "services": [
+                  "Enterprise UX Research",
+                  "Global User Workshops",
+                  "Industrial Interface Design",
+                  "Design Systems",
+                  "Mobile Design",
+                  "AI/Agent Experience Design",
+                  "Field Research",
+                  "Usability Testing"
+          ]
+    },
+    "cta": {
+          "heading": "Ready to transform your enterprise software?",
+          "body": "Let's discuss how research-driven design can improve your team's productivity and decision-making.",
+          "button_text": "Start a Conversation"
+    }
+}

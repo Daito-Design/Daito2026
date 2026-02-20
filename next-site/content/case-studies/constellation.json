@@ -1,0 +1,91 @@
+{
+    "slug": "constellation",
+    "client": "Constellation Energy",
+    "industry": "Nuclear Energy",
+    "year": "2019-Present",
+    "tags": ["Nuclear Energy", "Digital Transformation", "AI-Powered Operations"],
+    "hero": {
+          "headline": "Digitizing Nuclear Procedures for America's Largest Clean Energy Producer",
+          "subtitle": "We helped Constellation Energy transform decades of paper-based procedures into intelligent digital workflows, saving approximately one million work hours while maintaining the safety margins that nuclear operations demand.",
+          "image": "images/nuclear-control-room.jpg",
+          "image_alt": "Nuclear Power Plant Control Room",
+          "metrics": [
+                  { "value": "~1M", "label": "Hours Saved" },
+                  { "value": "85%", "label": "Fewer Calculation Errors" },
+                  { "value": "8", "label": "Legacy Systems Consolidated" }
+          ]
+    },
+    "challenge": {
+          "label": "The Challenge",
+          "heading": "Transforming Safety-Critical Operations",
+          "intro": "A major nuclear utility operating multiple power plants was digitizing decades of paper-based procedures. The goal: transform static documents into intelligent, interactive digital workflows that guide operators through complex tasks while maintaining the safety margins that nuclear operations demand.",
+          "cards": [
+                  { "title": "Zero-Error Tolerance", "description": "In nuclear environments, every design decision carries weight. The interfaces we create must prevent errors before they happen, not just catch them after." },
+                  { "title": "Regulatory Complexity", "description": "NRC and INPO regulations govern every aspect of nuclear operations. Digital systems must maintain compliance while improving efficiency." },
+                  { "title": "Legacy Integration", "description": "Eight different systems had evolved over decades. New digital tools needed to consolidate functionality while preserving institutional knowledge." }
+          ]
+    },
+    "approach": {
+          "label": "Our Approach",
+          "heading": "Error Prevention as a Design Principle",
+          "intro": "We approached nuclear UX with the humility it demands, listening first, designing second, and treating every interface element as a potential point of failure or protection. This means progressive disclosure, confirmation patterns, and interfaces that make the right action the easy action.",
+          "steps": [
+                  { "number": "1", "title": "Plant Observation", "description": "On-site research at operating plants. Understanding workflows in the actual environment where they'll be used." },
+                  { "number": "2", "title": "Compliance Mapping", "description": "Deep analysis of NRC and INPO requirements. Ensuring every design decision meets regulatory standards." },
+                  { "number": "3", "title": "Error Prevention", "description": "Designing interfaces where the right action is the easy action. Making mistakes hard, not just caught." },
+                  { "number": "4", "title": "Continuous Research", "description": "POD research model with 20+ presentations. Embedded partnership for ongoing improvement." }
+          ]
+    },
+    "work": {
+          "label": "The Work",
+          "heading": "A Digital Transformation Framework",
+          "intro": "We designed multiple interconnected systems that work together to support nuclear operations, from procedure execution to work planning to AI-powered automation.",
+          "cards": [
+                  { "title": "Smart Procedures", "description": "Digital procedure execution system that guides operators through complex tasks with real-time validation, automatic documentation, and error prevention at every step." },
+                  { "title": "Work Planning Interface", "description": "Resource allocation and scheduling system that optimizes maintenance windows, tracks dependencies, and ensures coverage for safety-critical operations." },
+                  { "title": "AI-Powered Automation", "description": "Machine learning systems that optimize workflows, predict maintenance needs, and automate routine decision-making while keeping humans in control." },
+                  { "title": "Compliance Dashboard", "description": "Real-time visibility into regulatory compliance status, audit trails, and documentation requirements across all plant operations." }
+          ]
+    },
+    "gallery": {
+          "label": "Field Research",
+          "heading": "Understanding Safety-Critical Environments",
+          "intro": "Nuclear operations demand design decisions grounded in real operational context, not assumptions made in conference rooms.",
+          "images": []
+    },
+    "results": {
+          "label": "Results",
+          "heading": "Measurable Impact on Operations",
+          "intro": "Digital transformation at nuclear scale requires patience and precision. The results speak to both efficiency gains and, more importantly, maintained and improved safety margins.",
+          "metrics": [
+                  { "value": "~1M", "label": "Estimated hours saved through AI efficiency", "description": "" },
+                  { "value": "85%", "label": "Fewer Calculation Errors", "description": "" },
+                  { "value": "8", "label": "Legacy systems consolidated", "description": "" },
+                  { "value": "20+", "label": "Research presentations delivered", "description": "" }
+          ]
+    },
+    "testimonial": {
+          "quote": "They approached our environment with the right level of humility. They listened first, understood the stakes, and designed systems that make our operators more effective while maintaining the safety margins we demand. That's rare.",
+          "author": "Director of Digital Operations",
+          "company": "Constellation Energy"
+    },
+    "capabilities": {
+          "label": "Capabilities Applied",
+          "heading": "Safety-Critical UX Expertise",
+          "body": "Nuclear operations demand a different approach to design. We brought our industrial UX expertise together with deep regulatory knowledge to create interfaces that protect operators and improve efficiency simultaneously. Our embedded research partnership ensures that design decisions are grounded in real operational context, not assumptions made in conference rooms.",
+          "services": [
+                  "Safety-Critical UX Research",
+                  "Regulatory Compliance Design",
+                  "Procedure Digitization",
+                  "Error Prevention Design",
+                  "Work Planning UX",
+                  "AI Integration Design",
+                  "Embedded Research Partnership"
+          ]
+    },
+    "cta": {
+          "heading": "Ready to digitize your operations?",
+          "body": "Let's discuss how safety-critical UX can transform your procedures while maintaining compliance.",
+          "button_text": "Start a Conversation"
+    }
+}

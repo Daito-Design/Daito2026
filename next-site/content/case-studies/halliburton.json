@@ -1,0 +1,128 @@
+{
+  "slug": "halliburton",
+  "client": "Halliburton",
+  "industry": "Oil & Gas",
+  "year": "Multi-phase",
+  "phase": "product",
+  "hero": {
+    "headline": "Consolidating 12 Systems Into One Unified Platform",
+    "subtitle": "A global oilfield services leader needed to redesign their hydraulic fracturing data management platform. We delivered a complete redesign that consolidated 12 legacy systems into a single, intuitive interface.",
+    "image": "/images/case-halliburton-hero.jpg",
+    "metrics": [
+      { "value": "12→1", "label": "Systems Consolidated" },
+      { "value": "35%", "label": "Efficiency Gain" },
+      { "value": "3", "label": "Project Phases" },
+      { "value": "3", "label": "Engagement Phases" }
+    ]
+  },
+  "challenge": {
+    "heading": "The Challenge",
+    "intro": "A global oilfield services leader needed to redesign their hydraulic fracturing data management platform. The existing interface had grown organically over years, accumulating complexity. Engineers struggled with data visualization, workflow navigation, and task completion.",
+    "cards": [
+      {
+        "title": "Legacy Fragmentation",
+        "description": "12 separate systems had evolved independently over decades. Each had its own interaction paradigm, data model, and user expectations."
+      },
+      {
+        "title": "Complex Data Visualization",
+        "description": "Hydraulic fracturing generates massive datasets. Engineers needed to visualize, compare, and act on this data in real-time during high-stakes operations."
+      },
+      {
+        "title": "High-Stakes Environment",
+        "description": "For software managing field operations, usability gaps meant efficiency gaps — and efficiency gaps meant costly delays."
+      }
+    ]
+  },
+  "approach": {
+    "heading": "Our Approach",
+    "intro": "We executed a three-phase engagement: complete redesign, development support, and capability building.",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Information Architecture",
+        "description": "Restructuring 12 systems' worth of functionality into a coherent navigation and workflow model."
+      },
+      {
+        "number": "2",
+        "title": "Data Visualization",
+        "description": "Designing complex data visualizations for fracturing metrics that enable rapid decision-making."
+      },
+      {
+        "number": "3",
+        "title": "Development Support",
+        "description": "Design QA during implementation, iteration based on developer and user feedback, production asset delivery."
+      },
+      {
+        "number": "4",
+        "title": "Capability Building",
+        "description": "Training internal teams on UX methodology. Establishing design standards for future development."
+      }
+    ]
+  },
+  "work": {
+    "heading": "The Work",
+    "intro": "Three phases took the platform from fragmented legacy systems to a unified, modern interface with internal UX capability.",
+    "cards": [
+      {
+        "title": "Complete Redesign",
+        "description": "Information architecture restructuring, complex data visualization for fracturing metrics, workflow optimization for field engineers."
+      },
+      {
+        "title": "Design System",
+        "description": "Comprehensive component library ensuring visual consistency across the entire consolidated platform."
+      },
+      {
+        "title": "Development QA",
+        "description": "Design quality assurance during implementation. Iteration based on developer and user feedback."
+      },
+      {
+        "title": "Team Training",
+        "description": "Training internal teams on UX methodology. Establishing design standards for autonomous future development."
+      }
+    ]
+  },
+  "results": {
+    "heading": "Results",
+    "intro": "The redesign delivered measurable improvements across all three phases of the engagement.",
+    "metrics": [
+      {
+        "value": "12→1",
+        "label": "Systems Consolidated",
+        "description": "Twelve legacy systems unified into a single coherent platform."
+      },
+      {
+        "value": "35%",
+        "label": "Efficiency Gain",
+        "description": "Field engineers work 35% more efficiently with the consolidated interface."
+      },
+      {
+        "value": "Faster",
+        "label": "Decision-Making",
+        "description": "Consolidated data views enable faster decisions during operations."
+      },
+      {
+        "value": "Internal",
+        "label": "UX Capability Built",
+        "description": "Teams trained on UX methodology for ongoing autonomous improvement."
+      }
+    ]
+  },
+  "testimonial": {
+    "quote": "The new interface just makes sense. I can find what I need without thinking about it.",
+    "author": "Field Engineer",
+    "author_title": "Halliburton"
+  },
+  "services": [
+    "User Research",
+    "Workshop Facilitation",
+    "UX/UI Design",
+    "Data Visualization",
+    "Design Systems",
+    "Development Support",
+    "UX Training"
+  ],
+  "cta": {
+    "heading": "Need to consolidate legacy systems?",
+    "button_text": "Start a Conversation"
+  }
+}

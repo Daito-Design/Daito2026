@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "eyebrow": "How We Work",
+    "headline": "End-to-end enterprise UX.",
+    "subtitle": "From initial discovery through design systems and ongoing support. We bring deep expertise in industrial and enterprise experience design."
+  },
+  "phases": [
+    {
+      "number": "01",
+      "heading": "Discovery & Research",
+      "description": "Understanding your world before we design. Field visits, user interviews, workflow mapping, and contextual analysis.",
+      "services": [
+        {
+          "title": "Contextual Inquiry",
+          "description": "On-site observation of your users and workflows in their actual environment — offshore platforms, control rooms, field sites."
+        },
+        {
+          "title": "User Interviews",
+          "description": "Deep conversations with operators, managers, and decision-makers about their needs and pain points."
+        },
+        {
+          "title": "Workflow Mapping",
+          "description": "Detailed documentation of how work actually happens (not how you think it happens)."
+        },
+        {
+          "title": "Usability Testing",
+          "description": "Quantitative task-based testing to measure completion rates, time-on-task, and error frequency."
+        }
+      ]
+    },
+    {
+      "number": "02",
+      "heading": "Strategy & Design",
+      "description": "Creating the vision and bringing it to life. Conceptual frameworks, interaction design, and visual systems.",
+      "services": [
+        {
+          "title": "Product Strategy",
+          "description": "Defining scope, phasing, and roadmap aligned with business goals and user needs."
+        },
+        {
+          "title": "Information Architecture",
+          "description": "Organizing complex information into intuitive mental models. Critical for legacy consolidation."
+        },
+        {
+          "title": "Interaction Design",
+          "description": "Designing how users interact with the system at every touchpoint — optimized for real working conditions."
+        },
+        {
+          "title": "Data Visualization",
+          "description": "Complex data made clear. From fracturing metrics to seismic interpretation to grid monitoring."
+        }
+      ]
+    },
+    {
+      "number": "03",
+      "heading": "Implementation & Scale",
+      "description": "Building sustainable systems that work across organizations. Design systems, development support, and capability building.",
+      "services": [
+        {
+          "title": "Design Systems",
+          "description": "Component libraries, design tokens, and documentation for consistent implementation at scale."
+        },
+        {
+          "title": "Development Support",
+          "description": "Design QA during implementation, iteration based on developer feedback, production asset delivery."
+        },
+        {
+          "title": "Embedded Partnership",
+          "description": "Dedicated design pod embedded with your product team. Sprint-aligned delivery, continuous improvement."
+        },
+        {
+          "title": "Training & Capability Building",
+          "description": "Training internal teams on UX methodology so they can maintain and extend design standards independently."
+        }
+      ]
+    },
+    {
+      "number": "04",
+      "heading": "Agentic Experience Design",
+      "description": "Next-generation human-AI collaboration for enterprise environments. We design the interface between people and intelligent systems.",
+      "services": [
+        {
+          "title": "AI Interface Design",
+          "description": "Designing how users interact with AI systems — from autonomous agents to decision-support tools."
+        },
+        {
+          "title": "Agentic Workflow Design",
+          "description": "Defining the hand-off points between human judgment and automated action in complex operational systems."
+        },
+        {
+          "title": "Spatial Computing Concepts",
+          "description": "Next-generation interface exploration for Vision Pro and spatial computing environments."
+        },
+        {
+          "title": "AI System Visualization",
+          "description": "Translating complex AI architectures and data flows into clear, compelling visual communication."
+        }
+      ]
+    }
+  ],
+  "industries": {
+    "heading": "Industries We Serve",
+    "cards": [
+      {
+        "name": "Energy & Utilities",
+        "description": "Oil, gas, nuclear, renewables. From exploration to operations to grid management.",
+        "clients": ["Shell", "Constellation", "LCRA", "SunPower", "Schneider Electric"]
+      },
+      {
+        "name": "Oilfield Services",
+        "description": "Field operations, data management, mobile tools for demanding oilfield environments.",
+        "clients": ["Halliburton", "Weatherford"]
+      },
+      {
+        "name": "Industrial Software",
+        "description": "B2B platforms, geoscience tools, production optimization software.",
+        "clients": ["Bluware", "INT", "3LC"]
+      },
+      {
+        "name": "Financial Services",
+        "description": "Credit unions, banking, insurance — member experience at scale with regulatory complexity.",
+        "clients": ["TDECU"]
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Let's talk about your enterprise software challenge.",
+    "body": "Whether you need a complete platform redesign, field research, or an embedded design partner — we've been here before.",
+    "button_text": "Get in Touch"
+  }
+}

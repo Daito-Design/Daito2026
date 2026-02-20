@@ -1,0 +1,9 @@
+/* Import Daito Design System */
+@import '../styles/daito.css';
+
+/* TinaCMS visual editing highlight */
+[data-tina-field]:hover {
+  outline: 2px solid #722F37;
+  outline-offset: 2px;
+  cursor: pointer;
+}

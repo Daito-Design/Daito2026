@@ -1,0 +1,154 @@
+{
+  "slug": "bluware",
+  "client": "Bluware",
+  "industry": "Geo-Technology",
+  "year": "2021-2024",
+  "tags": [
+    "Geo-Technology",
+    "Design POD",
+    "3+ Year Partnership"
+  ],
+  "hero": {
+    "headline": "Embedded Design for Subsurface Intelligence",
+    "subtitle": "Bluware develops sophisticated seismic interpretation software for geoscientists. We embedded with their product team for 3+ years, delivering continuous design support as a true product partner.",
+    "image": "",
+    "image_alt": "",
+    "metrics": [
+      {
+        "value": "3+",
+        "label": "Year Embedded Partnership"
+      },
+      {
+        "value": "35%",
+        "label": "Usability Score Increase"
+      },
+      {
+        "value": "8",
+        "label": "Major Releases Shipped"
+      }
+    ]
+  },
+  "challenge": {
+    "label": "The Challenge",
+    "heading": "Making Powerful Technology Accessible",
+    "intro": "Bluware's technology enables seismic data analysis that was previously impossible, but powerful technology needs intuitive interfaces to realize its potential. The mandate: design interfaces that match the sophistication of the technology without dumbing it down.",
+    "cards": [
+      {
+        "title": "The Design POD Model",
+        "description": "Rather than project-based engagements, we embedded a dedicated design team directly into Bluware's product organization. Sprint-aligned delivery. Continuous improvement. True partnership."
+      },
+      {
+        "title": "3+ Years",
+        "description": "Of continuous embedded partnership."
+      }
+    ]
+  },
+  "approach": {
+    "label": "Our Approach",
+    "heading": "Continuous Design Partnership",
+    "intro": "We operate as an extension of Bluware's product team, participating in sprints, responding to evolving requirements, and maintaining deep domain expertise.",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Sprint-Aligned Delivery",
+        "description": "Design work synchronized with development cycles. No handoff delays. Immediate feedback loops. Continuous iteration."
+      },
+      {
+        "number": "2",
+        "title": "Domain Expertise",
+        "description": "After 3+ years, we understand seismic interpretation workflows deeply. We challenge assumptions and propose solutions."
+      },
+      {
+        "number": "3",
+        "title": "Predictable Capacity",
+        "description": "Dedicated design resources available when needed. No ramp-up time for new projects. Institutional knowledge preserved."
+      }
+    ]
+  },
+  "work": {
+    "label": "The Work",
+    "heading": "From Research to Production",
+    "intro": "Our embedded partnership spans the full product design lifecycle, from competitive intelligence to production-ready interfaces.",
+    "cards": [
+      {
+        "title": "Competitive Intelligence",
+        "description": "Deep analysis of the geo-tech landscape. Understanding where Bluware's technology creates unique value. Identifying UX patterns that work in subsurface interpretation."
+      },
+      {
+        "title": "Product Design",
+        "description": "End-to-end UX/UI for Bluware's interpretation platform. Complex data visualization. Multi-panel workflows. Precision controls for specialist users."
+      },
+      {
+        "title": "Website & Content",
+        "description": "Product marketing design for launches and campaigns. Communicating sophisticated technology to technical audiences."
+      },
+      {
+        "title": "Design System",
+        "description": "Comprehensive component library ensuring consistency across the product portfolio. Documentation enabling internal teams to extend the design."
+      }
+    ]
+  },
+  "gallery": {
+    "images": []
+  },
+  "results": {
+    "label": "Results",
+    "heading": "Partnership That Scales",
+    "intro": "The Design POD model delivers continuous value: deeply embedded partnership that grows with the product.",
+    "metrics": [
+      {
+        "value": "35%",
+        "label": "Increase in Usability Scores",
+        "description": "Measurable improvement in user experience across the product."
+      },
+      {
+        "value": "3+",
+        "label": "Years of Embedded Partnership",
+        "description": "Continuous design support growing with the product."
+      },
+      {
+        "value": "8",
+        "label": "Major Releases Shipped",
+        "description": "Design support across multiple major product releases."
+      },
+      {
+        "value": "Global",
+        "label": "Geoscientist User Base",
+        "description": "Serving geoscientists worldwide with intuitive interpretation tools."
+      }
+    ]
+  },
+  "testimonial": {
+    "quote": "They understood our domain deeply enough to challenge our assumptions. That's rare in a design partner. After three years, they're not just a vendor. They're part of how we build products.",
+    "author": "VP of Product",
+    "company": "Bluware"
+  },
+  "capabilities": {
+    "label": "Capabilities Applied",
+    "heading": "The Design POD Advantage",
+    "body": "The POD model works because it aligns incentives. We succeed when the product succeeds. That changes how we approach every design decision. For companies building complex technical products, embedded design partnership offers something project-based work can't: continuity, context, and commitment.",
+    "services": [
+      "Competitive Analysis",
+      "User Research",
+      "Product Strategy",
+      "UX/UI Design",
+      "Design Systems",
+      "Website Design",
+      "Embedded Design Partnership"
+    ]
+  },
+  "services": [
+    "Competitive Analysis",
+    "User Research",
+    "Product Strategy",
+    "UX/UI Design",
+    "Design Systems",
+    "Website Design",
+    "Embedded Design Partnership"
+  ],
+  "cta": {
+    "heading": "Need embedded design support?",
+    "subtitle": "Let's discuss how a Design POD could accelerate your product development.",
+    "button_text": "Start a Conversation"
+  }
+}
